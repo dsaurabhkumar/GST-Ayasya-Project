@@ -6,8 +6,7 @@ import CreateCompany from '../components/create-company/CreateCompany';
 const Routes = () => (
     <Router>
         <Switch>
-            <Route path="/" exact={true}>
-                <LandingPage></LandingPage>
+            <Route path="/" exact={true} component={LandingPage}>
             </Route>
             <Route path="/create-company">
                 <CreateCompany />

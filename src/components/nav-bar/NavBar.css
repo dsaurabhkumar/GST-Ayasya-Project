@@ -10,8 +10,4 @@ header {
 }
 .nav-item:hover {
      color: rgb(255, 138, 115);
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1);
-    transform: scale(1.1); 
-    transition: all 0.8s ease 0s;
 }
