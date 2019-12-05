@@ -17,7 +17,7 @@ function NavBar() {
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" data-toggle="dropdown">Company</a>
                                 <ul className="dropdown-menu">
-                                    <li className="dropdown-item">Create Company</li>
+                                    <li className="dropdown-item" to="/create-company">Create Company</li>
                                     <div className="dropdown-divider"></div>
                                     <li className="dropdown-item">Open Company</li>
                                 </ul>
