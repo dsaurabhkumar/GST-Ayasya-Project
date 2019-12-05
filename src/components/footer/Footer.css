@@ -1,0 +1,19 @@
+.footer {
+    background-color:#343352;
+    color: white;
+}
+.socialIcons span {
+    display: block;
+    font-size: 25px;
+}
+.ourServices {
+    list-style: none;
+}
+.addressDetails p i {
+    margin-right: 10px;
+}
+.footer-lower-section {
+    background-color: #2d2d47;
+    padding: 25px;
+    text-align: end;
+}
