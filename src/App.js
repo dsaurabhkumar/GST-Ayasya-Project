@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import Routes from './routes/Routes';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <h1 className = "text-center">GST Project</h1>
+      {/* <h1 className = "text-center">GST Project</h1> */}
+      <Routes />
     </div>
   );
 }
