@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import LandingPage from "../components/landing-page/LandingPage";
 import CreateCompany from '../components/create-company/CreateCompany';
 
-const routes = (
+const Routes = () => (
     <Router>
         <Switch>
             <Route path="/" exact={true}>
@@ -15,4 +15,4 @@ const routes = (
         </Switch>
     </Router>
 )
-export default routes
+export default Routes
