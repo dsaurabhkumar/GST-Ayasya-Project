@@ -1,6 +1,7 @@
 import React from 'react';
 import '../nav-bar/NavBar.css';
 import logo from '../../assets/logo/_blue_text.png';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
 function NavBar() {
     return (
@@ -9,16 +10,16 @@ function NavBar() {
                 <div className="container">
                     <img className="navbar-brand logo" src={logo}></img>
                     <button className="navbar-toggler" data-toggle="collapse" data-target="#navBarId">
-                        <span className="navbar-toggler-icon"></span>
+                        <span><i className="fas fa-align-justify hambergerMenu"></i></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navBarId">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" data-toggle="dropdown">Company</a>
                                 <ul className="dropdown-menu">
-                                    <li className="dropdown-item">Hello</li>
+                                    <li className="dropdown-item">Create Company</li>
                                     <div className="dropdown-divider"></div>
-                                    <li className="dropdown-item">Hello-Hi</li>
+                                    <li className="dropdown-item">Open Company</li>
                                 </ul>
                             </li>
                             <li className="nav-item"><a className="nav-link">Administration</a></li>

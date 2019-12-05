@@ -17,3 +17,8 @@
     padding: 25px;
     text-align: end;
 }
+@media (max-width: 576px) {
+    .mobileView {
+        text-align: center;
+    }
+}
