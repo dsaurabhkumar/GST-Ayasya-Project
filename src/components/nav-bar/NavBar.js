@@ -1,7 +1,7 @@
 import React from 'react';
 import '../nav-bar/NavBar.css';
 import logo from '../../assets/logo/_blue_text.png';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (

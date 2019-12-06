@@ -1,19 +1,13 @@
 import React from 'react';
 import '../landing-page/LandingPage.css';
-import NavBar from '../nav-bar/NavBar';
 import banner from '../../assets/gst-banner/gstBanner.jpg'
-import Footer from '../footer/Footer';
 
 function LandingPage() {
     return (
         <>
-            <header>
-                    <NavBar></NavBar>
-            </header>
             <div>
                 <img className="gstBanner" src={banner}></img>
             </div>
-            <Footer></Footer>
         </>
     )
 }

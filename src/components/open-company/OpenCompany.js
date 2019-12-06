@@ -1,7 +1,7 @@
 import React from 'react';
 import './OpenCompany.css';
 import tableData from '../../assets/data/tableData.json';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class OpenCompany extends React.Component {
     render() {
@@ -29,7 +29,7 @@ export default class OpenCompany extends React.Component {
                                                 <td>{tableDetails.companyName}</td>
                                                 <td>{tableDetails.companyId}</td>
                                                 <td>{tableDetails.companyCreationDate}</td>
-                                                <td>{tableDetails.edit}</td>
+                                                <td><Link to="/create-company">{tableDetails.edit}</Link></td>
                                             </tr>
                                         )
                                     })
