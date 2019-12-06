@@ -76,7 +76,7 @@ export default class CreateCompany extends React.Component {
                             <label htmlFor="description">Description:</label>
                             <input type="text" className="form-control" name="description" value={description} id="description" placeholder="Enter your Description" onChange={this.changeHandler}></input>
                         </div>
-                        <div className="btnWidth mt-3 mb-3">
+                        <div className="btnWidth mt-3 mb-5">
                             <button className="btn btn-primary col-12 col-md-4" type="submit">Create Company</button>
                         </div>
                     </form>
