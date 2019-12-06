@@ -9,10 +9,10 @@ const App = () => {
   return (
     <BrowserRouter className="App">
       <header>
-        <NavBar/>
+        <NavBar />
       </header>
       <Routes />
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }

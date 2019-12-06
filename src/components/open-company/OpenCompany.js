@@ -37,7 +37,7 @@ export default class OpenCompany extends React.Component {
                             </tbody>
                         </table>
                     </div>
-                    <div className="addMoreBtn mt-4">
+                    <div className="addMoreBtn mt-4 mb-5">
                         <button className="btn btn-primary col-12 col-md-4"><Link className="linkTag" to="/create-company">Add More</Link></button>
                     </div>
                 </div>
