@@ -1,0 +1,15 @@
+.pageNotFound {
+    text-align: center;
+    padding-bottom: 5%;
+}
+h1 {
+    padding: 3%;
+}
+p {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.mainDiv {
+    background-color:dimgrey;
+    color: #ffffff;
+}

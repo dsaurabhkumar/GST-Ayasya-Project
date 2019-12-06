@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import LandingPage from "../components/landing-page/LandingPage";
 import CreateCompany from '../components/create-company/CreateCompany';
 import OpenCompany from '../components/open-company/OpenCompany';
+import PageNotFound from '../components/page-not-found/PageNotFound';
 
 const Routes = () => (
         <Switch>
@@ -14,6 +15,7 @@ const Routes = () => (
             <Route path="/open-company">
                 <OpenCompany />
             </Route>
+            <Route component={PageNotFound}></Route>
         </Switch>
 )
 export default Routes
