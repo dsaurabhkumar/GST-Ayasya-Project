@@ -1,0 +1,11 @@
+.addMoreBtn {
+    text-align: end;
+}
+.linkTag {
+    color:#fff;
+}
+
+.linkTag:hover {
+    color:#fff;
+    text-decoration: none;
+}
