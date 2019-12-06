@@ -7,8 +7,8 @@ function NavBar() {
     return (
         <header>
             <nav className="navbar navbar-expand-sm">
-                <div className="container">
-                    <img className="navbar-brand logo" src={logo}></img>
+                <div className="container-fluid">
+                    <Link className="" to="/"><img className="navbar-brand logo" src={logo}></img></Link>
                     <button className="navbar-toggler" data-toggle="collapse" data-target="#navBarId">
                         <span><i className="fas fa-align-justify hambergerMenu"></i></span>
                     </button>
@@ -20,6 +20,12 @@ function NavBar() {
                                     <Link className="dropdown-item" to="/create-company">Create Company</Link>
                                     <div className="dropdown-divider"></div>
                                     <Link className="dropdown-item" to="/open-company">Open Company</Link>
+                                    <div className="dropdown-divider"></div>
+                                    <li className="dropdown-item">Backup Data</li>
+                                    <div className="dropdown-divider"></div>
+                                    <li className="dropdown-item">Restore Data</li>
+                                    <div className="dropdown-divider"></div>
+                                    <li className="dropdown-item">Split Financial Year</li>
                                 </ul>
                             </li>
                             <li className="nav-item"><a className="nav-link">Administration</a></li>
