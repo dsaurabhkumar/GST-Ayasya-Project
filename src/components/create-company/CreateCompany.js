@@ -33,8 +33,7 @@ export default class CreateCompany extends React.Component {
     }
 
     render() {
-        const { companyId, companyName, companyEmailId, companyContactNo, companyAddress, 
-                city, state, pinCode, country, description } = this.state
+        const { companyId, companyName, companyEmailId, companyContactNo, companyAddress, city, state, pinCode, country, description } = this.state
         return (
             <React.Fragment>
                 <div className="container mt-5 mb-5">
