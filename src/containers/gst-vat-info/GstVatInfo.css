@@ -1,0 +1,11 @@
+.gstVat span {
+    background: white;
+    position: relative;
+    font-weight: 500;
+    top: 10px;
+    left: 20px;
+}
+.gstVatInfo {
+    border: 1px solid grey;
+    padding: 20px;
+}

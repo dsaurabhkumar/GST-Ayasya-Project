@@ -1,4 +1,42 @@
+.mainContainer {
+    border: 1px solid grey;
+    padding: 0 2% 0 2%;
+}
 .btnWidth {
     width: 100%;
     text-align: end;
+}
+.additionalInfo {
+    border: 1px solid grey;
+}
+.createComp {
+    border: 1px solid grey;
+    padding: 25px;
+    margin: 0 1px 0 1px;
+}
+.companyInfo span {
+    background: white;
+    position: relative;
+    top: 10px;
+    font-weight: 500;
+    margin-left: 33px;
+}
+.masterConfigUser {
+    border: 1px solid grey;
+    padding: 10px 0px 10px 30px;
+}
+@media (max-width:767px) {
+    .createComp {
+        padding: 10px;
+        margin: 0 1px 0 1px;
+    }
+    .companyInfo span {
+        margin-left: 18px;
+    }
+    .masterConfigUser {
+        padding: 10px 0px 10px 15px;
+    }
+    .mainContainer {
+        padding: 0 4% 0 4%;
+    }
 }

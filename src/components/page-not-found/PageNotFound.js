@@ -4,7 +4,7 @@ import './PageNotFound.css';
 function PageNotFound() {
     return (
         <div className="mainDiv">
-            <div className="pageNotFound container">
+            <div className="pageNotFound container pt-5">
                 <h1>404</h1>
                 <div>
                     <h1>Page Not Found !!!</h1>

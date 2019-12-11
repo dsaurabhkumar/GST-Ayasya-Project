@@ -1,0 +1,11 @@
+.currency span {
+    background: white;
+    position: relative;
+    top: 10px;
+    font-weight: 500;
+    left: 20px;
+}
+.currencyInfo {
+    border: 1px solid grey;
+    padding: 20px;
+}
