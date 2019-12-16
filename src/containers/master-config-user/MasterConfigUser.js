@@ -14,7 +14,7 @@ class MasterConfigUser extends React.Component {
                 </div>
                 <div className="form-check form-check-inline">
                     <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"></input>
-                    <label className="form-check-label" htmlFor="inlineRadio3">Copy Masters,Config and Users</label>
+                    <label className="form-check-label" htmlFor="inlineRadio3">Copy Masters, Config and Users</label>
                 </div>
             </React.Fragment>
         )
