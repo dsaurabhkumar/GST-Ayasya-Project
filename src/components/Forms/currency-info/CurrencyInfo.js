@@ -15,7 +15,8 @@ const CurrencyInfo = props => {
                     type="text" 
                     name="currencySymbol" 
                     value={props.currencySymbol} 
-                    placeholder="Rs., $ etc." onChange={props.changeHandler} />
+                    placeholder="Rs., $ etc." 
+                    onChange={props.changeHandler} />
             </div>
             <div className="form-group">
                 <label htmlFor="currencyString">Currency String:</label>
@@ -25,7 +26,8 @@ const CurrencyInfo = props => {
                     type="text" 
                     name="currencyString" 
                     value={props.currencyString} 
-                    placeholder="Rupees, Dollar etc." onChange={props.changeHandler} />
+                    placeholder="Rupees, Dollar etc." 
+                    onChange={props.changeHandler} />
             </div>
             <div className="form-group">
                 <label htmlFor="currencySubString">Currency Sub-String:</label>
@@ -35,7 +37,8 @@ const CurrencyInfo = props => {
                     type="text" 
                     name="currencySubString" 
                     value={props.currencySubString} 
-                    placeholder="Paisa, cent etc." onChange={props.changeHandler} />
+                    placeholder="Paisa, cent etc." 
+                    onChange={props.changeHandler} />
             </div>
             <div className="form-group">
                 <label htmlFor="currencyFont">Currency Font:</label>

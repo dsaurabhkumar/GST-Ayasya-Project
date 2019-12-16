@@ -36,16 +36,19 @@ export default class CreateCompany extends React.Component {
                 typeOfDealer: '',
                 defaultTaxRate1: '',
                 defaultTaxRate2: ''
+            },
+            masterConfigUser: {
+                inlineRadioOptions:''
             }
         }
     }
 
-    onChangeHandler = (formname, e) => {
-        const formstate = { ...this.state[formname] } ;
-        const inputname = e.target.name;
-        const inputvalue = e.target.value;
-        formstate[inputname] = inputvalue;
-        this.setState({ [formname]: formstate });
+    onChangeHandler = (formName, e) => {
+        const formState = { ...this.state[formName] } ;
+        const inputName = e.target.name;
+        const inputValue = e.target.value;
+        formState[inputName] = inputValue;
+        this.setState({ [formName]: formState });
     }
 
     handleFormSubmit = (e) => {
@@ -64,18 +67,19 @@ export default class CreateCompany extends React.Component {
                             </div>
                             <div className="form-row createComp mb-3">
                                 <CreateCompanyForm 
-                                    formdata={this.state.createCompany}
+                                    formData={this.state.createCompany}
                                     changeHandler={(event) => this.onChangeHandler('createCompany', event)}
                                     />
                             </div>
                             <div className="form-group col-md-12 additionalInfo">
                                 <AdditionalInfo 
-                                    formdata={this.state}
-                                    changeHandler={(formname, event) => this.onChangeHandler(formname, event)}
+                                    formData={this.state}
+                                    changeHandler={(formName, event) => this.onChangeHandler(formName, event)}
                                 />
                             </div>
                             <div className="masterConfigUser">
-                                <MasterConfigUser />
+                                <MasterConfigUser
+                                />
                             </div>
                             <div className="btnWidth mt-4 mb-4">
                                 <button className="btn btn-primary col-12 col-md-4" type="submit">Create Company</button>

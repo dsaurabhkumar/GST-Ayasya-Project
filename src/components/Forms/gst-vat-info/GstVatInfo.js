@@ -11,20 +11,22 @@ const GstVatInfo = props => {
                 <div className="form-group col-md-6">
                     <label htmlFor="enableGstVat">Enable GST/VAT:</label>
                     <input 
-                        type="text" 
-                        className="form-control" 
-                        name="enableGstVat" 
                         id="enableGstVat" 
+                        className="form-control" 
+                        type="text" 
+                        name="enableGstVat" 
+                        value={props.enableGstVat}
                         placeholder="Y/N" 
                         onChange={props.changeHandler} />
                 </div>
                 <div className="form-group col-md-6">
                     <label htmlFor="type">Type:</label>
                     <input 
-                        type="text" 
-                        className="form-control" 
-                        name="type" 
                         id="type" 
+                        className="form-control" 
+                        type="text" 
+                        name="type" 
+                        value={props.type}
                         placeholder="GST/VAT" 
                         onChange={props.changeHandler} />
                 </div>
@@ -32,30 +34,33 @@ const GstVatInfo = props => {
             <div className="form-group">
                 <label htmlFor="enableCess">Enable Cess:</label>
                 <input 
-                    type="text" 
-                    className="form-control" 
-                    name="enableCess" 
                     id="enableCess" 
+                    className="form-control" 
+                    type="text" 
+                    name="enableCess" 
+                    value={props.enableCess}
                     placeholder="Y/N" 
                     onChange={props.changeHandler} />
             </div>
             <div className="form-group">
                 <label htmlFor="gstIn">GSTIN:</label>
                 <input 
-                    type="text" 
-                    className="form-control" 
-                    name="gstIn" 
                     id="gstIn" 
+                    className="form-control" 
+                    type="text" 
+                    name="gstIn" 
+                    value={props.gstIn}
                     placeholder="GSTIN NO." 
                     onChange={props.changeHandler} />
             </div>
             <div className="form-group">
                 <label htmlFor="typeOfDealer">Type of Dealer:</label>
                 <input 
-                    type="text" 
-                    className="form-control" 
-                    name="typeOfDealer" 
                     id="typeOfDealer" 
+                    className="form-control" 
+                    type="text" 
+                    name="typeOfDealer" 
+                    value={props.typeOfDealer}
                     placeholder="Regular/Temporary" 
                     onChange={props.changeHandler} />
             </div>
@@ -63,20 +68,22 @@ const GstVatInfo = props => {
                 <div className="form-group col-md-6">
                     <label htmlFor="defaultTaxRate1">Default Tax Rate-1:</label>
                     <input 
-                        type="text" 
-                        className="form-control" 
-                        name="defaultTaxRate1" 
                         id="defaultTaxRate1" 
+                        className="form-control" 
+                        type="text" 
+                        name="defaultTaxRate1" 
+                        value={props.defaultTaxRate1}
                         placeholder="0.00" 
                         onChange={props.changeHandler} />
                 </div>
                 <div className="form-group col-md-6">
                     <label htmlFor="defaultTaxRate2">Default Tax Rate-2:</label>
                     <input 
-                        type="text" 
-                        className="form-control" 
-                        name="defaultTaxRate2" 
                         id="defaultTaxRate2" 
+                        className="form-control" 
+                        type="text" 
+                        name="defaultTaxRate2" 
+                        value={props.defaultTaxRate2}
                         placeholder="0.00" 
                         onChange={props.changeHandler} />
                 </div>
