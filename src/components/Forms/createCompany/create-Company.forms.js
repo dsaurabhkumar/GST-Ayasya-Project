@@ -2,19 +2,6 @@ import React from 'react';
 
 
 const CreateCompanyForm = props => {
-    const {
-        companyId,
-        companyName,
-        companyEmailId,
-        companyContactNo,
-        companyAddress,
-        city,
-        state,
-        pinCode,
-        country,
-        description
-    } = props;
-
     return <React.Fragment>
         <div className="form-group col-md-4">
             <label htmlFor="companyId">Company Id:</label>
@@ -22,7 +9,7 @@ const CreateCompanyForm = props => {
                 type="text"
                 className="form-control"
                 name="companyId"
-                value={companyId}
+                value={props.formData.companyId}
                 id="companyId"
                 onChange={props.changeHandler} readOnly></input>
         </div>
@@ -32,7 +19,7 @@ const CreateCompanyForm = props => {
                 type="text"
                 className="form-control"
                 name="companyName"
-                value={companyName}
+                value={props.formData.companyName}
                 id="companyName"
                 placeholder="Enter your Company Name"
                 onChange={props.changeHandler} />
@@ -43,7 +30,7 @@ const CreateCompanyForm = props => {
                 type="text"
                 className="form-control"
                 name="companyEmailId"
-                value={companyEmailId}
+                value={props.formData.companyEmailId}
                 id="companyEmailId"
                 placeholder="Enter your E-Mail Id"
                 onChange={props.changeHandler} />
@@ -54,7 +41,7 @@ const CreateCompanyForm = props => {
                 type="text"
                 className="form-control"
                 name="companyContactNo"
-                value={companyContactNo}
+                value={props.formData.companyContactNo}
                 id="companyContactNo"
                 placeholder="Enter your Contact No."
                 onChange={props.changeHandler} />
@@ -65,7 +52,7 @@ const CreateCompanyForm = props => {
                 type="text"
                 className="form-control"
                 name="companyAddress"
-                value={companyAddress}
+                value={props.formData.companyAddress}
                 id="companyAddress"
                 placeholder="Enter your Address"
                 onChange={props.changeHandler} />
@@ -76,7 +63,7 @@ const CreateCompanyForm = props => {
                 type="text"
                 className="form-control"
                 name="city"
-                value={city}
+                value={props.formData.city}
                 id="city"
                 placeholder="Enter your City"
                 onChange={props.changeHandler} />
@@ -87,7 +74,7 @@ const CreateCompanyForm = props => {
                 type="text"
                 className="form-control"
                 name="state"
-                value={state}
+                value={props.formData.state}
                 id="state"
                 placeholder="Enter your State"
                 onChange={props.changeHandler} />
@@ -98,7 +85,7 @@ const CreateCompanyForm = props => {
                 type="text"
                 className="form-control"
                 name="pinCode"
-                value={pinCode}
+                value={props.formData.pinCode}
                 id="pinCode"
                 placeholder="Enter your Pin Code"
                 onChange={props.changeHandler} />
@@ -109,10 +96,10 @@ const CreateCompanyForm = props => {
                 type="text"
                 className="form-control"
                 name="country"
-                value={country}
+                value={props.formData.country}
                 id="country"
                 placeholder="Enter your Country"
-                onChange={props.changeHandler} />
+                onChange={props.changeHandler} readOnly />
         </div>
         <div className="form-group col-md-8">
             <label htmlFor="description">Description:</label>
@@ -120,7 +107,7 @@ const CreateCompanyForm = props => {
                 type="text"
                 className="form-control"
                 name="description"
-                value={description}
+                value={props.formData.description}
                 id="description"
                 placeholder="Enter your Description"
                 onChange={props.changeHandler} />

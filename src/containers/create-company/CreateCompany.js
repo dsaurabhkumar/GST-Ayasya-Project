@@ -10,7 +10,7 @@ export default class CreateCompany extends React.Component {
         super(props)
         this.state = {
             createCompany: {
-                companyId: 'Company Id',
+                companyId: 'CompanyId',
                 companyName: '',
                 companyEmailId: '',
                 companyContactNo: '',
@@ -37,14 +37,19 @@ export default class CreateCompany extends React.Component {
                 defaultTaxRate1: '',
                 defaultTaxRate2: ''
             },
-            masterConfigUser: {
-                inlineRadioOptions:''
+            masterConfigUSer: {
+                master_config_status: '',
+                options: [
+                    { key: 'Not Required' , value: 'Not Required' },
+                    { key: 'Copy Masters and Config' , value: 'Copy Masters and Config' },
+                    { key: 'Copy Masters, Config and Users' , value: 'Copy Masters, Config and Users' },
+                ]
             }
         }
     }
 
     onChangeHandler = (formName, e) => {
-        const formState = { ...this.state[formName] } ;
+        const formState = { ...this.state[formName] };
         const inputName = e.target.name;
         const inputValue = e.target.value;
         formState[inputName] = inputValue;
@@ -66,19 +71,21 @@ export default class CreateCompany extends React.Component {
                                 <span>Company Information</span>
                             </div>
                             <div className="form-row createComp mb-3">
-                                <CreateCompanyForm 
+                                <CreateCompanyForm
                                     formData={this.state.createCompany}
                                     changeHandler={(event) => this.onChangeHandler('createCompany', event)}
-                                    />
+                                />
                             </div>
                             <div className="form-group col-md-12 additionalInfo">
-                                <AdditionalInfo 
+                                <AdditionalInfo
                                     formData={this.state}
                                     changeHandler={(formName, event) => this.onChangeHandler(formName, event)}
                                 />
                             </div>
                             <div className="masterConfigUser">
                                 <MasterConfigUser
+                                    options={this.state.masterConfigUSer.options}
+                                    changeHandler={(event) => this.onChangeHandler('masterConfigUSer', event)}
                                 />
                             </div>
                             <div className="btnWidth mt-4 mb-4">
