@@ -11,3 +11,9 @@ header {
 .nav-item:hover {
      color: rgb(255, 138, 115);
 }
+@media (min-width:576px) and (max-width:1024px) {
+    .navbar-nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+}
