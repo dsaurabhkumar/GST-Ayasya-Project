@@ -1,0 +1,13 @@
+.loginContainer {
+    border: 1px solid black;
+    padding: 3%;
+}
+@media (min-width: 768px) {
+    .loginContainer {
+        width: 570px;
+        margin: auto;
+    }
+    .loginBtn {
+        text-align: end;
+    }
+}

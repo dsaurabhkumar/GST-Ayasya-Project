@@ -59,6 +59,8 @@ export default class CreateCompany extends React.Component {
     handleFormSubmit = (e) => {
         e.preventDefault();
         console.log(this.state)
+        alert("Company has created successfully. In the next screen you will be prompted to create the user for the company");
+        window.location="/login"
     }
 
     render() {

@@ -4,6 +4,7 @@ import LandingPage from "../components/landing-page/LandingPage";
 import PageNotFound from '../components/page-not-found/PageNotFound';
 import OpenCompany from '../containers/open-company/OpenCompany';
 import CreateCompany from '../containers/create-company/CreateCompany';
+import Login from '../components/auth/login/Login';
 
 const Routes = () => (
         <Switch>
@@ -14,6 +15,9 @@ const Routes = () => (
             </Route>
             <Route path="/open-company">
                 <OpenCompany />
+            </Route>
+            <Route path="/login">
+                <Login />
             </Route>
             <Route component={PageNotFound}></Route>
         </Switch>

@@ -11,7 +11,7 @@ const CreateCompanyForm = props => {
                 name="companyId"
                 value={props.formData.companyId}
                 id="companyId"
-                onChange={props.changeHandler} readOnly></input>
+                onChange={props.changeHandler} readOnly />
         </div>
         <div className="form-group col-md-4">
             <label htmlFor="companyName">Company Name:</label>
