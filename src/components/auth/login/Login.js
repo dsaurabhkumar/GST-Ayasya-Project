@@ -81,7 +81,7 @@ export default class Login extends React.Component {
                                     type="recheckPassword"
                                     name="recheckPassword"
                                     className="form-control"
-                                    placeholder="Enter your E-Mail"
+                                    placeholder="Re-Check Password"
                                     value={recheckPassword}
                                     onChange={this.handleChange}
                                     required

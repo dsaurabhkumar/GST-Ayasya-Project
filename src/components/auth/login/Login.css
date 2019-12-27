@@ -2,12 +2,12 @@
     border: 1px solid black;
     padding: 3%;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .loginContainer {
         padding: 5%
     }
 }
-@media (min-width: 769px) {
+@media (min-width: 768px) {
     .loginContainer {
         width: 570px;
         margin: auto;
