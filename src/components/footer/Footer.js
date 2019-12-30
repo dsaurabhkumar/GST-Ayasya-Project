@@ -6,13 +6,13 @@ function Footer() {
         <React.Fragment>
             <div className="footer">
                 <div className="container-fluid mb-3">
-                    <div className="row pt-4 mobileView">
+                    <div className="row mobileView">
                         <div className="col-12 col-md-3 mt-4">
-                            <h3>About Ayasya</h3>
+                            <h4>About Ayasya</h4>
                             <p>IT-sphere is a vibrant arena with continuous changes and challenges. And Ayasya Digital Solutions has been one company which always has absorbed all the shifting requirements in the market and has come up with corresponding solutions right from the year 2010.</p>
                         </div>
-                        <div className="col-12 col-md-3 mt-4">
-                            <h3>Connect with us</h3>
+                        <div className="col-12 col-md-2 mt-4 text-center">
+                            <h4>Connect with us</h4>
                             <div className="socialIcons text-center">
                                 <span><i className="fab fa-facebook-f"></i></span>
                                 <span><i className="fab fa-instagram"></i></span>
@@ -22,7 +22,7 @@ function Footer() {
                             </div>
                         </div>
                         <div className="col-12 col-md-3 mt-4">
-                            <h3>Our Services</h3>
+                            <h4>Our Services</h4>
                             <div className="ourServices">
                                 <li>AEM Development</li>
                                 <li>Website Design & Development</li>
@@ -31,8 +31,8 @@ function Footer() {
                                 <li> Privacy Policy</li>
                             </div>
                         </div>
-                        <div className="col-12 col-md-3 mt-4">
-                            <h3>Contact-Us</h3>
+                        <div className="col-12 col-md-4 mt-4">
+                            <h4>Contact-Us</h4>
                             <div className="addressDetails">
                                 <p>
                                     <i className="fas fa-map-marker-alt"></i>

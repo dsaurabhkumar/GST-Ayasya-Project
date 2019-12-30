@@ -2,12 +2,18 @@
     background-color:#343352;
     color: white;
 }
+.footer p {
+    font-size: 16px;
+}
 .socialIcons span {
     display: block;
-    font-size: 25px;
+    font-size: 21px;
 }
 .ourServices {
     list-style: none;
+}
+.ourServices li {
+    font-size: 16px;
 }
 .addressDetails p i {
     margin-right: 10px;
