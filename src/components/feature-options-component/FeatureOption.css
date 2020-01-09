@@ -10,8 +10,15 @@
 .optionBtns {
     width: 100%;
 }
+.btnContainer {
+    padding: 0;
+    margin: 0;
+}
 @media (max-width: 767px) {
     .flex-container {
         padding: 5%;
+    }
+    .exit {
+        padding: 0;
     }
 }
