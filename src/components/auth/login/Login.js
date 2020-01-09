@@ -1,5 +1,6 @@
 import React from 'react';
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 export default class Login extends React.Component {
 
@@ -7,10 +8,10 @@ export default class Login extends React.Component {
         super(props);
 
         this.state = {
-            userAuth:'',
-            email:'',
-            password:'',
-            recheckPassword:''
+            userAuth: '',
+            email: '',
+            password: '',
+            recheckPassword: ''
         }
     }
 
@@ -42,7 +43,6 @@ export default class Login extends React.Component {
                                     placeholder="Y/N"
                                     value={userAuth}
                                     onChange={this.handleChange}
-                                    required
                                 />
                             </div>
                         </div>
@@ -56,7 +56,6 @@ export default class Login extends React.Component {
                                     placeholder="Enter your E-Mail"
                                     value={email}
                                     onChange={this.handleChange}
-                                    required
                                 />
                             </div>
                         </div>
@@ -70,7 +69,6 @@ export default class Login extends React.Component {
                                     placeholder="Enter your Password"
                                     value={password}
                                     onChange={this.handleChange}
-                                    required
                                 />
                             </div>
                         </div>
@@ -84,12 +82,16 @@ export default class Login extends React.Component {
                                     placeholder="Re-Check Password"
                                     value={recheckPassword}
                                     onChange={this.handleChange}
-                                    required
                                 />
                             </div>
                         </div>
-                        <div className="loginBtn">
-                            <button type="submit" className="btn btn-primary mt-3 mb-3 col-12 col-md-3">Login</button>
+                        <div className="row btnContainer flex-sm-row-reverse">
+                            <div className="mt-3 col-12 col-md-4">
+                                <button type="submit" className="btn btn-primary col-12">Login</button>
+                            </div>
+                            <div className="mt-3 col-12 col-md-4 align-self-center">
+                                <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
+                            </div>
                         </div>
                     </form>
                 </div>

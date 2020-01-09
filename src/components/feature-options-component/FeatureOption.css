@@ -1,0 +1,17 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid;
+    padding: 3%;
+}
+.flex-container > div {
+    padding: 10px;
+}
+.optionBtns {
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .flex-container {
+        padding: 5%;
+    }
+}

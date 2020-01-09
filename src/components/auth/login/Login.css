@@ -12,7 +12,7 @@
         width: 570px;
         margin: auto;
     }
-    .loginBtn {
+    .btnContainer {
         text-align: end;
     }
 }

@@ -5,6 +5,7 @@ import PageNotFound from '../components/page-not-found/PageNotFound';
 import OpenCompany from '../containers/open-company/OpenCompany';
 import CreateCompany from '../containers/create-company/CreateCompany';
 import Login from '../components/auth/login/Login';
+import FeatureOption from '../components/feature-options-component/FeatureOption';
 
 const Routes = () => (
         <Switch>
@@ -18,6 +19,9 @@ const Routes = () => (
             </Route>
             <Route path="/login">
                 <Login />
+            </Route>
+            <Route path="/feature-options">
+                <FeatureOption />
             </Route>
             <Route component={PageNotFound}></Route>
         </Switch>
