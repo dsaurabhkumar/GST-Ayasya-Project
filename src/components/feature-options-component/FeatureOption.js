@@ -2,7 +2,8 @@ import React from 'react';
 import '../feature-options-component/FeatureOption.css';
 import { Link } from 'react-router-dom';
 
-function FeatureOption() {
+class FeatureOption extends React.Component {
+    render() {
     return (
         <React.Fragment>
             <div className="mt-3 container">
@@ -46,5 +47,7 @@ function FeatureOption() {
             </div>
         </React.Fragment>
     )
+}
+    
 }
 export default FeatureOption
