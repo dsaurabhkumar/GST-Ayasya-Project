@@ -10,39 +10,39 @@ class FeatureOption extends React.Component {
             btnText: [
                 {
                     btnTitle: 'Reginal Settings',
-                    link: '',
+                    link: '/regional-settings',
                 },
                 {
                     btnTitle: 'General',
-                    link: '',
+                    link: '/general',
                 },
                 {
                     btnTitle: 'Display Settings',
-                    link: '',
+                    link: '/display-settings',
                 },
                 {
                     btnTitle: 'Accounts',
-                    link: '',
+                    link: '/accounts',
                 },
                 {
                     btnTitle: 'Inventory',
-                    link: '',
+                    link: '/inventory',
                 },
                 {
                     btnTitle: 'GST/VAT',
-                    link: '',
+                    link: '/gst-vat',
                 },
                 {
                     btnTitle: 'Excise',
-                    link: '',
+                    link: '/excise',
                 },
                 {
                     btnTitle: 'Service Tax',
-                    link: '',
+                    link: '/service-tax',
                 },
                 {
                     btnTitle: 'TDS/TCS',
-                    link: '',
+                    link: '/tds-tcs',
                 },
             ]
         }
@@ -58,18 +58,18 @@ class FeatureOption extends React.Component {
                         this.state.btnText.map((val, index) => (
                             <div key={'btns_' + index} className="col-12 col-md-3">
                                 <div>
-                                {
-                                    val.link.startsWith('http')?
-                                    <a className="optionBtns btn btn-primary" target={val.target} href={val.link}>{val.btnTitle}</a>:
-                                    <Link className="optionBtns btn btn-primary" to={val.link}>{val.btnTitle}</Link>
-                                }
+                                    {
+                                        val.link.startsWith('http') ?
+                                            <a className="optionBtns btn btn-primary" target={val.target} href={val.link}>{val.btnTitle}</a> :
+                                            <Link className="optionBtns btn btn-primary" to={val.link}>{val.btnTitle}</Link>
+                                    }
                                 </div>
                             </div>
                         ))
                     }
                     <div className="row btnContainer flex-sm-row-reverse mt-3 optionBtns">
                         <div className="mt-3 col-12 col-md-4 p-0">
-                            <button type="submit" className="btn btn-primary optionBtns">Trade Specific Configuration</button>
+                            <Link to='/trade-specific-configuration'><button type="submit" className="btn btn-primary optionBtns">Trade Specific Configuration</button></Link>
                         </div>
                         <div className="mt-3 col-12 col-md-4 align-self-center exit">
                             <Link to='/'><button type="submit" className="btn btn-primary optionBtns">Exit</button></Link>
