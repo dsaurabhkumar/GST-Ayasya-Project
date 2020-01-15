@@ -23,6 +23,13 @@ class RegionalSettings extends React.Component {
                     ]
                 },
                 {
+                    label: "Date Seperator",
+                    type: "text",
+                    name: "dateSeperator", 
+                    id: "dateSeperator",
+                    placeholder: "-",
+                },
+                {
                     label: "Currency Symbol",
                     type: "text",
                     className: "form-control",
