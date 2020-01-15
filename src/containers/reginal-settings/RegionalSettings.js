@@ -71,6 +71,32 @@ class RegionalSettings extends React.Component {
                     id: "formatDisplayNumber",
                     placeholder: "9,99,999.99"
                 },
+                {
+                    label: "Country",
+                    type: "country-dropdown",
+                    name: "countryDropdown", 
+                    id: "countryDropdown",
+                    placeholder: "Select an option",
+                    values: [
+                        "India",
+                        "Sri Lanka",
+                        "UK",
+                        "US",
+                    ]
+                },
+                {
+                    label: "State",
+                    type: "state-dropdown",
+                    name: "stateDropdown", 
+                    id: "stateDropdown",
+                    placeholder: "Select an option",
+                    values: [
+                        "New Delhi",
+                        "Chandigarh",
+                        "Haryana",
+                        "Uttar Pradesh",
+                    ]
+                },
             ]
         }
 
@@ -99,25 +125,52 @@ class RegionalSettings extends React.Component {
                                     this.state.inputFields.map((val, index) => {
                                         if(val.type === "text") {
                                             return (
+                                                <div className="form-group col-md-6" key={'inputFields_' + index}>
                                                 <InputText 
                                                     name = {val.name}
                                                     placeholder={val.placeholder}
                                                     label={val.label}
                                                     handleChange={this.handleChange}
                                                 />
+                                                </div>
                                             )
                                         } else if (val.type === "dropdown") {
                                             return (
+                                                <div className="form-group col-md-6" key={'inputFields_' + index}>
                                                 <Dropdown 
                                                     label={val.label}
                                                     values={val.values}
                                                     handleChange={this.handleChange}
                                                 />
+                                                </div>
+                                            )
+                                        }
+                                        else if (val.type === "country-dropdown") {
+                                            return (
+                                                <div className="form-group col-md-6" key={'inputFields_' + index}>
+                                                <Dropdown 
+                                                    label={val.label}
+                                                    values={val.values}
+                                                    handleChange={this.handleChange}
+                                                />
+                                                </div>
+                                            )
+                                        }
+                                        else if (val.type === "state-dropdown") {
+                                            return (
+                                                <div className="form-group col-md-6" key={'inputFields_' + index}>
+                                                <Dropdown 
+                                                    label={val.label}
+                                                    values={val.values}
+                                                    handleChange={this.handleChange}
+                                                />
+                                                </div>
                                             )
                                         }
                                     })
                                 }
                         </div>
+                        
                     </form>
                 </div>
             </React.Fragment>

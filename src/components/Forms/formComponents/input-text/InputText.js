@@ -1,7 +1,7 @@
 import React from 'react';
 
 const InputText = ({name, label, placeholder, handleChange}) => (
-    <div className="form-group col-md-6">
+    <div className="">
     <label>{label}</label>
         <input 
             type="text"
