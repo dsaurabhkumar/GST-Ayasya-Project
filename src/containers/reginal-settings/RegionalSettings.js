@@ -1,5 +1,6 @@
 import React from 'react';
 import './RegionalSettings.css';
+import { Link } from 'react-router-dom';
 import InputText from '../../components/Forms/formComponents/input-text/InputText';
 import Dropdown from '../../components/Forms/formComponents/dropdown/Dropdown';
 
@@ -170,7 +171,16 @@ class RegionalSettings extends React.Component {
                                     })
                                 }
                         </div>
-                        
+                      
+                        <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
+                            <div className="mt-3 col-12 col-md-4 p-0">
+                                <button type="submit" className="btn btn-primary col-12">Save</button>
+                            </div>
+                            <div className="mt-3 col-12 col-md-4 align-self-center quitBtn">
+                                <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </React.Fragment>
