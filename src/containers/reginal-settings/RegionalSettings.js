@@ -1,4 +1,8 @@
-import React from 'react'
+import React from 'react';
+import './RegionalSettings.css';
+import InputText from '../../components/Forms/formComponents/input-text/InputText';
+import Dropdown from '../../components/Forms/formComponents/dropdown/Dropdown';
+
 
 class RegionalSettings extends React.Component {
 
@@ -23,35 +27,35 @@ class RegionalSettings extends React.Component {
                     className: "form-control",
                     name: "currencySymbol",
                     id: "currencySymbol",
-                    placeholder: "Currency Symbol"
+                    placeholder: "Rs."
                 },
                 {
                     label: "Currency String",
                     type: "text",
                     name: "currencyString",
                     id: "currencyString",
-                    placeholder: ""
+                    placeholder: "Rupees"
                 },
                 {
                     label: "Currency Sub String",
                     type: "text",
                     name: "currencySubString",
                     id: "currencySubString",
-                    placeholder: ""
+                    placeholder: "Paisa"
                 },
                 {
                     label: "Currency Decimal Places",
                     type: "text",
                     name: "currencyDecimalPlaces",
                     id: "currencyDecimalPlaces",
-                    placeholder: ""
+                    placeholder: "2"
                 },
                 {
                     label: "Currency Font",
                     type: "text",
                     name: "currencyFont",
                     id: "currencyFont",
-                    placeholder: ""
+                    placeholder: "Rupee Foradian"
                 },
                 {
                     label: "Currency Character",
@@ -65,11 +69,23 @@ class RegionalSettings extends React.Component {
                     type: "text",
                     name: "formatDisplayNumber",
                     id: "formatDisplayNumber",
-                    placeholder: ""
+                    placeholder: "9,99,999.99"
                 },
             ]
         }
 
+    }
+
+    handleChange = event => {
+        console.log(event)
+        this.setState({
+            [event.target.name]:event.target.value
+        })
+    }
+
+    submitForm = (e) => {
+        e.preventDefault();
+        console.log(this.state);
     }
 
     render() {
@@ -77,20 +93,30 @@ class RegionalSettings extends React.Component {
             <React.Fragment>
                 <div className="container mt-4 mb-4">
                     <h2 className="text-center">Regional Settings</h2>
-                    <form>
-                        <div className="row">
-                            <div className="col-md-6">
+                    <form className="mt-5 reginalForm" onSubmit={this.submitForm}>
+                        <div className="form-row">
                                 {
-                                    this.state.inputFields.map((val, index) => (
-                                        <div key={'inputFields_' + index}>
-                                            <div className="col-md-6">
-                                                <label htmlFor="inputFields">{val.label}</label>
-                                                {console.log(val)}
-                                            </div>
-                                        </div>
-                                    ))
+                                    this.state.inputFields.map((val, index) => {
+                                        if(val.type === "text") {
+                                            return (
+                                                <InputText 
+                                                    name = {val.name}
+                                                    placeholder={val.placeholder}
+                                                    label={val.label}
+                                                    handleChange={this.handleChange}
+                                                />
+                                            )
+                                        } else if (val.type === "dropdown") {
+                                            return (
+                                                <Dropdown 
+                                                    label={val.label}
+                                                    values={val.values}
+                                                    handleChange={this.handleChange}
+                                                />
+                                            )
+                                        }
+                                    })
                                 }
-                            </div>
                         </div>
                     </form>
                 </div>
