@@ -2,3 +2,16 @@
     display: flex;
     align-items: center;
 }
+.generalForm {
+    border: 1px solid;
+    padding: 3%;
+}
+@media (max-width: 767px) {
+    .generalForm {
+        padding: 5%;
+    }
+    .inputFieldAlign {
+        position: relative;
+        top: -15px;
+    }
+}

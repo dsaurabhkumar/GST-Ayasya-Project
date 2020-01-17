@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import InputText from '../../components/Forms/formComponents/input-text/InputText';
 import Dropdown from '../../components/Forms/formComponents/dropdown/Dropdown';
 import './General.css';
@@ -86,17 +87,17 @@ class General extends React.Component {
     render() {
         return (
             <div className="container mt-4 mb-4">
-                <h2 className="text-center">General</h2>
-                <form className="">
+                <h2 className="text-center mb-5">General</h2>
+                <form className="generalForm">
                     {
                         this.state.inputLabels.map((val, index) => {
                             if (val.type === "text") {
                                 return (
                                     <div className="row form-group" key={'inputLabels_' + index}>
-                                        <div className="col-md-8 generalInputLabel">
+                                        <div className="col-md-7 generalInputLabel">
                                             {val.label}
                                         </div>
-                                        <div className="col-md-4">
+                                        <div className="col-md-5 inputFieldAlign">
                                             <InputText
                                                 name={val.name}
                                                 placeholder={val.placeholder}
@@ -109,10 +110,10 @@ class General extends React.Component {
                             else if (val.type === "dropdown") {
                                 return (
                                     <div className="row form-group" key={'inputLabels_' + index}>
-                                        <div className="col-md-8 generalInputLabel">
+                                        <div className="col-md-7 generalInputLabel">
                                             {val.label}
                                         </div>
-                                        <div className="col-md-4">
+                                        <div className="col-md-5 inputFieldAlign">
                                             <Dropdown
                                                 values={val.values}
                                                 handleChange={this.handleChange}
@@ -123,6 +124,14 @@ class General extends React.Component {
                             }
                         })
                     }
+                    <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
+                            <div className="mt-3 col-12 col-md-3 p-0">
+                                <button type="submit" className="btn btn-primary col-12">Save</button>
+                            </div>
+                            <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
+                                <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
+                            </div>
+                        </div>
                 </form>
             </div>
         )
