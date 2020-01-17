@@ -146,6 +146,7 @@ class RegionalSettings extends React.Component {
                                             return (
                                                 <div className="form-group col-md-6" key={'inputFields_' + index}>
                                                 <Dropdown 
+                                                    name={val.name}
                                                     label={val.label}
                                                     values={val.values}
                                                     handleChange={this.handleChange}
@@ -157,6 +158,7 @@ class RegionalSettings extends React.Component {
                                             return (
                                                 <div className="form-group col-md-6" key={'inputFields_' + index}>
                                                 <Dropdown 
+                                                    name={val.name}
                                                     label={val.label}
                                                     values={val.values}
                                                     handleChange={this.handleChange}
@@ -168,6 +170,7 @@ class RegionalSettings extends React.Component {
                                             return (
                                                 <div className="form-group col-md-6" key={'inputFields_' + index}>
                                                 <Dropdown 
+                                                    name={val.name}
                                                     label={val.label}
                                                     values={val.values}
                                                     handleChange={this.handleChange}

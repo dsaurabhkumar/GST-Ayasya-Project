@@ -13,16 +13,20 @@ class General extends React.Component {
                 {
                     label: "Maintain Data Checklist",
                     type: "text",
-                    placeholder: "Y/N",
+                    placeholder: "Y/N"
                 },
                 {
                     label: "Enable Notes Manager",
                     type: "text",
                     placeholder: "Y/N",
+                    name: "enableNotes",
+                    id: "enableNotes"
                 },
                 {
                     label: "Delete Exported Files on Closing the Company",
                     type: "dropdown",
+                    name:"deleteFiles",
+                    id: "deleteFiles",
                     values: [
                         "Never",
                         "Ask before Deletion",
@@ -33,30 +37,42 @@ class General extends React.Component {
                     label: "Bind Data with specified HDD(s)",
                     type: "text",
                     placeholder: "Y/N",
+                    name:"bindData",
+                    id:"bindData"
                 },
                 {
                     label: "Enable Voucher Auditing",
                     type: "text",
                     placeholder: "Y/N",
+                    name:"enableVoucher",
+                    id:"enableVoucher"
                 },
                 {
                     label: "Display Thought of The Day",
                     type: "text",
                     placeholder: "Y/N",
+                    name:"displayThought",
+                    id:"displayThought"
                 },
                 {
                     label: "Maintain Image & Signature with User",
                     type: "text",
                     placeholder: "Y/N",
+                    name:"maintainUser",
+                    id:"maintainUser"
                 },
                 {
                     label: "Maintain Tracking No. in Vouchers",
                     type: "text",
                     placeholder: "Y/N",
+                    name:"maintainVoucher",
+                    id:"maintainVoucher"
                 },
                 {
                     label: "Intelligent Search in Master's Drop Down List",
                     type: "dropdown",
+                    name:"intelligentSearch",
+                    id:"intelligentSearch",
                     values: [
                         "Not Required",
                         "Moderate",
@@ -67,31 +83,43 @@ class General extends React.Component {
                     label: "Show <--End of List--> in Master's Drop Down List",
                     type: "text",
                     placeholder: "Y/N",
+                    name:"showMaster",
+                    id:"showMaster"
                 },
                 {
                     label: "Change Voucher Type Captions(s)",
                     type: "text",
                     placeholder: "Y/N",
+                    name:"changeVoucher",
+                    id:"changeVoucher"
                 },
                 {
                     label: "Default Mode of Sending SMS",
                     type: "text",
                     placeholder: "Y/N",
+                    name:"defaultMode",
+                    id:"defaultMode"
                 },
                 {
                     label: "Print 'Duplicate Copy' while re-printing Sales Invoice",
                     type: "text",
                     placeholder: "Y/N",
+                    name:"printDuplicateCopy",
+                    id:"printDuplicateCopy"
                 },
                 {
                     label: "Enable Second Language Support",
                     type: "text",
                     placeholder: "Y/N",
+                    name:"enableSecondLang",
+                    id:"enableSecondLang"
                 },
                 {
                     label: "Maintain Data Checklist",
                     type: "text",
                     placeholder: "Y/N",
+                    name:"maintainChecklist",
+                    id:"maintainChecklist"
                 },
             ]
         }
