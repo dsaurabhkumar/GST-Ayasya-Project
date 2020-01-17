@@ -12,11 +12,13 @@ class General extends React.Component {
             inputLabels: [
                 {
                     label: "Maintain Data Checklist",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Enable Notes Manager",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Delete Exported Files on Closing the Company",
@@ -29,23 +31,28 @@ class General extends React.Component {
                 },
                 {
                     label: "Bind Data with specified HDD(s)",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Enable Voucher Auditing",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Display Thought of The Day",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Maintain Image & Signature with User",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Maintain Tracking No. in Vouchers",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Intelligent Search in Master's Drop Down List",
@@ -58,37 +65,55 @@ class General extends React.Component {
                 },
                 {
                     label: "Show <--End of List--> in Master's Drop Down List",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Change Voucher Type Captions(s)",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Default Mode of Sending SMS",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Print 'Duplicate Copy' while re-printing Sales Invoice",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Enable Second Language Support",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
                 {
                     label: "Maintain Data Checklist",
-                    type: "text"
+                    type: "text",
+                    placeholder: "Y/N",
                 },
             ]
         }
+    }
+
+    handleChange = event => {
+        console.log(event)
+        this.setState({
+            [event.target.name]:event.target.value
+        })
+    }
+
+    formSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.state);
     }
 
     render() {
         return (
             <div className="container mt-4 mb-4">
                 <h2 className="text-center mb-5">General</h2>
-                <form className="generalForm">
+                <form className="generalForm" onSubmit={this.formSubmit}>
                     {
                         this.state.inputLabels.map((val, index) => {
                             if (val.type === "text") {
@@ -116,6 +141,7 @@ class General extends React.Component {
                                         <div className="col-md-5 inputFieldAlign">
                                             <Dropdown
                                                 values={val.values}
+                                                name={val.name}
                                                 handleChange={this.handleChange}
                                             />
                                         </div>
@@ -125,13 +151,13 @@ class General extends React.Component {
                         })
                     }
                     <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
-                            <div className="mt-3 col-12 col-md-3 p-0">
-                                <button type="submit" className="btn btn-primary col-12">Save</button>
-                            </div>
-                            <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
-                                <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
-                            </div>
+                        <div className="mt-3 col-12 col-md-3 p-0">
+                            <button type="submit" className="btn btn-primary col-12">Save</button>
                         </div>
+                        <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
+                            <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
+                        </div>
+                    </div>
                 </form>
             </div>
         )
