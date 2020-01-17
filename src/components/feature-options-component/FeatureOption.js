@@ -16,10 +16,10 @@ class FeatureOption extends React.Component {
                     btnTitle: 'General',
                     link: '/general',
                 },
-                {
-                    btnTitle: 'Display Settings',
-                    link: '/display-settings',
-                },
+                // {
+                //     btnTitle: 'Display Settings',
+                //     link: '/display-settings',
+                // },
                 {
                     btnTitle: 'Accounts',
                     link: '/accounts',

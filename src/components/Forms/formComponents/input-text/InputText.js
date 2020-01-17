@@ -1,9 +1,9 @@
 import React from 'react';
 
-const InputText = ({name, label, placeholder, handleChange}) => (
-    <div className="">
-    <label>{label}</label>
-        <input 
+const InputText = ({ name, label, placeholder, handleChange }) => (
+    <div>
+        <label>{label}</label>
+        <input
             type="text"
             className="form-control"
             name={name}

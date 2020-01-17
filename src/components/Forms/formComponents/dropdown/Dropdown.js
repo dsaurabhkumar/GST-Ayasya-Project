@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Dropdown = ({ name, label, values, handleChange }) => (
-    <div className="">
+    <div>
         <label>{label}</label>
         <select name={name} onChange={handleChange} className="form-control">
             <option value="">Select an option</option>
