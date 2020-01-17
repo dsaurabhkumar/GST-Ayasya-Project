@@ -13,7 +13,9 @@ class General extends React.Component {
                 {
                     label: "Maintain Data Checklist",
                     type: "text",
-                    placeholder: "Y/N"
+                    placeholder: "Y/N",
+                    name:"maintainChecklist",
+                    id:"maintainChecklist"
                 },
                 {
                     label: "Enable Notes Manager",
@@ -113,13 +115,6 @@ class General extends React.Component {
                     placeholder: "Y/N",
                     name:"enableSecondLang",
                     id:"enableSecondLang"
-                },
-                {
-                    label: "Maintain Data Checklist",
-                    type: "text",
-                    placeholder: "Y/N",
-                    name:"maintainChecklist",
-                    id:"maintainChecklist"
                 },
             ]
         }
