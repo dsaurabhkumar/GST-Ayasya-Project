@@ -1,0 +1,25 @@
+.generalInputLabel {
+    display: flex;
+    align-items: center;
+}
+.fieldAlignment {
+    position: relative;
+    top: -10px;
+}
+.textFieldAlignment {
+    position: relative;
+    top: -21px;
+}
+.accountsForm {
+    border: 1px solid;
+    padding: 5%;
+}
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+}
+@media (max-width: 767px) {
+    .accountsForm {
+        padding: 5%;
+    }
+}
