@@ -280,7 +280,9 @@ class Accounts extends React.Component {
                         </div>
                     </div>
 
-                    <ModalComponent />
+                    <ModalComponent>
+                        Hi Hello !!!
+                    </ModalComponent>
 
                 </form>
             </div>
