@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Checkbox from '../../components/Forms/formComponents/checkbox/Checkbox';
 import Dropdown from '../../components/Forms/formComponents/dropdown/Dropdown';
 import InputText from '../../components/Forms/formComponents/input-text/InputText';
+import ModalComponent from '../../components/modal/ModalComponent';
 
 class Accounts extends React.Component {
 
@@ -278,6 +279,8 @@ class Accounts extends React.Component {
                             <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
                         </div>
                     </div>
+
+                    <ModalComponent />
 
                 </form>
             </div>
