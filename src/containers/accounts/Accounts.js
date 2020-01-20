@@ -13,54 +13,43 @@ class Accounts extends React.Component {
         this.state = {
             inputLabels: [
                 {
-                    label: "Bill-by-bill Details",
                     type: "check-box",
-                    name: "billDetails",
-                    id: "billDetails",
-                    checked: false
+                    label: "check-box-details",
+                    output: [],
+                    options: [
+                        {
+                            name: "Bill-by-bill Details",
+                            value: "billDetails",
+                        },
+                        {
+                            name: "Credit Limits",
+                            value: "creditLimits",
+                        },
+                        {
+                            name: "Targets",
+                            value: "targets",
+                        },
+                        {
+                            name: "Cost Centers",
+                            value: "costCenters",
+                        },
+                        {
+                            name: "Account wise interest Rate",
+                            value: "actIntRate",
+                        },
+                        {
+                            name: "Ledger Reconciliation",
+                            value: "ledgerRecon",
+                        },
+                        {
+                            name: "Show Accounts Current Balance During Vouchers Entry",
+                            value: "showVouchersEntry",
+                        },
+                        
+                    ]
                 },
-                {
-                    label: "Credit Limits",
-                    type: "check-box",
-                    name: "creditLimits",
-                    id: "creditLimits",
-                    checked: false
-                },
-                {
-                    label: "Targets",
-                    type: "check-box",
-                    name: "targets",
-                    id: "targets",
-                    checked: false
-                },
-                {
-                    label: "Cost Centers",
-                    type: "check-box",
-                    name: "costCenters",
-                    id: "costCenters",
-                    checked: false
-                },
-                {
-                    label: "Account wise interest Rate",
-                    type: "check-box",
-                    name: "actIntRate",
-                    id: "actIntRate",
-                    checked: false
-                },
-                {
-                    label: "Ledger Reconciliation",
-                    type: "check-box",
-                    name: "ledgerRecon",
-                    id: "ledgerRecon",
-                    checked: false
-                },
-                {
-                    label: "Show Accounts Current Balance During Vouchers Entry",
-                    type: "check-box",
-                    name: "showVouchersEntry",
-                    id: "showVouchersEntry",
-                    checked: false
-                },
+
+
                 {
                     label: "Balance Sheet Stock Updation",
                     type: "drop-down",
@@ -73,138 +62,117 @@ class Accounts extends React.Component {
                     ]
                 },
                 {
-                    label: "Single Entry System for Payment & Receipt Vouchers",
-                    type: "check-box",
-                    name: "paymentReceiptVouchers",
-                    id: "paymentReceiptVouchers",
-                    checked: false
-                },
-                {
-                    label: "Posting in Accounts Through Sales Return & Purchase Return",
-                    type: "check-box",
-                    name: "salesPurchaseReturn",
-                    id: "salesPurchaseReturn",
-                    checked: false
-                },
-                {
-                    label: "Enable Party Dash Board",
-                    type: "check-box",
-                    name: "enablePartyDashboard",
-                    id: "enablePartyDashboard",
-                    checked: false
-                },
-                {
-                    label: "Maintain Account Category",
-                    type: "check-box",
-                    name: "maintainActCat",
-                    id: "maintainActCat",
-                    checked: false
-                },
-                {
-                    label: "Salesman/Broker-wise Reporting",
-                    type: "check-box",
-                    name: "salesmanBrokerReporting",
-                    id: "salesmanBrokerReporting",
-                    checked: false
-                },
-                {
-                    label: "Budgets",
-                    type: "check-box",
-                    name: "budgets",
-                    id: "budgets",
-                    checked: false
-                },
-                {
-                    label: "Royalty Calculation",
-                    type: "check-box",
-                    name: "royaltyCalculation",
-                    id: "royaltyCalculation",
-                    checked: false
-                },
-                {
-                    label: "Company's Act Depreciation",
-                    type: "check-box",
-                    name: "companyAct",
-                    id: "companyAct",
-                    checked: false
-                },
-                {
-                    label: "Maintain Sub Ledgers",
-                    type: "check-box",
-                    name: "maintainSubLedgers",
-                    id: "maintainSubLedgers",
-                    checked: false
-                },
-                {
-                    label: "Maintain Multiple Account Aliases",
-                    type: "check-box",
-                    name: "multipleActAliases",
-                    id: "multipleActAliases",
-                    checked: false
-                },
-                {
-                    label: "Multi Currency",
-                    type: "check-box",
-                    name: "multiCurrency",
-                    id: "multiCurrency",
-                    checked: false
-                },
-                {
-                    label: "Maintain Images/Notes with Masters/Vouchers",
-                    type: "check-box",
-                    name: "ImgNotesWithMasterVouchers",
-                    id: "ImgNotesWithMasterVouchers",
-                    checked: false
-                },
-                {
                     label: "Show Party Dash Board after Selecting Party in Vouchers",
                     type: "text",
                     placeholder: "Y/N",
                     name: "showPartyDashBoard",
                     id: "showPartyDashBoard"
                 },
+
                 {
-                    label: "Bank Reconciliation",
                     type: "check-box",
-                    name: "bankReconciliation",
-                    id: "bankReconciliation",
-                    checked: false
+                    label: "check-box-details",
+                    output: [],
+                    options: [
+                        {
+                            name: "Single Entry System for Payment & Receipt Vouchers",
+                            value: "paymentReceiptVouchers",
+                        },
+                        {
+                            name: "Posting in Accounts Through Sales Return & Purchase Return",
+                            value: "salesPurchaseReturn",
+                        },
+                        {
+                            name: "Enable Party Dash Board",
+                            value: "enablePartyDashboard"
+                        },
+                        {
+                            name: "Maintain Account Category",
+                            value: "maintainActCat"
+                        },
+                        {
+                            name: "Salesman/Broker-wise Reporting",
+                            value: "salesmanBrokerReporting"
+                        },
+                        {
+                            name: "Budgets",
+                            value: "budgets"
+                        },
+                        {
+                            name: "Royalty Calculation",
+                            value: "royaltyCalculation"
+                        },
+                        {
+                            name: "Company's Act Depreciation",
+                            value: "companyAct"
+                        },
+                        {
+                            name: "Maintain Sub Ledgers",
+                            value: "maintainSubLedgers"
+                        },
+                        {
+                            name: "Maintain Multiple Account Aliases",
+                            value: "multipleActAliases"
+                        },
+                        {
+                            name: "Multi Currency",
+                            value: "multiCurrency"
+                        },
+                        {
+                            name: "Maintain Images/Notes with Masters/Vouchers",
+                            value: "ImgNotesWithMasterVouchers"
+                        },
+                        {
+                            name: "Bank Reconciliation",
+                            value: "bankReconciliation"
+                        },
+                        {
+                            name: "Maintain Bank Instrument Details",
+                            value: "bankInstrumentDetails"
+                        },
+                        {
+                            name: "Post Dated Cheques in Payment/Receipt Vouchers",
+                            value: "postDatedVouchers"
+                        },
+                        {
+                            name: "Cheque Printing",
+                            value: "chequePrinting"
+                        },
+                    ]
                 },
-                {
-                    label: "Maintain Bank Instrument Details",
-                    type: "check-box",
-                    name: "bankInstrumentDetails",
-                    id: "bankInstrumentDetails",
-                    checked: false
-                },
-                {
-                    label: "Post Dated Cheques in Payment/Receipt Vouchers",
-                    type: "check-box",
-                    name: "postDatedVouchers",
-                    id: "postDatedVouchers",
-                    checked: false
-                },
-                {
-                    label: "Cheque Printing",
-                    type: "check-box",
-                    name: "chequePrinting",
-                    id: "chequePrinting",
-                    checked: false
-                }
             ]
         }
     }
 
     handleChange = event => {
-        console.log(event)
         this.setState({
-            [event.target.name]:event.target.value
+            [event.target.name]: event.target.value
         })
     }
-    handleCheck = event => {
-        console.log(event)
+    handleCheck = (...args) => {
+        const [groupindex, valueindex, value, checked] = args;
+        // Take state copy
+        const inputgroup = [...this.state.inputLabels];
+
+        // Reach to target object or array
+        const checkgroup = { ...this.state.inputLabels[groupindex] };
+        const outputArray = [...checkgroup.output];
+
+        // Update checkbox values
+        checkgroup.options[valueindex].checked = checked;
+
+        // Update output
+        if (checked) {
+            outputArray.push(value);            
+        } else {
+            outputArray.splice(outputArray.findIndex(val => val === value), 1);
+        }
+        inputgroup[groupindex].output = outputArray;
+        console.log(inputgroup)
+        
+        // Update state
         this.setState({
-            [event.target.name]:event.target.checked
+            inputLabels: inputgroup
         })
     }
 
@@ -220,22 +188,21 @@ class Accounts extends React.Component {
                 <form className="accountsForm" onSubmit={this.formSubmit}>
                     {
                         this.state.inputLabels.map((val, index) => {
-                            console.log(val);
                             if (val.type === "check-box") {
-                                return (
-                                    <div className="row form-group mb-0" key={'inputLabels_' + index}>
-                                        <div className="col-2 col-md-2 p-0">
-                                            <Checkbox 
-                                                name={val.name}
-                                                id={val.id}
-                                                checked={this.state.checked}
-                                                handleCheck={this.handleCheck}
-                                            />
-                                        </div>
-                                        <div className="col-10 col-md-10 p-0">
-                                            {val.label}
-                                        </div>
+                                return val.options.map((cval, cindex) => <div className="row form-group mb-0" key={'input_checkbox_' + cindex + "_" + cval.name + "_" + cindex}>
+                                    <div className="col-2 col-md-2 p-0">
+                                        <Checkbox
+                                            name={val.label}
+                                            id={cval.value}
+                                            value={cval.value}
+                                            checked={cval.checked}
+                                            handleCheck={(event) => this.handleCheck(index, cindex, cval.value, event.target.checked)}
+                                        />
                                     </div>
+                                    <div className="col-10 col-md-10 p-0">
+                                        {cval.name}
+                                    </div>
+                                </div>
                                 )
                             } else if (val.type === "drop-down") {
                                 return (
@@ -280,11 +247,12 @@ class Accounts extends React.Component {
                         </div>
                     </div>
 
-                    <ModalComponent>
-                        Hi Hello !!!
-                    </ModalComponent>
 
                 </form>
+                    <ModalComponent>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </ModalComponent>
             </div>
         )
     }
