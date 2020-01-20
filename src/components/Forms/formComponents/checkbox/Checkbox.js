@@ -1,13 +1,12 @@
 import React from 'react';
 
-const Checkbox = ({ name, checked, id, handleCheck, value }) => (
+const Checkbox = ({ name, checked, handleCheck, value }) => (
     <div className="form-group col-md-6">
         <input
             type="checkbox"
-            id={id}
             name={name}
             value={value}
-            checked={checked}
+            checked={checked || ""}
             onChange={handleCheck}
         />
     </div>

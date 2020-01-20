@@ -48,8 +48,6 @@ class Accounts extends React.Component {
                         
                     ]
                 },
-
-
                 {
                     label: "Balance Sheet Stock Updation",
                     type: "drop-down",
@@ -68,7 +66,6 @@ class Accounts extends React.Component {
                     name: "showPartyDashBoard",
                     id: "showPartyDashBoard"
                 },
-
                 {
                     type: "check-box",
                     label: "check-box-details",
@@ -150,6 +147,7 @@ class Accounts extends React.Component {
         })
     }
     handleCheck = (...args) => {
+
         const [groupindex, valueindex, value, checked] = args;
         // Take state copy
         const inputgroup = [...this.state.inputLabels];
@@ -193,7 +191,6 @@ class Accounts extends React.Component {
                                     <div className="col-2 col-md-2 p-0">
                                         <Checkbox
                                             name={val.label}
-                                            id={cval.value}
                                             value={cval.value}
                                             checked={cval.checked}
                                             handleCheck={(event) => this.handleCheck(index, cindex, cval.value, event.target.checked)}
