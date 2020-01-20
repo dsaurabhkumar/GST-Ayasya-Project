@@ -148,16 +148,16 @@ class Accounts extends React.Component {
     }
     handleCheck = (...args) => {
 
-        const [groupindex, valueindex, value, checked] = args;
+        const [groupIndex, valueIndex, value, checked] = args;
         // Take state copy
-        const inputgroup = [...this.state.inputLabels];
+        const inputGroup = [...this.state.inputLabels];
 
         // Reach to target object or array
-        const checkgroup = { ...this.state.inputLabels[groupindex] };
-        const outputArray = [...checkgroup.output];
+        const checkGroup = { ...this.state.inputLabels[groupIndex] };
+        const outputArray = [...checkGroup.output];
 
         // Update checkbox values
-        checkgroup.options[valueindex].checked = checked;
+        checkGroup.options[valueIndex].checked = checked;
 
         // Update output
         if (checked) {
@@ -165,12 +165,12 @@ class Accounts extends React.Component {
         } else {
             outputArray.splice(outputArray.findIndex(val => val === value), 1);
         }
-        inputgroup[groupindex].output = outputArray;
-        console.log(inputgroup)
+        inputGroup[groupIndex].output = outputArray;
+        console.log(inputGroup)
         
         // Update state
         this.setState({
-            inputLabels: inputgroup
+            inputLabels: inputGroup
         })
     }
 
@@ -247,7 +247,6 @@ class Accounts extends React.Component {
 
                 </form>
                     <ModalComponent>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </ModalComponent>
             </div>
