@@ -1,4 +1,5 @@
 import React from 'react';
+import './ModalComponent.css';
 import { Button, Modal } from 'react-bootstrap';
 
 class ModalComponent extends React.Component {
@@ -21,7 +22,7 @@ class ModalComponent extends React.Component {
             <div>
                 <Button onClick={this.handleModal}>Click Me</Button>
                 <Modal show={this.state.show} onHide={this.handleModal}>
-                    <Modal.Header closeButton>Modal Header</Modal.Header>
+                    <Modal.Header closeButton className="closeBtn"></Modal.Header>
                     <Modal.Body>
                         {this.props.children}
                     </Modal.Body>

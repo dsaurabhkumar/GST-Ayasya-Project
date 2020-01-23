@@ -18,6 +18,10 @@ input[type='checkbox'] {
     width: 20px;
     height: 20px;
 }
+.formTitle {
+    position: relative;
+    bottom: 60px;
+}
 @media (max-width: 767px) {
     .accountsForm {
         padding: 5%;
