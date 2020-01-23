@@ -45,7 +45,7 @@ class Accounts extends React.Component {
                             name: "Show Accounts Current Balance During Vouchers Entry",
                             value: "showVouchersEntry",
                         },
-                        
+
                     ]
                 },
                 {
@@ -137,7 +137,46 @@ class Accounts extends React.Component {
                         },
                     ]
                 },
-            ]
+            ],
+
+            formOne: [
+                {
+                    type: "check-box-form-one",
+                    label: "check-box-click-details",
+                    output: [],
+                    options: [
+                        {
+                            name: "Enable Grouping of Reference",
+                            value: "enableGroupingRef",
+                        },
+                        {
+                            name: "Enforce full amount allocation to References",
+                            value: "enforceFullAmtAllocation",
+                        },
+                        {
+                            name: "Show Pending References till Voucher Date only",
+                            value: "showPendingRefOnly",
+                        },
+                        {
+                            name: "Enable Bill Reference Narration",
+                            value: "enableBillRefNarration",
+                        },
+                        {
+                            name: "Enable Bill by Bill for all Accounts",
+                            value: "enableBillForAllAccts",
+                        },
+                        {
+                            name: "Auto Create Party References in Sales Voucher",
+                            value: "autoCreatePartyRefSaleVoucher",
+                        },
+                        {
+                            name: "Auto Create Party References in Purchase Voucher",
+                            value: "autoCreatePartyRefPurchaseVoucher",
+                        },
+
+                    ]
+                }
+            ],
         }
     }
 
@@ -146,8 +185,8 @@ class Accounts extends React.Component {
             [event.target.name]: event.target.value
         })
     }
-    handleCheck = (...args) => {
 
+    handleCheck = (...args) => {
         const [groupIndex, valueIndex, value, checked] = args;
         // Take state copy
         const inputGroup = [...this.state.inputLabels];
@@ -161,16 +200,39 @@ class Accounts extends React.Component {
 
         // Update output
         if (checked) {
-            outputArray.push(value);            
+            outputArray.push(value);
         } else {
             outputArray.splice(outputArray.findIndex(val => val === value), 1);
         }
         inputGroup[groupIndex].output = outputArray;
         console.log(inputGroup)
-        
+
         // Update state
         this.setState({
             inputLabels: inputGroup
+        })
+    }
+
+    handleCheckForm = (...args) => {
+        const [formIndex, valueIndex, value, checked] = args;
+
+        const formInputGroup = [...this.state.formOne];
+
+        const formCheckGroup = {...this.state.formOne[formIndex]};
+        const formOutputArray = [...formCheckGroup.output];
+
+        formCheckGroup.options[valueIndex].checked = checked;
+
+        if(checked) {
+            formOutputArray.push(value);
+        } else {
+            formOutputArray.splice(formOutputArray.findIndex(val => val === value), 1);
+        }
+        formInputGroup[formIndex].output = formOutputArray;
+        console.log(formInputGroup)
+
+        this.setState({
+            formOne: formInputGroup
         })
     }
 
@@ -234,6 +296,55 @@ class Accounts extends React.Component {
                             }
                         })
                     }
+                    <ModalComponent>
+                    <form>
+                        {
+                            this.state.formOne.map((val, index) => (
+                                <div key={"checkbox_parent_" + index}>
+                                    {
+                                        val.type === "check-box-form-one" && val.options.map(
+                                            (fval, findex) => (
+                                                <div className="row form-group mb-0" key={"checkbox_child_" + index + "_" + findex}>
+                                                    <div className="col-2 col-md-2 p-0">
+                                                        <Checkbox
+                                                            name={fval.name}
+                                                            value={fval.value}
+                                                            checked={fval.checked}
+                                                            handleCheck={(event) => this.handleCheckForm(index, findex, fval.value ,event.target.checked)}
+                                                        />
+                                                    </div>
+                                                    <div className="col-10 col-md-10 p-0">
+                                                        {fval.name}
+                                                    </div>
+                                                </div>
+                                            )
+                                        )
+                                    }
+                                </div>
+                            ))
+                        }
+                        
+                        {/* {
+                            this.state.formTwo.map((val, index) => (
+                                <div key={"checkbox_parent_" + index}>
+                                    {
+                                        val.type === "check-box-form-two" && val.options.map(
+                                            (fval, findex) => (
+                                                <div key={"checkbox_child_" + index + "_" + findex}>
+                                                    <Checkbox
+                                                        name={fval.name}
+                                                        value={fval.value}
+                                                        handleCheck={event => console.log(event)}
+                                                    />
+                                                </div>
+                                            )
+                                        )
+                                    }
+                                </div>
+                            ))
+                        } */}
+                        </form>
+                    </ModalComponent>
 
                     <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
                         <div className="mt-3 col-12 col-md-3 p-0">
@@ -246,9 +357,6 @@ class Accounts extends React.Component {
 
 
                 </form>
-                    <ModalComponent>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </ModalComponent>
             </div>
         )
     }

@@ -26,7 +26,7 @@ class ModalComponent extends React.Component {
                         {this.props.children}
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={this.handleModal}>Close</Button>
+                        <Button onClick={this.handleModal}>Ok</Button>
                     </Modal.Footer>
                 </Modal>
             </div>
