@@ -5,7 +5,7 @@ import Checkbox from '../../components/Forms/formComponents/checkbox/Checkbox';
 import Dropdown from '../../components/Forms/formComponents/dropdown/Dropdown';
 import InputText from '../../components/Forms/formComponents/input-text/InputText';
 import ModalComponent from '../../components/modal/ModalComponent';
-
+import Radio from '../../components/Forms/formComponents/radio/Radio';
 class Accounts extends React.Component {
 
     constructor(props) {
@@ -177,7 +177,7 @@ class Accounts extends React.Component {
 
                     ]
                 },
-                
+
             ],
 
             formTwo: [
@@ -225,6 +225,43 @@ class Accounts extends React.Component {
                     ]
                 }
             ],
+
+            formFour: [
+                {
+                    label: "Salesman / Broker",
+                    type: "text",
+                    name: "salesman-broker",
+                    id: "salesman-broker"
+                },
+                {
+                    label: "Commission / Brokerage",
+                    type: "text",
+                    name: "commission-brokerage",
+                    id: "commission-brokerage"
+                },
+                {
+                    label: "Specify Default Commission / Brokerage",
+                    type: "text-bolean",
+                    name: "default-commission-brokerage",
+                    id: "default-commission-brokerage"
+                },
+                {
+                    label: "Voucher Level",
+                    type: "radio",
+                    value: "Voucher-Level",
+                    name: "voucher-level",
+                    id: "voucher-level",
+                    options:''
+                },
+                {
+                    label: "Item Level",
+                    type: "radio",
+                    value: "Item-level",
+                    name: "item-level",
+                    id: "item-level",
+                    options: ''
+                }
+            ]
         }
     }
 
@@ -345,6 +382,21 @@ class Accounts extends React.Component {
         })
     }
 
+    handleRadioChange = (...args) => {
+        const [radioIndex, valueIndex, checked] = args;
+
+        const radioGroup = [...this.state.formFour]
+
+        const formRadioGroup = {...this.state.formFour[radioIndex]}
+        const radioSelected = [...formRadioGroup.options]
+        console.log(radioSelected) 
+
+        this.setState({
+
+        })
+
+        }
+
     formSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
@@ -461,7 +513,7 @@ class Accounts extends React.Component {
                                 ))
                             } */}
 
-                            {
+                            {/* {
                                 this.state.formThree.map((val, index) => (
                                     <div key={"checkbox_parent_" + index}>
                                         <p className="formTitle">{val.title}</p>
@@ -486,8 +538,43 @@ class Accounts extends React.Component {
                                         }
                                     </div>
                                 ))
-                            }
+                            } */}
 
+                                {
+                                    this.state.formFour.map((val, index) => {
+                                        if (val.type === "text") {
+                                            return (
+                                                <div className="row form-group" key={"input-text" + index}>
+                                                    <div className="col-md-6">
+                                                        {val.label}
+                                                    </div>
+                                                    <div className="col-md-6 textFieldAlignment">
+                                                        <InputText
+                                                            name={val.name}
+                                                            value={val.value}
+                                                            checked={val.checked}
+                                                            handleChange={this.handleChange}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            )
+                                        } else if (val.type === "radio") {
+                                            return (
+                                                <div className="form-check form-check-inline" key={"radio-input" + index}>
+                                                    <div className="radioLabel">
+                                                        {val.label}
+                                                    </div>
+                                                    <Radio
+                                                        name={val.name}
+                                                        value={val.value}
+                                                        checked={val.checked}
+                                                        handleChange={(event) => this.handleRadioChange(index, val.value, event.target.checked)}
+                                                    />
+                                                </div>
+                                            )
+                                        }
+                                    })
+                                }
 
                         </form>
                     </ModalComponent>

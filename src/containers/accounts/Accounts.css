@@ -8,7 +8,7 @@
 }
 .textFieldAlignment {
     position: relative;
-    top: -21px;
+    top: -25px;
 }
 .accountsForm {
     border: 1px solid;
@@ -23,8 +23,24 @@ input[type='checkbox'] {
     bottom: 60px;
     font-weight: 500;
 }
+.formBorder {
+    border: 1px solid;
+    padding: 1rem;
+}
+.formBorder span {
+    background: white;
+    position: relative;
+    bottom: 29px;
+}
+.radioLabel {
+    padding-right: 15px;
+}
 @media (max-width: 767px) {
     .accountsForm {
         padding: 5%;
+    }
+    .textFieldAlignment {
+        position: relative;
+        top: -15px;
     }
 }
