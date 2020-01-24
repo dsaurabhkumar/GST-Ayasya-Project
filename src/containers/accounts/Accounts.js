@@ -410,7 +410,7 @@ class Accounts extends React.Component {
                             {/* {
                                 this.state.formOne.map((val, index) => (
                                     <div key={"checkbox_parent_" + index}>
-                                        <h4 className="formTitle">{val.title}</h4>
+                                        <p className="formTitle">{val.title}</p>
                                         {
                                             val.type === "check-box-form-one" && val.options.map(
                                                 (fval, findex) => (
@@ -437,7 +437,7 @@ class Accounts extends React.Component {
                             {/* {
                                 this.state.formTwo.map((val, index) => (
                                     <div key={"checkbox_parent_" + index}>
-                                        <h4 className="formTitle">{val.title}</h4>
+                                        <p className="formTitle">{val.title}</p>
                                         {
                                             val.type === "check-box-form-two" && val.options.map(
                                                 (fval, findex) => (
@@ -464,7 +464,7 @@ class Accounts extends React.Component {
                             {
                                 this.state.formThree.map((val, index) => (
                                     <div key={"checkbox_parent_" + index}>
-                                        <h4 className="formTitle">{val.title}</h4>
+                                        <p className="formTitle">{val.title}</p>
                                         {
                                             val.type === "check-box-form-three" && val.options.map(
                                                 (fval, findex) => (

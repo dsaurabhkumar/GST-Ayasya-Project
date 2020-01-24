@@ -21,6 +21,7 @@ input[type='checkbox'] {
 .formTitle {
     position: relative;
     bottom: 60px;
+    font-weight: 500;
 }
 @media (max-width: 767px) {
     .accountsForm {
