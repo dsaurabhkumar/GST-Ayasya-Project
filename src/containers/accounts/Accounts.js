@@ -240,27 +240,27 @@ class Accounts extends React.Component {
                     id: "commission-brokerage"
                 },
                 {
+                    type: "radio",
+                    output: [],
+                    options: [
+                        {
+                            label: "Voucher Level",
+                            name: "voucher-level",
+                            value: "voucher-level"
+                        },
+                        {
+                            label: "Item Level",
+                            name: "item-level",
+                            value: "item-level"
+                        }
+                    ]
+                },
+                {
                     label: "Specify Default Commission / Brokerage",
                     type: "text-bolean",
                     name: "default-commission-brokerage",
                     id: "default-commission-brokerage"
                 },
-                {
-                    label: "Voucher Level",
-                    type: "radio",
-                    value: "Voucher-Level",
-                    name: "voucher-level",
-                    id: "voucher-level",
-                    options:''
-                },
-                {
-                    label: "Item Level",
-                    type: "radio",
-                    value: "Item-level",
-                    name: "item-level",
-                    id: "item-level",
-                    options: ''
-                }
             ]
         }
     }
@@ -383,19 +383,33 @@ class Accounts extends React.Component {
     }
 
     handleRadioChange = (...args) => {
-        const [radioIndex, valueIndex, checked] = args;
+        const [radioIndex, valueIndex, value, checked] = args;
 
-        const radioGroup = [...this.state.formFour]
+        // State copy
+        const inputRadioGroup = [...this.state.formFour];
 
-        const formRadioGroup = {...this.state.formFour[radioIndex]}
-        const radioSelected = [...formRadioGroup.options]
-        console.log(radioSelected) 
+        // React to target object or array
+        const formRadioGroup = {...this.state.formFour[radioIndex]};
+        const formOutputArray = [...formRadioGroup.output];
 
+        //Update check values
+        formRadioGroup.options[valueIndex].checked = checked;
+
+        //Update output
+        if (checked) {
+            formOutputArray.push(value);
+        } else {
+            formOutputArray.splice(formOutputArray.findIndex(val => val === value), 1);
+        }
+        inputRadioGroup[radioIndex].output = formOutputArray;
+        console.log(inputRadioGroup)
+
+        //Update state
         this.setState({
-
+            formFour: inputRadioGroup
         })
 
-        }
+    }
 
     formSubmit = (e) => {
         e.preventDefault();
@@ -540,41 +554,52 @@ class Accounts extends React.Component {
                                 ))
                             } */}
 
-                                {
-                                    this.state.formFour.map((val, index) => {
-                                        if (val.type === "text") {
-                                            return (
-                                                <div className="row form-group" key={"input-text" + index}>
-                                                    <div className="col-md-6">
-                                                        {val.label}
-                                                    </div>
-                                                    <div className="col-md-6 textFieldAlignment">
-                                                        <InputText
-                                                            name={val.name}
-                                                            value={val.value}
-                                                            checked={val.checked}
-                                                            handleChange={this.handleChange}
-                                                        />
-                                                    </div>
+                            {
+                                this.state.formFour.map((val, index) => {
+                                    if (val.type === "text") {
+                                        return (
+                                            <div className="row form-group" key={"input-text" + index}>
+                                                <div className="col-md-6">
+                                                    {val.label}
                                                 </div>
-                                            )
-                                        } else if (val.type === "radio") {
-                                            return (
-                                                <div className="form-check form-check-inline" key={"radio-input" + index}>
-                                                    <div className="radioLabel">
-                                                        {val.label}
-                                                    </div>
-                                                    <Radio
+                                                <div className="col-md-6 textFieldAlignment">
+                                                    <InputText
                                                         name={val.name}
                                                         value={val.value}
                                                         checked={val.checked}
-                                                        handleChange={(event) => this.handleRadioChange(index, val.value, event.target.checked)}
+                                                        handleChange={this.handleChange}
                                                     />
                                                 </div>
-                                            )
-                                        }
-                                    })
-                                }
+                                            </div>
+                                        )
+                                    } else if (val.type === "radio") {
+                                        return (
+                                            <div className="" key={"radio_parent" + index}>
+                                                {
+                                                    val.options.map((radioVal, radioIndex) =>
+                                                        (
+                                                            <div className="form-check form-check-inline" key={"radio_child" + index + "-" + radioIndex}>
+                                                                <div className="radioLabel">
+                                                                    {radioVal.label}
+                                                                </div>
+                                                                <div>
+                                                                    <Radio
+                                                                        name={radioVal.name}
+                                                                        value={radioVal.value}
+                                                                        checked={radioVal.checked}
+                                                                        handleChange={(event) => this.handleRadioChange(index, radioIndex, radioVal.value, event.target.checked)}
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                        )
+                                                    )
+                                                }
+
+                                            </div>
+                                        )
+                                    }
+                                })
+                            }
 
                         </form>
                     </ModalComponent>
