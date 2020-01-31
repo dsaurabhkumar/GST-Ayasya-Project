@@ -35,6 +35,10 @@ input[type='checkbox'] {
 .radioLabel {
     padding-right: 15px;
 }
+.checkbox-alignment {
+    position: relative;
+    top: 12px;
+}
 @media (max-width: 767px) {
     .accountsForm {
         padding: 5%;

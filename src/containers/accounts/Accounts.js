@@ -241,17 +241,14 @@ class Accounts extends React.Component {
                 },
                 {
                     type: "radio",
-                    output: [],
                     options: [
                         {
-                            label: "Voucher Level",
-                            name: "voucher-level",
-                            value: "voucher-level"
+                            key: "voucher-level",
+                            value: "Voucher Level",
                         },
                         {
-                            label: "Item Level",
-                            name: "item-level",
-                            value: "item-level"
+                            key: "item-level",
+                            value: "Item Level",
                         }
                     ]
                 },
@@ -261,6 +258,21 @@ class Accounts extends React.Component {
                     name: "default-commission-brokerage",
                     id: "default-commission-brokerage"
                 },
+                {
+                    type: "check-box-form-four",
+                    label: "check-box-click-details",
+                    output: [],
+                    options: [
+                        {
+                            name: "Sales",
+                            value: "sales",
+                        },
+                        {
+                            name: "Purchase",
+                            value: "purchase",
+                        },
+                    ]
+                }
             ]
         }
     }
@@ -382,32 +394,14 @@ class Accounts extends React.Component {
         })
     }
 
-    handleRadioChange = (...args) => {
-        const [radioIndex, valueIndex, value, checked] = args;
-
-        // State copy
-        const inputRadioGroup = [...this.state.formFour];
-
-        // React to target object or array
-        const formRadioGroup = {...this.state.formFour[radioIndex]};
-        const formOutputArray = [...formRadioGroup.output];
-
-        //Update check values
-        formRadioGroup.options[valueIndex].checked = checked;
-
-        //Update output
-        if (checked) {
-            formOutputArray.push(value);
-        } else {
-            formOutputArray.splice(formOutputArray.findIndex(val => val === value), 1);
-        }
-        inputRadioGroup[radioIndex].output = formOutputArray;
-        console.log(inputRadioGroup)
-
-        //Update state
+    handleRadioChange = (event) => {
+        console.log(event)
         this.setState({
-            formFour: inputRadioGroup
+            options: event.target.value
         })
+    }
+
+    handleCheckFormFour = (event) => {
 
     }
 
@@ -580,14 +574,15 @@ class Accounts extends React.Component {
                                                         (
                                                             <div className="form-check form-check-inline" key={"radio_child" + index + "-" + radioIndex}>
                                                                 <div className="radioLabel">
-                                                                    {radioVal.label}
+                                                                    {radioVal.value}
                                                                 </div>
                                                                 <div>
                                                                     <Radio
                                                                         name={radioVal.name}
+                                                                        key={radioVal.key}
                                                                         value={radioVal.value}
-                                                                        checked={radioVal.checked}
-                                                                        handleChange={(event) => this.handleRadioChange(index, radioIndex, radioVal.value, event.target.checked)}
+                                                                        checked={this.state.formFour.options === radioVal.options}
+                                                                        handleChange={this.handleRadioChange}
                                                                     />
                                                                 </div>
                                                             </div>
@@ -596,6 +591,30 @@ class Accounts extends React.Component {
                                                 }
 
                                             </div>
+                                        )
+                                    } else if (val.type === "check-box-form-four") {
+                                        return (this.state.formFour.map((val, index) => (<div key={"checkbox_parent_" + index}>
+                                            {
+                                                val.type === "check-box-form-four" && val.options.map(
+                                                    (fval, findex) => (
+                                                        <div className="form-check form-check-inline mt-4" key={"checkbox_child_" + index + "_" + findex}>
+                                                            <div>
+                                                                {fval.name}
+                                                            </div>
+                                                            <div className="checkbox-alignment">
+                                                                <Checkbox
+                                                                    name={fval.name}
+                                                                    value={fval.value}
+                                                                    checked={fval.checked}
+                                                                    handleCheck={(event) => this.handleCheckFormFour(index, findex, fval.value, event.target.checked)}
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                )
+                                            }
+                                        </div>
+                                        ))
                                         )
                                     }
                                 })
