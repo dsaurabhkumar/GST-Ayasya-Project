@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Radio = ({checked = true, value, handleChange}) => (
+const Radio = ({checked, value, handleChange}) => (
     <div className="">
         <input 
             type="radio"

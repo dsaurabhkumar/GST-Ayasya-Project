@@ -1,0 +1,115 @@
+import React from 'react';
+import Checkbox from '../formComponents/checkbox/Checkbox';
+
+
+class BillByBillDetailsForm extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            formOne: [
+                {
+                    type: "check-box-form-one",
+                    label: "check-box-click-details",
+                    title: "Bill Reference Group",
+                    output: [],
+                    options: [
+                        {
+                            name: "Enable Grouping of Reference",
+                            value: "enableGroupingRef",
+                        },
+                        {
+                            name: "Enforce full amount allocation to References",
+                            value: "enforceFullAmtAllocation",
+                        },
+                        {
+                            name: "Show Pending References till Voucher Date only",
+                            value: "showPendingRefOnly",
+                        },
+                        {
+                            name: "Enable Bill Reference Narration",
+                            value: "enableBillRefNarration",
+                        },
+                        {
+                            name: "Enable Bill by Bill for all Accounts",
+                            value: "enableBillForAllAccts",
+                        },
+                        {
+                            name: "Auto Create Party References in Sales Voucher",
+                            value: "autoCreatePartyRefSaleVoucher",
+                        },
+                        {
+                            name: "Auto Create Party References in Purchase Voucher",
+                            value: "autoCreatePartyRefPurchaseVoucher",
+                        },
+
+                    ]
+                },
+
+            ],
+        }
+    }
+
+    handleCheckForm = (...args) => {
+        const [formIndex, valueIndex, value, checked] = args;
+
+        // State copy
+        const formInputGroup = [...this.state.formOne];
+
+        // React to target object or array
+        const formCheckGroup = { ...this.state.formOne[formIndex] };
+        const formOutputArray = [...formCheckGroup.output];
+
+        //Update check values
+        formCheckGroup.options[valueIndex].checked = checked;
+
+        //Update output
+        if (checked) {
+            formOutputArray.push(value);
+        } else {
+            formOutputArray.splice(formOutputArray.findIndex(val => val === value), 1);
+        }
+        formInputGroup[formIndex].output = formOutputArray;
+        console.log(formInputGroup)
+
+        //Update state
+        this.setState({
+            formOne: formInputGroup
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                {
+                    this.state.formOne.map((val, index) => (
+                        <div key={"checkbox_parent_" + index}>
+                            <p className="formTitle">{val.title}</p>
+                            {
+                                val.type === "check-box-form-one" && val.options.map(
+                                    (fval, findex) => (
+                                        <div className="row form-group mb-0" key={"checkbox_child_" + index + "_" + findex}>
+                                            <div className="col-2 col-md-2 p-0">
+                                                <Checkbox
+                                                    name={fval.name}
+                                                    value={fval.value}
+                                                    checked={fval.checked}
+                                                    handleCheck={(event) => this.handleCheckForm(index, findex, fval.value, event.target.checked)}
+                                                />
+                                            </div>
+                                            <div className="col-10 col-md-10 p-0">
+                                                {fval.name}
+                                            </div>
+                                        </div>
+                                    )
+                                )
+                            }
+                        </div>
+                    ))
+                }
+            </div>
+        )
+    }
+}
+
+export default BillByBillDetailsForm

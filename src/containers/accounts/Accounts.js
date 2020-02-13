@@ -6,275 +6,228 @@ import Dropdown from '../../components/Forms/formComponents/dropdown/Dropdown';
 import InputText from '../../components/Forms/formComponents/input-text/InputText';
 import ModalComponent from '../../components/modal/ModalComponent';
 import Radio from '../../components/Forms/formComponents/radio/Radio';
+import BillByBillDetailsForm from '../../components/Forms/bill-by-bill-details/Bill-by-bill-details.form';
+import CostCentersOptions from '../../components/Forms/cost-centers-options/Cost-centers.form';
+
 class Accounts extends React.Component {
+    state = {
+        inputLabels: [
+            {
+                type: "check-box",
+                label: "check-box-details",
+                output: [],
+                options: [
+                    {
+                        name: "Bill-by-bill Details",
+                        value: "billDetails",
+                        button: "Configure",
+                        id: "billButton"
+                    },
+                    {
+                        name: "Credit Limits",
+                        value: "creditLimits",
+                    },
+                    {
+                        name: "Targets",
+                        value: "targets",
+                    },
+                    {
+                        name: "Cost Centers",
+                        value: "costCenters",
+                        button: "Configure",
+                        id: "costButton"
+                    },
+                    {
+                        name: "Account wise interest Rate",
+                        value: "actIntRate",
+                    },
+                    {
+                        name: "Ledger Reconciliation",
+                        value: "ledgerRecon",
+                    },
+                    {
+                        name: "Show Accounts Current Balance During Vouchers Entry",
+                        value: "showVouchersEntry",
+                    },
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            inputLabels: [
-                {
-                    type: "check-box",
-                    label: "check-box-details",
-                    output: [],
-                    options: [
-                        {
-                            name: "Bill-by-bill Details",
-                            value: "billDetails",
-                        },
-                        {
-                            name: "Credit Limits",
-                            value: "creditLimits",
-                        },
-                        {
-                            name: "Targets",
-                            value: "targets",
-                        },
-                        {
-                            name: "Cost Centers",
-                            value: "costCenters",
-                        },
-                        {
-                            name: "Account wise interest Rate",
-                            value: "actIntRate",
-                        },
-                        {
-                            name: "Ledger Reconciliation",
-                            value: "ledgerRecon",
-                        },
-                        {
-                            name: "Show Accounts Current Balance During Vouchers Entry",
-                            value: "showVouchersEntry",
-                        },
+                ]
+            },
+            {
+                label: "Balance Sheet Stock Updation",
+                type: "drop-down",
+                name: "stockUpdation",
+                id: "stockUpdation",
+                values: [
+                    "Manually",
+                    "Stock Status",
+                    "Ask Me"
+                ]
+            },
+            {
+                label: "Show Party Dash Board after Selecting Party in Vouchers",
+                type: "text",
+                placeholder: "Y/N",
+                name: "showPartyDashBoard",
+                id: "showPartyDashBoard"
+            },
+            {
+                type: "check-box",
+                label: "check-box-details",
+                output: [],
+                options: [
+                    {
+                        name: "Single Entry System for Payment & Receipt Vouchers",
+                        value: "paymentReceiptVouchers",
+                    },
+                    {
+                        name: "Posting in Accounts Through Sales Return & Purchase Return",
+                        value: "salesPurchaseReturn",
+                    },
+                    {
+                        name: "Enable Party Dash Board",
+                        value: "enablePartyDashboard",
+                        button: "Configure",
+                        id: "enablePartyButton"
+                    },
+                    {
+                        name: "Maintain Account Category",
+                        value: "maintainActCat"
+                    },
+                    {
+                        name: "Salesman/Broker-wise Reporting",
+                        value: "salesmanBrokerReporting",
+                        button: "Configure",
+                        id: "salesman-broker-button"
+                    },
+                    {
+                        name: "Budgets",
+                        value: "budgets"
+                    },
+                    {
+                        name: "Royalty Calculation",
+                        value: "royaltyCalculation"
+                    },
+                    {
+                        name: "Company's Act Depreciation",
+                        value: "companyAct"
+                    },
+                    {
+                        name: "Maintain Sub Ledgers",
+                        value: "maintainSubLedgers"
+                    },
+                    {
+                        name: "Maintain Multiple Account Aliases",
+                        value: "multipleActAliases"
+                    },
+                    {
+                        name: "Multi Currency",
+                        value: "multiCurrency"
+                    },
+                    {
+                        name: "Maintain Images/Notes with Masters/Vouchers",
+                        value: "ImgNotesWithMasterVouchers"
+                    },
+                    {
+                        name: "Bank Reconciliation",
+                        value: "bankReconciliation"
+                    },
+                    {
+                        name: "Maintain Bank Instrument Details",
+                        value: "bankInstrumentDetails"
+                    },
+                    {
+                        name: "Post Dated Cheques in Payment/Receipt Vouchers",
+                        value: "postDatedVouchers"
+                    },
+                    {
+                        name: "Cheque Printing",
+                        value: "chequePrinting"
+                    },
+                ]
+            },
+        ],
 
-                    ]
-                },
-                {
-                    label: "Balance Sheet Stock Updation",
-                    type: "drop-down",
-                    name: "stockUpdation",
-                    id: "stockUpdation",
-                    values: [
-                        "Manually",
-                        "Stock Status",
-                        "Ask Me"
-                    ]
-                },
-                {
-                    label: "Show Party Dash Board after Selecting Party in Vouchers",
-                    type: "text",
-                    placeholder: "Y/N",
-                    name: "showPartyDashBoard",
-                    id: "showPartyDashBoard"
-                },
-                {
-                    type: "check-box",
-                    label: "check-box-details",
-                    output: [],
-                    options: [
-                        {
-                            name: "Single Entry System for Payment & Receipt Vouchers",
-                            value: "paymentReceiptVouchers",
-                        },
-                        {
-                            name: "Posting in Accounts Through Sales Return & Purchase Return",
-                            value: "salesPurchaseReturn",
-                        },
-                        {
-                            name: "Enable Party Dash Board",
-                            value: "enablePartyDashboard"
-                        },
-                        {
-                            name: "Maintain Account Category",
-                            value: "maintainActCat"
-                        },
-                        {
-                            name: "Salesman/Broker-wise Reporting",
-                            value: "salesmanBrokerReporting"
-                        },
-                        {
-                            name: "Budgets",
-                            value: "budgets"
-                        },
-                        {
-                            name: "Royalty Calculation",
-                            value: "royaltyCalculation"
-                        },
-                        {
-                            name: "Company's Act Depreciation",
-                            value: "companyAct"
-                        },
-                        {
-                            name: "Maintain Sub Ledgers",
-                            value: "maintainSubLedgers"
-                        },
-                        {
-                            name: "Maintain Multiple Account Aliases",
-                            value: "multipleActAliases"
-                        },
-                        {
-                            name: "Multi Currency",
-                            value: "multiCurrency"
-                        },
-                        {
-                            name: "Maintain Images/Notes with Masters/Vouchers",
-                            value: "ImgNotesWithMasterVouchers"
-                        },
-                        {
-                            name: "Bank Reconciliation",
-                            value: "bankReconciliation"
-                        },
-                        {
-                            name: "Maintain Bank Instrument Details",
-                            value: "bankInstrumentDetails"
-                        },
-                        {
-                            name: "Post Dated Cheques in Payment/Receipt Vouchers",
-                            value: "postDatedVouchers"
-                        },
-                        {
-                            name: "Cheque Printing",
-                            value: "chequePrinting"
-                        },
-                    ]
-                },
-            ],
+        formThree: [
+            {
+                type: "check-box-form-three",
+                label: "check-box-click-details",
+                title: "Option for Images and Notes",
+                output: [],
+                options: [
+                    {
+                        name: "Maintain Image with Account Master",
+                        value: "maintainImageActMaster",
+                    },
+                    {
+                        name: "Maintain Notes with Account Master",
+                        value: "maintainNotesActMaster",
+                    },
+                    {
+                        name: "Show Account Notes in Data Entry",
+                        value: "showActDataEntry",
+                    },
+                    {
+                        name: "Maintain Image with Accounting Vouchers",
+                        value: "maintainImageActVouchers",
+                    },
+                    {
+                        name: "Maintain Notes with Accounting Vouchers",
+                        value: "maintainNotesActVouchers",
+                    },
+                ]
+            }
+        ],
 
-            formOne: [
-                {
-                    type: "check-box-form-one",
-                    label: "check-box-click-details",
-                    title: "Bill Reference Group",
-                    output: [],
-                    options: [
-                        {
-                            name: "Enable Grouping of Reference",
-                            value: "enableGroupingRef",
-                        },
-                        {
-                            name: "Enforce full amount allocation to References",
-                            value: "enforceFullAmtAllocation",
-                        },
-                        {
-                            name: "Show Pending References till Voucher Date only",
-                            value: "showPendingRefOnly",
-                        },
-                        {
-                            name: "Enable Bill Reference Narration",
-                            value: "enableBillRefNarration",
-                        },
-                        {
-                            name: "Enable Bill by Bill for all Accounts",
-                            value: "enableBillForAllAccts",
-                        },
-                        {
-                            name: "Auto Create Party References in Sales Voucher",
-                            value: "autoCreatePartyRefSaleVoucher",
-                        },
-                        {
-                            name: "Auto Create Party References in Purchase Voucher",
-                            value: "autoCreatePartyRefPurchaseVoucher",
-                        },
-
-                    ]
-                },
-
-            ],
-
-            formTwo: [
-                {
-                    type: "check-box-form-two",
-                    label: "check-box-click-details",
-                    title: "Option for Multiple Alias",
-                    output: [],
-                    options: [
-                        {
-                            name: "Specify Different Address Details with Multiple Alias",
-                            value: "specifyMultipleAlias",
-                        },
-                    ]
-                }
-            ],
-
-            formThree: [
-                {
-                    type: "check-box-form-three",
-                    label: "check-box-click-details",
-                    title: "Option for Images and Notes",
-                    output: [],
-                    options: [
-                        {
-                            name: "Maintain Image with Account Master",
-                            value: "maintainImageActMaster",
-                        },
-                        {
-                            name: "Maintain Notes with Account Master",
-                            value: "maintainNotesActMaster",
-                        },
-                        {
-                            name: "Show Account Notes in Data Entry",
-                            value: "showActDataEntry",
-                        },
-                        {
-                            name: "Maintain Image with Accounting Vouchers",
-                            value: "maintainImageActVouchers",
-                        },
-                        {
-                            name: "Maintain Notes with Accounting Vouchers",
-                            value: "maintainNotesActVouchers",
-                        },
-                    ]
-                }
-            ],
-
-            formFour: [
-                {
-                    label: "Salesman / Broker",
-                    type: "text",
-                    name: "salesman-broker",
-                    id: "salesman-broker"
-                },
-                {
-                    label: "Commission / Brokerage",
-                    type: "text",
-                    name: "commission-brokerage",
-                    id: "commission-brokerage"
-                },
-                {
-                    type: "radio",
-                    options: [
-                        {
-                            key: "voucher-level",
-                            value: "Voucher Level",
-                        },
-                        {
-                            key: "item-level",
-                            value: "Item Level",
-                        }
-                    ]
-                },
-                {
-                    label: "Specify Default Commission / Brokerage",
-                    type: "text-bolean",
-                    name: "default-commission-brokerage",
-                    id: "default-commission-brokerage"
-                },
-                {
-                    type: "check-box-form-four",
-                    label: "check-box-click-details",
-                    output: [],
-                    options: [
-                        {
-                            name: "Sales",
-                            value: "sales",
-                        },
-                        {
-                            name: "Purchase",
-                            value: "purchase",
-                        },
-                    ]
-                }
-            ]
-        }
+        formFour: [
+            {
+                label: "Salesman / Broker",
+                type: "text",
+                name: "salesman-broker",
+                id: "salesman-broker"
+            },
+            {
+                label: "Commission / Brokerage",
+                type: "text",
+                name: "commission-brokerage",
+                id: "commission-brokerage"
+            },
+            {
+                type: "radio",
+                options: [
+                    {
+                        key: "voucher-level",
+                        value: "Voucher Level",
+                        checked: ''
+                    },
+                    {
+                        key: "item-level",
+                        value: "Item Level",
+                        checked: ''
+                    }
+                ]
+            },
+            {
+                label: "Specify Default Commission / Brokerage",
+                type: "text-bolean",
+                name: "default-commission-brokerage",
+                id: "default-commission-brokerage"
+            },
+            {
+                type: "check-box-form-four",
+                label: "check-box-click-details",
+                output: [],
+                options: [
+                    {
+                        name: "Sales",
+                        value: "sales",
+                    },
+                    {
+                        name: "Purchase",
+                        value: "purchase",
+                    },
+                ]
+            }
+        ]
     }
 
     handleChange = event => {
@@ -310,61 +263,7 @@ class Accounts extends React.Component {
         })
     }
 
-    handleCheckForm = (...args) => {
-        const [formIndex, valueIndex, value, checked] = args;
-
-        // State copy
-        const formInputGroup = [...this.state.formOne];
-
-        // React to target object or array
-        const formCheckGroup = { ...this.state.formOne[formIndex] };
-        const formOutputArray = [...formCheckGroup.output];
-
-        //Update check values
-        formCheckGroup.options[valueIndex].checked = checked;
-
-        //Update output
-        if (checked) {
-            formOutputArray.push(value);
-        } else {
-            formOutputArray.splice(formOutputArray.findIndex(val => val === value), 1);
-        }
-        formInputGroup[formIndex].output = formOutputArray;
-        console.log(formInputGroup)
-
-        //Update state
-        this.setState({
-            formOne: formInputGroup
-        })
-    }
-
-    handleCheckFormTwo = (...args) => {
-        const [formIndex, valueIndex, value, checked] = args;
-
-        // State copy
-        const formInputGroup = [...this.state.formTwo];
-
-        // React to target object or array
-        const formCheckGroup = { ...this.state.formTwo[formIndex] };
-        const formOutputArray = [...formCheckGroup.output];
-
-        //Update check values
-        formCheckGroup.options[valueIndex].checked = checked;
-
-        //Update output
-        if (checked) {
-            formOutputArray.push(value);
-        } else {
-            formOutputArray.splice(formOutputArray.findIndex(val => val === value), 1);
-        }
-        formInputGroup[formIndex].output = formOutputArray;
-        console.log(formInputGroup)
-
-        //Update state
-        this.setState({
-            formTwo: formInputGroup
-        })
-    }
+    
 
     handleCheckFormThree = (...args) => {
         const [formIndex, valueIndex, value, checked] = args;
@@ -395,7 +294,6 @@ class Accounts extends React.Component {
     }
 
     handleRadioChange = (event) => {
-        console.log(event)
         this.setState({
             options: event.target.value
         })
@@ -408,6 +306,30 @@ class Accounts extends React.Component {
     formSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
+    }
+
+    componentmodalitem = (id) => {
+        let element = null;
+        switch (id) {
+            case "billButton":
+                element = <BillByBillDetailsForm />
+                break;
+            case "costButton":
+                element = <CostCentersOptions />
+                break;
+            case "enablePartyButton":
+                break;
+            case "salesman-broker-button":
+                break;
+        }
+        if(element) {
+            element = <ModalComponent>
+                <div>
+                    {element}
+                </div>
+            </ModalComponent>
+        }
+        return element;
     }
 
     render() {
@@ -427,9 +349,10 @@ class Accounts extends React.Component {
                                             handleCheck={(event) => this.handleCheck(index, cindex, cval.value, event.target.checked)}
                                         />
                                     </div>
-                                    <div className="col-10 col-md-10 p-0">
+                                    <div className="col-6 col-md-6 p-0">
                                         {cval.name}
                                     </div>
+                                    {this.componentmodalitem(cval.id)}
                                 </div>
                                 )
                             } else if (val.type === "drop-down") {
@@ -467,61 +390,9 @@ class Accounts extends React.Component {
                     }
                     <ModalComponent>
                         <form>
-                            {/* {
-                                this.state.formOne.map((val, index) => (
-                                    <div key={"checkbox_parent_" + index}>
-                                        <p className="formTitle">{val.title}</p>
-                                        {
-                                            val.type === "check-box-form-one" && val.options.map(
-                                                (fval, findex) => (
-                                                    <div className="row form-group mb-0" key={"checkbox_child_" + index + "_" + findex}>
-                                                        <div className="col-2 col-md-2 p-0">
-                                                            <Checkbox
-                                                                name={fval.name}
-                                                                value={fval.value}
-                                                                checked={fval.checked}
-                                                                handleCheck={(event) => this.handleCheckForm(index, findex, fval.value, event.target.checked)}
-                                                            />
-                                                        </div>
-                                                        <div className="col-10 col-md-10 p-0">
-                                                            {fval.name}
-                                                        </div>
-                                                    </div>
-                                                )
-                                            )
-                                        }
-                                    </div>
-                                ))
-                            } */}
+                            
 
-                            {/* {
-                                this.state.formTwo.map((val, index) => (
-                                    <div key={"checkbox_parent_" + index}>
-                                        <p className="formTitle">{val.title}</p>
-                                        {
-                                            val.type === "check-box-form-two" && val.options.map(
-                                                (fval, findex) => (
-                                                    <div className="row form-group mb-0" key={"checkbox_child_" + index + "_" + findex}>
-                                                        <div className="col-2 col-md-2 p-0">
-                                                            <Checkbox
-                                                                name={fval.name}
-                                                                value={fval.value}
-                                                                checked={fval.checked}
-                                                                handleCheck={(event) => this.handleCheckFormTwo(index, findex, fval.value, event.target.checked)}
-                                                            />
-                                                        </div>
-                                                        <div className="col-10 col-md-10 p-0">
-                                                            {fval.name}
-                                                        </div>
-                                                    </div>
-                                                )
-                                            )
-                                        }
-                                    </div>
-                                ))
-                            } */}
-
-                            {/* {
+                            {
                                 this.state.formThree.map((val, index) => (
                                     <div key={"checkbox_parent_" + index}>
                                         <p className="formTitle">{val.title}</p>
@@ -546,7 +417,7 @@ class Accounts extends React.Component {
                                         }
                                     </div>
                                 ))
-                            } */}
+                            }
 
                             {
                                 this.state.formFour.map((val, index) => {
@@ -581,7 +452,7 @@ class Accounts extends React.Component {
                                                                         name={radioVal.name}
                                                                         key={radioVal.key}
                                                                         value={radioVal.value}
-                                                                        checked={this.state.formFour.options === radioVal.options}
+                                                                        checked={this.state.formFour.options}
                                                                         handleChange={this.handleRadioChange}
                                                                     />
                                                                 </div>
