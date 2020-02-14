@@ -5,9 +5,10 @@ import Checkbox from '../../components/Forms/formComponents/checkbox/Checkbox';
 import Dropdown from '../../components/Forms/formComponents/dropdown/Dropdown';
 import InputText from '../../components/Forms/formComponents/input-text/InputText';
 import ModalComponent from '../../components/modal/ModalComponent';
-import Radio from '../../components/Forms/formComponents/radio/Radio';
 import BillByBillDetailsForm from '../../components/Forms/bill-by-bill-details/Bill-by-bill-details.form';
 import CostCentersOptions from '../../components/Forms/cost-centers-options/Cost-centers.form';
+import MaintainVoucherMaster from '../../components/Forms/maintain-image-notes-voucher-master/Maintain-voucher-master.form';
+import SalesmanBrokerReport from '../../components/Forms/salesman-broker-report/Salesman-broker-report.form';
 
 class Accounts extends React.Component {
     state = {
@@ -147,87 +148,7 @@ class Accounts extends React.Component {
             },
         ],
 
-        formThree: [
-            {
-                type: "check-box-form-three",
-                label: "check-box-click-details",
-                title: "Option for Images and Notes",
-                output: [],
-                options: [
-                    {
-                        name: "Maintain Image with Account Master",
-                        value: "maintainImageActMaster",
-                    },
-                    {
-                        name: "Maintain Notes with Account Master",
-                        value: "maintainNotesActMaster",
-                    },
-                    {
-                        name: "Show Account Notes in Data Entry",
-                        value: "showActDataEntry",
-                    },
-                    {
-                        name: "Maintain Image with Accounting Vouchers",
-                        value: "maintainImageActVouchers",
-                    },
-                    {
-                        name: "Maintain Notes with Accounting Vouchers",
-                        value: "maintainNotesActVouchers",
-                    },
-                ]
-            }
-        ],
-
-        formFour: [
-            {
-                label: "Salesman / Broker",
-                type: "text",
-                name: "salesman-broker",
-                id: "salesman-broker"
-            },
-            {
-                label: "Commission / Brokerage",
-                type: "text",
-                name: "commission-brokerage",
-                id: "commission-brokerage"
-            },
-            {
-                type: "radio",
-                options: [
-                    {
-                        key: "voucher-level",
-                        value: "Voucher Level",
-                        checked: ''
-                    },
-                    {
-                        key: "item-level",
-                        value: "Item Level",
-                        checked: ''
-                    }
-                ]
-            },
-            {
-                label: "Specify Default Commission / Brokerage",
-                type: "text-bolean",
-                name: "default-commission-brokerage",
-                id: "default-commission-brokerage"
-            },
-            {
-                type: "check-box-form-four",
-                label: "check-box-click-details",
-                output: [],
-                options: [
-                    {
-                        name: "Sales",
-                        value: "sales",
-                    },
-                    {
-                        name: "Purchase",
-                        value: "purchase",
-                    },
-                ]
-            }
-        ]
+        
     }
 
     handleChange = event => {
@@ -263,46 +184,6 @@ class Accounts extends React.Component {
         })
     }
 
-    
-
-    handleCheckFormThree = (...args) => {
-        const [formIndex, valueIndex, value, checked] = args;
-
-        // State copy
-        const formInputGroup = [...this.state.formThree];
-
-        // React to target object or array
-        const formCheckGroup = { ...this.state.formThree[formIndex] };
-        const formOutputArray = [...formCheckGroup.output];
-
-        //Update check values
-        formCheckGroup.options[valueIndex].checked = checked;
-
-        //Update output
-        if (checked) {
-            formOutputArray.push(value);
-        } else {
-            formOutputArray.splice(formOutputArray.findIndex(val => val === value), 1);
-        }
-        formInputGroup[formIndex].output = formOutputArray;
-        console.log(formInputGroup)
-
-        //Update state
-        this.setState({
-            formThree: formInputGroup
-        })
-    }
-
-    handleRadioChange = (event) => {
-        this.setState({
-            options: event.target.value
-        })
-    }
-
-    handleCheckFormFour = (event) => {
-
-    }
-
     formSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
@@ -318,8 +199,10 @@ class Accounts extends React.Component {
                 element = <CostCentersOptions />
                 break;
             case "enablePartyButton":
+                element = <MaintainVoucherMaster />
                 break;
             case "salesman-broker-button":
+                element = <SalesmanBrokerReport />
                 break;
         }
         if(element) {
@@ -388,111 +271,6 @@ class Accounts extends React.Component {
                             }
                         })
                     }
-                    <ModalComponent>
-                        <form>
-                            
-
-                            {
-                                this.state.formThree.map((val, index) => (
-                                    <div key={"checkbox_parent_" + index}>
-                                        <p className="formTitle">{val.title}</p>
-                                        {
-                                            val.type === "check-box-form-three" && val.options.map(
-                                                (fval, findex) => (
-                                                    <div className="row form-group mb-0" key={"checkbox_child_" + index + "_" + findex}>
-                                                        <div className="col-2 col-md-2 p-0">
-                                                            <Checkbox
-                                                                name={fval.name}
-                                                                value={fval.value}
-                                                                checked={fval.checked}
-                                                                handleCheck={(event) => this.handleCheckFormThree(index, findex, fval.value, event.target.checked)}
-                                                            />
-                                                        </div>
-                                                        <div className="col-10 col-md-10 p-0">
-                                                            {fval.name}
-                                                        </div>
-                                                    </div>
-                                                )
-                                            )
-                                        }
-                                    </div>
-                                ))
-                            }
-
-                            {
-                                this.state.formFour.map((val, index) => {
-                                    if (val.type === "text") {
-                                        return (
-                                            <div className="row form-group" key={"input-text" + index}>
-                                                <div className="col-md-6">
-                                                    {val.label}
-                                                </div>
-                                                <div className="col-md-6 textFieldAlignment">
-                                                    <InputText
-                                                        name={val.name}
-                                                        value={val.value}
-                                                        checked={val.checked}
-                                                        handleChange={this.handleChange}
-                                                    />
-                                                </div>
-                                            </div>
-                                        )
-                                    } else if (val.type === "radio") {
-                                        return (
-                                            <div className="" key={"radio_parent" + index}>
-                                                {
-                                                    val.options.map((radioVal, radioIndex) =>
-                                                        (
-                                                            <div className="form-check form-check-inline" key={"radio_child" + index + "-" + radioIndex}>
-                                                                <div className="radioLabel">
-                                                                    {radioVal.value}
-                                                                </div>
-                                                                <div>
-                                                                    <Radio
-                                                                        name={radioVal.name}
-                                                                        key={radioVal.key}
-                                                                        value={radioVal.value}
-                                                                        checked={this.state.formFour.options}
-                                                                        handleChange={this.handleRadioChange}
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        )
-                                                    )
-                                                }
-
-                                            </div>
-                                        )
-                                    } else if (val.type === "check-box-form-four") {
-                                        return (this.state.formFour.map((val, index) => (<div key={"checkbox_parent_" + index}>
-                                            {
-                                                val.type === "check-box-form-four" && val.options.map(
-                                                    (fval, findex) => (
-                                                        <div className="form-check form-check-inline mt-4" key={"checkbox_child_" + index + "_" + findex}>
-                                                            <div>
-                                                                {fval.name}
-                                                            </div>
-                                                            <div className="checkbox-alignment">
-                                                                <Checkbox
-                                                                    name={fval.name}
-                                                                    value={fval.value}
-                                                                    checked={fval.checked}
-                                                                    handleCheck={(event) => this.handleCheckFormFour(index, findex, fval.value, event.target.checked)}
-                                                                />
-                                                            </div>
-                                                        </div>
-                                                    )
-                                                )
-                                            }
-                                        </div>
-                                        ))
-                                        )
-                                    }
-                                })
-                            }
-
-                        </form>
-                    </ModalComponent>
 
                     <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
                         <div className="mt-3 col-12 col-md-3 p-0">
@@ -502,8 +280,6 @@ class Accounts extends React.Component {
                             <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
                         </div>
                     </div>
-
-
                 </form>
             </div>
         )
