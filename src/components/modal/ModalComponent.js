@@ -17,12 +17,12 @@ class ModalComponent extends React.Component {
         })
     }
 
-    componentDidUpdate(props){
-        if(!this.props.show && this.props.show !== this.state.show) {
-            console.log(props, this.state)
-            // this.setState()
-        }
-    }
+    // componentDidUpdate(props){
+    //     if(!this.props.show && this.props.show !== this.state.show) {
+    //         console.log(props, this.state)
+    //         // this.setState()
+    //     }
+    // }
 
     render(){
         return(
