@@ -372,6 +372,11 @@ class SalesmanBrokerReport extends React.Component {
                         }
                     })
                 }
+                <div className="row btnContainer flex-sm-row-reverse mt-3 optionBtns">
+                        <div className="mt-3 col-12 col-md-4 p-0">
+                            <button type="submit" className="btn btn-primary optionBtns">Submit</button>
+                        </div>
+                    </div>
             </div>
         )
     }

@@ -17,6 +17,13 @@ class ModalComponent extends React.Component {
         })
     }
 
+    componentDidUpdate(props){
+        if(!this.props.show && this.props.show !== this.state.show) {
+            console.log(props, this.state)
+            // this.setState()
+        }
+    }
+
     render(){
         return(
             <div>
@@ -26,9 +33,9 @@ class ModalComponent extends React.Component {
                     <Modal.Body>
                         {this.props.children}
                     </Modal.Body>
-                    <Modal.Footer>
+                    {/* <Modal.Footer>
                         <Button onClick={this.handleModal}>Submit</Button>
-                    </Modal.Footer>
+                    </Modal.Footer> */}
                 </Modal>
             </div>
         )

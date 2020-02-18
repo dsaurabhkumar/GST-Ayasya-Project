@@ -98,7 +98,7 @@ class Accounts extends React.Component {
                         name: "Salesman/Broker-wise Reporting",
                         value: "salesmanBrokerReporting",
                         button: "Configure",
-                        id: "salesman-broker-button"
+                        id: "salesmanBbrokerButton"
                     },
                     {
                         name: "Budgets",
@@ -147,8 +147,6 @@ class Accounts extends React.Component {
                 ]
             },
         ],
-
-        
     }
 
     handleChange = event => {
@@ -189,7 +187,7 @@ class Accounts extends React.Component {
         console.log(this.state);
     }
 
-    componentmodalitem = (id) => {
+    componentModalItem = (id) => {
         let element = null;
         switch (id) {
             case "billButton":
@@ -201,7 +199,7 @@ class Accounts extends React.Component {
             case "enablePartyButton":
                 element = <MaintainVoucherMaster />
                 break;
-            case "salesman-broker-button":
+            case "salesmanBbrokerButton":
                 element = <SalesmanBrokerReport />
                 break;
         }
@@ -235,7 +233,7 @@ class Accounts extends React.Component {
                                     <div className="col-6 col-md-6 p-0">
                                         {cval.name}
                                     </div>
-                                    {this.componentmodalitem(cval.id)}
+                                    {this.componentModalItem(cval.id)}
                                 </div>
                                 )
                             } else if (val.type === "drop-down") {
