@@ -67,6 +67,11 @@ class MaintainVoucherMaster extends React.Component {
         })
     }
 
+    submitFormData = (e) => {
+        this.props.submittedData(this.state);
+        this.props.closeModal();
+    }
+
     render() {
         return (
             <div>
@@ -98,7 +103,7 @@ class MaintainVoucherMaster extends React.Component {
                 }
                 <div className="row btnContainer flex-sm-row-reverse mt-3 optionBtns">
                         <div className="mt-3 col-12 col-md-4 p-0">
-                            <button type="submit" className="btn btn-primary optionBtns">Submit</button>
+                            <button type="button" onClick={(e) => this.submitFormData(e)} className="btn btn-primary optionBtns">Submit</button>
                         </div>
                     </div>
             </div>

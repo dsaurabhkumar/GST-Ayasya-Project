@@ -187,20 +187,36 @@ class Accounts extends React.Component {
         console.log(this.state);
     }
 
+    closeModal = () => {
+        return false;
+    }
+
     componentModalItem = (id) => {
         let element = null;
         switch (id) {
             case "billButton":
-                element = <BillByBillDetailsForm />
+                element = <BillByBillDetailsForm 
+                submittedData={data => console.log(data.formOne[0].output)} 
+                closeModal={this.closeModal}
+                />
                 break;
             case "costButton":
-                element = <CostCentersOptions />
+                element = <CostCentersOptions 
+                    submittedData={data => console.log(data.formTwo[0].output)}
+                    closeModal={this.closeModal}
+                />
                 break;
             case "enablePartyButton":
-                element = <MaintainVoucherMaster />
+                element = <MaintainVoucherMaster 
+                    submittedData={data => console.log(data.formThree[0].output)}
+                    closeModal={this.closeModal}
+                />
                 break;
             case "salesmanBbrokerButton":
-                element = <SalesmanBrokerReport />
+                element = <SalesmanBrokerReport 
+                    submittedData={data => console.log(data.formFour)}
+                    closeModal={this.closeModal}
+                />
                 break;
         }
         if(element) {
