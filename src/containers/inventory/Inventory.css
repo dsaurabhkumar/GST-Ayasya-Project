@@ -1,0 +1,14 @@
+.inventoryForm {
+    border: 1px solid;
+    padding: 5%;
+}
+
+.inventoryCheckBox span {
+    padding-left: 0px;
+}
+
+@media (max-width: 767px) {
+    .inventoryCheckBox span {
+        padding-left: 0px;
+    }
+}
