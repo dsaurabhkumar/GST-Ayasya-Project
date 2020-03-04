@@ -9,7 +9,6 @@ const Inventory = () => {
         qtyDecimalPlaces: "",
         itemWiseDiscountDecimalPlaces: "",
         checkbox: "",
-        dropDownValue: ""
     }
 
     const inputText = [
@@ -276,7 +275,6 @@ const Inventory = () => {
                                         </div>
                                     </div>
                                 ))
-
                             }
                         </div>
 
@@ -301,24 +299,28 @@ const Inventory = () => {
                         <div>
                             {
                                 dropDownValue.map((val, index) => (
-                                    <div className="row mb-1" key={"inputDropdownValue" + index}>
+                                    <div className="row mb-3" key={"inputDropdownValue" + index}>
                                         <div className="col-6 col-md-6">
                                             {val.label}
                                         </div>
+                                        
                                         <div className="col-6 col-md-6">
-                                                <Field
+                                        <FormControl>
+                                                <select
                                                     type='select'
                                                     name={val.name}
-                                                    value={val.values}
+                                                    value={values.name}
+                                                    multiple={false}
                                                     onChange={handleChange}
-                                                    as={Select}
                                                 >
+                                                <option defaultValue>Select an Option</option>
                                                     {
                                                         val.values.map((cval, cindex) => (
-                                                            <MenuItem key = {"optionValues" + cindex} value={cval}>{cval}</MenuItem>
+                                                            <option key = {"optionValues" + cindex} value={cval}>{cval}</option>
                                                         ))
                                                     }
-                                                </Field>
+                                                </select>
+                                        </FormControl>
                                         </div>
                                     </div>
                                 ))
