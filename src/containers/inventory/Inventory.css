@@ -16,6 +16,12 @@
     border-bottom: 1px solid;
 }
 
+.MuiButtonBase-root.MuiButton-root.MuiButton-text {
+    background: #007bff;
+    border: #007bff;
+    color: #ffffff;
+}
+
 @media (max-width: 767px) {
     .inventoryCheckBox span {
         padding-left: 0px;

@@ -1,8 +1,8 @@
 import React from 'react';
 import './Inventory.css';
-import { Formik, Field, Form, FieldArray } from 'formik';
+import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
-import { TextField, Checkbox, Button, FormControlLabel, Select, MenuItem, FormControl } from '@material-ui/core';
+import { TextField, Checkbox, Button, FormControlLabel, FormControl } from '@material-ui/core';
 
 const Inventory = () => {
     const formvalue = {
@@ -35,7 +35,9 @@ const Inventory = () => {
         },
         {
             title: 'Enable Multi-Godown Inventory',
-            value: 'Enable Multi-Godown Inventory'
+            value: 'Enable Multi-Godown Inventory',
+            id: 'enableMultiGodownInventory',
+            button: 'Configure'
         },
         {
             title: 'Enable Manufacturing Features',
