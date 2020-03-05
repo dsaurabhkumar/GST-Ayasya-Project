@@ -254,15 +254,15 @@ const Inventory = (props) => {
         let element = null;
         switch (id) {
             case "enableMultiGodownInventory":
-                    element = <MultiGodownInventory 
+                element = <MultiGodownInventory
                     submittedData={(childData) => (
-                            console.log('Child Data', childData)
+                        console.log('Child Data', childData)
                     )}
                 />
                 break;
         }
 
-        if(element) {
+        if (element) {
             element = <ModalComponent>
                 <div>
                     {element}
@@ -306,21 +306,23 @@ const Inventory = (props) => {
                             }
                         </div>
 
-                        <div className="inventoryCheckBox d-flex flex-column align-items-start">
+                        <div className="inventoryCheckBox">
                             {
                                 checkboxdata.map((val, index) => (
-                                    <div key={"inputCheckboxKey" + index}>
-                                        <FormControlLabel
-                                            label={val.title}
-                                            control={
-                                                <Field
-                                                    type='checkbox'
-                                                    name="checkbox"
-                                                    value={val.value}
-                                                    as={Checkbox} />
-                                            }
-                                        />
-                                        <div>
+                                    <div className="row" key={"inputCheckboxKey" + index}>
+                                        <div className="col-7 col-md-7">
+                                            <FormControlLabel
+                                                label={val.title}
+                                                control={
+                                                    <Field
+                                                        type='checkbox'
+                                                        name="checkbox"
+                                                        value={val.value}
+                                                        as={Checkbox} />
+                                                }
+                                            />
+                                        </div>
+                                        <div className="col-5 col-md-5 configureBtns">
                                             {componentModalItem(val.id)}
                                         </div>
                                     </div>

@@ -1,6 +1,10 @@
 .inventoryForm {
     border: 1px solid;
-    padding: 7%;
+    padding: 5%;
+}
+
+.configureBtns {
+    text-align: end;
 }
 
 .MuiFormControl-root {
