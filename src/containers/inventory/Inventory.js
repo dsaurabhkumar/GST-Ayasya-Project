@@ -1,11 +1,13 @@
 import React from 'react';
 import './Inventory.css';
+import ModalComponent from '../../components/modal/ModalComponent';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl } from '@material-ui/core';
+import MultiGodownInventory from '../../components/Forms/inventory-sub-forms/enable-multi-godown-inventory/MultiGodownInventory';
 
-const Inventory = () => {
-    const formvalue = {
+const Inventory = (props) => {
+    const formValue = {
         qtyDecimalPlaces: "",
         itemWiseDiscountDecimalPlaces: "",
         checkbox: "",
@@ -247,10 +249,32 @@ const Inventory = () => {
         }
     ]
 
+
+    const componentModalItem = (id) => {
+        let element = null;
+        switch (id) {
+            case "enableMultiGodownInventory":
+                    element = <MultiGodownInventory 
+                    submittedData={childData => console.log("Child Data" , childData)} 
+                />
+                break;
+        }
+
+        if(element) {
+            element = <ModalComponent>
+                <div>
+                    {element}
+                </div>
+            </ModalComponent>
+        }
+        return element;
+    }
+
+
     return (
         <div className="container mt-4 mb-4">
             <Formik
-                initialValues={formvalue}
+                initialValues={formValue}
 
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
@@ -283,17 +307,21 @@ const Inventory = () => {
                         <div className="inventoryCheckBox d-flex flex-column align-items-start">
                             {
                                 checkboxdata.map((val, index) => (
-                                    <FormControlLabel
-                                        key={"inputCheckboxKey" + index}
-                                        label={val.title}
-                                        control={
-                                            <Field
-                                                type='checkbox'
-                                                name="checkbox"
-                                                value={val.value}
-                                                as={Checkbox} />
-                                        }
-                                    />
+                                    <div key={"inputCheckboxKey" + index}>
+                                        <FormControlLabel
+                                            label={val.title}
+                                            control={
+                                                <Field
+                                                    type='checkbox'
+                                                    name="checkbox"
+                                                    value={val.value}
+                                                    as={Checkbox} />
+                                            }
+                                        />
+                                        <div>
+                                            {componentModalItem(val.id)}
+                                        </div>
+                                    </div>
                                 ))
                             }
                         </div>
@@ -305,9 +333,9 @@ const Inventory = () => {
                                         <div className="col-6 col-md-6">
                                             {val.label}
                                         </div>
-                                        
+
                                         <div className="col-6 col-md-6">
-                                        <FormControl>
+                                            <FormControl>
                                                 <select
                                                     type='select'
                                                     name={val.name}
@@ -315,14 +343,14 @@ const Inventory = () => {
                                                     multiple={false}
                                                     onChange={handleChange}
                                                 >
-                                                <option defaultValue>Select an Option</option>
+                                                    <option defaultValue>Select an Option</option>
                                                     {
                                                         val.values.map((cval, cindex) => (
-                                                            <option key = {"optionValues" + cindex} value={cval}>{cval}</option>
+                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
                                                         ))
                                                     }
                                                 </select>
-                                        </FormControl>
+                                            </FormControl>
                                         </div>
                                     </div>
                                 ))
