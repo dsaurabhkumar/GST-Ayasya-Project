@@ -255,7 +255,9 @@ const Inventory = (props) => {
         switch (id) {
             case "enableMultiGodownInventory":
                     element = <MultiGodownInventory 
-                    submittedData={childData => console.log("Child Data" , childData)} 
+                    submittedData={(childData) => (
+                            console.log('Child Data', childData)
+                    )}
                 />
                 break;
         }
