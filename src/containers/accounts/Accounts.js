@@ -202,32 +202,32 @@ class Accounts extends React.Component {
         switch (id) {
             case "billButton":
                 element = <BillByBillDetailsForm 
-                submittedData={(childData) => (
-                        this.childDataInfoOne = childData.formOne[0].output
+                submittedData={(childDataOne) => (
+                        this.childDataInfoOne = childDataOne.formOne[0].output
                     )}
                 closeModal={this.closeModal}
                 />
                 break;
             case "costButton":
                 element = <CostCentersOptions 
-                    submittedData={(childData) => (
-                        this.childDataInfoTwo = childData.formTwo[0].output
+                    submittedData={(childDataTwo) => (
+                        this.childDataInfoTwo = childDataTwo.formTwo[0].output
                     )}
                     closeModal={this.closeModal}
                 />
                 break;
             case "enablePartyButton":
                 element = <MaintainVoucherMaster 
-                    submittedData={(childData) => (
-                        this.childDataInfoThree = childData.formThree[0].output
+                    submittedData={(childDataThree) => (
+                        this.childDataInfoThree = childDataThree.formThree[0].output
                     )}
                     closeModal={this.closeModal}
                 />
                 break;
             case "salesmanBbrokerButton":
                 element = <SalesmanBrokerReport 
-                    submittedData={(childData) => (
-                        this.childDataInfoFour = childData.formFour
+                    submittedData={(childDataFour) => (
+                        this.childDataInfoFour = childDataFour.formFour
                     )}
                     
                     closeModal={this.closeModal}
