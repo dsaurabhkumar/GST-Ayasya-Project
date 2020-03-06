@@ -11,6 +11,7 @@ import MaintainVoucherMaster from '../../components/Forms/maintain-image-notes-v
 import SalesmanBrokerReport from '../../components/Forms/salesman-broker-report/Salesman-broker-report.form';
 
 class Accounts extends React.Component {
+
     state = {
         inputLabels: [
             {
@@ -149,6 +150,7 @@ class Accounts extends React.Component {
         ],
     }
 
+
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -185,6 +187,10 @@ class Accounts extends React.Component {
     formSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
+        console.log(this.childDataInfoOne);
+        console.log(this.childDataInfoTwo);
+        console.log(this.childDataInfoThree);
+        console.log(this.childDataInfoFour);
     }
 
     closeModal = () => {
@@ -196,25 +202,34 @@ class Accounts extends React.Component {
         switch (id) {
             case "billButton":
                 element = <BillByBillDetailsForm 
-                submittedData={data => console.log(data.formOne[0].output)} 
+                submittedData={(childData) => (
+                        this.childDataInfoOne = childData.formOne[0].output
+                    )}
                 closeModal={this.closeModal}
                 />
                 break;
             case "costButton":
                 element = <CostCentersOptions 
-                    submittedData={data => console.log(data.formTwo[0].output)}
+                    submittedData={(childData) => (
+                        this.childDataInfoTwo = childData.formTwo[0].output
+                    )}
                     closeModal={this.closeModal}
                 />
                 break;
             case "enablePartyButton":
                 element = <MaintainVoucherMaster 
-                    submittedData={data => console.log(data.formThree[0].output)}
+                    submittedData={(childData) => (
+                        this.childDataInfoThree = childData.formThree[0].output
+                    )}
                     closeModal={this.closeModal}
                 />
                 break;
             case "salesmanBbrokerButton":
                 element = <SalesmanBrokerReport 
-                    submittedData={data => console.log(data.formFour)}
+                    submittedData={(childData) => (
+                        this.childDataInfoFour = childData.formFour
+                    )}
+                    
                     closeModal={this.closeModal}
                 />
                 break;

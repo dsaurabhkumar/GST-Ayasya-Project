@@ -13,6 +13,8 @@ const Inventory = (props) => {
         checkbox: "",
     }
 
+    let childDataInfo = null;
+
     const inputText = [
         {
             label: 'Qty. Decimal Places',
@@ -256,7 +258,7 @@ const Inventory = (props) => {
             case "enableMultiGodownInventory":
                 element = <MultiGodownInventory
                     submittedData={(childData) => (
-                        console.log('Child Data', childData)
+                        childDataInfo = childData
                     )}
                 />
                 break;
@@ -280,7 +282,7 @@ const Inventory = (props) => {
 
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
-                    console.log(data)
+                    console.log(data, childDataInfo)                    
                     setSubmitting(false);
                 }}
             >
