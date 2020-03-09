@@ -5,9 +5,19 @@ import { Checkbox, Button, FormControlLabel, FormControl } from '@material-ui/co
 const ConsignmentSales = (props) => {
 
     const formValue = {
-        checkbox: "",
+        
     }
-
+    
+    const dropDownFormSeven = [
+        {
+            label: 'Consignment Type',
+            name: 'consignmentType',
+            values: [
+                "With Order (Movement of Goods)",
+                "Without Order",
+            ]
+        },
+    ]
 
     const checkBoxDataFormSeven = [
         {
@@ -20,18 +30,6 @@ const ConsignmentSales = (props) => {
         },
     ]
 
-    const dropDownFormSeven = [
-        {
-            label: 'Consignment Type',
-            name: 'consignmentType',
-            values: [
-                "With Order (Movement of Goods)",
-                "Without Order",
-            ]
-        },
-    ]
-
-
     return (
         <div className="container mt-4 mb-4">
             <Formik
@@ -41,28 +39,12 @@ const ConsignmentSales = (props) => {
                     setSubmitting(true);
                     console.log(data)
                     setSubmitting(false);
-                    props.submittedData(data.checkbox);
+                    props.submittedData(data);
                 }}
             >
                 {({ values, isSubmitting, handleChange }) => (
                     <Form>
                         <div className="inventoryCheckBox d-flex flex-column align-items-start">
-                            {
-                                checkBoxDataFormSeven.map((val, index) => (
-                                    <div key={"inputCheckboxKey" + index}>
-                                        <FormControlLabel
-                                            label={val.title}
-                                            control={
-                                                <Field
-                                                    type='checkbox'
-                                                    name="checkbox"
-                                                    value={val.value}
-                                                    as={Checkbox} />
-                                            }
-                                        />
-                                    </div>
-                                ))
-                            }
                             {
                                 dropDownFormSeven.map((val, index) => (
                                     <div className="row mb-3" key={"inputDropdownValue" + index}>
@@ -76,7 +58,6 @@ const ConsignmentSales = (props) => {
                                                     type='select'
                                                     name={val.name}
                                                     value={values.name}
-                                                    multiple={false}
                                                     onChange={handleChange}
                                                 >
                                                     <option defaultValue>Select an Option</option>
@@ -88,6 +69,22 @@ const ConsignmentSales = (props) => {
                                                 </select>
                                             </FormControl>
                                         </div>
+                                    </div>
+                                ))
+                            }
+                            {
+                                checkBoxDataFormSeven.map((val, index) => (
+                                    <div key={"inputCheckboxKey" + index}>
+                                        <FormControlLabel
+                                            label={val.title}
+                                            control={
+                                                <Field
+                                                    type='checkbox'
+                                                    name="checkbox"
+                                                    value={val.value}
+                                                    as={Checkbox} />
+                                            }
+                                        />
                                     </div>
                                 ))
                             }
