@@ -13,7 +13,8 @@ const MultiGodownInventory = (props) => {
     const checkBoxDataFormOne = [
         {
             title: 'Material Centre at Item Level',
-            value: 'Material Centre at Item Level'
+            value: 'Material Centre at Item Level',
+            heading: 'Options for MC Level'
         }
     ]
 
@@ -35,6 +36,7 @@ const MultiGodownInventory = (props) => {
                             {
                                 checkBoxDataFormOne.map((val, index) => (
                                     <div key={"inputCheckboxKey" + index}>
+                                    <h5 className="modalHeading">{val.heading}</h5>
                                         <FormControlLabel
                                             label={val.title}
                                             control={

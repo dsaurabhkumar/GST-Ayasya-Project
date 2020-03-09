@@ -12,7 +12,8 @@ const OrderProcessing = (props) => {
     const checkBoxDataFormFour = [
         {
             title: 'Consolidate Items While Picking from Orders',
-            value: 'Consolidate Items While Picking from Orders'
+            value: 'Consolidate Items While Picking from Orders',
+            heading: 'Options for Order Processing'
         },
         {
             title: 'Restrict Sales/Sale Challan Without Order',
@@ -58,6 +59,7 @@ const OrderProcessing = (props) => {
                             {
                                 checkBoxDataFormFour.map((val, index) => (
                                     <div key={"inputCheckboxKey" + index}>
+                                    <h5 className="modalHeading">{val.heading}</h5>
                                         <FormControlLabel
                                             label={val.title}
                                             control={

@@ -10,6 +10,7 @@ const ConsignmentSales = (props) => {
     
     const dropDownFormSeven = [
         {
+            heading: 'Options for Consignment Sales',
             label: 'Consignment Type',
             name: 'consignmentType',
             values: [
@@ -22,7 +23,7 @@ const ConsignmentSales = (props) => {
     const checkBoxDataFormSeven = [
         {
             title: 'Maintain Customer at the time of Purchase',
-            value: 'Maintain Customer at the time of Purchase'
+            value: 'Maintain Customer at the time of Purchase',
         },
         {
             title: 'Maintain Price of Source Voucher',
@@ -48,6 +49,7 @@ const ConsignmentSales = (props) => {
                             {
                                 dropDownFormSeven.map((val, index) => (
                                     <div className="row mb-3" key={"inputDropdownValue" + index}>
+                                    <h5 className="modalHeading">{val.heading}</h5>
                                         <div className="col-6 col-md-6">
                                             {val.label}
                                         </div>

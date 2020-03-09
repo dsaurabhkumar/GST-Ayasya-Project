@@ -11,6 +11,8 @@ import OrderProcessing from '../../components/Forms/inventory-sub-forms/enable-o
 import SalePurchaseChallan from '../../components/Forms/inventory-sub-forms/enable-sale-purchase-challan/SalePurchaseChallan';
 import PureInventoryVouchers from '../../components/Forms/inventory-sub-forms/accounting-in-pure-inventory-vouchers/PureInventoryVouchers';
 import ConsignmentSales from '../../components/Forms/inventory-sub-forms/enable-consignment-sales/ConsignmentSales';
+import MrpWiseDetails from '../../components/Forms/inventory-sub-forms/MRP-wise-details/MrpWiseDetails';
+import FreeQuantityVouchers from '../../components/Forms/inventory-sub-forms/enable-free-quantity-vouchers/FreeQuantityVouchers';
 
 const Inventory = (props) => {
     const formValue = {
@@ -26,6 +28,11 @@ const Inventory = (props) => {
     let childDataInfoFormFive = null;
     let childDataInfoFormSix = null;
     let childDataInfoFormSeven = null;
+
+
+
+    let childDataInfoFormEleven = null;
+    let childDataInfoFormTwelve = null;
 
     const inputText = [
         {
@@ -169,7 +176,9 @@ const Inventory = (props) => {
         },
         {
             title: 'MRP-wise Details',
-            value: 'MRP-wise Details'
+            value: 'MRP-wise Details',
+            id: 'mrpWiseDetails',
+            button: 'Configure'
         },
         {
             title: 'Skip Items Default Price during Voucher Modification',
@@ -177,7 +186,9 @@ const Inventory = (props) => {
         },
         {
             title: 'Enable Free Quantity in Vouchers',
-            value: 'Enable Free Quantity in Vouchers'
+            value: 'Enable Free Quantity in Vouchers',
+            id: 'enebleFreeQuantityVouchers',
+            button: 'Configure'
         },
         {
             title: 'Show Last Transactions during Sales',
@@ -335,6 +346,22 @@ const Inventory = (props) => {
                 />
                 break;
 
+                case "mrpWiseDetails":
+                element = <MrpWiseDetails 
+                    submittedData={(childData) => (
+                        childDataInfoFormEleven = childData
+                    )}
+                />
+                break;
+
+                case "enebleFreeQuantityVouchers":
+                element = <FreeQuantityVouchers 
+                    submittedData={(childData) => (
+                        childDataInfoFormTwelve = childData
+                    )}
+                />
+                break;
+
         }
 
         if (element) {
@@ -356,7 +383,7 @@ const Inventory = (props) => {
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
                     console.log(data, childDataInfoFormOne, childDataInfoFormTwo, childDataInfoFormThree, childDataInfoFormFour, childDataInfoFormFive,
-                        childDataInfoFormSix, childDataInfoFormSeven)                    
+                        childDataInfoFormSix, childDataInfoFormSeven, childDataInfoFormEleven, childDataInfoFormTwelve)                    
                     setSubmitting(false);
                 }}
             >

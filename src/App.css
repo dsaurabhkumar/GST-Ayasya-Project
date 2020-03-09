@@ -15,3 +15,8 @@ code {
 .nav-link {
   font-size: 16px;
 }
+
+.modalHeading {
+  position: absolute;
+  top: -40px;
+}

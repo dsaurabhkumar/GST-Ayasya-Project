@@ -12,7 +12,8 @@ const PureInventoryVouchers = (props) => {
     const checkBoxDataFormSix = [
         {
             title: 'Enable Accounting in Material Issue',
-            value: 'Enable Accounting in Material Issue'
+            value: 'Enable Accounting in Material Issue',
+            heading: 'Accounting in Pure Inventory Vouchers'
         },
         {
             title: 'Enable Accounting in Material Receipt',
@@ -42,6 +43,7 @@ const PureInventoryVouchers = (props) => {
                             {
                                 checkBoxDataFormSix.map((val, index) => (
                                     <div key={"inputCheckboxKey" + index}>
+                                    <h5 className="modalHeading">{val.heading}</h5>
                                         <FormControlLabel
                                             label={val.title}
                                             control={

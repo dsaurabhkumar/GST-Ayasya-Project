@@ -13,7 +13,8 @@ const SaleQuotation = (props) => {
     const checkBoxDataFormTwo = [
         {
             title: 'Auto Create/Adjustment Quotation References',
-            value: 'Auto Create/Adjustment Quotation References'
+            value: 'Auto Create/Adjustment Quotation References',
+            heading: 'Option for Sale Quotation'
         },
         {
             title: 'Show Pending Quotation Till Voucher Date',
@@ -39,6 +40,7 @@ const SaleQuotation = (props) => {
                             {
                                 checkBoxDataFormTwo.map((val, index) => (
                                     <div key={"inputCheckboxKey" + index}>
+                                    <h5 className="modalHeading">{val.heading}</h5>
                                         <FormControlLabel
                                             label={val.title}
                                             control={

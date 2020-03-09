@@ -12,7 +12,8 @@ const SalePurchaseChallan = (props) => {
     const checkBoxDataFormFive = [
         {
             title: 'Consolidate Items While Picking from Orders',
-            value: 'Consolidate Items While Picking from Orders'
+            value: 'Consolidate Items While Picking from Orders',
+            heading: 'Options for Challan'
         },
         {
             title: 'Restrict Sales Without Challan',
@@ -66,6 +67,7 @@ const SalePurchaseChallan = (props) => {
                             {
                                 checkBoxDataFormFive.map((val, index) => (
                                     <div key={"inputCheckboxKey" + index}>
+                                    <h5 className="modalHeading">{val.heading}</h5>
                                         <FormControlLabel
                                             label={val.title}
                                             control={
