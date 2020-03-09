@@ -446,10 +446,10 @@ const Inventory = (props) => {
                             }
                         </div>
 
-                        <div className="mt-3">
+                        <div className="mt-4">
                             {
                                 dropDownValue.map((val, index) => (
-                                    <div className="row mb-3" key={"inputDropdownValue" + index}>
+                                    <div className="row mb-4" key={"inputDropdownValue" + index}>
                                         <div className="col-6 col-md-6">
                                             {val.label}
                                         </div>
