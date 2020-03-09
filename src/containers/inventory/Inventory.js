@@ -13,6 +13,7 @@ import PureInventoryVouchers from '../../components/Forms/inventory-sub-forms/ac
 import ConsignmentSales from '../../components/Forms/inventory-sub-forms/enable-consignment-sales/ConsignmentSales';
 import MrpWiseDetails from '../../components/Forms/inventory-sub-forms/MRP-wise-details/MrpWiseDetails';
 import FreeQuantityVouchers from '../../components/Forms/inventory-sub-forms/enable-free-quantity-vouchers/FreeQuantityVouchers';
+import MultipleItemAliases from '../../components/Forms/inventory-sub-forms/maintain-multiple-item-aliases/MultipleItemAliases';
 
 const Inventory = (props) => {
     const formValue = {
@@ -33,6 +34,8 @@ const Inventory = (props) => {
 
     let childDataInfoFormEleven = null;
     let childDataInfoFormTwelve = null;
+
+    let childDataInfoFormForteen = null;
 
     const inputText = [
         {
@@ -236,7 +239,9 @@ const Inventory = (props) => {
         },
         {
             title: 'Maintain Multiple Item Aliases',
-            value: 'Maintain Multiple Item Aliases'
+            value: 'Maintain Multiple Item Aliases',
+            id: 'maintainMultipleItemAliases',
+            button: 'Configure'
         },
     ]
 
@@ -361,6 +366,14 @@ const Inventory = (props) => {
                     )}
                 />
                 break;
+                
+                case "maintainMultipleItemAliases":
+                element = <MultipleItemAliases 
+                    submittedData={(childData) => (
+                        childDataInfoFormForteen = childData
+                    )}
+                />
+                break;
 
         }
 
@@ -383,7 +396,7 @@ const Inventory = (props) => {
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
                     console.log(data, childDataInfoFormOne, childDataInfoFormTwo, childDataInfoFormThree, childDataInfoFormFour, childDataInfoFormFive,
-                        childDataInfoFormSix, childDataInfoFormSeven, childDataInfoFormEleven, childDataInfoFormTwelve)                    
+                        childDataInfoFormSix, childDataInfoFormSeven, childDataInfoFormEleven, childDataInfoFormTwelve, childDataInfoFormForteen)                    
                     setSubmitting(false);
                 }}
             >
@@ -433,7 +446,7 @@ const Inventory = (props) => {
                             }
                         </div>
 
-                        <div>
+                        <div className="mt-3">
                             {
                                 dropDownValue.map((val, index) => (
                                     <div className="row mb-3" key={"inputDropdownValue" + index}>
