@@ -5,6 +5,12 @@ import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl } from '@material-ui/core';
 import MultiGodownInventory from '../../components/Forms/inventory-sub-forms/enable-multi-godown-inventory/MultiGodownInventory';
+import SaleQuotation from '../../components/Forms/inventory-sub-forms/enable-sale-quotation/SaleQuotation';
+import PurchaseQuotation from '../../components/Forms/inventory-sub-forms/enable-purchase-quotation/PurchaseQuotation';
+import OrderProcessing from '../../components/Forms/inventory-sub-forms/enable-order-processing/OrderProcessing';
+import SalePurchaseChallan from '../../components/Forms/inventory-sub-forms/enable-sale-purchase-challan/SalePurchaseChallan';
+import PureInventoryVouchers from '../../components/Forms/inventory-sub-forms/accounting-in-pure-inventory-vouchers/PureInventoryVouchers';
+import ConsignmentSales from '../../components/Forms/inventory-sub-forms/enable-consignment-sales/ConsignmentSales';
 
 const Inventory = (props) => {
     const formValue = {
@@ -13,7 +19,13 @@ const Inventory = (props) => {
         checkbox: "",
     }
 
-    let childDataInfo = null;
+    let childDataInfoFormOne = null;
+    let childDataInfoFormTwo = null;
+    let childDataInfoFormThree = null;
+    let childDataInfoFormFour = null;
+    let childDataInfoFormFive = null;
+    let childDataInfoFormSix = null;
+    let childDataInfoFormSeven = null;
 
     const inputText = [
         {
@@ -49,19 +61,27 @@ const Inventory = (props) => {
         },
         {
             title: 'Enable Sale Quotation',
-            value: 'Enable Sale Quotation'
+            value: 'Enable Sale Quotation',
+            id: 'enableSaleQuotation',
+            button: 'Configure'
         },
         {
             title: 'Enable Purcahse Quotation',
-            value: 'Enable Purcahse Quotation'
+            value: 'Enable Purcahse Quotation',
+            id: 'enablePurchaseQuotation',
+            button: 'Configure'
         },
         {
             title: 'Enable Order Processing',
-            value: 'Enable Order Processing'
+            value: 'Enable Order Processing',
+            id: 'enableOrderProcessing',
+            button: 'Configure'
         },
         {
             title: 'Enable Sale/Purchase Challan',
-            value: 'Enable Sale/Purchase Challan'
+            value: 'Enable Sale/Purchase Challan',
+            id: 'enableSalePurchaseChallan',
+            button: 'Configure'
         },
         {
             title: 'Carry Pending Material Issued/Receipt to next F.Y',
@@ -81,7 +101,9 @@ const Inventory = (props) => {
         },
         {
             title: 'Accounting in Pure Inventory Vouchers',
-            value: 'Accounting in Pure Inventory Vouchers'
+            value: 'Accounting in Pure Inventory Vouchers',
+            id: 'accountingPureInventoryVouchers',
+            button: 'Configure'
         },
         {
             title: 'Enable Party-Wise Item Codes',
@@ -113,7 +135,9 @@ const Inventory = (props) => {
         },
         {
             title: 'Enable Consignment Sales',
-            value: 'Enable Consignment Sales'
+            value: 'Enable Consignment Sales',
+            id: 'enableConsignementSales',
+            button: 'Configure'
         },
         {
             title: 'Maintain Item Category',
@@ -258,10 +282,59 @@ const Inventory = (props) => {
             case "enableMultiGodownInventory":
                 element = <MultiGodownInventory
                     submittedData={(childData) => (
-                        childDataInfo = childData
+                        childDataInfoFormOne = childData
                     )}
                 />
                 break;
+
+                case "enableSaleQuotation":
+                element = <SaleQuotation 
+                    submittedData={(childData) => (
+                        childDataInfoFormTwo = childData
+                    )}
+                />
+                break;
+
+                case "enablePurchaseQuotation":
+                element = <PurchaseQuotation 
+                    submittedData={(childData) => (
+                        childDataInfoFormThree = childData
+                    )}
+                />
+                break;
+
+                case "enableOrderProcessing":
+                element = <OrderProcessing 
+                    submittedData={(childData) => (
+                        childDataInfoFormFour = childData
+                    )}
+                />
+                break;
+
+                case "enableSalePurchaseChallan":
+                element = <SalePurchaseChallan 
+                    submittedData={(childData) => (
+                        childDataInfoFormFive = childData
+                    )}
+                />
+                break;
+
+                case "accountingPureInventoryVouchers":
+                element = <PureInventoryVouchers 
+                    submittedData={(childData) => (
+                        childDataInfoFormSix = childData
+                    )}
+                />
+                break;
+
+                case "enableConsignementSales":
+                element = <ConsignmentSales 
+                    submittedData={(childData) => (
+                        childDataInfoFormSeven = childData
+                    )}
+                />
+                break;
+
         }
 
         if (element) {
@@ -282,7 +355,8 @@ const Inventory = (props) => {
 
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
-                    console.log(data, childDataInfo)                    
+                    console.log(data, childDataInfoFormOne, childDataInfoFormTwo, childDataInfoFormThree, childDataInfoFormFour, childDataInfoFormFive,
+                        childDataInfoFormSix, childDataInfoFormSeven)                    
                     setSubmitting(false);
                 }}
             >

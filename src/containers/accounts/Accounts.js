@@ -186,11 +186,11 @@ class Accounts extends React.Component {
 
     formSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
-        console.log(this.childDataInfoOne);
-        console.log(this.childDataInfoTwo);
-        console.log(this.childDataInfoThree);
-        console.log(this.childDataInfoFour);
+        console.log(this.state, this.childDataInfoOne, this.childDataInfoTwo, this.childDataInfoThree, this.childDataInfoFour);
+        // console.log(this.childDataInfoOne);
+        // console.log(this.childDataInfoTwo);
+        // console.log(this.childDataInfoThree);
+        // console.log(this.childDataInfoFour);
     }
 
     closeModal = () => {

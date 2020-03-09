@@ -10,7 +10,7 @@ const MultiGodownInventory = (props) => {
     }
 
 
-    const checkboxdata = [
+    const checkBoxDataFormOne = [
         {
             title: 'Material Centre at Item Level',
             value: 'Material Centre at Item Level'
@@ -33,7 +33,7 @@ const MultiGodownInventory = (props) => {
                     <Form>
                         <div className="inventoryCheckBox d-flex flex-column align-items-start">
                             {
-                                checkboxdata.map((val, index) => (
+                                checkBoxDataFormOne.map((val, index) => (
                                     <div key={"inputCheckboxKey" + index}>
                                         <FormControlLabel
                                             label={val.title}

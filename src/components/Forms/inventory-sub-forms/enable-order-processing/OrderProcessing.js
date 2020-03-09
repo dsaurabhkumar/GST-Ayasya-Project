@@ -1,23 +1,42 @@
 import React from 'react';
-import './SaleQuotation.css';
 import { Formik, Field, Form } from 'formik';
 import { Checkbox, Button, FormControlLabel } from '@material-ui/core';
 
-const SaleQuotation = (props) => {
+const OrderProcessing = (props) => {
 
     const formValue = {
         checkbox: "",
     }
 
 
-    const checkBoxDataFormTwo = [
+    const checkBoxDataFormFour = [
         {
-            title: 'Auto Create/Adjustment Quotation References',
-            value: 'Auto Create/Adjustment Quotation References'
+            title: 'Consolidate Items While Picking from Orders',
+            value: 'Consolidate Items While Picking from Orders'
         },
         {
-            title: 'Show Pending Quotation Till Voucher Date',
-            value: 'Show Pending Quotation Till Voucher Date'
+            title: 'Restrict Sales/Sale Challan Without Order',
+            value: 'Restrict Sales/Sale Challan Without Order'
+        },
+        {
+            title: 'Restrict Purchase/Purc. Challan Without Order',
+            value: 'Restrict Purchase/Purc. Challan Without Order'
+        },
+        {
+            title: 'Resctrict Sale Order modification after Sales',
+            value: 'Resctrict Sale Order modification after Sales'
+        },
+        {
+            title: 'Resctrict Purc. Order modification after Purchase',
+            value: 'Resctrict Purc. Order modification after Purchase'
+        },
+        {
+            title: 'Auto Create/Adjust Order References',
+            value: 'Auto Create/Adjust Order References'
+        },
+        {
+            title: 'Show Pending Order Till Voucher Date',
+            value: 'Show Pending Order Till Voucher Date'
         }
     ]
 
@@ -37,7 +56,7 @@ const SaleQuotation = (props) => {
                     <Form>
                         <div className="inventoryCheckBox d-flex flex-column align-items-start">
                             {
-                                checkBoxDataFormTwo.map((val, index) => (
+                                checkBoxDataFormFour.map((val, index) => (
                                     <div key={"inputCheckboxKey" + index}>
                                         <FormControlLabel
                                             label={val.title}
@@ -66,4 +85,4 @@ const SaleQuotation = (props) => {
         </div>
     )
 }
-export default SaleQuotation
+export default OrderProcessing
