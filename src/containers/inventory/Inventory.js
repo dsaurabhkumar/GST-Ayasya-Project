@@ -14,6 +14,7 @@ import ConsignmentSales from '../../components/Forms/inventory-sub-forms/enable-
 import MrpWiseDetails from '../../components/Forms/inventory-sub-forms/MRP-wise-details/MrpWiseDetails';
 import FreeQuantityVouchers from '../../components/Forms/inventory-sub-forms/enable-free-quantity-vouchers/FreeQuantityVouchers';
 import MultipleItemAliases from '../../components/Forms/inventory-sub-forms/maintain-multiple-item-aliases/MultipleItemAliases';
+import JobWork from '../../components/Forms/inventory-sub-forms/enable-job-work/JobWork';
 
 const Inventory = (props) => {
     const formValue = {
@@ -29,7 +30,7 @@ const Inventory = (props) => {
     let childDataInfoFormFive = null;
     let childDataInfoFormSix = null;
     let childDataInfoFormSeven = null;
-
+    let childDataInfoFormEight = null;
 
 
     let childDataInfoFormEleven = null;
@@ -163,7 +164,9 @@ const Inventory = (props) => {
         },
         {
             title: 'Enable Job Work',
-            value: 'Enable Job Work'
+            value: 'Enable Job Work',
+            id: 'enableJobWork',
+            button: 'Configure'
         },
         {
             title: 'Parameterized Details',
@@ -351,6 +354,14 @@ const Inventory = (props) => {
                 />
                 break;
 
+                case "enableJobWork":
+                element = <JobWork 
+                    submittedData={(childData) => (
+                        childDataInfoFormEight= childData
+                    )}
+                />
+                break;
+
                 case "mrpWiseDetails":
                 element = <MrpWiseDetails 
                     submittedData={(childData) => (
@@ -374,7 +385,7 @@ const Inventory = (props) => {
                     )}
                 />
                 break;
-
+                
         }
 
         if (element) {
@@ -396,7 +407,7 @@ const Inventory = (props) => {
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
                     console.log(data, childDataInfoFormOne, childDataInfoFormTwo, childDataInfoFormThree, childDataInfoFormFour, childDataInfoFormFive,
-                        childDataInfoFormSix, childDataInfoFormSeven, childDataInfoFormEleven, childDataInfoFormTwelve, childDataInfoFormForteen)                    
+                        childDataInfoFormSix, childDataInfoFormSeven, childDataInfoFormEight, childDataInfoFormEleven, childDataInfoFormTwelve, childDataInfoFormForteen)                    
                     setSubmitting(false);
                 }}
             >
