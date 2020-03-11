@@ -5,8 +5,20 @@ import { Checkbox, Button, FormControlLabel, FormControl } from '@material-ui/co
 const JobWork = (props) => {
 
     const formValue = {
-        checkbox: ''
+
     }
+
+    const dropDownFormEight = [
+        {
+            label: 'Duplicacy in Job Id',
+            name: 'duplicacyInJobId',
+            values: [
+                "Do Not Allow",
+                "Allow Within Same Party",
+                "Allow Always",
+            ]
+        },
+    ]
 
     const checkBoxDataFormEight = [
         {
@@ -73,10 +85,10 @@ const JobWork = (props) => {
                     setSubmitting(true);
                     console.log(data)
                     setSubmitting(false);
-                    props.submittedData(data.checkbox);
+                    props.submittedData(data);
                 }}
             >
-                {({ isSubmitting }) => (
+                {({ values, isSubmitting, handleChange }) => (
                     <Form>
                         <div className="inventoryCheckBox d-flex flex-column align-items-start">
                             {
@@ -93,6 +105,34 @@ const JobWork = (props) => {
                                                     as={Checkbox} />
                                             }
                                         />
+                                    </div>
+                                ))
+                            }
+                            {
+                                dropDownFormEight.map((val, index) => (
+                                    <div className="row mb-3" key={"inputDropdownValue" + index}>
+                                    <h5 className="modalHeading">{val.heading}</h5>
+                                        <div className="col-6 col-md-6">
+                                            {val.label}
+                                        </div>
+
+                                        <div className="col-6 col-md-6">
+                                            <FormControl>
+                                                <select
+                                                    type='select'
+                                                    name={val.name}
+                                                    value={values.name}
+                                                    onChange={handleChange}
+                                                >
+                                                    <option defaultValue>Select an Option</option>
+                                                    {
+                                                        val.values.map((cval, cindex) => (
+                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                        ))
+                                                    }
+                                                </select>
+                                            </FormControl>
+                                        </div>
                                     </div>
                                 ))
                             }
