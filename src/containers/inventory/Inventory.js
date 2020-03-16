@@ -15,6 +15,7 @@ import MrpWiseDetails from '../../components/Forms/inventory-sub-forms/MRP-wise-
 import FreeQuantityVouchers from '../../components/Forms/inventory-sub-forms/enable-free-quantity-vouchers/FreeQuantityVouchers';
 import MultipleItemAliases from '../../components/Forms/inventory-sub-forms/maintain-multiple-item-aliases/MultipleItemAliases';
 import JobWork from '../../components/Forms/inventory-sub-forms/enable-job-work/JobWork';
+import BatchWiseDetails from '../../components/Forms/inventory-sub-forms/batch-wise-details/BatchWiseDetails';
 
 const Inventory = (props) => {
     const formValue = {
@@ -32,7 +33,7 @@ const Inventory = (props) => {
     let childDataInfoFormSeven = null;
     let childDataInfoFormEight = null;
 
-
+    let childDataInfoFormTen = null;
     let childDataInfoFormEleven = null;
     let childDataInfoFormTwelve = null;
 
@@ -174,7 +175,9 @@ const Inventory = (props) => {
         },
         {
             title: 'Batch-wise Details',
-            value: 'Batch-wise Details'
+            value: 'Batch-wise Details',
+            id: 'batchWiseDetails',
+            button: 'Configure'
         },
         {
             title: 'Serial No.-wise Details',
@@ -362,6 +365,14 @@ const Inventory = (props) => {
                 />
                 break;
 
+                case "batchWiseDetails":
+                element = <BatchWiseDetails 
+                    submittedData={(childData) => (
+                        childDataInfoFormTen = childData
+                    )}
+                />
+                break;
+
                 case "mrpWiseDetails":
                 element = <MrpWiseDetails 
                     submittedData={(childData) => (
@@ -407,7 +418,7 @@ const Inventory = (props) => {
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
                     console.log(data, childDataInfoFormOne, childDataInfoFormTwo, childDataInfoFormThree, childDataInfoFormFour, childDataInfoFormFive,
-                        childDataInfoFormSix, childDataInfoFormSeven, childDataInfoFormEight, childDataInfoFormEleven, childDataInfoFormTwelve, childDataInfoFormForteen)                    
+                        childDataInfoFormSix, childDataInfoFormSeven, childDataInfoFormEight, childDataInfoFormTen, childDataInfoFormEleven, childDataInfoFormTwelve, childDataInfoFormForteen)                    
                     setSubmitting(false);
                 }}
             >

@@ -1,0 +1,14 @@
+.radioBtnsOne {
+    border: 1px solid #dee2e6;
+    padding: 3%;
+}
+.inputHeadingOne {
+    position: absolute;
+    top: 27px;
+    background-color: white;
+}
+.inputHeadingTwo {
+    position: relative;
+    bottom: 28px;
+    background-color: white;
+}
