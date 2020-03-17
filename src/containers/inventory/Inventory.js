@@ -16,6 +16,7 @@ import FreeQuantityVouchers from '../../components/Forms/inventory-sub-forms/ena
 import MultipleItemAliases from '../../components/Forms/inventory-sub-forms/maintain-multiple-item-aliases/MultipleItemAliases';
 import JobWork from '../../components/Forms/inventory-sub-forms/enable-job-work/JobWork';
 import BatchWiseDetails from '../../components/Forms/inventory-sub-forms/batch-wise-details/BatchWiseDetails';
+import ParameterizedDetails from '../../components/Forms/inventory-sub-forms/parameterized-details/ParameterizedDetails';
 
 const Inventory = (props) => {
     const formValue = {
@@ -32,7 +33,7 @@ const Inventory = (props) => {
     let childDataInfoFormSix = null;
     let childDataInfoFormSeven = null;
     let childDataInfoFormEight = null;
-
+    let childDataInfoFormNine = null;
     let childDataInfoFormTen = null;
     let childDataInfoFormEleven = null;
     let childDataInfoFormTwelve = null;
@@ -171,7 +172,9 @@ const Inventory = (props) => {
         },
         {
             title: 'Parameterized Details',
-            value: 'Parameterized Details'
+            value: 'Parameterized Details',
+            id: 'parameterizedDetails',
+            button: 'Configure'
         },
         {
             title: 'Batch-wise Details',
@@ -360,7 +363,15 @@ const Inventory = (props) => {
                 case "enableJobWork":
                 element = <JobWork 
                     submittedData={(childData) => (
-                        childDataInfoFormEight= childData
+                        childDataInfoFormEight = childData
+                    )}
+                />
+                break;
+
+                case "parameterizedDetails":
+                element = <ParameterizedDetails 
+                    submittedData={(childData) => (
+                        childDataInfoFormNine = childData
                     )}
                 />
                 break;
@@ -418,7 +429,7 @@ const Inventory = (props) => {
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
                     console.log(data, childDataInfoFormOne, childDataInfoFormTwo, childDataInfoFormThree, childDataInfoFormFour, childDataInfoFormFive,
-                        childDataInfoFormSix, childDataInfoFormSeven, childDataInfoFormEight, childDataInfoFormTen, childDataInfoFormEleven, childDataInfoFormTwelve, childDataInfoFormForteen)                    
+                        childDataInfoFormSix, childDataInfoFormSeven, childDataInfoFormEight, childDataInfoFormNine, childDataInfoFormTen, childDataInfoFormEleven, childDataInfoFormTwelve, childDataInfoFormForteen)                    
                     setSubmitting(false);
                 }}
             >

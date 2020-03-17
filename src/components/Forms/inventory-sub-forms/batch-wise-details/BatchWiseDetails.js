@@ -13,6 +13,7 @@ const BatchWiseDetails = (props) => {
         {
             key: 'Full Date Format',
             value: 'Full Date Format',
+            heading: 'Batch-wise Detail Options'
         },
         {
             key: 'Month-Year Format',
@@ -132,6 +133,7 @@ const BatchWiseDetails = (props) => {
                                 {
                                     radioBtnFormTen_One.map((val, index) => (
                                         <div className="row mb-2 mt-2" key={"radioInputKey" + index}>
+                                            <h5 className="modalHeading">{val.heading}</h5>
                                             <div className="col-6 col-md-6">
                                                 {val.key}
                                             </div>
@@ -225,7 +227,7 @@ const BatchWiseDetails = (props) => {
                                         </div>
                                     ))
                                 }
-                                
+
                                 <div className="mt-4">
                                     {
                                         checkBoxDataFormTen.map((val, index) => (

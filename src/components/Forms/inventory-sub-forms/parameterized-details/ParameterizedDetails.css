@@ -1,0 +1,9 @@
+.radioBtnTextAlign {
+    display: flex;
+    align-items: center;
+}
+.headingText {
+    position: relative;
+    bottom: 27px;
+    background-color: white;
+}
