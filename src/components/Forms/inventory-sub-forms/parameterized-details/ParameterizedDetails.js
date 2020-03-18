@@ -9,14 +9,15 @@ const ParameterizedDetails = (props) => {
 
     }
 
-    const dropDownFormNine = [
+    const dropDownFormNine_One = [
         {
             label: 'Parameter Stock Adjustment Through Dropdown List',
             name: 'parameterStockAdjustment',
             values: [
                 "Y",
                 "N",
-            ]
+            ],
+            heading: 'Parameterised Stock Detail Options'
         },
         {
             label: 'Pick Parameters Through Dropdown List (Qty In.)',
@@ -38,7 +39,7 @@ const ParameterizedDetails = (props) => {
 
     ]
 
-    const checkBoxDataFormNine = [
+    const checkBoxDataFormNine_One = [
         {
             title: 'Input Transaction Price & Value for each Parameter combination',
             value: 'Input Transaction Price & Value for each Parameter combination',
@@ -81,6 +82,61 @@ const ParameterizedDetails = (props) => {
         },
     ]
 
+    const radioBtnFormNine_Two = [
+        {
+            key: 'Continuous Number',
+            value: 'Continuous Number',
+            heading: ''
+        },
+        {
+            key: 'Item Parameter Values',
+            value: 'Item Parameter Values',
+        },
+    ]
+
+
+    const checkBoxDataFormNine_Two = [
+        {
+            title: 'Unique BCN Generation of Each City',
+            value: 'Unique BCN Generation of Each City',
+        },
+    ]
+
+    const dropDownFormNine_Two = [
+        {
+            label: 'Allow Duplicate of BCN',
+            name: 'allowDuplicateOfBcn',
+            values: [
+                "Y",
+                "N",
+            ]
+        },
+        {
+            label: 'Deletion of BCN Source with Adjustments',
+            name: 'deletionOfBCN',
+            values: [
+                "Allow",
+                "Don't Allow",
+                "Allow with Warning",
+            ]
+        },
+    ]
+
+    const checkBoxDataFormNine_Three = [
+        {
+            title: 'Group Parameterized stock on the basis of Atl. Qty. Con. Factor',
+            value: 'Group Parameterized stock on the basis of Atl. Qty. Con. Factor',
+        },
+        {
+            title: 'Group Parameterized stock on the basis of Sales Price',
+            value: 'Group Parameterized stock on the basis of Sales Price',
+        },
+        {
+            title: 'Carry Negative Stock Parameters to Next F.Y',
+            value: 'Carry Negative Stock Parameters to Next F.Y',
+        },
+    ]
+
 
     return (
         <div className="container mt-4 mb-4">
@@ -98,8 +154,9 @@ const ParameterizedDetails = (props) => {
                     <Form>
                         <div>
                             {
-                                dropDownFormNine.map((val, index) => (
+                                dropDownFormNine_One.map((val, index) => (
                                     <div className="row mb-3" key={"inputDropdownValue" + index}>
+                                    <h5 className="modalHeading">{val.heading}</h5>
                                         <div className="col-6 col-md-6">
                                             {val.label}
                                         </div>
@@ -127,14 +184,14 @@ const ParameterizedDetails = (props) => {
 
                             <div className="mt-3">
                                 {
-                                    checkBoxDataFormNine.map((val, index) => (
+                                    checkBoxDataFormNine_One.map((val, index) => (
                                         <div key={"inputCheckboxKey" + index}>
                                             <FormControlLabel
                                                 label={val.title}
                                                 control={
                                                     <Field
                                                         type='checkbox'
-                                                        name="checkbox"
+                                                        name="checkbox_One"
                                                         value={val.value}
                                                         as={Checkbox} />
                                                 }
@@ -145,8 +202,8 @@ const ParameterizedDetails = (props) => {
                             </div>
 
                             <div className="radioBtnsOne mt-4">
-                            <span className="headingText">Barcode No. (BCN) Configuration</span>
-                            <div className="mb-4">Default BCN Generation Mode</div>
+                                <span className="headingText">Barcode No. (BCN) Configuration</span>
+                                <div className="mb-4">Default BCN Generation Mode</div>
                                 {
                                     radioBtnFormNine_One.map((val, index) => (
                                         <div className="row mb-2" key={"radioInputKey" + index}>
@@ -156,7 +213,7 @@ const ParameterizedDetails = (props) => {
                                             <div className="col-6 col-md-6">
                                                 <Field
                                                     type='radio'
-                                                    name='radioBtnsTwo'
+                                                    name='radioBtnsOne'
                                                     value={val.value}
                                                     as={Radio}
                                                 />
@@ -164,7 +221,95 @@ const ParameterizedDetails = (props) => {
                                         </div>
                                     ))
                                 }
+
+                                <div className="radioBtnsOne mt-4">
+                                    <span className="headingText">Automatic Mode Configuration</span>
+                                    <div className="mb-4">Specify BCN Generation Basis</div>
+                                    {
+                                        radioBtnFormNine_Two.map((val, index) => (
+                                            <div className="row mb-2" key={"radioInputKey" + index}>
+                                                <div className="col-6 col-md-6 radioBtnTextAlign">
+                                                    {val.key}
+                                                </div>
+                                                <div className="col-6 col-md-6">
+                                                    <Field
+                                                        type='radio'
+                                                        name='radioBtnsTwo'
+                                                        value={val.value}
+                                                        as={Radio}
+                                                    />
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
+
+                                    {
+                                        checkBoxDataFormNine_Two.map((val, index) => (
+                                            <div key={"inputCheckboxKey" + index}>
+                                                <FormControlLabel
+                                                    label={val.title}
+                                                    control={
+                                                        <Field
+                                                            type='checkbox'
+                                                            name="checkbox_Two"
+                                                            value={val.value}
+                                                            as={Checkbox} />
+                                                    }
+                                                />
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                                <div className="mt-4">
+                                    {
+                                        dropDownFormNine_Two.map((val, index) => (
+                                            <div className="row mb-3" key={"inputDropdownValue" + index}>
+                                                <div className="col-6 col-md-6">
+                                                    {val.label}
+                                                </div>
+
+                                                <div className="col-6 col-md-6">
+                                                    <FormControl>
+                                                        <select
+                                                            type='select'
+                                                            name={val.name}
+                                                            value={values.name}
+                                                            onChange={handleChange}
+                                                        >
+                                                            <option defaultValue>Select an Option</option>
+                                                            {
+                                                                val.values.map((cval, cindex) => (
+                                                                    <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                                ))
+                                                            }
+                                                        </select>
+                                                    </FormControl>
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+
+                                {
+                                    checkBoxDataFormNine_Three.map((val, index) => (
+                                        <div key={"inputCheckboxKey" + index}>
+                                            <FormControlLabel
+                                                label={val.title}
+                                                control={
+                                                    <Field
+                                                        type='checkbox'
+                                                        name="checkbox_Three"
+                                                        value={val.value}
+                                                        as={Checkbox} />
+                                                }
+                                            />
+                                        </div>
+                                    ))
+                                }
+
                             </div>
+
+
 
 
 
