@@ -308,11 +308,6 @@ const ParameterizedDetails = (props) => {
                                 }
 
                             </div>
-
-
-
-
-
                         </div>
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
