@@ -11,7 +11,8 @@ const SignatoryDetails = (props) => {
         {
             label: 'Name',
             name: 'yourName',
-            placeholder: 'Name...'
+            placeholder: 'Name...',
+            heading: `Authorised Signatory's Details`
         },
         {
             label: 'S/o, D/o, W/o',
@@ -39,10 +40,10 @@ const SignatoryDetails = (props) => {
             >
                 {({ isSubmitting }) => (
                     <Form>
-                    <div className="row">
                     {
                                 inputText.map((val, index) => (
-                                    <div className="col-6 col-md-6 mb-3" key={"inputTextKey" + index}>
+                                    <div className="mb-3" key={"inputTextKey" + index}>
+                                    <h5 className="modalHeading">{val.heading}</h5>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -53,7 +54,6 @@ const SignatoryDetails = (props) => {
                                     </div>
                                 ))
                             }
-                            </div>
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
                             <div className="mt-3 col-12 col-md-3 p-0">
