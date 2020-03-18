@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
-import { Checkbox, Button, FormControlLabel, FormControl } from '@material-ui/core';
+import { Checkbox, Button, FormControlLabel } from '@material-ui/core';
 
 const FreeQuantityVouchers = (props) => {
 

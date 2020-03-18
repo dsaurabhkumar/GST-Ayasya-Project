@@ -74,7 +74,6 @@ const ParameterizedDetails = (props) => {
         {
             key: 'Atomatic',
             value: 'Atomatic',
-            heading: ''
         },
         {
             key: 'Manual',
@@ -86,7 +85,6 @@ const ParameterizedDetails = (props) => {
         {
             key: 'Continuous Number',
             value: 'Continuous Number',
-            heading: ''
         },
         {
             key: 'Item Parameter Values',

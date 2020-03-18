@@ -20,3 +20,8 @@ code {
   position: absolute;
   top: -40px;
 }
+
+.inventoryForm {
+  border: 1px solid;
+  padding: 5%;
+}
