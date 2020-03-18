@@ -5,6 +5,9 @@ import { Checkbox, Button, FormControlLabel, FormControl, TextField } from '@mat
 const SignatoryDetails = (props) => {
 
     const formValue = {
+        yourName: '',
+        relation: '',
+        designation: '',
     }
 
     const inputText = [

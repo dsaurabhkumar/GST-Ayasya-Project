@@ -9,13 +9,7 @@ import SignatoryDetails from '../../components/Forms/gst-vat-sub-forms/signatory
 const GstVat = (props) => {
 
     const formValue = {
-        taxRate: '',
-        categoryOfContract: '',
-        cstNo: '',
-        lbtNo: '',
-        tin: '',
-        gstin: '',
-        gstPortalUserName: '',
+        
     }
 
     let childDataInfoFormOne = null;
