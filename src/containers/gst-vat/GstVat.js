@@ -9,6 +9,13 @@ import SignatoryDetails from '../../components/Forms/gst-vat-sub-forms/signatory
 const GstVat = (props) => {
 
     const formValue = {
+        taxRate: '',
+        categoryOfContract: '',
+        cstNo: '',
+        lbtNo: '',
+        tin: '',
+        gstin: '',
+        gstPortalUserName: '',
     }
 
     let childDataInfoFormOne = null;
@@ -251,7 +258,6 @@ const GstVat = (props) => {
                                                 type='select'
                                                 name={val.name}
                                                 value={values.name}
-                                                onChange={handleChange}
                                             >
                                                 <option defaultValue>Select an Option</option>
                                                 {
@@ -270,8 +276,9 @@ const GstVat = (props) => {
                                     <div className="mb-1 col-6 col-md-6" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
-                                            type='text'
+                                            type='input'
                                             name={val.name}
+                                            onChange={handleChange}
                                             placeholder={val.placeholder}
                                             as={TextField}
                                         />
@@ -286,8 +293,9 @@ const GstVat = (props) => {
                                         <div className="mb-1 mt-4 col-6 col-md-6" key={"inputTextField" + index}>
                                             {val.label}
                                             <Field
-                                                type='text'
+                                                type='input'
                                                 name={val.name}
+                                                onChange={handleChange}
                                                 placeholder={val.placeholder}
                                                 as={TextField}
                                             />
@@ -302,8 +310,9 @@ const GstVat = (props) => {
                                             <div className="mb-1 mt-3 col-12 col-md-12" key={"inputTextField" + index}>
                                                 {val.label}
                                                 <Field
-                                                    type='text'
+                                                    type='input'
                                                     name={val.name}
+                                                    onChange={handleChange}
                                                     placeholder={val.placeholder}
                                                     as={TextField}
                                                 />
@@ -323,7 +332,6 @@ const GstVat = (props) => {
                                                             type='select'
                                                             name={val.name}
                                                             value={values.name}
-                                                            onChange={handleChange}
                                                         >
                                                             <option defaultValue>Select an Option</option>
                                                             {
@@ -347,8 +355,9 @@ const GstVat = (props) => {
                                             <div className="mt-4 mb-4 col-12 col-md-12" key={"inputTextField" + index}>
                                                 {val.label}
                                                 <Field
-                                                    type='text'
+                                                    type='input'
                                                     name={val.name}
+                                                    onChange={handleChange}
                                                     placeholder={val.placeholder}
                                                     as={TextField}
                                                 />
@@ -368,7 +377,7 @@ const GstVat = (props) => {
                                                     type='select'
                                                     name={val.name}
                                                     value={values.name}
-                                                    onChange={handleChange}
+
                                                 >
                                                     <option defaultValue>Select an Option</option>
                                                     {
@@ -387,8 +396,9 @@ const GstVat = (props) => {
                                         <div className="mb-1 mt-3 col-12 col-md-12" key={"inputTextField" + index}>
                                             {val.label}
                                             <Field
-                                                type='text'
+                                                type='input'
                                                 name={val.name}
+                                                onChange={handleChange}
                                                 placeholder={val.placeholder}
                                                 as={TextField}
                                             />
@@ -407,7 +417,6 @@ const GstVat = (props) => {
                                                     type='select'
                                                     name={val.name}
                                                     value={values.name}
-                                                    onChange={handleChange}
                                                 >
                                                     <option defaultValue>Select an Option</option>
                                                     {
