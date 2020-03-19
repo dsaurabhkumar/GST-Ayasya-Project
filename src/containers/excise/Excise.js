@@ -242,7 +242,7 @@ const Excise = (props) => {
 
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
-                    console.log(data)
+                    console.log(data, childDataInfoFormOne)
                     setSubmitting(false);
                 }}
             >
