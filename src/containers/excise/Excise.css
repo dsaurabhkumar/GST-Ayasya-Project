@@ -1,0 +1,15 @@
+.exciseRadioBtns {
+    width: 100%;
+    border: 1px solid #000000;
+    padding: 3%;
+    margin: 0 15px 0 15px;
+}
+.exciseHeadingText {
+    position: relative;
+    top: 10px;
+    left: 25px;
+    background-color: #ffffff;
+}
+.radioBtnAlign {
+    padding: 0;
+}
