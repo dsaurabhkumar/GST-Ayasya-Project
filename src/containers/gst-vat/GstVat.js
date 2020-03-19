@@ -214,7 +214,6 @@ const GstVat = (props) => {
             >
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
-
                         <div className="row">
                             <div className="col-12 col-md-12">
                                 {
