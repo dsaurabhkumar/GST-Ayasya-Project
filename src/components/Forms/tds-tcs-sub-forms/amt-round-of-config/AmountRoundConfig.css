@@ -1,0 +1,18 @@
+.amountHeadingValue {
+    position: absolute;
+    top: -105px;
+    right: 25%;
+}
+
+@media screen and (max-width: 767px) {
+    .amountHeadingValue {
+        position: absolute;
+        top: -110px;
+    }
+}
+
+.personDetails {
+    margin: 0;
+    border: 1px solid;
+    padding: 5%;
+}

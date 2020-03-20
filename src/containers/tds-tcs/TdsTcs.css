@@ -1,0 +1,10 @@
+.tdsTcsDetails {
+    width: 100%;
+    margin: 0;
+}
+.tdsTcsDetailsHeading {
+    position: relative;
+    top: 25px;
+    background-color: #ffffff;
+    left: 15px;
+}
