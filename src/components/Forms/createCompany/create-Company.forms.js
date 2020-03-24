@@ -13,6 +13,7 @@ const CreateCompanyForm = props => {
                 id="companyId"
                 onChange={props.changeHandler} readOnly />
         </div>
+
         <div className="form-group col-md-4">
             <label htmlFor="companyName">Company Name:</label>
             <input
@@ -23,7 +24,9 @@ const CreateCompanyForm = props => {
                 id="companyName"
                 placeholder="Enter your Company Name"
                 onChange={props.changeHandler} />
+                <div className="inputError">{props.formData.companyNameError}</div>
         </div>
+
         <div className="form-group col-md-4">
             <label htmlFor="companyEmailId">E-Mail Id:</label>
             <input
@@ -34,7 +37,9 @@ const CreateCompanyForm = props => {
                 id="companyEmailId"
                 placeholder="Enter your E-Mail Id"
                 onChange={props.changeHandler} />
+                <div className="inputError">{props.formData.companyEmailIdError}</div>
         </div>
+
         <div className="form-group col-md-4">
             <label htmlFor="companyContactNo">Contact No:</label>
             <input
@@ -45,7 +50,9 @@ const CreateCompanyForm = props => {
                 id="companyContactNo"
                 placeholder="Enter your Contact No."
                 onChange={props.changeHandler} />
+                <div className="inputError">{props.formData.companyContactNoError}</div>
         </div>
+
         <div className="form-group col-md-8">
             <label htmlFor="companyAddress">Company Address:</label>
             <input
@@ -56,7 +63,9 @@ const CreateCompanyForm = props => {
                 id="companyAddress"
                 placeholder="Enter your Address"
                 onChange={props.changeHandler} />
+                <div className="inputError">{props.formData.companyAddressError}</div>
         </div>
+
         <div className="form-group col-md-4">
             <label htmlFor="city">City:</label>
             <input
@@ -67,7 +76,9 @@ const CreateCompanyForm = props => {
                 id="city"
                 placeholder="Enter your City"
                 onChange={props.changeHandler} />
+                <div className="inputError">{props.formData.cityError}</div>
         </div>
+        
         <div className="form-group col-md-4">
             <label htmlFor="state">State:</label>
             <input
@@ -78,7 +89,9 @@ const CreateCompanyForm = props => {
                 id="state"
                 placeholder="Enter your State"
                 onChange={props.changeHandler} />
+                <div className="inputError">{props.formData.stateError}</div>
         </div>
+
         <div className="form-group col-md-4">
             <label htmlFor="pinCode">Pin Code:</label>
             <input
@@ -89,7 +102,9 @@ const CreateCompanyForm = props => {
                 id="pinCode"
                 placeholder="Enter your Pin Code"
                 onChange={props.changeHandler} />
+                <div className="inputError">{props.formData.pinCodeError}</div>
         </div>
+
         <div className="form-group col-md-4">
             <label htmlFor="country">Country:</label>
             <input
@@ -101,6 +116,7 @@ const CreateCompanyForm = props => {
                 placeholder="Enter your Country"
                 onChange={props.changeHandler} readOnly />
         </div>
+        
         <div className="form-group col-md-8">
             <label htmlFor="description">Description:</label>
             <input
@@ -111,6 +127,7 @@ const CreateCompanyForm = props => {
                 id="description"
                 placeholder="Enter your Description"
                 onChange={props.changeHandler} />
+                <div className="inputError">{props.formData.descriptionError}</div>
         </div>
     </React.Fragment>
 }

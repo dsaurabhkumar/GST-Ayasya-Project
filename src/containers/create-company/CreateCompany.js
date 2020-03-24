@@ -3,9 +3,13 @@ import './CreateCompany.css';
 import AdditionalInfo from '../additional-info/AdditionalInfo';
 import MasterConfigUser from '../master-config-user/MasterConfigUser';
 import CreateCompanyForm from '../../components/Forms/createCompany/create-Company.forms';
+import { Redirect } from 'react-router-dom';
+
+
+const onlyChar = /^[a-zA-Z]+$/;
 
 export default class CreateCompany extends React.Component {
-
+    
     constructor(props) {
         super(props)
         this.state = {
@@ -20,6 +24,14 @@ export default class CreateCompany extends React.Component {
                 pinCode: '',
                 country: 'India',
                 description: '',
+                companyNameError: '',
+                companyEmailIdError: '',
+                companyContactNoError: '',
+                companyAddressError: '',
+                cityError: '',
+                stateError: '',
+                pinCodeError: '',
+                descriptionError: '',
             },
             currencyInfo: {
                 currencySymbol: '',
@@ -40,11 +52,12 @@ export default class CreateCompany extends React.Component {
             masterConfigUSer: {
                 master_config_status: '',
                 options: [
-                    { key: 'Not Required' , value: 'Not Required' },
-                    { key: 'Copy Masters and Config' , value: 'Copy Masters and Config' },
-                    { key: 'Copy Masters, Config and Users' , value: 'Copy Masters, Config and Users' },
+                    { key: 'Not Required', value: 'Not Required' },
+                    { key: 'Copy Masters and Config', value: 'Copy Masters and Config' },
+                    { key: 'Copy Masters, Config and Users', value: 'Copy Masters, Config and Users' },
                 ]
-            }
+            },
+            redirectToLogin: false
         }
     }
 
@@ -56,14 +69,48 @@ export default class CreateCompany extends React.Component {
         this.setState({ [formName]: formState });
     }
 
+    validate = () => {
+        debugger
+        let companyNameError = "";
+        // let companyEmailIdError = '';
+        // let companyContactNoError = '';
+        // let companyAddressError = '';
+        // let cityError = '';
+        // let stateError = '';
+        // let pinCodeError = '';
+        // let descriptionError = '';
+
+        if ((onlyChar.test(this.state.createCompany.companyName))) {
+            debugger
+            companyNameError = 'Invalid Company Name';
+        }
+        if (companyNameError) {
+            debugger
+            this.setState({
+                companyNameError
+            });
+            console.log(companyNameError)
+            return false;
+        }
+        return true;
+    }
+
     handleFormSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state)
-        alert("Company has created successfully. In the next screen you will be prompted to create the user for the company");
-        window.location="/login"
+        const isValid = this.validate();
+        if (isValid) {
+            console.log(this.state);
+            this.setState({
+                redirectToLogin: true
+            })
+        }
     }
 
     render() {
+        const redirectToLogin = this.state.redirectToLogin;
+        if (redirectToLogin === true) {
+            return <Redirect to='/login' />
+        }
         return (
             <React.Fragment>
                 <div className="container mt-5 mb-5">

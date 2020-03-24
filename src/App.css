@@ -25,3 +25,8 @@ code {
   border: 1px solid;
   padding: 5%;
 }
+
+.inputError {
+  color: red;
+  font-size: 12px;
+}
