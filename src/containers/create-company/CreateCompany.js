@@ -9,7 +9,7 @@ import { Redirect } from 'react-router-dom';
 const onlyChar = /^[a-zA-Z]+$/;
 
 export default class CreateCompany extends React.Component {
-    
+
     constructor(props) {
         super(props)
         this.state = {
@@ -24,14 +24,16 @@ export default class CreateCompany extends React.Component {
                 pinCode: '',
                 country: 'India',
                 description: '',
-                companyNameError: '',
-                companyEmailIdError: '',
-                companyContactNoError: '',
-                companyAddressError: '',
-                cityError: '',
-                stateError: '',
-                pinCodeError: '',
-                descriptionError: '',
+                formErrors: {
+                    companyNameError: '',
+                    companyEmailIdError: '',
+                    companyContactNoError: '',
+                    companyAddressError: '',
+                    cityError: '',
+                    stateError: '',
+                    pinCodeError: '',
+                    descriptionError: '',
+                }
             },
             currencyInfo: {
                 currencySymbol: '',
@@ -70,26 +72,15 @@ export default class CreateCompany extends React.Component {
     }
 
     validate = () => {
-        debugger
         let companyNameError = "";
-        // let companyEmailIdError = '';
-        // let companyContactNoError = '';
-        // let companyAddressError = '';
-        // let cityError = '';
-        // let stateError = '';
-        // let pinCodeError = '';
-        // let descriptionError = '';
 
-        if ((onlyChar.test(this.state.createCompany.companyName))) {
-            debugger
+        if ((!onlyChar.test(this.state.createCompany.formErrors.companyNameError))) {
             companyNameError = 'Invalid Company Name';
         }
         if (companyNameError) {
-            debugger
             this.setState({
                 companyNameError
             });
-            console.log(companyNameError)
             return false;
         }
         return true;

@@ -24,7 +24,10 @@ const CreateCompanyForm = props => {
                 id="companyName"
                 placeholder="Enter your Company Name"
                 onChange={props.changeHandler} />
-                <div className="inputError">{props.formData.companyNameError}</div>
+                <div className="inputError">{props.formData.formErrors.companyNameError}</div>
+                {
+                    console.log(props.formData.formErrors.companyNameError)
+                }
         </div>
 
         <div className="form-group col-md-4">
@@ -116,7 +119,7 @@ const CreateCompanyForm = props => {
                 placeholder="Enter your Country"
                 onChange={props.changeHandler} readOnly />
         </div>
-        
+
         <div className="form-group col-md-8">
             <label htmlFor="description">Description:</label>
             <input
