@@ -74,7 +74,7 @@ export default class CreateCompany extends React.Component {
     validate = () => {
         let companyNameError = "";
 
-        if ((!onlyChar.test(this.state.createCompany.formErrors.companyNameError))) {
+        if ((onlyChar.test(this.state.createCompany.formErrors.companyNameError))) {
             companyNameError = 'Invalid Company Name';
         }
         if (companyNameError) {
