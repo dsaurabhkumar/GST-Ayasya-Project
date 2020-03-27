@@ -8,3 +8,6 @@
     background-color: #ffffff;
     left: 15px;
 }
+.inlineCheckbox{
+    display: flex;
+}

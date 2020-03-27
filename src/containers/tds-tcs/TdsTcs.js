@@ -171,9 +171,6 @@ const TdsTcs = (props) => {
                 "WEST BENGAL"
             ],
         },
-    ]
-
-    const dropDown_Three = [
         {
             label: `Enable Edu./SHE Cess on TDS`,
             name: 'enableEduSheCessOnTds',
@@ -183,6 +180,7 @@ const TdsTcs = (props) => {
             ],
         },
     ]
+
 
     const componentModalItem = (id) => {
         let element = null;
@@ -229,7 +227,7 @@ const TdsTcs = (props) => {
                     <Form className="inventoryForm">
                         
                     <div className="row">
-                            <div className="col-12 col-md-12">
+                            <div className="col-12 col-md-12 inlineCheckbox">
                                 {
                                     checkBoxData.map((val, index) => (
                                         <div key={"inputCheckboxKey" + index}>
@@ -267,7 +265,7 @@ const TdsTcs = (props) => {
                             <div className="row tdsTcsDetails mt-4">
                             {
                                 inputText_Two.map((val, index) => (
-                                    <div className="mb-1 mt-2 col-12 col-md-12" key={"inputTextField" + index}>
+                                    <div className="mb-1 mt-2 col-12 col-md-4" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -281,7 +279,7 @@ const TdsTcs = (props) => {
 
                             {
                                 dropDown_One.map((val, index) => (
-                                    <div className="mb-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
+                                    <div className="mb-3 col-12 col-md-4" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>
@@ -308,7 +306,7 @@ const TdsTcs = (props) => {
                             <div className="row tdsTcsDetails mt-4">
                             {
                                 inputText_Three.map((val, index) => (
-                                    <div className="mb-1 mt-2 col-12 col-md-12" key={"inputTextField" + index}>
+                                    <div className="mb-1 mt-2 col-12 col-md-4" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -319,9 +317,10 @@ const TdsTcs = (props) => {
                                     </div>
                                 ))
                             }
+                            
                             {
                                 dropDown_Two.map((val, index) => (
-                                    <div className="mb-3 mt-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
+                                    <div className="mb-3 mt-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>
@@ -345,30 +344,7 @@ const TdsTcs = (props) => {
                             }
                             </div>
 
-                            {
-                                dropDown_Three.map((val, index) => (
-                                    <div className="mb-3 mt-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
-                                        <div className="mb-2">
-                                            {val.label}
-                                        </div>
-                                        <FormControl>
-                                            <select
-                                                type='select'
-                                                name={val.name}
-                                                value={values.name}
-                                                onChange={handleChange}
-                                            >
-                                                <option defaultValue>Select an Option</option>
-                                                {
-                                                    val.values.map((cval, cindex) => (
-                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                    ))
-                                                }
-                                            </select>
-                                        </FormControl>
-                                    </div>
-                                ))
-                            }
+                        
 
                             </div>
 
