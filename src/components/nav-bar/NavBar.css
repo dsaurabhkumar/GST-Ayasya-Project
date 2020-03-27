@@ -17,8 +17,7 @@ header {
 }
 .dropdown-submenu {
     position: relative;
-}
-  
+} 
 .dropdown-submenu>a:after {
     content: "\f0da";
     float: right;
@@ -30,6 +29,12 @@ header {
     left: 100%;
     margin-top: 15px;
     margin-left: 0px;
+}
+a {
+    color: #000000;
+}
+a:hover {
+    text-decoration: none;
 }
 @media (min-width:576px) {
     .navbar-nav {
