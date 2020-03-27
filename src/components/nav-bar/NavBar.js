@@ -56,22 +56,22 @@ function NavBar() {
                                 <ul className="dropdown-menu">
 
                                     <li className="dropdown-item dropdown-submenu">
-                                        <a href="#" data-toggle="dropdown" className="dropdown-toggle">Masters</a>
+                                        <Link data-toggle="dropdown" className="dropdown-toggle" to=''>Masters</Link>
+                                        
                                         <ul className="dropdown-menu">
-
                                             <li className="dropdown-item dropdown-submenu ">
-                                                <Link href="#" data-toggle="dropdown" className="dropdown-toggle" to=''>Account</Link>
+                                                <Link data-toggle="dropdown" className="dropdown-toggle" to=''>Account</Link>
                                                 <ul className="dropdown-menu">
                                                     <li className="dropdown-item ">
-                                                        <a href="#" className="">Add</a>
+                                                        <a className="">Add</a>
                                                     </li>
                                                     <div className="dropdown-divider"></div>
                                                     <li className="dropdown-item ">
-                                                        <a href="#" className="">Modify</a>
+                                                        <a className="">Modify</a>
                                                     </li>
                                                     <div className="dropdown-divider"></div>
                                                     <li className="dropdown-item ">
-                                                        <a href="#" className="">List</a>
+                                                        <a className="">List</a>
                                                     </li>
                                                 </ul>
                                             </li>
