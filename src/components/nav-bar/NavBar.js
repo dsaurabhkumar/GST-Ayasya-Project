@@ -33,7 +33,6 @@ function NavBar() {
                             </a>
 
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li>
                                     <a className="dropdown-item dropdown-toggle" href="#">Masters</a>
                                     <ul className="dropdown-menu">
                                         <li>
@@ -440,7 +439,6 @@ function NavBar() {
 
                                     <li><a className="dropdown-item dropdown-toggle" href="#">Change Financial Year</a></li>
 
-                                </li>
                             </ul>
                         </li>
                         <li className="nav-item"><a className="nav-link">Transactions</a></li>
