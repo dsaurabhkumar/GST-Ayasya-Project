@@ -178,7 +178,7 @@ const ServiceTax = (props) => {
 
                                 {
                                     dropDown.map((val, index) => (
-                                        <div className="mb-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
+                                        <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                             <div className="mb-2">
                                                 {val.label}
                                             </div>
