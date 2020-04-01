@@ -309,7 +309,7 @@ const Excise = (props) => {
 
                                 {
                                     dropDown_One.map((val, index) => (
-                                        <div className="mb-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
+                                        <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                             <div className="mb-2">
                                                 {val.label}
                                             </div>
@@ -339,7 +339,7 @@ const Excise = (props) => {
 
                                 {
                                     dropDown_Two.map((val, index) => (
-                                        <div className="mb-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
+                                        <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                             <div className="mb-2">
                                                 {val.label}
                                             </div>
@@ -403,7 +403,7 @@ const Excise = (props) => {
 
                                 {
                                     dropDown_Three.map((val, index) => (
-                                        <div className="mb-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
+                                        <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                             <div className="mb-2">
                                                 {val.label}
                                             </div>

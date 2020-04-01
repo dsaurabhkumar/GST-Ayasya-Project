@@ -133,7 +133,7 @@ class RegionalSettings extends React.Component {
                                     this.state.inputFields.map((val, index) => {
                                         if(val.type === "text") {
                                             return (
-                                                <div className="form-group col-md-6" key={'inputFields_' + index}>
+                                                <div className="form-group col-md-4" key={'inputFields_' + index}>
                                                 <InputText 
                                                     name = {val.name}
                                                     placeholder={val.placeholder}
@@ -144,7 +144,7 @@ class RegionalSettings extends React.Component {
                                             )
                                         } else if (val.type === "dropdown") {
                                             return (
-                                                <div className="form-group col-md-6" key={'inputFields_' + index}>
+                                                <div className="form-group col-md-4" key={'inputFields_' + index}>
                                                 <Dropdown 
                                                     name={val.name}
                                                     label={val.label}
@@ -156,7 +156,7 @@ class RegionalSettings extends React.Component {
                                         }
                                         else if (val.type === "country-dropdown") {
                                             return (
-                                                <div className="form-group col-md-6" key={'inputFields_' + index}>
+                                                <div className="form-group col-md-4" key={'inputFields_' + index}>
                                                 <Dropdown 
                                                     name={val.name}
                                                     label={val.label}
@@ -168,7 +168,7 @@ class RegionalSettings extends React.Component {
                                         }
                                         else if (val.type === "state-dropdown") {
                                             return (
-                                                <div className="form-group col-md-6" key={'inputFields_' + index}>
+                                                <div className="form-group col-md-4" key={'inputFields_' + index}>
                                                 <Dropdown 
                                                     name={val.name}
                                                     label={val.label}
