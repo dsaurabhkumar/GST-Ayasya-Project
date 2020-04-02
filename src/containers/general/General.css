@@ -1,11 +1,16 @@
 .generalInputLabel {
-    display: flex;
+    display: block !important;
     align-items: center;
 }
 .generalForm {
     border: 1px solid;
     padding: 3%;
 }
+
+.generalButtonContainer{
+    width: 100%;
+}
+
 @media (max-width: 767px) {
     .generalForm {
         padding: 5%;
@@ -15,3 +20,5 @@
         top: -15px;
     }
 }
+
+

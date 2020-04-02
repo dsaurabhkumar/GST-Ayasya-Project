@@ -136,44 +136,54 @@ class General extends React.Component {
         return (
             <div className="container mt-4 mb-4">
                 <h2 className="text-center mb-5">General</h2>
-                <form className="generalForm" onSubmit={this.formSubmit}>
+                <form className="row generalForm" onSubmit={this.formSubmit}>
                     {
                         this.state.inputLabels.map((val, index) => {
                             if (val.type === "text") {
                                 return (
-                                    <div className="row form-group" key={'inputLabels_' + index}>
-                                        <div className="col-md-7 generalInputLabel">
+                                    <div className="col-12 col-md-4 generalInputLabel form-group" key={'inputLabels_' + index}>
+                                       
                                             {val.label}
-                                        </div>
-                                        <div className="col-md-5 inputFieldAlign">
                                             <InputText
                                                 name={val.name}
                                                 placeholder={val.placeholder}
                                                 handleChange={this.handleChange}
                                             />
-                                        </div>
+                                        
+                                        {/* <div className="col-md-5 inputFieldAlign">
+                                            <InputText
+                                                name={val.name}
+                                                placeholder={val.placeholder}
+                                                handleChange={this.handleChange}
+                                            />
+                                        </div> */}
                                     </div>
                                 )
                             }
                             else if (val.type === "dropdown") {
                                 return (
-                                    <div className="row form-group" key={'inputLabels_' + index}>
-                                        <div className="col-md-7 generalInputLabel">
+                                    <div className="generalInputLabel form-group" key={'inputLabels_' + index}>
+                                        {/* <div className="inputFieldAlign generalInputLabel"> */}
                                             {val.label}
-                                        </div>
-                                        <div className="col-md-5 inputFieldAlign">
                                             <Dropdown
                                                 values={val.values}
                                                 name={val.name}
                                                 handleChange={this.handleChange}
                                             />
-                                        </div>
+                                        {/* </div> */}
+                                        {/* <div className="col-md-5 inputFieldAlign">
+                                            <Dropdown
+                                                values={val.values}
+                                                name={val.name}
+                                                handleChange={this.handleChange}
+                                            />
+                                        </div> */}
                                     </div>
                                 )
                             }
                         })
                     }
-                    <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
+                    <div className="row btnContainer generalButtonContainer flex-sm-row-reverse mt-4 mb-3">
                         <div className="mt-3 col-12 col-md-3 p-0">
                             <button type="submit" className="btn btn-primary col-12">Save</button>
                         </div>
