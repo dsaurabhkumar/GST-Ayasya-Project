@@ -38,11 +38,11 @@ function NavBar() {
                                         <li>
                                             <a className="dropdown-item dropdown-toggle" href="#">Account</a>
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">Add</a></li>
+                                                <li><Link className="dropdown-item" to='/account-add'>Add</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">Modify</a></li>
+                                                <li><Link className="dropdown-item" to='/account-modify'>Modify</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">List</a></li>
+                                                <li><Link className="dropdown-item" to='/account-list'>List</Link></li>
                                             </ul>
                                         </li>
                                         <div className="dropdown-divider"></div>
