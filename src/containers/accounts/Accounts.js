@@ -253,7 +253,7 @@ class Accounts extends React.Component {
                     {
                         this.state.inputLabels.map((val, index) => {
                             if (val.type === "check-box") {
-                                return val.options.map((cval, cindex) => <div className="col-12 col-md-4 mb-4 accountCheckbox" key={'input_checkbox_' + cindex + "_" + cval.name + "_" + cindex}>
+                                return val.options.map((cval, cindex) => <div className="col-12 col-md-6 mb-4 accountCheckbox" key={'input_checkbox_' + cindex + "_" + cval.name + "_" + cindex}>
                                     
                                     <Checkbox
                                         name={val.label}
@@ -311,10 +311,10 @@ class Accounts extends React.Component {
                     }
 
                         <div className="row btnContainer generalButtonContainer flex-sm-row-reverse mt-4 mb-3 pr-3 pl-3">
-                        <div className="mt-3 col-12 col-md-3 p-0">
+                        <div className="mt-3 col-12 col-md-3 pr-3">
                             <button type="submit" className="btn btn-primary col-12">Save</button>
                         </div>
-                        <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
+                        <div className="mt-3 col-12 col-md-3 align-self-center quitBtn pl-3">
                             <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
                         </div>
                     </div>
