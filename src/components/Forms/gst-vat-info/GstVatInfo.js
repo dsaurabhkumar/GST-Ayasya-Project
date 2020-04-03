@@ -6,9 +6,8 @@ const GstVatInfo = props => {
         <div className="gstVat">
             <span>GST/VAT Information</span>
         </div>
-        <div className="gstVatInfo">
-            <div className="row">
-                <div className="form-group col-md-6">
+        <div className="row gstVatInfo">
+                <div className="form-group col-12 col-md-6">
                     <label htmlFor="enableGstVat">Enable GST/VAT:</label>
                     <input 
                         id="enableGstVat" 
@@ -19,7 +18,7 @@ const GstVatInfo = props => {
                         placeholder="Y/N" 
                         onChange={props.changeHandler} />
                 </div>
-                <div className="form-group col-md-6">
+                <div className="form-group col-12 col-md-6">
                     <label htmlFor="type">Type:</label>
                     <input 
                         id="type" 
@@ -30,8 +29,8 @@ const GstVatInfo = props => {
                         placeholder="GST/VAT" 
                         onChange={props.changeHandler} />
                 </div>
-            </div>
-            <div className="form-group">
+           
+            <div className="form-group col-12 col-md-6">
                 <label htmlFor="enableCess">Enable Cess:</label>
                 <input 
                     id="enableCess" 
@@ -42,7 +41,7 @@ const GstVatInfo = props => {
                     placeholder="Y/N" 
                     onChange={props.changeHandler} />
             </div>
-            <div className="form-group">
+            <div className="form-group col-12 col-md-6">
                 <label htmlFor="gstIn">GSTIN:</label>
                 <input 
                     id="gstIn" 
@@ -53,7 +52,7 @@ const GstVatInfo = props => {
                     placeholder="GSTIN NO." 
                     onChange={props.changeHandler} />
             </div>
-            <div className="form-group">
+            <div className="form-group col-12 col-md-6">
                 <label htmlFor="typeOfDealer">Type of Dealer:</label>
                 <input 
                     id="typeOfDealer" 
@@ -64,8 +63,8 @@ const GstVatInfo = props => {
                     placeholder="Regular/Temporary" 
                     onChange={props.changeHandler} />
             </div>
-            <div className="row">
-                <div className="form-group col-md-6">
+            
+                <div className="form-group col-12 col-md-6">
                     <label htmlFor="defaultTaxRate1">Default Tax Rate-1:</label>
                     <input 
                         id="defaultTaxRate1" 
@@ -76,7 +75,7 @@ const GstVatInfo = props => {
                         placeholder="0.00" 
                         onChange={props.changeHandler} />
                 </div>
-                <div className="form-group col-md-6">
+                <div className="form-group col-12 col-md-6">
                     <label htmlFor="defaultTaxRate2">Default Tax Rate-2:</label>
                     <input 
                         id="defaultTaxRate2" 
@@ -87,7 +86,7 @@ const GstVatInfo = props => {
                         placeholder="0.00" 
                         onChange={props.changeHandler} />
                 </div>
-            </div>
+           
         </div>
     </React.Fragment>
 }

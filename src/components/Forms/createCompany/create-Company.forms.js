@@ -3,7 +3,7 @@ import React from 'react';
 
 const CreateCompanyForm = props => {
     return <React.Fragment>
-        <div className="form-group col-md-4">
+        <div className="form-group col-md-3">
             <label htmlFor="companyId">Company Id:</label>
             <input
                 type="text"
@@ -14,7 +14,7 @@ const CreateCompanyForm = props => {
                 onChange={props.changeHandler} readOnly />
         </div>
 
-        <div className="form-group col-md-4">
+        <div className="form-group col-md-3">
             <label htmlFor="companyName">Company Name:</label>
             <input
                 type="text"
@@ -30,7 +30,7 @@ const CreateCompanyForm = props => {
                 }
         </div>
 
-        <div className="form-group col-md-4">
+        <div className="form-group col-md-3">
             <label htmlFor="companyEmailId">E-Mail Id:</label>
             <input
                 type="text"
@@ -43,7 +43,7 @@ const CreateCompanyForm = props => {
                 <div className="inputError">{props.formData.companyEmailIdError}</div>
         </div>
 
-        <div className="form-group col-md-4">
+        <div className="form-group col-md-3">
             <label htmlFor="companyContactNo">Contact No:</label>
             <input
                 type="text"
@@ -56,7 +56,7 @@ const CreateCompanyForm = props => {
                 <div className="inputError">{props.formData.companyContactNoError}</div>
         </div>
 
-        <div className="form-group col-md-8">
+        <div className="form-group col-md-6">
             <label htmlFor="companyAddress">Company Address:</label>
             <input
                 type="text"
@@ -69,7 +69,7 @@ const CreateCompanyForm = props => {
                 <div className="inputError">{props.formData.companyAddressError}</div>
         </div>
 
-        <div className="form-group col-md-4">
+        <div className="form-group col-md-3">
             <label htmlFor="city">City:</label>
             <input
                 type="text"
@@ -82,7 +82,7 @@ const CreateCompanyForm = props => {
                 <div className="inputError">{props.formData.cityError}</div>
         </div>
         
-        <div className="form-group col-md-4">
+        <div className="form-group col-md-3">
             <label htmlFor="state">State:</label>
             <input
                 type="text"
@@ -95,7 +95,7 @@ const CreateCompanyForm = props => {
                 <div className="inputError">{props.formData.stateError}</div>
         </div>
 
-        <div className="form-group col-md-4">
+        <div className="form-group col-md-3">
             <label htmlFor="pinCode">Pin Code:</label>
             <input
                 type="text"
@@ -108,7 +108,7 @@ const CreateCompanyForm = props => {
                 <div className="inputError">{props.formData.pinCodeError}</div>
         </div>
 
-        <div className="form-group col-md-4">
+        <div className="form-group col-md-3">
             <label htmlFor="country">Country:</label>
             <input
                 type="text"
@@ -120,7 +120,7 @@ const CreateCompanyForm = props => {
                 onChange={props.changeHandler} readOnly />
         </div>
 
-        <div className="form-group col-md-8">
+        <div className="form-group col-md-6">
             <label htmlFor="description">Description:</label>
             <input
                 type="text"

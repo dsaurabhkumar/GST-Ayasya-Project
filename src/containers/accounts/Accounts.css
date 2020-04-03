@@ -6,10 +6,7 @@
     position: relative;
     top: -10px;
 }
-.textFieldAlignment {
-    position: relative;
-    top: -25px;
-}
+
 .accountsForm {
     border: 1px solid;
     padding: 5%;
@@ -35,16 +32,27 @@ input[type='checkbox'] {
 .radioLabel {
     padding-right: 15px;
 }
-.checkbox-alignment {
-    position: relative;
-    top: 12px;
+
+.accountDropdown{
+    display: flex;
 }
+.dropdownSelectValue{
+    bottom: 27px;
+    position: relative;
+    left: 10px;
+}
+.accountCheckbox{
+    display: flex;
+}
+   
 @media (max-width: 767px) {
     .accountsForm {
         padding: 5%;
     }
-    .textFieldAlignment {
+    .dropdownSelectValue {
         position: relative;
-        top: -15px;
+        bottom: 19px;
+        width: 100%;
+        left: 0;
     }
 }

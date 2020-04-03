@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Checkbox = ({ name, checked, handleCheck, value }) => (
-    <div className="form-group col-md-6">
+    <span className="form-group pr-2">
         <input
             type="checkbox"
             name={name}
@@ -9,6 +9,7 @@ const Checkbox = ({ name, checked, handleCheck, value }) => (
             checked={checked || ""}
             onChange={handleCheck}
         />
-    </div>
+        
+    </span>
 );
 export default Checkbox

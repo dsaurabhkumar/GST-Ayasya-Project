@@ -19,7 +19,7 @@ class ModalComponent extends React.Component {
 
     render(){
         return(
-            <div>
+            <span>
                 <Button onClick={this.handleModal}>Configure</Button>
                 <Modal show={this.state.show} onHide={this.handleModal}>
                     <Modal.Header closeButton className="closeBtn"></Modal.Header>
@@ -30,7 +30,7 @@ class ModalComponent extends React.Component {
                         <Button onClick={this.handleModal}>Submit</Button>
                     </Modal.Footer> */}
                 </Modal>
-            </div>
+            </span>
         )
     }
 }

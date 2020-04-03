@@ -6,8 +6,8 @@ const CurrencyInfo = props => {
         <div className="currency">
             <span>Currency Information</span>
         </div>
-        <div className="currencyInfo">
-            <div className="form-group">
+        <div className="row currencyInfo">
+            <div className="form-group col-12 col-md-6">
                 <label htmlFor="currencySymbol">Currency Symbol:</label>
                 <input 
                     id="currencySymbol" 
@@ -18,7 +18,7 @@ const CurrencyInfo = props => {
                     placeholder="Rs., $ etc." 
                     onChange={props.changeHandler} />
             </div>
-            <div className="form-group">
+            <div className="form-group col-12 col-md-6">
                 <label htmlFor="currencyString">Currency String:</label>
                 <input 
                     id="currencyString" 
@@ -29,7 +29,7 @@ const CurrencyInfo = props => {
                     placeholder="Rupees, Dollar etc." 
                     onChange={props.changeHandler} />
             </div>
-            <div className="form-group">
+            <div className="form-group col-12 col-md-6">
                 <label htmlFor="currencySubString">Currency Sub-String:</label>
                 <input 
                     id="currencySubString" 
@@ -40,7 +40,7 @@ const CurrencyInfo = props => {
                     placeholder="Paisa, cent etc." 
                     onChange={props.changeHandler} />
             </div>
-            <div className="form-group">
+            <div className="form-group col-12 col-md-6">
                 <label htmlFor="currencyFont">Currency Font:</label>
                 <input 
                     type="text" 
@@ -50,7 +50,7 @@ const CurrencyInfo = props => {
                     id="currencyFont" 
                     onChange={props.changeHandler} />
             </div>
-            <div className="form-group">
+            <div className="form-group col-12 col-md-6">
                 <label htmlFor="currencyCharacter">Currency Character:</label>
                 <input 
                     type="text" 

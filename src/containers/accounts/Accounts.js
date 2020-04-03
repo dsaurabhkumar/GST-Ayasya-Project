@@ -248,47 +248,56 @@ class Accounts extends React.Component {
         return (
             <div className="container mt-4 mb-4">
                 <h2 className="text-center mt-4 mb-5">Accounts</h2>
-                <form className="accountsForm" onSubmit={this.formSubmit}>
+                <form className=" accountsForm" onSubmit={this.formSubmit}>
+                    <div className="row">
                     {
                         this.state.inputLabels.map((val, index) => {
                             if (val.type === "check-box") {
-                                return val.options.map((cval, cindex) => <div className="row form-group mb-0" key={'input_checkbox_' + cindex + "_" + cval.name + "_" + cindex}>
-                                    <div className="col-2 col-md-2 p-0">
-                                        <Checkbox
-                                            name={val.label}
-                                            value={cval.value}
-                                            checked={cval.checked}
-                                            handleCheck={(event) => this.handleCheck(index, cindex, cval.value, event.target.checked)}
-                                        />
-                                    </div>
-                                    <div className="col-6 col-md-6 p-0">
-                                        {cval.name}
-                                    </div>
+                                return val.options.map((cval, cindex) => <div className="col-12 col-md-4 mb-4 accountCheckbox" key={'input_checkbox_' + cindex + "_" + cval.name + "_" + cindex}>
+                                    
+                                    <Checkbox
+                                        name={val.label}
+                                        value={cval.value}
+                                        checked={cval.checked}
+                                        handleCheck={(event) => this.handleCheck(index, cindex, cval.value, event.target.checked)}
+                                    />
+
+                                        <span className="checkboxLabelAlignment p-0 pr-2">
+                                            {cval.name}
+                                       
+                                        </span>
+                                    
                                     {this.componentModalItem(cval.id)}
+                                    {/* <span className="p-0">
+                                        {cval.name}
+                                    </span> */}
+                                    
                                 </div>
+                               
                                 )
                             } else if (val.type === "drop-down") {
                                 return (
-                                    <div className="row form-group mb-2" key={'inputLabels_' + index}>
-                                        <div className="col-5 col-md-5 generalInputLabel">
+                                    <div className="col-12 col-md-6 form-group accountDropdown mb-2" key={'inputLabels_' + index}>
+                                        <div className="">
                                             {val.label}
                                         </div>
-                                        <div className="col-7 col-md-7 fieldAlignment">
+                                        <div className="dropdownSelectValue" >
                                             <Dropdown
                                                 values={val.values}
                                                 name={val.name}
                                                 handleChange={this.handleChange}
                                             />
+                                     
                                         </div>
                                     </div>
                                 )
                             } else if (val.type === "text") {
                                 return (
-                                    <div className="row form-group mb-2 mt-2" key={'inputLabels_' + index}>
-                                        <div className="col-8 col-md-7">
+                                    <div className="col-12 col-md-6 accountDropdown form-group mb-4 mt-2" key={'inputLabels_' + index}>
+                                        <div className="">
                                             {val.label}
                                         </div>
-                                        <div className="col-4 col-md-5 textFieldAlignment">
+                                        <div className="dropdownSelectValue">
                                             <InputText
                                                 name={val.name}
                                                 placeholder={val.placeholder}
@@ -301,7 +310,7 @@ class Accounts extends React.Component {
                         })
                     }
 
-                    <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
+                        <div className="row btnContainer generalButtonContainer flex-sm-row-reverse mt-4 mb-3 pr-3 pl-3">
                         <div className="mt-3 col-12 col-md-3 p-0">
                             <button type="submit" className="btn btn-primary col-12">Save</button>
                         </div>
@@ -309,8 +318,10 @@ class Accounts extends React.Component {
                             <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
                         </div>
                     </div>
+                    </div>
                 </form>
             </div>
+           
         )
     }
 }
