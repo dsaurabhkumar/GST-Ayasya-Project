@@ -44,7 +44,10 @@ input[type='checkbox'] {
 .accountCheckbox{
     display: flex;
 }
-   
+.accountButtonFloatLeft{
+    display: inline-block;
+    float: left;
+}   
 @media (max-width: 767px) {
     .accountsForm {
         padding: 5%;

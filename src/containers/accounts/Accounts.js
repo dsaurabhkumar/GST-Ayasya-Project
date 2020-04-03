@@ -310,11 +310,11 @@ class Accounts extends React.Component {
                         })
                     }
 
-                        <div className="row btnContainer generalButtonContainer flex-sm-row-reverse mt-4 mb-3 pr-3 pl-3">
-                        <div className="mt-3 col-12 col-md-3 pr-3">
+                        <div className="btnContainer generalButtonContainer flex-sm-row-reverse mt-4 mb-3 ">
+                            <div className="accountButtonFloatLeft mt-3 col-12 col-md-3 pr-3 pl-3">
                             <button type="submit" className="btn btn-primary col-12">Save</button>
                         </div>
-                        <div className="mt-3 col-12 col-md-3 align-self-center quitBtn pl-3">
+                            <div className="accountButtonFloatLeft mt-3 col-12 col-md-3 align-self-center quitBtn pl-3 pr-3">
                             <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
                         </div>
                     </div>
