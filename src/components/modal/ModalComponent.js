@@ -23,9 +23,11 @@ class ModalComponent extends React.Component {
                 <Button onClick={this.handleModal}>Configure</Button>
                 <Modal show={this.state.show} onHide={this.handleModal}>
                     <Modal.Header closeButton className="closeBtn"></Modal.Header>
+                    
                     <Modal.Body>
                         {this.props.children}
                     </Modal.Body>
+                   
                     {/* <Modal.Footer>
                         <Button onClick={this.handleModal}>Submit</Button>
                     </Modal.Footer> */}

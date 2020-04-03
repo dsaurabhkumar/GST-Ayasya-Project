@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Checkbox = ({ name, checked, handleCheck, value }) => (
-    <span className="form-group pr-2">
+    <span className="form-group pr-2 check-box-alignment">
         <input
             type="checkbox"
             name={name}

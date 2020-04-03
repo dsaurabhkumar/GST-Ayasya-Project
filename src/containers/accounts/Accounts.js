@@ -262,10 +262,10 @@ class Accounts extends React.Component {
                                         handleCheck={(event) => this.handleCheck(index, cindex, cval.value, event.target.checked)}
                                     />
 
-                                        <span className="checkboxLabelAlignment p-0 pr-2">
+                                    <div className="divWidth checkboxLabelAlignment p-0 pr-2">
                                             {cval.name}
                                        
-                                        </span>
+                                        </div>
                                     
                                     {this.componentModalItem(cval.id)}
                                     {/* <span className="p-0">
@@ -281,7 +281,7 @@ class Accounts extends React.Component {
                                         <div className="">
                                             {val.label}
                                         </div>
-                                        <div className="dropdownSelectValue" >
+                                        <div className="dropdownSelectValue divWidth" >
                                             <Dropdown
                                                 values={val.values}
                                                 name={val.name}
@@ -297,7 +297,7 @@ class Accounts extends React.Component {
                                         <div className="">
                                             {val.label}
                                         </div>
-                                        <div className="dropdownSelectValue">
+                                        <div className="inputTextValue">
                                             <InputText
                                                 name={val.name}
                                                 placeholder={val.placeholder}
@@ -310,11 +310,11 @@ class Accounts extends React.Component {
                         })
                     }
 
-                        <div className="btnContainer generalButtonContainer flex-sm-row-reverse mt-4 mb-3 ">
-                            <div className="accountButtonFloatLeft mt-3 col-12 col-md-3 pr-3 pl-3">
+                        <div className="row btnContainer generalButtonContainer flex-sm-row-reverse mt-4 mb-3">
+                            <div className="mt-3 col-12 col-md-3 pr-3 pl-3">
                             <button type="submit" className="btn btn-primary col-12">Save</button>
                         </div>
-                            <div className="accountButtonFloatLeft mt-3 col-12 col-md-3 align-self-center quitBtn pl-3 pr-3">
+                            <div className="mt-3 col-12 col-md-3 align-self-center quitBtn pl-3 pr-3">
                             <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
                         </div>
                     </div>

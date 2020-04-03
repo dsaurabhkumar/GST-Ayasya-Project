@@ -39,7 +39,7 @@ input[type='checkbox'] {
 .dropdownSelectValue{
     bottom: 27px;
     position: relative;
-    left: 10px;
+    
 }
 .accountCheckbox{
     display: flex;
@@ -48,6 +48,10 @@ input[type='checkbox'] {
     display: inline-block;
     float: left;
 }   
+.inputTextValue{
+     bottom: 27px;
+    position: relative;
+}
 @media (max-width: 767px) {
     .accountsForm {
         padding: 5%;
