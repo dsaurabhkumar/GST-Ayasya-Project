@@ -50,11 +50,11 @@ function NavBar() {
                                         <li>
                                             <a className="dropdown-item dropdown-toggle" href="#">Account Group</a>
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">Add</a></li>
+                                                <li><Link className="dropdown-item" to='/account-group-add'>Add</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">Modify</a></li>
+                                                <li><Link className="dropdown-item" to='/account-group-modify'>Modify</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">List</a></li>
+                                                <li><Link className="dropdown-item" to='/account-group-list'>List</Link></li>
                                             </ul>
                                         </li>
                                         <div className="dropdown-divider"></div>

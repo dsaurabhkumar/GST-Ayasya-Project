@@ -15,7 +15,11 @@ import GstVat from '../containers/gst-vat/GstVat';
 import Excise from '../containers/excise/Excise';
 import ServiceTax from '../containers/service-tax/ServiceTax';
 import TdsTcs from '../containers/tds-tcs/TdsTcs';
-import TradeSpecific from '../containers/trade-specific-configuration/TradeSpecific';
+import AccountAdd from '../containers/masters-module/masters-account/account-add/AccountAdd';
+import AccountModify from '../containers/masters-module/masters-account/account-modify/AccountModify';
+import AccountList from '../containers/masters-module/masters-account/account-list/AccountList';
+import AccountGroupAdd from '../containers/masters-module/masters-account-group/account-group-add/AccountGroupAdd';
+import AccountGroupList from '../containers/masters-module/masters-account-group/account-group-list/AccountGroupList';
 
 const Routes = () => (
         <Switch>
@@ -60,8 +64,23 @@ const Routes = () => (
             <Route path="/tds-tcs">
                 <TdsTcs />
             </Route>
-            <Route path="/trade-specific-configuration">
-                <TradeSpecific />
+            <Route path="/account-add">
+                <AccountAdd />
+            </Route>
+            <Route path="/account-modify">
+                <AccountModify />
+            </Route>
+            <Route path="/account-list">
+                <AccountList />
+            </Route>
+            <Route path="/account-group-add">
+                <AccountGroupAdd />
+            </Route>
+            <Route path="/account-group-modify">
+                <AccountModify />
+            </Route>
+            <Route path="/account-group-list">
+                <AccountGroupList />
             </Route>
             <Route component={PageNotFound}></Route>
         </Switch>
