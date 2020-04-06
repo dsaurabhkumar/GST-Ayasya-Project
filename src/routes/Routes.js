@@ -20,6 +20,15 @@ import AccountModify from '../containers/masters-module/masters-account/account-
 import AccountList from '../containers/masters-module/masters-account/account-list/AccountList';
 import AccountGroupAdd from '../containers/masters-module/masters-account-group/account-group-add/AccountGroupAdd';
 import AccountGroupList from '../containers/masters-module/masters-account-group/account-group-list/AccountGroupList';
+import StdNarrationAdd from '../containers/masters-module/masters-std-narration/std-narration-add/StdNarrationAdd';
+import StdNarrationModify from '../containers/masters-module/masters-std-narration/std-narration-modify/StdNarrationModify';
+import StdNarrationList from '../containers/masters-module/masters-std-narration/std-narration-list/StdNarrationList';
+import ItemAdd from '../containers/masters-module/masters-item/item-add/ItemAdd';
+import ItemModify from '../containers/masters-module/masters-item/item-modify/ItemModify';
+import ItemList from '../containers/masters-module/masters-item/item-list/ItemList';
+import ItemGroupAdd from '../containers/masters-module/masters-item-group/item-group-add/ItemGroupAdd';
+import ItemGroupModify from '../containers/masters-module/masters-item-group/item-group-modify/ItemGroupModify';
+import ItemGroupList from '../containers/masters-module/masters-item-group/item-group-list/ItemGroupList';
 
 const Routes = () => (
         <Switch>
@@ -81,6 +90,33 @@ const Routes = () => (
             </Route>
             <Route path="/account-group-list">
                 <AccountGroupList />
+            </Route>
+            <Route path="/std-narration-add">
+                <StdNarrationAdd />
+            </Route>
+            <Route path="/std-narration-modify">
+                <StdNarrationModify />
+            </Route>
+            <Route path="/std-narration-list">
+                <StdNarrationList />
+            </Route>
+            <Route path="/item-add">
+                <ItemAdd />
+            </Route>
+            <Route path="/item-modify">
+                <ItemModify />
+            </Route>
+            <Route path="/item-list">
+                <ItemList />
+            </Route>
+            <Route path="/item-group-add">
+                <ItemGroupAdd />
+            </Route>
+            <Route path="/item-group-modify">
+                <ItemGroupModify />
+            </Route>
+            <Route path="/item-group-list">
+                <ItemGroupList />
             </Route>
             <Route component={PageNotFound}></Route>
         </Switch>
