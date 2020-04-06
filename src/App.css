@@ -30,3 +30,7 @@ code {
   color: red;
   font-size: 12px;
 }
+
+.fullDivWidth {
+  width: 100%;
+}
