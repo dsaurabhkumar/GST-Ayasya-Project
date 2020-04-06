@@ -15,7 +15,20 @@ import GstVat from '../containers/gst-vat/GstVat';
 import Excise from '../containers/excise/Excise';
 import ServiceTax from '../containers/service-tax/ServiceTax';
 import TdsTcs from '../containers/tds-tcs/TdsTcs';
-import TradeSpecific from '../containers/trade-specific-configuration/TradeSpecific';
+import AccountAdd from '../containers/masters-module/masters-account/account-add/AccountAdd';
+import AccountModify from '../containers/masters-module/masters-account/account-modify/AccountModify';
+import AccountList from '../containers/masters-module/masters-account/account-list/AccountList';
+import AccountGroupAdd from '../containers/masters-module/masters-account-group/account-group-add/AccountGroupAdd';
+import AccountGroupList from '../containers/masters-module/masters-account-group/account-group-list/AccountGroupList';
+import StdNarrationAdd from '../containers/masters-module/masters-std-narration/std-narration-add/StdNarrationAdd';
+import StdNarrationModify from '../containers/masters-module/masters-std-narration/std-narration-modify/StdNarrationModify';
+import StdNarrationList from '../containers/masters-module/masters-std-narration/std-narration-list/StdNarrationList';
+import ItemAdd from '../containers/masters-module/masters-item/item-add/ItemAdd';
+import ItemModify from '../containers/masters-module/masters-item/item-modify/ItemModify';
+import ItemList from '../containers/masters-module/masters-item/item-list/ItemList';
+import ItemGroupAdd from '../containers/masters-module/masters-item-group/item-group-add/ItemGroupAdd';
+import ItemGroupModify from '../containers/masters-module/masters-item-group/item-group-modify/ItemGroupModify';
+import ItemGroupList from '../containers/masters-module/masters-item-group/item-group-list/ItemGroupList';
 
 const Routes = () => (
         <Switch>
@@ -60,8 +73,50 @@ const Routes = () => (
             <Route path="/tds-tcs">
                 <TdsTcs />
             </Route>
-            <Route path="/trade-specific-configuration">
-                <TradeSpecific />
+            <Route path="/account-add">
+                <AccountAdd />
+            </Route>
+            <Route path="/account-modify">
+                <AccountModify />
+            </Route>
+            <Route path="/account-list">
+                <AccountList />
+            </Route>
+            <Route path="/account-group-add">
+                <AccountGroupAdd />
+            </Route>
+            <Route path="/account-group-modify">
+                <AccountModify />
+            </Route>
+            <Route path="/account-group-list">
+                <AccountGroupList />
+            </Route>
+            <Route path="/std-narration-add">
+                <StdNarrationAdd />
+            </Route>
+            <Route path="/std-narration-modify">
+                <StdNarrationModify />
+            </Route>
+            <Route path="/std-narration-list">
+                <StdNarrationList />
+            </Route>
+            <Route path="/item-add">
+                <ItemAdd />
+            </Route>
+            <Route path="/item-modify">
+                <ItemModify />
+            </Route>
+            <Route path="/item-list">
+                <ItemList />
+            </Route>
+            <Route path="/item-group-add">
+                <ItemGroupAdd />
+            </Route>
+            <Route path="/item-group-modify">
+                <ItemGroupModify />
+            </Route>
+            <Route path="/item-group-list">
+                <ItemGroupList />
             </Route>
             <Route component={PageNotFound}></Route>
         </Switch>
