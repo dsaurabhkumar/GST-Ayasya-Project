@@ -29,6 +29,7 @@ import ItemList from '../containers/masters-module/masters-item/item-list/ItemLi
 import ItemGroupAdd from '../containers/masters-module/masters-item-group/item-group-add/ItemGroupAdd';
 import ItemGroupModify from '../containers/masters-module/masters-item-group/item-group-modify/ItemGroupModify';
 import ItemGroupList from '../containers/masters-module/masters-item-group/item-group-list/ItemGroupList';
+import AccountGroupModify from '../containers/masters-module/masters-account-group/account-group-modify/AccountGroupModify';
 
 const Routes = () => (
         <Switch>
@@ -86,7 +87,7 @@ const Routes = () => (
                 <AccountGroupAdd />
             </Route>
             <Route path="/account-group-modify">
-                <AccountModify />
+                <AccountGroupModify />
             </Route>
             <Route path="/account-group-list">
                 <AccountGroupList />

@@ -43,3 +43,10 @@ code {
     border: 1px solid;
     padding: 0 3% 3% 3%;
 }
+
+@media (min-width: 767px) {
+  .containerWidth {
+    width: 570px;
+    margin: 0 auto;
+  }
+}

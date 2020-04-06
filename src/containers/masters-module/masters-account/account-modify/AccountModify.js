@@ -29,7 +29,7 @@ const AccountModify = (props) => {
     ]
 
     return(
-        <div className="container mt-4 mb-4">
+        <div className="container containerWidth mt-4 mb-4">
             <Formik
 
                 initialValues={formValue}
