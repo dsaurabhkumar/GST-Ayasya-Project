@@ -203,7 +203,7 @@ const ServiceTax = (props) => {
 
                                 {
                                     inputText_One.map((val, index) => (
-                                        <div className="mb-3 mt-2 col-6 col-md-6" key={"inputTextField" + index}>
+                                        <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
                                             {val.label}
                                             <Field
                                                 type='text'
@@ -217,7 +217,7 @@ const ServiceTax = (props) => {
 
                                 {
                                     inputText_Two.map((val, index) => (
-                                        <div className="mb-3 mt-2 col-6 col-md-6" key={"inputTextField" + index}>
+                                        <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
                                             {val.label}
                                             <Field
                                                 type='text'
