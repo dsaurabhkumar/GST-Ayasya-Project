@@ -162,7 +162,7 @@ class General extends React.Component {
                             }
                             else if (val.type === "dropdown") {
                                 return (
-                                    <div className="generalInputLabel form-group" key={'inputLabels_' + index}>
+                                    <div className="col-12 col-md-4 generalInputLabel form-group" key={'inputLabels_' + index}>
                                         {/* <div className="inputFieldAlign generalInputLabel"> */}
                                             {val.label}
                                             <Dropdown
