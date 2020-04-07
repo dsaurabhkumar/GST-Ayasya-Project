@@ -6,7 +6,7 @@ import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } fro
 const StdNarrationAdd = (props) => {
 
     const formValue = {
-
+        narration: ''
     }
 
     const stdNarrationAdd_dropdown = [
