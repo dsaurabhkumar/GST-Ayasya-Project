@@ -362,7 +362,7 @@ const AccountAdd = (props) => {
                                 <Button type="submit" className="col-12" disabled={isSubmitting}>Save</Button>
                             </div>
                             <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
-                                <Link to='/feature-options'><Button type="submit" className="col-12">Quit</Button></Link>
+                                <Link to='/'><Button type="submit" className="col-12">Quit</Button></Link>
                             </div>
                         </div>
                     </Form>
