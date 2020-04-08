@@ -185,7 +185,7 @@ const ItemAdd = (props) => {
         },
         {
             label: `Specify Purc Acc`,
-            name: 'specifySalesAcc',
+            name: 'specifyPurcAcc',
             values: [
                 "Not Reqd.",
                 "Specify in Vch."
