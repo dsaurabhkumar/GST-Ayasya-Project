@@ -98,11 +98,11 @@ function NavBar() {
                                         <li>
                                             <a className="dropdown-item dropdown-toggle" href="#">Material Centre</a>
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">Add</a></li>
+                                                <li><Link className="dropdown-item" to='/material-centre-add'>Add</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">Modify</a></li>
+                                                <li><Link className="dropdown-item" to='/material-centre-modify'>Modify</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">List</a></li>
+                                                <li><Link className="dropdown-item" to='/material-centre-list'>List</Link></li>
                                             </ul>
                                         </li>
                                         <div className="dropdown-divider"></div>
@@ -110,11 +110,11 @@ function NavBar() {
                                         <li>
                                             <a className="dropdown-item dropdown-toggle" href="#">Material Centre Group</a>
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">Add</a></li>
+                                                <li><Link className="dropdown-item" to='/material-centre-group-add'>Add</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">Modify</a></li>
+                                                <li><Link className="dropdown-item" to='/material-centre-group-modify'>Modify</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">List</a></li>
+                                                <li><Link className="dropdown-item" to='/material-centre-group-list'>List</Link></li>
                                             </ul>
                                         </li>
                                         <div className="dropdown-divider"></div>

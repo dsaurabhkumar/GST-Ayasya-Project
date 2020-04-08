@@ -30,6 +30,12 @@ import ItemGroupAdd from '../containers/masters-module/masters-item-group/item-g
 import ItemGroupModify from '../containers/masters-module/masters-item-group/item-group-modify/ItemGroupModify';
 import ItemGroupList from '../containers/masters-module/masters-item-group/item-group-list/ItemGroupList';
 import AccountGroupModify from '../containers/masters-module/masters-account-group/account-group-modify/AccountGroupModify';
+import MaterialCentreAdd from '../containers/masters-module/masters-material-centre/material-centre-add/MaterialCentreAdd';
+import MaterialCentreModify from '../containers/masters-module/masters-material-centre/material-centre-modify/MaterialCentreModify';
+import MaterialCentreList from '../containers/masters-module/masters-material-centre/material-centre-list/MaterialCentreList';
+import MaterialCentreGroupAdd from '../containers/masters-module/masters-material-centre-group/material-centre-group-add/MaterialCentreGroupAdd';
+import MaterialCentreGroupModify from '../containers/masters-module/masters-material-centre-group/material-centre-group-modify/MaterialCentreGroupModify';
+import MaterialCentreGroupList from '../containers/masters-module/masters-material-centre-group/material-centre-group-list/MaterialCentreGroupList';
 
 const Routes = () => (
         <Switch>
@@ -119,6 +125,25 @@ const Routes = () => (
             <Route path="/item-group-list">
                 <ItemGroupList />
             </Route>
+            <Route path="/material-centre-add">
+                <MaterialCentreAdd />
+            </Route>
+            <Route path="/material-centre-modify">
+                <MaterialCentreModify />
+            </Route>
+            <Route path="/material-centre-list">
+                <MaterialCentreList />
+            </Route>
+            <Route path="/material-centre-group-add">
+                <MaterialCentreGroupAdd />
+            </Route>
+            <Route path="/material-centre-group-modify">
+                <MaterialCentreGroupModify />
+            </Route>
+            <Route path="/material-centre-group-list">
+                <MaterialCentreGroupList />
+            </Route>
+
             <Route component={PageNotFound}></Route>
         </Switch>
 )
