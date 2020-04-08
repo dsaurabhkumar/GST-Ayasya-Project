@@ -11,7 +11,7 @@ const ItemModify = (props) => {
 
     const itemModify_dropdown = [
         {
-            name: 'selectGroupToModify',
+            name: 'selectItemToModify',
             values: [
                 "General",
             ]
