@@ -9,7 +9,7 @@ const MaterialCentreModify = (props) => {
 
     }
 
-    const itemGroupModify_dropdown = [
+    const materialCentreModify_dropdown = [
         {
             name: 'selectMaterialCentreToModify',
             values: [
@@ -38,7 +38,7 @@ const MaterialCentreModify = (props) => {
                         <div className="row">
 
                             {
-                                itemGroupModify_dropdown.map((val, index) => (
+                                materialCentreModify_dropdown.map((val, index) => (
                                     <div className="mb-4 mt-4 col-12 col-md-12" key={"inputDropdownValue" + index}>
                                         <FormControl>
                                             <select
