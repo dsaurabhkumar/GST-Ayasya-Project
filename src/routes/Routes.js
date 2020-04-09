@@ -36,6 +36,12 @@ import MaterialCentreList from '../containers/masters-module/masters-material-ce
 import MaterialCentreGroupAdd from '../containers/masters-module/masters-material-centre-group/material-centre-group-add/MaterialCentreGroupAdd';
 import MaterialCentreGroupModify from '../containers/masters-module/masters-material-centre-group/material-centre-group-modify/MaterialCentreGroupModify';
 import MaterialCentreGroupList from '../containers/masters-module/masters-material-centre-group/material-centre-group-list/MaterialCentreGroupList';
+import UnitAdd from '../containers/masters-module/masters-unit/unit-add/UnitAdd';
+import UnitModify from '../containers/masters-module/masters-unit/unit-modify/UnitModify';
+import UnitList from '../containers/masters-module/masters-unit/unit-list/UnitList';
+import UnitConversionAdd from '../containers/masters-module/masters-unit-conversion/unit-conversion-add/UnitConversionAdd';
+import UnitConversionModify from '../containers/masters-module/masters-unit-conversion/unit-conversion-modify/UnitConversionModify';
+import UnitConversionList from '../containers/masters-module/masters-unit-conversion/unit-conversion-list/UnitConversionList';
 
 const Routes = () => (
         <Switch>
@@ -142,6 +148,24 @@ const Routes = () => (
             </Route>
             <Route path="/material-centre-group-list">
                 <MaterialCentreGroupList />
+            </Route>
+            <Route path="/unit-add">
+                <UnitAdd />
+            </Route>
+            <Route path="/unit-modify">
+                <UnitModify />
+            </Route>
+            <Route path="/unit-list">
+                <UnitList />
+            </Route>
+            <Route path="/unit-conversion-add">
+                <UnitConversionAdd />
+            </Route>
+            <Route path="/unit-conversion-modify">
+                <UnitConversionModify />
+            </Route>
+            <Route path="/unit-conversion-list">
+                <UnitConversionList />
             </Route>
 
             <Route component={PageNotFound}></Route>
