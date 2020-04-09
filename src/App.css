@@ -24,6 +24,7 @@ code {
 .inventoryForm {
   border: 1px solid;
   padding: 5%;
+  margin: 0 auto;
 }
 
 .inputError {
