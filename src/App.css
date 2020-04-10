@@ -45,6 +45,11 @@ code {
     padding: 0 3% 3% 3%;
 }
 
+.notes {
+  font-size: 12px;
+  color: red;
+}
+
 @media (min-width: 767px) {
   .containerWidth {
     width: 570px;
