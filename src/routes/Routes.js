@@ -51,6 +51,9 @@ import BillOfMaterialList from '../containers/masters-module/masters-bill-of-mat
 import SaleTypeAdd from '../containers/masters-module/masters-sale-type/sale-type-add/SaleTypeAdd';
 import SaleTypeModify from '../containers/masters-module/masters-sale-type/sale-type-modify/SaleTypeModify';
 import SaleTypeList from '../containers/masters-module/masters-sale-type/sale-type-list/SaleTypeList';
+import PurchaseTypeAdd from '../containers/masters-module/masters-purchase-type/purchase-type-add/PurchaseTypeAdd';
+import PurchaseTypeModify from '../containers/masters-module/masters-purchase-type/purchase-type-modify/PurchaseTypeModify';
+import PurchaseTypeList from '../containers/masters-module/masters-purchase-type/purchase-type-list/PurchaseTypeList';
 
 const Routes = () => (
         <Switch>
@@ -202,6 +205,15 @@ const Routes = () => (
             </Route>
             <Route path="/sale-type-list">
                 <SaleTypeList />
+            </Route>
+            <Route path="/purchase-type-add">
+                <PurchaseTypeAdd />
+            </Route>
+            <Route path="/purchase-type-modify">
+                <PurchaseTypeModify />
+            </Route>
+            <Route path="/purchase-type-list">
+                <PurchaseTypeList />
             </Route>
 
             <Route component={PageNotFound}></Route>

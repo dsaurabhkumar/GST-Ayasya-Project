@@ -3,15 +3,15 @@ import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
 
-const SaleTypeModify = (props) => {
+const PurchaseTypeModify = (props) => {
 
     const formValue = {
 
     }
 
-    const saleType_modify_dropdown_one = [
+    const purchaseType_modify_dropdown_one = [
         {
-            name: 'selectSaleToModify',
+            name: 'selectPurchaseToModify',
             values: [
                 "I/GST-12",
                 "I/GST-18",
@@ -45,11 +45,11 @@ const SaleTypeModify = (props) => {
 
                 {({ values, isSubmitting, handleChange }) => (
                     <Form>
-                        <div className="text-center"><strong>Select Sale Type to Modify</strong></div>
+                        <div className="text-center"><strong>Select Purchase Type to Modify</strong></div>
                         <div className="row">
 
                             {
-                                saleType_modify_dropdown_one.map((val, index) => (
+                                purchaseType_modify_dropdown_one.map((val, index) => (
                                     <div className="mb-4 mt-4 col-12 col-md-12" key={"inputDropdownValue" + index}>
                                         <FormControl>
                                             <select
@@ -89,4 +89,4 @@ const SaleTypeModify = (props) => {
     )
 }
 
-export default SaleTypeModify
+export default PurchaseTypeModify

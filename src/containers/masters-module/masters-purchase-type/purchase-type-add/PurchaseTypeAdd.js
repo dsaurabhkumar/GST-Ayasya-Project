@@ -3,24 +3,24 @@ import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
 
-const SaleTypeAdd = (props) => {
+const PurchaseTypeAdd = (props) => {
 
     const formValue = {
-        saleType: '',
-        cgstRate:'',
+        purchaseType: '',
+        cgstRate: '',
         sgstRate: '',
         invoiceHeading: '',
         invoiceDescription: ''
     }
 
-    const sale_type_add_text_one = [
+    const purchase_type_add_text_one = [
         {
-            label: 'Sale Type',
-            name: 'saleType',
+            label: 'Purchase Type',
+            name: 'purchaseType',
         },
     ]
 
-    const sale_type_add_radio_one = [
+    const purchase_type_add_radio_one = [
         {
             key: 'Specify here (Single A/C)',
             value: 'specifyHereSingleAC',
@@ -35,7 +35,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_dropdown_one = [
+    const purchase_type_add_dropdown_one = [
         {
             name: 'specifySingleAC',
             values: [
@@ -50,7 +50,36 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_radio_two = [
+    const purchase_type_add_dropdown = [
+        {
+            label: 'Goods',
+            name: 'goods',
+            values: [
+                "Add. Cess Adjustable Agnst. Advance",
+                "Add. Cess on GST Input",
+                "Add. Cess on GST Output",
+                "Advertisement and Publicity",
+                "Bad Debts Written Off",
+                "Bank Charges",
+                "Books and Periodicals",
+            ]
+        },
+        {
+            label: 'Services',
+            name: 'services',
+            values: [
+                "Add. Cess Adjustable Agnst. Advance",
+                "Add. Cess on GST Input",
+                "Add. Cess on GST Output",
+                "Advertisement and Publicity",
+                "Bad Debts Written Off",
+                "Bank Charges",
+                "Books and Periodicals",
+            ]
+        },
+    ]
+
+    const purchase_type_add_radio_two = [
         {
             key: 'Taxable (Voucher-wise)',
             value: 'taxableVoucherWise',
@@ -68,10 +97,6 @@ const SaleTypeAdd = (props) => {
             value: 'nonGst',
         },
         {
-            key: 'Reverse Charge',
-            value: 'reverseCharge',
-        },
-        {
             key: 'Zero Rated',
             value: 'zeroRated',
         },
@@ -80,12 +105,16 @@ const SaleTypeAdd = (props) => {
             value: 'compositionDealer',
         },
         {
+            key: 'UnReg/RCM',
+            value: 'unregRcm',
+        },
+        {
             key: 'Nil Rated',
             value: 'nilRated',
         },
     ]
 
-    const sale_type_add_dropdown_two = [
+    const purchase_type_add_dropdown_two = [
         {
             label: 'Sales through E-Commerce Portal',
             name: 'salesThroughECommercePortal',
@@ -95,7 +124,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_dropdown_three = [
+    const purchase_type_add_dropdown_three = [
         {
             label: 'E-Commerce Portal Name',
             name: 'eCommercePortalName',
@@ -106,7 +135,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_dropdown_four = [
+    const purchase_type_add_dropdown_four = [
         {
             label: 'Tax Inclusive Item Price',
             name: 'taxInclusiveItemPrice',
@@ -130,7 +159,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_dropdown_five = [
+    const purchase_type_add_dropdown_five = [
         {
             label: 'Hide Item Tax Rate Window',
             name: 'hideItemTaxRateWindow',
@@ -140,7 +169,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_dropdown_six = [
+    const purchase_type_add_dropdown_six = [
         {
             label: 'Tax on MRP Mode',
             name: 'taxOnMrpMode',
@@ -151,7 +180,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_dropdown_seven = [
+    const purchase_type_add_dropdown_seven = [
         {
             label: 'Tax account (CGST)',
             name: 'taxAccountCGST',
@@ -182,7 +211,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_dropdown_eight = [
+    const purchase_type_add_dropdown_eight = [
         {
             label: 'Show/Print Deemed Tax',
             name: 'showPrintDeemedTax',
@@ -192,7 +221,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_radio_three = [
+    const purchase_type_add_radio_three = [
         {
             key: 'Local',
             value: 'local',
@@ -203,7 +232,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_radio_four = [
+    const purchase_type_add_radio_four = [
         {
             key: 'Stock Transfer',
             value: 'stockTransfer',
@@ -218,7 +247,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_radio_five = [
+    const purchase_type_add_radio_five = [
         {
             key: 'Export(Normal)',
             value: 'exportNormal',
@@ -229,7 +258,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_radio_six = [
+    const purchase_type_add_radio_six = [
         {
             key: 'Single Tax Rate',
             value: 'singleTaxRate',
@@ -240,7 +269,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_text_two = [
+    const purchase_type_add_text_two = [
         {
             label: 'CGST Rate(in %)',
             name: 'cgstRate',
@@ -251,7 +280,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_dropdown_nine = [
+    const purchase_type_add_dropdown_nine = [
         {
             label: 'Freeze Tax in Sales',
             name: 'freezeTaxInSales',
@@ -268,7 +297,7 @@ const SaleTypeAdd = (props) => {
         },
     ]
 
-    const sale_type_add_text_three = [
+    const purchase_type_add_text_three = [
         {
             label: 'Invoice Heading',
             name: 'invoiceHeading',
@@ -295,10 +324,10 @@ const SaleTypeAdd = (props) => {
 
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
-                        <div className="text-center"><strong>Add Sale Type Master</strong></div>
+                        <div className="text-center"><strong>Add Purchase Type Master</strong></div>
                         <div className="row mt-4">
                             {
-                                sale_type_add_text_one.map((val, index) => (
+                                purchase_type_add_text_one.map((val, index) => (
                                     <div className="col-12 col-md-6" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
@@ -315,7 +344,7 @@ const SaleTypeAdd = (props) => {
                         <h5><span className="mt-2 headingAlign">Sales Account Information</span></h5>
                         <div className="row inventoryForm">
                             {
-                                sale_type_add_radio_one.map((val, index) => (
+                                purchase_type_add_radio_one.map((val, index) => (
                                     <div className="mb-2 col-12 col-md-6 p-0" key={"radioInputKey" + index}>
                                         <div className="radioBtnTextAlign">
                                             <Field
@@ -331,7 +360,7 @@ const SaleTypeAdd = (props) => {
                                 ))
                             }
                             {
-                                sale_type_add_dropdown_one.map((val, index) => (
+                                purchase_type_add_dropdown_one.map((val, index) => (
                                     <div className="mt-3 mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                         <FormControl>
                                             <select
@@ -340,7 +369,31 @@ const SaleTypeAdd = (props) => {
                                                 multiple={false}
                                                 onChange={handleChange}
                                             >
-                                                <option defaultValue>Sales</option>
+                                                <option defaultValue>Purchase</option>
+                                                {
+                                                    val.values.map((cval, cindex) => (
+                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                    ))
+                                                }
+                                            </select>
+                                        </FormControl>
+                                    </div>
+                                ))
+                            }
+                            {
+                                purchase_type_add_dropdown.map((val, index) => (
+                                    <div className="mb-2 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                        <div className="mb-2">
+                                            {val.label}
+                                        </div>
+                                        <FormControl>
+                                            <select
+                                                type='select'
+                                                name={val.name}
+                                                multiple={false}
+                                                onChange={handleChange}
+                                            >
+                                                <option defaultValue>Purchase</option>
                                                 {
                                                     val.values.map((cval, cindex) => (
                                                         <option key={"optionValues" + cindex} value={cval}>{cval}</option>
@@ -356,7 +409,7 @@ const SaleTypeAdd = (props) => {
                         <h5><span className="mt-2 headingAlign">Taxation Type</span></h5>
                         <div className="row inventoryForm">
                             {
-                                sale_type_add_radio_two.map((val, index) => (
+                                purchase_type_add_radio_two.map((val, index) => (
                                     <div className="mb-2 col-12 col-md-6 p-0" key={"radioInputKey" + index}>
                                         <div className="radioBtnTextAlign">
                                             <Field
@@ -372,11 +425,11 @@ const SaleTypeAdd = (props) => {
                                 ))
                             }
                         </div>
-                        <p className="notes">Above information can not be changed if any transaction exist for this Sale Type</p>
+                        <p className="notes">Above information can not be changed if any transaction exist for this Purchase Type</p>
 
                         <div className="row">
                             {
-                                sale_type_add_dropdown_two.map((val, index) => (
+                                purchase_type_add_dropdown_two.map((val, index) => (
                                     <div className="mt-3 mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                         {val.label}
                                         <FormControl>
@@ -400,7 +453,7 @@ const SaleTypeAdd = (props) => {
                         </div>
                         <div className="row">
                             {
-                                sale_type_add_dropdown_three.map((val, index) => (
+                                purchase_type_add_dropdown_three.map((val, index) => (
                                     <div className="mt-3 mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                         {val.label}
                                         <FormControl>
@@ -426,7 +479,7 @@ const SaleTypeAdd = (props) => {
                         <h5><span className="mt-2 headingAlign">Other Information</span></h5>
                         <div className="row inventoryForm">
                             {
-                                sale_type_add_dropdown_four.map((val, index) => (
+                                purchase_type_add_dropdown_four.map((val, index) => (
                                     <div className="mt-3 mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                         {val.label}
                                         <FormControl>
@@ -449,7 +502,7 @@ const SaleTypeAdd = (props) => {
                             }
                             <div className="">
                                 {
-                                    sale_type_add_dropdown_five.map((val, index) => (
+                                    purchase_type_add_dropdown_five.map((val, index) => (
                                         <div className="mt-3 mb-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
                                             {val.label}
                                             <FormControl>
@@ -473,7 +526,7 @@ const SaleTypeAdd = (props) => {
                             </div>
                             <div className="divWidth">
                                 {
-                                    sale_type_add_dropdown_six.map((val, index) => (
+                                    purchase_type_add_dropdown_six.map((val, index) => (
                                         <div className="mt-3 mb-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
                                             {val.label}
                                             <FormControl>
@@ -498,7 +551,7 @@ const SaleTypeAdd = (props) => {
 
                             <div className="divWidth">
                                 {
-                                    sale_type_add_dropdown_seven.map((val, index) => (
+                                    purchase_type_add_dropdown_seven.map((val, index) => (
                                         <div className="mt-3 mb-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
                                             {val.label}
                                             <FormControl>
@@ -523,7 +576,7 @@ const SaleTypeAdd = (props) => {
 
                             <div className="divWidth">
                                 {
-                                    sale_type_add_dropdown_eight.map((val, index) => (
+                                    purchase_type_add_dropdown_eight.map((val, index) => (
                                         <div className="mt-3 mb-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
                                             {val.label}
                                             <FormControl>
@@ -550,7 +603,7 @@ const SaleTypeAdd = (props) => {
                         <h5><span className="mt-2 headingAlign">Region</span></h5>
                         <div className="row inventoryForm">
                             {
-                                sale_type_add_radio_three.map((val, index) => (
+                                purchase_type_add_radio_three.map((val, index) => (
                                     <div className="mb-2 col-12 col-md-6 p-0" key={"radioInputKey" + index}>
                                         <div className="radioBtnTextAlign">
                                             <Field
@@ -569,7 +622,7 @@ const SaleTypeAdd = (props) => {
                             <h5><span className="mt-2 headingAlign">Type of Transaction</span></h5>
                             <div className="row inventoryForm divWidth">
                                 {
-                                    sale_type_add_radio_four.map((val, index) => (
+                                    purchase_type_add_radio_four.map((val, index) => (
                                         <div className="mb-2 col-12 col-md-6 p-0" key={"radioInputKey" + index}>
                                             <div className="radioBtnTextAlign">
                                                 <Field
@@ -588,7 +641,7 @@ const SaleTypeAdd = (props) => {
 
                                 </div>
                                 {
-                                    sale_type_add_radio_five.map((val, index) => (
+                                    purchase_type_add_radio_five.map((val, index) => (
                                         <div className="mb-2 col-12 col-md-6 p-0" key={"radioInputKey" + index}>
                                             <div className="radioBtnTextAlign">
                                                 <Field
@@ -611,7 +664,7 @@ const SaleTypeAdd = (props) => {
                         <h5><span className="mt-2 headingAlign">Tax Calculation</span></h5>
                         <div className="row inventoryForm">
                             {
-                                sale_type_add_radio_six.map((val, index) => (
+                                purchase_type_add_radio_six.map((val, index) => (
                                     <div className="mb-2 col-12 col-md-6 p-0" key={"radioInputKey" + index}>
                                         <div className="radioBtnTextAlign">
                                             <Field
@@ -628,7 +681,7 @@ const SaleTypeAdd = (props) => {
                             }
                             <div className="row mt-4">
                                 {
-                                    sale_type_add_text_two.map((val, index) => (
+                                    purchase_type_add_text_two.map((val, index) => (
                                         <div className="mb-3 col-12 col-md-6" key={"inputTextField" + index}>
                                             {val.label}
                                             <Field
@@ -641,46 +694,46 @@ const SaleTypeAdd = (props) => {
                                     ))
                                 }
                                 {
-                                sale_type_add_dropdown_nine.map((val, index) => (
-                                    <div className="mt-3 mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
-                                        <FormControl>
-                                            <select
-                                                type='select'
-                                                name={val.name}
-                                                multiple={false}
-                                                onChange={handleChange}
-                                            >
-                                                <option defaultValue>N</option>
-                                                {
-                                                    val.values.map((cval, cindex) => (
-                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                    ))
-                                                }
-                                            </select>
-                                        </FormControl>
-                                    </div>
-                                ))
-                            }
+                                    purchase_type_add_dropdown_nine.map((val, index) => (
+                                        <div className="mt-3 mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                            <FormControl>
+                                                <select
+                                                    type='select'
+                                                    name={val.name}
+                                                    multiple={false}
+                                                    onChange={handleChange}
+                                                >
+                                                    <option defaultValue>N</option>
+                                                    {
+                                                        val.values.map((cval, cindex) => (
+                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                        ))
+                                                    }
+                                                </select>
+                                            </FormControl>
+                                        </div>
+                                    ))
+                                }
                             </div>
 
                         </div>
 
                         <h5><span className="mt-2 headingAlign">For Printing Documents</span></h5>
                         <div className="row inventoryForm">
-                                {
-                                    sale_type_add_text_three.map((val, index) => (
-                                        <div className="mb-3 col-12 col-md-6" key={"inputTextField" + index}>
-                                            {val.label}
-                                            <Field
-                                                type='text'
-                                                name={val.name}
-                                                placeholder={val.placeholder}
-                                                as={TextField}
-                                            />
-                                        </div>
-                                    ))
-                                }
-                            </div>
+                            {
+                                purchase_type_add_text_three.map((val, index) => (
+                                    <div className="mb-3 col-12 col-md-6" key={"inputTextField" + index}>
+                                        {val.label}
+                                        <Field
+                                            type='text'
+                                            name={val.name}
+                                            placeholder={val.placeholder}
+                                            as={TextField}
+                                        />
+                                    </div>
+                                ))
+                            }
+                        </div>
 
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
@@ -701,4 +754,4 @@ const SaleTypeAdd = (props) => {
 
 }
 
-export default SaleTypeAdd
+export default PurchaseTypeAdd
