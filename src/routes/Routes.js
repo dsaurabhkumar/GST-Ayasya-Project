@@ -45,6 +45,9 @@ import UnitConversionList from '../containers/masters-module/masters-unit-conver
 import BillSundryAdd from '../containers/masters-module/masters-bill-sundry/bill-sundry-add/BillSundryAdd';
 import BillSundryModify from '../containers/masters-module/masters-bill-sundry/bill-sundry-modify/BillSundryModify';
 import BillSundryList from '../containers/masters-module/masters-bill-sundry/bill-sundry-list/BillSundryList';
+import BillOfMaterialAdd from '../containers/masters-module/masters-bill-of-material/bill-of-material-add/BillOfMaterialAdd';
+import BillOfMaterialModify from '../containers/masters-module/masters-bill-of-material/bill-of-material-modify/BillOfMaterialModify';
+import BillOfMaterialList from '../containers/masters-module/masters-bill-of-material/bill-of-material-list/BillOfMaterialList';
 
 const Routes = () => (
         <Switch>
@@ -178,6 +181,15 @@ const Routes = () => (
             </Route>
             <Route path="/bill-sundry-list">
                 <BillSundryList />
+            </Route>
+            <Route path="/bill-of-material-add">
+                <BillOfMaterialAdd />
+            </Route>
+            <Route path="/bill-of-material-modify">
+                <BillOfMaterialModify />
+            </Route>
+            <Route path="/bill-of-material-list">
+                <BillOfMaterialList />
             </Route>
 
             <Route component={PageNotFound}></Route>

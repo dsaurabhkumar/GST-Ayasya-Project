@@ -158,11 +158,11 @@ function NavBar() {
                                         <li>
                                             <a className="dropdown-item dropdown-toggle" href="#">Bill of Material</a>
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">Add</a></li>
+                                                <li><Link className="dropdown-item" to='/bill-of-material-add'>Add</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">Modify</a></li>
+                                                <li><Link className="dropdown-item" to='/bill-of-material-modify'>Modify</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">List</a></li>
+                                                <li><Link className="dropdown-item" to='/bill-of-material-list'>List</Link></li>
                                             </ul>
                                         </li>
                                         <div className="dropdown-divider"></div>
@@ -170,11 +170,11 @@ function NavBar() {
                                         <li>
                                             <a className="dropdown-item dropdown-toggle" href="#">Sale Type</a>
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">Add</a></li>
+                                                <li><Link className="dropdown-item" to='/sale-type-add'>Add</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">Modify</a></li>
+                                                <li><Link className="dropdown-item" to='/sale-type-modify'>Modify</Link></li>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">List</a></li>
+                                                <li><Link className="dropdown-item" to='/sale-type-list'>List</Link></li>
                                             </ul>
                                         </li>
                                         <div className="dropdown-divider"></div>
@@ -192,7 +192,7 @@ function NavBar() {
                                         <div className="dropdown-divider"></div>
 
                                         <li>
-                                            <a className="dropdown-item dropdown-toggle" href="#">Tac Category</a>
+                                            <a className="dropdown-item dropdown-toggle" href="#">Tax Category</a>
                                             <ul className="dropdown-menu">
                                                 <li><a className="dropdown-item" href="#">Add</a></li>
                                                 <div className="dropdown-divider"></div>
