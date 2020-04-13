@@ -57,6 +57,9 @@ import PurchaseTypeList from '../containers/masters-module/masters-purchase-type
 import TaxCategoryAdd from '../containers/masters-module/masters-tax-category/tax-category-add/TaxCategoryAdd';
 import TaxCategoryModify from '../containers/masters-module/masters-tax-category/tax-category-modify/TaxCategoryModify';
 import TaxCategoryList from '../containers/masters-module/masters-tax-category/tax-category-list/TaxCategoryList';
+import DiscountStructureAdd from '../containers/masters-module/masters-misc-masters-discount-structure/discount-structure-add/DiscountStructureAdd';
+import DiscountStructureModify from '../containers/masters-module/masters-misc-masters-discount-structure/discount-structure-modify/DiscountStructureModify';
+import DiscountStructureList from '../containers/masters-module/masters-misc-masters-discount-structure/discount-structure-list/DiscountStructureList';
 
 const Routes = () => (
         <Switch>
@@ -226,6 +229,15 @@ const Routes = () => (
             </Route>
             <Route path="/tax-category-list">
                 <TaxCategoryList />
+            </Route>
+            <Route path="/misc-masters-discount-structure-add">
+                <DiscountStructureAdd />
+            </Route>
+            <Route path="/misc-masters-discount-structure-modify">
+                <DiscountStructureModify />
+            </Route>
+            <Route path="/misc-masters-discount-structure-list">
+                <DiscountStructureList />
             </Route>
 
             <Route component={PageNotFound}></Route>
