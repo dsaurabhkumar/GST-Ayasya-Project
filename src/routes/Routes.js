@@ -54,6 +54,9 @@ import SaleTypeList from '../containers/masters-module/masters-sale-type/sale-ty
 import PurchaseTypeAdd from '../containers/masters-module/masters-purchase-type/purchase-type-add/PurchaseTypeAdd';
 import PurchaseTypeModify from '../containers/masters-module/masters-purchase-type/purchase-type-modify/PurchaseTypeModify';
 import PurchaseTypeList from '../containers/masters-module/masters-purchase-type/purchase-type-list/PurchaseTypeList';
+import TaxCategoryAdd from '../containers/masters-module/masters-tax-category/tax-category-add/TaxCategoryAdd';
+import TaxCategoryModify from '../containers/masters-module/masters-tax-category/tax-category-modify/TaxCategoryModify';
+import TaxCategoryList from '../containers/masters-module/masters-tax-category/tax-category-list/TaxCategoryList';
 
 const Routes = () => (
         <Switch>
@@ -214,6 +217,15 @@ const Routes = () => (
             </Route>
             <Route path="/purchase-type-list">
                 <PurchaseTypeList />
+            </Route>
+            <Route path="/tax-category-add">
+                <TaxCategoryAdd />
+            </Route>
+            <Route path="/tax-category-modify">
+                <TaxCategoryModify />
+            </Route>
+            <Route path="/tax-category-list">
+                <TaxCategoryList />
             </Route>
 
             <Route component={PageNotFound}></Route>
