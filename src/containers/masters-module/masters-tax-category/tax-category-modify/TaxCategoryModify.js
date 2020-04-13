@@ -11,7 +11,7 @@ const TaxCategoryModify = (props) => {
 
     const taxCategory_modify_dropdown = [
         {
-            name: 'selectSaleToModify',
+            name: 'taxCategoryToModify',
             values: [
                 "<--None-->",
                 "Exempt",
