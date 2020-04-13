@@ -60,6 +60,12 @@ import TaxCategoryList from '../containers/masters-module/masters-tax-category/t
 import DiscountStructureAdd from '../containers/masters-module/masters-misc-masters-discount-structure/discount-structure-add/DiscountStructureAdd';
 import DiscountStructureModify from '../containers/masters-module/masters-misc-masters-discount-structure/discount-structure-modify/DiscountStructureModify';
 import DiscountStructureList from '../containers/masters-module/masters-misc-masters-discount-structure/discount-structure-list/DiscountStructureList';
+import StateAdd from '../containers/masters-module/masters-misc-masters-state/state-add/StateAdd';
+import StateModify from '../containers/masters-module/masters-misc-masters-state/state-modify/StateModify';
+import StateList from '../containers/masters-module/masters-misc-masters-state/state-list/StateList';
+import CountryAdd from '../containers/masters-module/masters-misc-masters-country/country-add/CountryAdd';
+import CountryModify from '../containers/masters-module/masters-misc-masters-country/country-modify/CountryModify';
+import CountryList from '../containers/masters-module/masters-misc-masters-country/country-list/CountryList';
 
 const Routes = () => (
         <Switch>
@@ -238,6 +244,24 @@ const Routes = () => (
             </Route>
             <Route path="/misc-masters-discount-structure-list">
                 <DiscountStructureList />
+            </Route>
+            <Route path="/discount-structre-state-add">
+                <StateAdd />
+            </Route>
+            <Route path="/discount-structre-state-modify">
+                <StateModify />
+            </Route>
+            <Route path="/discount-structre-state-list">
+                <StateList />
+            </Route>
+            <Route path='/discount-structre-country-add'>
+                <CountryAdd />
+            </Route>
+            <Route path='/discount-structre-country-modify'>
+                <CountryModify />
+            </Route>
+            <Route path='/discount-structre-country-list'>
+                <CountryList />
             </Route>
 
             <Route component={PageNotFound}></Route>

@@ -3,25 +3,54 @@ import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
 
-const DiscountStructureModify = (props) => {
+const StateModify = (props) => {
 
     const formValue = {
 
     }
 
-    const discount_structure_modify_dropdown = [
+    const state_modify_dropdown = [
         {
-            name: 'selectSaleToModify',
+            name: 'selectStateToMOdify',
             values: [
-                "Simple Discount, % of Amount",
-                "Simple Discount, % of MRP",
-                "Simple Discount, % of Price",
-                "Simple Discount, % of /Alt. Unit",
-                "Simple Discount, % of /Main Unit",
-                "Simple Discount, % of /Pkg. Unit",
-                "Simple Discount, % of Absolute Amount",
-            ]
-        }
+                "ANDAMAN AND NICOBAR ISLANDS",
+                "ANDHRA PRADESH",
+                "ARUNACHAL PRADESH",
+                "ASSAM",
+                "BIHAR",
+                "CHANDIGARH",
+                "CHHATISHGARH",
+                "DADRA & NAGAR HAVELI",
+                "DAMAN & DIU",
+                "DELHI",
+                "GOA",
+                "GUJARAT",
+                "HARYANA",
+                "HIMACHAL PRADESH",
+                "JAMMU & KASHMIR",
+                "JHARKHAND",
+                "KARNATAKA",
+                "KERALA",
+                "LAKSHAWADEEP",
+                "MADHYA PRADESH",
+                "MAHARASHTRA",
+                "MANIPUR",
+                "MEGHALAYA",
+                "MIZORAM",
+                "NAGALAND",
+                "ODISHA",
+                "OTHERS",
+                "PUDUCHERRY",
+                "PUNJAB",
+                "RAJASTHAN",
+                "SIKKIM",
+                "TAMILNADU",
+                "TRIPURA",
+                "UTTAR PRADESH",
+                "UTTRAKHAND",
+                "WEST BENGAL"
+            ],
+        },
     ]
 
     return(
@@ -40,11 +69,11 @@ const DiscountStructureModify = (props) => {
 
                 {({ values, isSubmitting, handleChange }) => (
                     <Form>
-                        <div className="text-center"><strong>Select Discount Structure to Modify</strong></div>
+                        <div className="text-center"><strong>Select State to Modify</strong></div>
                         <div className="row">
 
                             {
-                                discount_structure_modify_dropdown.map((val, index) => (
+                                state_modify_dropdown.map((val, index) => (
                                     <div className="mb-4 mt-4 col-12 col-md-12" key={"inputDropdownValue" + index}>
                                         <FormControl>
                                             <select
@@ -83,4 +112,4 @@ const DiscountStructureModify = (props) => {
     )
 }
 
-export default DiscountStructureModify
+export default StateModify

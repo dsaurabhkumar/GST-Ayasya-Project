@@ -3,25 +3,31 @@ import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
 
-const DiscountStructureModify = (props) => {
+const CountryModify = (props) => {
 
     const formValue = {
 
     }
 
-    const discount_structure_modify_dropdown = [
+    const country_modify_dropdown = [
         {
-            name: 'selectSaleToModify',
+            name: 'selectCountryToModify',
             values: [
-                "Simple Discount, % of Amount",
-                "Simple Discount, % of MRP",
-                "Simple Discount, % of Price",
-                "Simple Discount, % of /Alt. Unit",
-                "Simple Discount, % of /Main Unit",
-                "Simple Discount, % of /Pkg. Unit",
-                "Simple Discount, % of Absolute Amount",
-            ]
-        }
+               "Australia",
+               "Bangladesh",
+               "China",
+               "Denmark",
+               "Egypt",
+               "France",
+               "Germany",
+               "Hong Kong",
+               "India",
+               "Pakistan",
+               "Russia",
+               "Sri Lanka",
+               "US",
+            ],
+        },
     ]
 
     return(
@@ -40,11 +46,11 @@ const DiscountStructureModify = (props) => {
 
                 {({ values, isSubmitting, handleChange }) => (
                     <Form>
-                        <div className="text-center"><strong>Select Discount Structure to Modify</strong></div>
+                        <div className="text-center"><strong>Select Country to Modify</strong></div>
                         <div className="row">
 
                             {
-                                discount_structure_modify_dropdown.map((val, index) => (
+                                country_modify_dropdown.map((val, index) => (
                                     <div className="mb-4 mt-4 col-12 col-md-12" key={"inputDropdownValue" + index}>
                                         <FormControl>
                                             <select
@@ -83,4 +89,4 @@ const DiscountStructureModify = (props) => {
     )
 }
 
-export default DiscountStructureModify
+export default CountryModify
