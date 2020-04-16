@@ -210,7 +210,7 @@ class SalesmanBrokerReport extends React.Component {
                             )
                         } else if (val.type === "radio") {
                             return (
-                                <div className="" key={"radio_parent" + index}>
+                                <div className="popup-check-box-border mb-3" key={"radio_parent" + index}>
                                     {
                                         val.options.map((radioVal, radioIndex) =>
                                             (
@@ -257,7 +257,7 @@ class SalesmanBrokerReport extends React.Component {
                             ))
                             )
                         } else if (val.type === "check-box-four") {
-                            return (this.state.formFour.map((val, index) => (<div key={"checkbox_parent_" + index}>
+                            return (this.state.formFour.map((val, index) => (<div className="" key={"checkbox_parent_" + index}>
                                 {
                                     val.type === "check-box-four" && val.options.map(
                                         (fval, findex) => (
@@ -322,7 +322,7 @@ class SalesmanBrokerReport extends React.Component {
                             )
                         } else if (val.type === "radio-2") {
                             return (
-                                <div className="mt-4" key={"radio_parent" + index}>
+                                <div className="mt-4 popup-check-box-border mb-3" key={"radio_parent" + index}>
                                     {
                                         val.options.map((radioVal, radioIndex) =>
                                             (
