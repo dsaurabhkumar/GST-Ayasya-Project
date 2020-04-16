@@ -89,7 +89,7 @@ const JobWork = (props) => {
                 }}
             >
                 {({ values, isSubmitting, handleChange }) => (
-                    <Form>
+                    <Form className="popup-check-box-border">
                         <div className="inventoryCheckBox d-flex flex-column align-items-start">
                             {
                                 checkBoxDataFormEight.map((val, index) => (

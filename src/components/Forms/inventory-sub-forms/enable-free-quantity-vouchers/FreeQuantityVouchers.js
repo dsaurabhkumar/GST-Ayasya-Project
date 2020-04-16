@@ -29,7 +29,7 @@ const FreeQuantityVouchers = (props) => {
                 }}
             >
                 {({ isSubmitting }) => (
-                    <Form>
+                    <Form className="popup-check-box-border">
                         <div className="inventoryCheckBox d-flex flex-column align-items-start">
                             {
                                 checkBoxDataFormTwelve.map((val, index) => (

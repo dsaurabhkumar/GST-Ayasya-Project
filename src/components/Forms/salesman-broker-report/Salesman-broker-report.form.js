@@ -189,16 +189,16 @@ class SalesmanBrokerReport extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.submitFormData}>
+            <form className="popup-check-box-border" onSubmit={this.submitFormData}>
                 {
                     this.state.formFour.map((val, index) => {
                         if (val.type === "text") {
                             return (
-                                <div className="row form-group" key={"input-text" + index}>
-                                    <div className="col-md-6">
+                                <div className="row form-group textFieldAlignment" key={"input-text" + index}>
+                                    <div className="col-md-6 textField">
                                         {val.label}
                                     </div>
-                                    <div className="col-md-6 textFieldAlignment">
+                                    <div className="col-md-6">
                                         <InputText
                                             name={val.name}
                                             value={val.value}
@@ -215,9 +215,6 @@ class SalesmanBrokerReport extends React.Component {
                                         val.options.map((radioVal, radioIndex) =>
                                             (
                                                 <div className="form-check form-check-inline" key={"radio_child" + index + "-" + radioIndex}>
-                                                    <div className="radioLabel">
-                                                        {radioVal.value}
-                                                    </div>
                                                     <div>
                                                         <Radio
                                                             name={radioVal.name}
@@ -227,6 +224,9 @@ class SalesmanBrokerReport extends React.Component {
                                                             handleChange={this.handleRadioChange}
                                                         />
                                                     </div>
+                                                    <div className="radioLabel">
+                                                        {radioVal.value}
+                                                    </div>
                                                 </div>
                                             )
                                         )
@@ -235,21 +235,19 @@ class SalesmanBrokerReport extends React.Component {
                                 </div>
                             )
                         } else if (val.type === "check-box-form-four") {
-                            return (this.state.formFour.map((val, index) => (<div key={"checkbox_parent_" + index}>
+                            return (this.state.formFour.map((val, index) => (<div className="checkboxAlignFix" key={"checkbox_parent_" + index}>
                                 {
                                     val.type === "check-box-form-four" && val.options.map(
                                         (fval, findex) => (
-                                            <div className="form-check form-check-inline mt-4" key={"checkbox_child_" + index + "_" + findex}>
-                                                <div>
-                                                    {fval.name}
-                                                </div>
-                                                <div className="checkbox-alignment">
+                                            <div className="form-group mb-0 accountCheckbox" key={"checkbox_child_" + index + "_" + findex}>
                                                     <Checkbox
                                                         name={fval.name}
                                                         value={fval.value}
                                                         checked={fval.checked}
                                                         handleCheck={(event) => this.handleCheckFormFour(index, findex, fval.value, event.target.checked)}
                                                     />
+                                                <div className="divWidth checkboxLabelAlignment pr-2 p-0">
+                                                    {fval.name}
                                                 </div>
                                             </div>
                                         )
@@ -263,17 +261,15 @@ class SalesmanBrokerReport extends React.Component {
                                 {
                                     val.type === "check-box-four" && val.options.map(
                                         (fval, findex) => (
-                                            <div className="form-check form-check-inline mt-4" key={"checkbox_child_" + index + "_" + findex}>
-                                                <div>
-                                                    {fval.name}
-                                                </div>
-                                                <div className="checkbox-alignment">
+                                            <div className="form-group mb-0 accountCheckbox" key={"checkbox_child_" + index + "_" + findex}>
                                                     <Checkbox
                                                         name={fval.name}
                                                         value={fval.value}
                                                         checked={fval.checked}
                                                         handleCheck={(event) => this.handleCheckFormFour(index, findex, fval.value, event.target.checked)}
                                                     />
+                                                <div className="divWidth checkboxLabelAlignment pr-2 p-0">
+                                                    {fval.name}
                                                 </div>
                                             </div>
                                         )
@@ -284,11 +280,11 @@ class SalesmanBrokerReport extends React.Component {
                             )
                         } else if (val.type === "text-boolean") {
                             return (
-                                <div className="row form-group mt-4" key={"input-text" + index}>
-                                    <div className="col-md-8">
+                                <div className="textFieldAlignment" key={"input-text" + index}>
+                                    <div className="col-md-8 textField">
                                         {val.label}
                                     </div>
-                                    <div className="col-md-4 textFieldAlignment">
+                                    <div className="col-md-4">
                                         <InputText
                                             name={val.name}
                                             value={val.value}
@@ -305,9 +301,6 @@ class SalesmanBrokerReport extends React.Component {
                                         val.options.map((radioVal, radioIndex) =>
                                             (
                                                 <div className="form-check form-check-inline" key={"radio_child" + index + "-" + radioIndex}>
-                                                    <div className="radioLabel">
-                                                        {radioVal.value}
-                                                    </div>
                                                     <div>
                                                         <Radio
                                                             name={radioVal.name}
@@ -316,6 +309,9 @@ class SalesmanBrokerReport extends React.Component {
                                                             checked={this.state.formFour.options}
                                                             handleChange={this.handleRadioChange}
                                                         />
+                                                    </div>
+                                                    <div className="radioLabel">
+                                                        {radioVal.value}
                                                     </div>
                                                 </div>
                                             )
@@ -331,9 +327,6 @@ class SalesmanBrokerReport extends React.Component {
                                         val.options.map((radioVal, radioIndex) =>
                                             (
                                                 <div className="form-check form-check-inline" key={"radio_child" + index + "-" + radioIndex}>
-                                                    <div className="radioLabel">
-                                                        {radioVal.value}
-                                                    </div>
                                                     <div>
                                                         <Radio
                                                             name={radioVal.name}
@@ -342,6 +335,9 @@ class SalesmanBrokerReport extends React.Component {
                                                             checked={this.state.formFour.options}
                                                             handleChange={this.handleRadioChange}
                                                         />
+                                                    </div>
+                                                    <div className="radioLabel">
+                                                        {radioVal.value}
                                                     </div>
                                                 </div>
                                             )
@@ -355,17 +351,15 @@ class SalesmanBrokerReport extends React.Component {
                                 {
                                     val.type === "check-box-four-1" && val.options.map(
                                         (fval, findex) => (
-                                            <div className="form-check form-check-inline mt-4" key={"checkbox_child_" + index + "_" + findex}>
-                                                <div>
-                                                    {fval.name}
-                                                </div>
-                                                <div className="checkbox-alignment">
+                                            <div className="form-group mb-0 accountCheckbox" key={"checkbox_child_" + index + "_" + findex}>
                                                     <Checkbox
                                                         name={fval.name}
                                                         value={fval.value}
                                                         checked={fval.checked}
                                                         handleCheck={(event) => this.handleCheckFormFour(index, findex, fval.value, event.target.checked)}
                                                     />
+                                                <div className="divWidth checkboxLabelAlignment pr-2 p-0">
+                                                    {fval.name}
                                                 </div>
                                             </div>
                                         )

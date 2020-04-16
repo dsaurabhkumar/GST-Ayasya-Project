@@ -62,7 +62,7 @@ const SalePurchaseChallan = (props) => {
                 }}
             >
                 {({ isSubmitting }) => (
-                    <Form>
+                    <Form className="popup-check-box-border">
                         <div className="inventoryCheckBox d-flex flex-column align-items-start">
                             {
                                 checkBoxDataFormFive.map((val, index) => (

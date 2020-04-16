@@ -40,7 +40,7 @@ const InvoiceSetting = (props) => {
                 }}
             >
                 {({ isSubmitting }) => (
-                    <Form>
+                    <Form className="popup-check-box-border">
                         {
                             radioBtn_One.map((val, index) => (
                                 <div className="mb-2" key={"radioInputKey" + index}>

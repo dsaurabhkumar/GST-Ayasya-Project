@@ -29,7 +29,7 @@ const MultipleItemAliases = (props) => {
                 }}
             >
                 {({ isSubmitting }) => (
-                    <Form>
+                    <Form className="popup-check-box-border">
                         <div className="inventoryCheckBox d-flex flex-column align-items-start">
                             {
                                 checkBoxDataFormForteen.map((val, index) => (

@@ -31,7 +31,7 @@ const MultiGodownInventory = (props) => {
                 }}
             >
                 {({ isSubmitting }) => (
-                    <Form>
+                    <Form className="popup-check-box-border">
                         <div className="inventoryCheckBox d-flex flex-column align-items-start">
                             {
                                 checkBoxDataFormOne.map((val, index) => (

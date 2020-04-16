@@ -149,7 +149,7 @@ const ParameterizedDetails = (props) => {
                 }}
             >
                 {({ values, isSubmitting, handleChange }) => (
-                    <Form>
+                    <Form className="popup-check-box-border">
                         <div>
                             {
                                 dropDownFormNine_One.map((val, index) => (

@@ -74,7 +74,7 @@ class MaintainVoucherMaster extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.submitFormData}>
+            <form className="popup-check-box-border" onSubmit={this.submitFormData}>
                 {
                     this.state.formThree.map((val, index) => (
                         <div key={"checkbox_parent_" + index}>
@@ -82,16 +82,14 @@ class MaintainVoucherMaster extends React.Component {
                             {
                                 val.type === "check-box-form-three" && val.options.map(
                                     (fval, findex) => (
-                                        <div className="row form-group mb-0" key={"checkbox_child_" + index + "_" + findex}>
-                                            <div className="col-2 col-md-2 p-0">
+                                        <div className="form-group mb-0 accountCheckbox" key={"checkbox_child_" + index + "_" + findex}>
                                                 <Checkbox
                                                     name={fval.name}
                                                     value={fval.value}
                                                     checked={fval.checked}
                                                     handleCheck={(event) => this.handleCheckFormThree(index, findex, fval.value, event.target.checked)}
                                                 />
-                                            </div>
-                                            <div className="col-10 col-md-10 p-0">
+                                            <div className="divWidth checkboxLabelAlignment pr-2 p-0">
                                                 {fval.name}
                                             </div>
                                         </div>

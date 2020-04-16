@@ -42,7 +42,7 @@ const SignatoryDetails = (props) => {
                 }}
             >
                 {({ isSubmitting }) => (
-                    <Form>
+                    <Form className="popup-check-box-border">
                     {
                                 inputText.map((val, index) => (
                                     <div className="mb-3" key={"inputTextKey" + index}>

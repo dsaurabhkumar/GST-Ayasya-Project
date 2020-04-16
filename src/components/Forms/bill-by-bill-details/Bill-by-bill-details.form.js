@@ -94,14 +94,12 @@ class BillByBillDetailsForm extends React.Component {
                                 val.type === "check-box-form-one" && val.options.map(
                                     (fval, findex) => (
                                         <div className="form-group mb-0 accountCheckbox" key={"checkbox_child_" + index + "_" + findex}>
-                                            
                                                 <Checkbox
                                                     name={fval.name}
                                                     value={fval.value}
                                                     checked={fval.checked}
                                                     handleCheck={(event) => this.handleCheckForm(index, findex, fval.value, event.target.checked)}
                                                 />
-                                            
                                             <div className="divWidth checkboxLabelAlignment pr-2 p-0">
                                                 {fval.name}
                                             </div>
