@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import InputText from '../../components/Forms/formComponents/input-text/InputText';
 import Dropdown from '../../components/Forms/formComponents/dropdown/Dropdown';
 import './General.css';
+import axios from 'axios';
 
 class General extends React.Component {
 
@@ -130,6 +131,13 @@ class General extends React.Component {
     formSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
+        axios.post('https://jsonplaceholder.typicode.com/posts', this.state)
+        .then(response => {
+            console.log(response);
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
 
     render() {
