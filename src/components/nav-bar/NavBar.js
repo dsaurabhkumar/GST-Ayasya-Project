@@ -267,7 +267,7 @@ function NavBar() {
                                     <li>
                                     <a className="dropdown-item dropdown-toggle" href="#">Configuration</a>
                                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <Link className="dropdown-item" to=''>Feature / Options</Link>
+                                            <Link className="dropdown-item" to='/feature-options'>Feature / Options</Link>
                                             <div className="dropdown-divider"></div>
 
                                             <Link className="dropdown-item" to="">Voucher Series Configuration</Link>
