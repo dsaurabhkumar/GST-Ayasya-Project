@@ -66,6 +66,7 @@ import StateList from '../containers/masters-module/masters-misc-masters-state/s
 import CountryAdd from '../containers/masters-module/masters-misc-masters-country/country-add/CountryAdd';
 import CountryModify from '../containers/masters-module/masters-misc-masters-country/country-modify/CountryModify';
 import CountryList from '../containers/masters-module/masters-misc-masters-country/country-list/CountryList';
+import { VoucherSeriesConfig } from '../containers/configuration-module/voucher-series-configuration/VoucherSeriesConfig';
 
 const Routes = () => (
         <Switch>
@@ -262,6 +263,10 @@ const Routes = () => (
             </Route>
             <Route path='/discount-structre-country-list'>
                 <CountryList />
+            </Route>
+
+            <Route path='/voucher-series-configuration'>
+                <VoucherSeriesConfig />
             </Route>
 
             <Route component={PageNotFound}></Route>

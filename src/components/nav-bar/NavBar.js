@@ -270,7 +270,7 @@ function NavBar() {
                                             <Link className="dropdown-item" to='/feature-options'>Feature / Options</Link>
                                             <div className="dropdown-divider"></div>
 
-                                            <Link className="dropdown-item" to="">Voucher Series Configuration</Link>
+                                            <Link className="dropdown-item" to="/voucher-series-configuration">Voucher Series Configuration</Link>
                                             <div className="dropdown-divider"></div>
 
                                             <Link className="dropdown-item" to="">Masters Configuration</Link>
