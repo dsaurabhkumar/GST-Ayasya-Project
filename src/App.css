@@ -53,6 +53,7 @@ code {
 .textFieldAlignment {
   display: flex;
 }
+
 .textField {
   align-self: center;
 }

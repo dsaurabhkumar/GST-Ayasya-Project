@@ -16,10 +16,6 @@ class FeatureOption extends React.Component {
                     btnTitle: 'General',
                     link: '/general',
                 },
-                // {
-                //     btnTitle: 'Display Settings',
-                //     link: '/display-settings',
-                // },
                 {
                     btnTitle: 'Accounts',
                     link: '/accounts',
@@ -68,9 +64,6 @@ class FeatureOption extends React.Component {
                         ))
                     }
                     <div className="row btnContainer flex-sm-row-reverse mt-3 optionBtns">
-                        {/* <div className="mt-3 col-12 col-md-4 p-0">
-                            <Link to='/trade-specific-configuration'><button type="submit" className="btn btn-primary optionBtns">Trade Specific Configuration</button></Link>
-                        </div> */}
                         <div className="mt-3 col-sm-12 col-md-3 p-0 align-self-center exit">
                             <Link to='/'><button type="submit" className="btn btn-primary optionBtns">Exit</button></Link>
                         </div>

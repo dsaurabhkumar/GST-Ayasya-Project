@@ -1,0 +1,81 @@
+  .myaccordion {
+    max-width: 500px;
+    box-shadow: 0 0 1px rgba(0,0,0,0.1);
+  }
+  
+  .myaccordion .card,
+  .myaccordion .card:last-child .card-header {
+    border: none;
+  }
+  
+  .myaccordion .card-header {
+    border-bottom-color: #EDEFF0;
+    background: transparent;
+  }
+  
+  .myaccordion .fa-stack {
+    font-size: 18px;
+  }
+
+  .myaccordion .btn-link:hover,
+  .myaccordion .btn-link:focus {
+    text-decoration: none;
+  }
+  
+  .myaccordion li + li {
+    margin-top: 1px;
+  }
+
+  .card-header {
+      padding: 0px;
+  }
+
+  .card-body {
+      padding: 0px;
+  }
+
+.btn.btn-link {
+  position: relative;
+  bottom: 5px !important;
+  padding: 5px;
+}
+
+.btn-link {
+  font-size: 25px;
+}
+
+.btn-link.focus, .btn-link:focus {
+  text-decoration: none !important;
+}
+
+.btn-link:link, .btn-link:visited {
+  text-decoration: none !important;
+}
+
+.btn-link:hover, .btn-link:active {
+  text-decoration: none !important;
+}
+
+.voucherListBox {
+  padding: 0;
+  margin: 0;
+}
+
+.containerStyle {
+  border: 1px solid;
+}
+
+@media (max-width: 767px) {
+  .voucherListRow {
+    padding: 3%;
+  }
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.buttonAlign {
+  margin-bottom: 1.75rem;
+}
