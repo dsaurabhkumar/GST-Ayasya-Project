@@ -124,7 +124,7 @@ class VoucherSeriesList extends React.Component {
     }
   }
 
-  viewMore = (index) => {
+  accordionView = (index) => {
     let voucherList = [...this.state.voucherList];
     voucherList[index].open = !voucherList[index].open;
     this.setState({
@@ -142,7 +142,7 @@ class VoucherSeriesList extends React.Component {
               {
                 this.state.voucherList.map((val, index) => (
                   <div key={'accordion' + index}>
-                    <button className="btn btn-link" onClick={() => this.viewMore(index)}>{!val.open ? "+" : "-"}</button>
+                    <button className="btn btn-link" onClick={() => this.accordionView(index)}>{!val.open ? "+" : "-"}</button>
                     {val.label}
                     <div className={(!val.open ? 'd-none' : '')}>
                       <Link className="ml-5 p-0" to="">
