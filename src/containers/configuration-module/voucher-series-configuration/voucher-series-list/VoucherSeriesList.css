@@ -69,6 +69,9 @@
   .voucherListRow {
     padding: 3%;
   }
+  .containerBorder {
+    padding: 3%;
+  }
 }
 
 hr {

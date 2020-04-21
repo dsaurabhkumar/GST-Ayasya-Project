@@ -134,42 +134,44 @@ class VoucherSeriesList extends React.Component {
 
   render() {
     return (
-      <div className="container containerStyle mb-3 mt-3">
-        <h6 className="mt-2">Select the Voucher Series to Configure</h6>
-        <div className="row voucherListRow">
-          <div className="col-md-7 mb-3 voucherListBox">
-            {
-              this.state.voucherList.map((val, index) => (
-                <div key={'accordion' + index}>
-                  <button className="btn btn-link" onClick={() => this.viewMore(index)}>{!val.open ? "+" : "-"}</button>
-                  {val.label}
-                  <div className={(!val.open ? 'd-none' : '')}>
-                    <Link className="ml-5 p-0" to="">
-                      {val.accordianText}
-                    </Link>
+      <div className="containerBorder">
+          <h6 className="mt-3 text-center">Select the Voucher Series to Configure</h6>
+        <div className="container containerStyle mb-3 mt-3">
+          <div className="row">
+            <div className="col-md-7 mb-3 voucherListBox">
+              {
+                this.state.voucherList.map((val, index) => (
+                  <div key={'accordion' + index}>
+                    <button className="btn btn-link" onClick={() => this.viewMore(index)}>{!val.open ? "+" : "-"}</button>
+                    {val.label}
+                    <div className={(!val.open ? 'd-none' : '')}>
+                      <Link className="ml-5 p-0" to="">
+                        {val.accordianText}
+                      </Link>
+                    </div>
+                    {index < this.state.voucherList.length - 1 && <hr />}
                   </div>
-                  {index < this.state.voucherList.length - 1 && <hr />}
-                </div>
-              ))
-            }
-          </div>
+                ))
+              }
+            </div>
 
-          <div className="col-md-5">
-            {
-              this.state.buttonList.map((val, index) => (
-                <div key={'buttons' + index}>
-                  <div className="mt-2">
-                    {
-                      val.buttonLink.startsWith('http') ?
-                        <a className="btn btn-primary divWidth buttonAlign" target={val.target} href={val.buttonLink}>{val.label}</a> :
-                        <Link className="btn btn-primary divWidth buttonAlign" to={val.buttonLink}>{val.label}</Link>
-                    }
+            <div className="col-md-5">
+              {
+                this.state.buttonList.map((val, index) => (
+                  <div key={'buttons' + index}>
+                    <div className="mt-2">
+                      {
+                        val.buttonLink.startsWith('http') ?
+                          <a className="btn btn-primary divWidth buttonAlign" target={val.target} href={val.buttonLink}>{val.label}</a> :
+                          <Link className="btn btn-primary divWidth buttonAlign" to={val.buttonLink}>{val.label}</Link>
+                      }
+                    </div>
                   </div>
-                </div>
-              ))
-            }
-          </div>
+                ))
+              }
+            </div>
 
+          </div>
         </div>
       </div>
     )
