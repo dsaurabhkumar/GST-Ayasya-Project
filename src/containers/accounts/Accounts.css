@@ -47,11 +47,7 @@ input[type='checkbox'] {
 }
 .accountCheckbox{
     display: flex;
-}
-.accountButtonFloatLeft{
-    display: inline-block;
-    float: left;
-}   
+}  
 .inputTextValue{
      bottom: 27px;
     position: relative;
