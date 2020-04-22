@@ -168,7 +168,7 @@ class General extends React.Component {
         console.log(this.state);
         axios.post('https://jsonplaceholder.typicode.com/posts', this.state)
         .then(response => {
-            console.log(response);
+            console.log(response.data);
         })
         .catch(error => {
             console.log(error);
