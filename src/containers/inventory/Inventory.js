@@ -423,6 +423,7 @@ const Inventory = (props) => {
 
     return (
         <div className="container mt-4 mb-4">
+            <h2 className="text-center mb-4">Inventory</h2>
             <Formik
                 initialValues={formValue}
 
@@ -435,31 +436,27 @@ const Inventory = (props) => {
             >
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
-                        <div>
+                        <div className="row">
                             {
                                 inputText.map((val, index) => (
-                                    <div className="row mb-1" key={"inputTextField" + index}>
-                                        <div className="col-9 col-md-9">
+                                    <div className="col-12 col-md-6 mb-4" key={"inputTextField" + index}>
                                             {val.label}
-                                        </div>
-                                        <div className="col-3 col-md-3">
                                             <Field
                                                 type='number'
                                                 name={val.name}
                                                 placeholder={val.placeholder}
                                                 as={TextField}
                                             />
-                                        </div>
-                                    </div>
+                                        </div> 
                                 ))
                             }
-                        </div>
+                            </div>
 
-                        <div className="inventoryCheckBox">
+                        <div className="row mb-4 inventoryCheckBox">
                             {
                                 checkboxdata.map((val, index) => (
-                                    <div className="row" key={"inputCheckboxKey" + index}>
-                                        <div className="col-7 col-md-7">
+                                    <div className="col-12 col-md-6 inventoryButton" key={"inputCheckboxKey" + index}>
+                                        {/* <div> */}
                                             <FormControlLabel
                                                 label={val.title}
                                                 control={
@@ -470,10 +467,10 @@ const Inventory = (props) => {
                                                         as={Checkbox} />
                                                 }
                                             />
-                                        </div>
-                                        <div className="col-5 col-md-5 configureBtns">
+                                        {/* </div> */}
+                                        {/* <div className="col-5 col-md-5 configureBtns"> */}
                                             {componentModalItem(val.id)}
-                                        </div>
+                                        {/* </div> */}
                                     </div>
                                 ))
                             }

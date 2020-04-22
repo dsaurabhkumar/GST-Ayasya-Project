@@ -16,3 +16,18 @@
     border: #007bff;
     color: #ffffff;
 }
+.inventoryButton .btn-primary{
+    position: absolute;
+    right: 5px;
+}
+
+@media (max-width: 767px) {
+   .inventoryButton .MuiFormControlLabel-root{
+    width: 70%;
+    }
+}
+@media (min-width: 768px) {
+   .inventoryButton .MuiFormControlLabel-root{
+    width: 75%;
+    }
+}
