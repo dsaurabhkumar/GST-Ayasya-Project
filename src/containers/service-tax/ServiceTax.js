@@ -145,6 +145,7 @@ const ServiceTax = (props) => {
 
     return (
         <div className="container mt-4 mb-4">
+            <h2 className="text-center mb-4">Service Tax</h2>
             <Formik
                 initialValues={formValue}
 
@@ -176,71 +177,71 @@ const ServiceTax = (props) => {
                                 }
                             </div>
 
-                                {
-                                    dropDown.map((val, index) => (
-                                        <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
-                                            <div className="mb-2">
-                                                {val.label}
-                                            </div>
-                                            <FormControl>
-                                                <select
-                                                    type='select'
-                                                    name={val.name}
-                                                    value={values.name}
-                                                    onChange={handleChange}
-                                                >
-                                                    <option defaultValue>Select an Option</option>
-                                                    {
-                                                        val.values.map((cval, cindex) => (
-                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                        ))
-                                                    }
-                                                </select>
-                                            </FormControl>
-                                        </div>
-                                    ))
-                                }
-
-                                {
-                                    inputText_One.map((val, index) => (
-                                        <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
+                            {
+                                dropDown.map((val, index) => (
+                                    <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                        <div className="mb-2">
                                             {val.label}
-                                            <Field
-                                                type='text'
-                                                name={val.name}
-                                                placeholder={val.placeholder}
-                                                as={TextField}
-                                            />
                                         </div>
-                                    ))
-                                }
-
-                                {
-                                    inputText_Two.map((val, index) => (
-                                        <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
-                                            {val.label}
-                                            <Field
-                                                type='text'
+                                        <FormControl>
+                                            <select
+                                                type='select'
                                                 name={val.name}
-                                                placeholder={val.placeholder}
-                                                as={TextField}
-                                            />
-                                        </div>
-                                    ))
-                                }
-
-                                <div className="mt-2 mb-4 configureBtn">
-                                    {
-                                        signatoryDetails.map((val, index) => (
-                                            <div key={"inputTextKey" + index}>
+                                                value={values.name}
+                                                onChange={handleChange}
+                                            >
+                                                <option defaultValue>Select an Option</option>
                                                 {
-                                                    componentModalItem(val.id)
+                                                    val.values.map((cval, cindex) => (
+                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                    ))
                                                 }
-                                            </div>
-                                        ))
-                                    }
-                                </div>
-                                
+                                            </select>
+                                        </FormControl>
+                                    </div>
+                                ))
+                            }
+
+                            {
+                                inputText_One.map((val, index) => (
+                                    <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
+                                        {val.label}
+                                        <Field
+                                            type='text'
+                                            name={val.name}
+                                            placeholder={val.placeholder}
+                                            as={TextField}
+                                        />
+                                    </div>
+                                ))
+                            }
+
+                            {
+                                inputText_Two.map((val, index) => (
+                                    <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
+                                        {val.label}
+                                        <Field
+                                            type='text'
+                                            name={val.name}
+                                            placeholder={val.placeholder}
+                                            as={TextField}
+                                        />
+                                    </div>
+                                ))
+                            }
+
+                            <div className="mt-2 mb-4 configureBtn">
+                                {
+                                    signatoryDetails.map((val, index) => (
+                                        <div key={"inputTextKey" + index}>
+                                            {
+                                                componentModalItem(val.id)
+                                            }
+                                        </div>
+                                    ))
+                                }
+                            </div>
+
                         </div>
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">

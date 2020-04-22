@@ -201,15 +201,15 @@ class Accounts extends React.Component {
         let element = null;
         switch (id) {
             case "billButton":
-                element = <BillByBillDetailsForm 
-                submittedData={(childDataOne) => (
+                element = <BillByBillDetailsForm
+                    submittedData={(childDataOne) => (
                         this.childDataInfoOne = childDataOne.formOne[0].output
                     )}
-                closeModal={this.closeModal}
+                    closeModal={this.closeModal}
                 />
                 break;
             case "costButton":
-                element = <CostCentersOptions 
+                element = <CostCentersOptions
                     submittedData={(childDataTwo) => (
                         this.childDataInfoTwo = childDataTwo.formTwo[0].output
                     )}
@@ -217,7 +217,7 @@ class Accounts extends React.Component {
                 />
                 break;
             case "enablePartyButton":
-                element = <MaintainVoucherMaster 
+                element = <MaintainVoucherMaster
                     submittedData={(childDataThree) => (
                         this.childDataInfoThree = childDataThree.formThree[0].output
                     )}
@@ -225,16 +225,16 @@ class Accounts extends React.Component {
                 />
                 break;
             case "salesmanBbrokerButton":
-                element = <SalesmanBrokerReport 
+                element = <SalesmanBrokerReport
                     submittedData={(childDataFour) => (
                         this.childDataInfoFour = childDataFour.formFour
                     )}
-                    
+
                     closeModal={this.closeModal}
                 />
                 break;
         }
-        if(element) {
+        if (element) {
             element = <ModalComponent>
                 <div>
                     {element}
@@ -247,81 +247,81 @@ class Accounts extends React.Component {
     render() {
         return (
             <div className="container mt-4 mb-4">
-                <h2 className="text-center mt-4 mb-5">Accounts</h2>
+                <h2 className="text-center mt-4 mb-4">Accounts</h2>
                 <form className=" accountsForm" onSubmit={this.formSubmit}>
                     <div className="row">
-                    {
-                        this.state.inputLabels.map((val, index) => {
-                            if (val.type === "check-box") {
-                                return val.options.map((cval, cindex) => <div className="col-12 col-md-6 mb-4 accountCheckbox" key={'input_checkbox_' + cindex + "_" + cval.name + "_" + cindex}>
-                                    
-                                    <Checkbox
-                                        name={val.label}
-                                        value={cval.value}
-                                        checked={cval.checked}
-                                        handleCheck={(event) => this.handleCheck(index, cindex, cval.value, event.target.checked)}
-                                    />
+                        {
+                            this.state.inputLabels.map((val, index) => {
+                                if (val.type === "check-box") {
+                                    return val.options.map((cval, cindex) => <div className="col-12 col-md-6 mb-4 accountCheckbox" key={'input_checkbox_' + cindex + "_" + cval.name + "_" + cindex}>
 
-                                    <div className="divWidth checkboxLabelAlignment p-0 pr-2">
+                                        <Checkbox
+                                            name={val.label}
+                                            value={cval.value}
+                                            checked={cval.checked}
+                                            handleCheck={(event) => this.handleCheck(index, cindex, cval.value, event.target.checked)}
+                                        />
+
+                                        <div className="divWidth checkboxLabelAlignment p-0 pr-2">
                                             {cval.name}
-                                       
+
                                         </div>
-                                    
-                                    {this.componentModalItem(cval.id)}
-                                    {/* <span className="p-0">
+
+                                        {this.componentModalItem(cval.id)}
+                                        {/* <span className="p-0">
                                         {cval.name}
                                     </span> */}
-                                    
-                                </div>
-                               
-                                )
-                            } else if (val.type === "drop-down") {
-                                return (
-                                    <div className="col-12 col-md-6 form-group accountDropdown mb-2" key={'inputLabels_' + index}>
-                                        <div className="">
-                                            {val.label}
-                                        </div>
-                                        <div className="dropdownSelectValue divWidth" >
-                                            <Dropdown
-                                                values={val.values}
-                                                name={val.name}
-                                                handleChange={this.handleChange}
-                                            />
-                                     
-                                        </div>
+
                                     </div>
-                                )
-                            } else if (val.type === "text") {
-                                return (
-                                    <div className="col-12 col-md-6 accountDropdown form-group mb-4 mt-2" key={'inputLabels_' + index}>
-                                        <div className="">
-                                            {val.label}
+
+                                    )
+                                } else if (val.type === "drop-down") {
+                                    return (
+                                        <div className="col-12 col-md-6 form-group accountDropdown mb-2" key={'inputLabels_' + index}>
+                                            <div className="">
+                                                {val.label}
+                                            </div>
+                                            <div className="dropdownSelectValue divWidth" >
+                                                <Dropdown
+                                                    values={val.values}
+                                                    name={val.name}
+                                                    handleChange={this.handleChange}
+                                                />
+
+                                            </div>
                                         </div>
-                                        <div className="inputTextValue">
-                                            <InputText
-                                                name={val.name}
-                                                placeholder={val.placeholder}
-                                                handleChange={this.handleChange}
-                                            />
+                                    )
+                                } else if (val.type === "text") {
+                                    return (
+                                        <div className="col-12 col-md-6 accountDropdown form-group mb-4 mt-2" key={'inputLabels_' + index}>
+                                            <div className="">
+                                                {val.label}
+                                            </div>
+                                            <div className="inputTextValue">
+                                                <InputText
+                                                    name={val.name}
+                                                    placeholder={val.placeholder}
+                                                    handleChange={this.handleChange}
+                                                />
+                                            </div>
                                         </div>
-                                    </div>
-                                )
-                            }
-                        })
-                    }
+                                    )
+                                }
+                            })
+                        }
 
                         <div className="row btnContainer generalButtonContainer flex-sm-row-reverse mt-4 mb-3">
                             <div className="mt-3 col-12 col-md-3 pr-3 pl-3">
-                            <button type="submit" className="btn btn-primary col-12">Save</button>
-                        </div>
+                                <button type="submit" className="btn btn-primary col-12">Save</button>
+                            </div>
                             <div className="mt-3 col-12 col-md-3 align-self-center quitBtn pl-3 pr-3">
-                            <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
+                                <Link to='/feature-options'><button type="submit" className="btn btn-primary col-12">Quit</button></Link>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </form>
             </div>
-           
+
         )
     }
 }

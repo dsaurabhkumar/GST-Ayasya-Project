@@ -14,7 +14,7 @@ class RegionalSettings extends React.Component {
                 {
                     label: "Date Format",
                     type: "dropdown",
-                    name: "dateFormat", 
+                    name: "dateFormat",
                     id: "dateFormat",
                     placeholder: "Select an option",
                     values: [
@@ -25,7 +25,7 @@ class RegionalSettings extends React.Component {
                 {
                     label: "Date Seperator",
                     type: "text",
-                    name: "dateSeperator", 
+                    name: "dateSeperator",
                     id: "dateSeperator",
                     placeholder: "-",
                 },
@@ -82,7 +82,7 @@ class RegionalSettings extends React.Component {
                 {
                     label: "Country",
                     type: "country-dropdown",
-                    name: "countryDropdown", 
+                    name: "countryDropdown",
                     id: "countryDropdown",
                     placeholder: "Select an option",
                     values: [
@@ -95,7 +95,7 @@ class RegionalSettings extends React.Component {
                 {
                     label: "State",
                     type: "state-dropdown",
-                    name: "stateDropdown", 
+                    name: "stateDropdown",
                     id: "stateDropdown",
                     placeholder: "Select an option",
                     values: [
@@ -113,7 +113,7 @@ class RegionalSettings extends React.Component {
     handleChange = event => {
         console.log(event)
         this.setState({
-            [event.target.name]:event.target.value
+            [event.target.name]: event.target.value
         })
     }
 
@@ -126,62 +126,62 @@ class RegionalSettings extends React.Component {
         return (
             <React.Fragment>
                 <div className="container mt-4 mb-4">
-                    <h2 className="text-center">Regional Settings</h2>
-                    <form className="mt-5 reginalForm" onSubmit={this.submitForm}>
+                    <h2 className="text-center mb-4">Regional Settings</h2>
+                    <form className="reginalForm" onSubmit={this.submitForm}>
                         <div className="form-row">
-                                {
-                                    this.state.inputFields.map((val, index) => {
-                                        if(val.type === "text") {
-                                            return (
-                                                <div className="form-group col-md-4" key={'inputFields_' + index}>
-                                                <InputText 
-                                                    name = {val.name}
+                            {
+                                this.state.inputFields.map((val, index) => {
+                                    if (val.type === "text") {
+                                        return (
+                                            <div className="form-group col-md-4" key={'inputFields_' + index}>
+                                                <InputText
+                                                    name={val.name}
                                                     placeholder={val.placeholder}
                                                     label={val.label}
                                                     handleChange={this.handleChange}
                                                 />
-                                                </div>
-                                            )
-                                        } else if (val.type === "dropdown") {
-                                            return (
-                                                <div className="form-group col-md-4" key={'inputFields_' + index}>
-                                                <Dropdown 
+                                            </div>
+                                        )
+                                    } else if (val.type === "dropdown") {
+                                        return (
+                                            <div className="form-group col-md-4" key={'inputFields_' + index}>
+                                                <Dropdown
                                                     name={val.name}
                                                     label={val.label}
                                                     values={val.values}
                                                     handleChange={this.handleChange}
                                                 />
-                                                </div>
-                                            )
-                                        }
-                                        else if (val.type === "country-dropdown") {
-                                            return (
-                                                <div className="form-group col-md-4" key={'inputFields_' + index}>
-                                                <Dropdown 
+                                            </div>
+                                        )
+                                    }
+                                    else if (val.type === "country-dropdown") {
+                                        return (
+                                            <div className="form-group col-md-4" key={'inputFields_' + index}>
+                                                <Dropdown
                                                     name={val.name}
                                                     label={val.label}
                                                     values={val.values}
                                                     handleChange={this.handleChange}
                                                 />
-                                                </div>
-                                            )
-                                        }
-                                        else if (val.type === "state-dropdown") {
-                                            return (
-                                                <div className="form-group col-md-4" key={'inputFields_' + index}>
-                                                <Dropdown 
+                                            </div>
+                                        )
+                                    }
+                                    else if (val.type === "state-dropdown") {
+                                        return (
+                                            <div className="form-group col-md-4" key={'inputFields_' + index}>
+                                                <Dropdown
                                                     name={val.name}
                                                     label={val.label}
                                                     values={val.values}
                                                     handleChange={this.handleChange}
                                                 />
-                                                </div>
-                                            )
-                                        }
-                                    })
-                                }
+                                            </div>
+                                        )
+                                    }
+                                })
+                            }
                         </div>
-                      
+
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
                             <div className="mt-3 col-12 col-md-4 p-0">
                                 <button type="submit" className="btn btn-primary col-12">Save</button>

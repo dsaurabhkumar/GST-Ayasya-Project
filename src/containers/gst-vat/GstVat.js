@@ -203,6 +203,7 @@ const GstVat = (props) => {
 
     return (
         <div className="container mt-4 mb-4">
+            <h2 className="text-center mb-4">GST/VAT</h2>
             <Formik
                 initialValues={formValue}
 

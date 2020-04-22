@@ -237,6 +237,7 @@ const Excise = (props) => {
 
     return (
         <div className="container mt-4 mb-4">
+            <h2 className="text-center mb-4">Excise</h2>
             <Formik
                 initialValues={formValue}
 

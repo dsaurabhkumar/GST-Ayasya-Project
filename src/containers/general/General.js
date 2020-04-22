@@ -167,18 +167,18 @@ class General extends React.Component {
         e.preventDefault();
         console.log(this.state);
         axios.post('https://jsonplaceholder.typicode.com/posts', this.state)
-        .then(response => {
-            console.log(response.data);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     render() {
         return (
             <div className="container mt-4 mb-4">
-                <h2 className="text-center mb-5">General</h2>
+                <h2 className="text-center mb-4">General</h2>
                 <form className="generalForm" onSubmit={this.formSubmit}>
                     <div className="row">
                         {

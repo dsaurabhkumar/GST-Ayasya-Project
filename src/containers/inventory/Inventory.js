@@ -312,102 +312,102 @@ const Inventory = (props) => {
                 />
                 break;
 
-                case "enableSaleQuotation":
-                element = <SaleQuotation 
+            case "enableSaleQuotation":
+                element = <SaleQuotation
                     submittedData={(childData) => (
                         childDataInfoFormTwo = childData
                     )}
                 />
                 break;
 
-                case "enablePurchaseQuotation":
-                element = <PurchaseQuotation 
+            case "enablePurchaseQuotation":
+                element = <PurchaseQuotation
                     submittedData={(childData) => (
                         childDataInfoFormThree = childData
                     )}
                 />
                 break;
 
-                case "enableOrderProcessing":
-                element = <OrderProcessing 
+            case "enableOrderProcessing":
+                element = <OrderProcessing
                     submittedData={(childData) => (
                         childDataInfoFormFour = childData
                     )}
                 />
                 break;
 
-                case "enableSalePurchaseChallan":
-                element = <SalePurchaseChallan 
+            case "enableSalePurchaseChallan":
+                element = <SalePurchaseChallan
                     submittedData={(childData) => (
                         childDataInfoFormFive = childData
                     )}
                 />
                 break;
 
-                case "accountingPureInventoryVouchers":
-                element = <PureInventoryVouchers 
+            case "accountingPureInventoryVouchers":
+                element = <PureInventoryVouchers
                     submittedData={(childData) => (
                         childDataInfoFormSix = childData
                     )}
                 />
                 break;
 
-                case "enableConsignementSales":
-                element = <ConsignmentSales 
+            case "enableConsignementSales":
+                element = <ConsignmentSales
                     submittedData={(childData) => (
                         childDataInfoFormSeven = childData
                     )}
                 />
                 break;
 
-                case "enableJobWork":
-                element = <JobWork 
+            case "enableJobWork":
+                element = <JobWork
                     submittedData={(childData) => (
                         childDataInfoFormEight = childData
                     )}
                 />
                 break;
 
-                case "parameterizedDetails":
-                element = <ParameterizedDetails 
+            case "parameterizedDetails":
+                element = <ParameterizedDetails
                     submittedData={(childData) => (
                         childDataInfoFormNine = childData
                     )}
                 />
                 break;
 
-                case "batchWiseDetails":
-                element = <BatchWiseDetails 
+            case "batchWiseDetails":
+                element = <BatchWiseDetails
                     submittedData={(childData) => (
                         childDataInfoFormTen = childData
                     )}
                 />
                 break;
 
-                case "mrpWiseDetails":
-                element = <MrpWiseDetails 
+            case "mrpWiseDetails":
+                element = <MrpWiseDetails
                     submittedData={(childData) => (
                         childDataInfoFormEleven = childData
                     )}
                 />
                 break;
 
-                case "enebleFreeQuantityVouchers":
-                element = <FreeQuantityVouchers 
+            case "enebleFreeQuantityVouchers":
+                element = <FreeQuantityVouchers
                     submittedData={(childData) => (
                         childDataInfoFormTwelve = childData
                     )}
                 />
                 break;
-                
-                case "maintainMultipleItemAliases":
-                element = <MultipleItemAliases 
+
+            case "maintainMultipleItemAliases":
+                element = <MultipleItemAliases
                     submittedData={(childData) => (
                         childDataInfoFormForteen = childData
                     )}
                 />
                 break;
-                
+
         }
 
         if (element) {
@@ -430,7 +430,7 @@ const Inventory = (props) => {
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
                     console.log(data, childDataInfoFormOne, childDataInfoFormTwo, childDataInfoFormThree, childDataInfoFormFour, childDataInfoFormFive,
-                        childDataInfoFormSix, childDataInfoFormSeven, childDataInfoFormEight, childDataInfoFormNine, childDataInfoFormTen, childDataInfoFormEleven, childDataInfoFormTwelve, childDataInfoFormForteen)                    
+                        childDataInfoFormSix, childDataInfoFormSeven, childDataInfoFormEight, childDataInfoFormNine, childDataInfoFormTen, childDataInfoFormEleven, childDataInfoFormTwelve, childDataInfoFormForteen)
                     setSubmitting(false);
                 }}
             >
@@ -440,36 +440,36 @@ const Inventory = (props) => {
                             {
                                 inputText.map((val, index) => (
                                     <div className="col-12 col-md-6 mb-4" key={"inputTextField" + index}>
-                                            {val.label}
-                                            <Field
-                                                type='number'
-                                                name={val.name}
-                                                placeholder={val.placeholder}
-                                                as={TextField}
-                                            />
-                                        </div> 
+                                        {val.label}
+                                        <Field
+                                            type='number'
+                                            name={val.name}
+                                            placeholder={val.placeholder}
+                                            as={TextField}
+                                        />
+                                    </div>
                                 ))
                             }
-                            </div>
+                        </div>
 
                         <div className="row mb-4 inventoryCheckBox">
                             {
                                 checkboxdata.map((val, index) => (
                                     <div className="col-12 col-md-6 inventoryButton" key={"inputCheckboxKey" + index}>
                                         {/* <div> */}
-                                            <FormControlLabel
-                                                label={val.title}
-                                                control={
-                                                    <Field
-                                                        type='checkbox'
-                                                        name="checkbox"
-                                                        value={val.value}
-                                                        as={Checkbox} />
-                                                }
-                                            />
+                                        <FormControlLabel
+                                            label={val.title}
+                                            control={
+                                                <Field
+                                                    type='checkbox'
+                                                    name="checkbox"
+                                                    value={val.value}
+                                                    as={Checkbox} />
+                                            }
+                                        />
                                         {/* </div> */}
                                         {/* <div className="col-5 col-md-5 configureBtns"> */}
-                                            {componentModalItem(val.id)}
+                                        {componentModalItem(val.id)}
                                         {/* </div> */}
                                     </div>
                                 ))

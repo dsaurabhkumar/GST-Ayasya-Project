@@ -214,6 +214,7 @@ const TdsTcs = (props) => {
 
     return (
         <div className="container mt-4 mb-4">
+            <h2 className="text-center mb-4">TDS/TCS</h2>
             <Formik
                 initialValues={formValue}
 
@@ -343,9 +344,6 @@ const TdsTcs = (props) => {
                                         ))
                                     }
                                 </div>
-
-
-
                             </div>
 
                             <div className="mt-2 mb-4 configureBtn">
