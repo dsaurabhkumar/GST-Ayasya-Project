@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import InputText from '../../components/Forms/formComponents/input-text/InputText';
 import Dropdown from '../../components/Forms/formComponents/dropdown/Dropdown';
 import './General.css';
 import axios from 'axios';
@@ -13,17 +12,23 @@ class General extends React.Component {
             inputLabels: [
                 {
                     label: "Maintain Data Checklist",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "maintainChecklist",
-                    id: "maintainChecklist"
+                    id: "maintainChecklist",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
                 {
                     label: "Enable Notes Manager",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "enableNotes",
-                    id: "enableNotes"
+                    id: "enableNotes",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
                 {
                     label: "Delete Exported Files on Closing the Company",
@@ -38,38 +43,53 @@ class General extends React.Component {
                 },
                 {
                     label: "Bind Data with specified HDD(s)",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "bindData",
-                    id: "bindData"
+                    id: "bindData",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
                 {
                     label: "Enable Voucher Auditing",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "enableVoucher",
-                    id: "enableVoucher"
+                    id: "enableVoucher",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
                 {
                     label: "Display Thought of The Day",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "displayThought",
-                    id: "displayThought"
+                    id: "displayThought",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
                 {
                     label: "Maintain Image & Signature with User",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "maintainUser",
-                    id: "maintainUser"
+                    id: "maintainUser",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
                 {
                     label: "Maintain Tracking No. in Vouchers",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "maintainVoucher",
-                    id: "maintainVoucher"
+                    id: "maintainVoucher",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
                 {
                     label: "Intelligent Search in Master's Drop Down List",
@@ -84,38 +104,53 @@ class General extends React.Component {
                 },
                 {
                     label: "Show <--End of List--> in Master's Drop Down List",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "showMaster",
-                    id: "showMaster"
+                    id: "showMaster",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
                 {
                     label: "Change Voucher Type Captions(s)",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "changeVoucher",
-                    id: "changeVoucher"
+                    id: "changeVoucher",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
                 {
                     label: "Default Mode of Sending SMS",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "defaultMode",
-                    id: "defaultMode"
+                    id: "defaultMode",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
                 {
                     label: "Print 'Duplicate Copy' while re-printing Sales Invoice",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "printDuplicateCopy",
-                    id: "printDuplicateCopy"
+                    id: "printDuplicateCopy",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
                 {
                     label: "Enable Second Language Support",
-                    type: "text",
-                    placeholder: "Y/N",
+                    type: "dropdown",
                     name: "enableSecondLang",
-                    id: "enableSecondLang"
+                    id: "enableSecondLang",
+                    values: [
+                        "Y",
+                        "N"
+                    ]
                 },
             ]
         }
@@ -148,19 +183,7 @@ class General extends React.Component {
                     <div className="row">
                         {
                             this.state.inputLabels.map((val, index) => {
-                                if (val.type === "text") {
-                                    return (
-                                        <div className="col-12 col-md-4 generalInputLabel form-group" key={'inputLabels_' + index}>
-                                            {val.label}
-                                            <InputText
-                                                name={val.name}
-                                                placeholder={val.placeholder}
-                                                handleChange={this.handleChange}
-                                            />
-                                        </div>
-                                    )
-                                }
-                                else if (val.type === "dropdown") {
+                                if (val.type === "dropdown") {
                                     return (
                                         <div className="col-12 col-md-4 generalInputLabel form-group" key={'inputLabels_' + index}>
                                             {val.label}
