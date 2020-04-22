@@ -12,7 +12,7 @@ function NavBar() {
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-hover="dropdown" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span><i className="fas fa-align-justify hambergerMenu"></i></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                <div className="collapse navbar-collapse desktopViewNav" id="navbarNavDropdown">
                     <ul className="navbar-nav">
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
