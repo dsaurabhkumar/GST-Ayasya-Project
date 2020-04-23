@@ -105,7 +105,7 @@ const EmailConfig = () => {
                     setSubmitting(false);
                 }}
             >
-                {({ values, isSubmitting }) => (
+                {({ values, isSubmitting, handleChange, handleBlur }) => (
                     <Form className="">
 
                         <div className="row inventoryForm">
@@ -192,10 +192,12 @@ const EmailConfig = () => {
                                                 {val.label}
                                                 <div className="mt-2 inputTextArea">
                                                     <TextareaAutosize
-                                                        type='textarea'
+                                                        type='text'
                                                         name={val.name}
                                                         placeholder={val.placeholder}
                                                         rows={11}
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
                                                     />
                                                 </div>
                                             </div>
