@@ -110,34 +110,16 @@ const EmailConfig = () => {
 
                         <div className="row inventoryForm">
 
-                            <div className="col-12 col-md-6 inventoryForm">
-                                <h5 className="text-center mb-3 emailConfigHeading">Email Sending Options</h5>
-                                {
-                                    radioBtn_One.map((val, index) => (
-                                        <div className="mb-2" key={"radioInputKey" + index}>
-                                            <div className="radioBtnTextAlign">
-                                                <Field
-                                                    type='radio'
-                                                    name='radioBtnsOne'
-                                                    value={val.value}
-                                                    as={Radio}
-                                                />
-                                                {val.key}
-                                            </div>
-
-                                        </div>
-                                    ))
-                                }
-
-                                <div className="inventoryForm mt-4">
-                                <span className="subSectionHeading">Send Reports as</span>
+                            <div className="col-12 col-md-6">
+                                <div className="inventoryForm">
+                                    <h5 className="text-center mb-3 emailConfigHeading">Email Sending Options</h5>
                                     {
-                                        radioBtn_Two.map((val, index) => (
+                                        radioBtn_One.map((val, index) => (
                                             <div className="mb-2" key={"radioInputKey" + index}>
                                                 <div className="radioBtnTextAlign">
                                                     <Field
                                                         type='radio'
-                                                        name='radioBtnsTwo'
+                                                        name='radioBtnsOne'
                                                         value={val.value}
                                                         as={Radio}
                                                     />
@@ -147,13 +129,52 @@ const EmailConfig = () => {
                                             </div>
                                         ))
                                     }
-                                </div>
 
-                                <div className="inventoryForm mt-4">
-                                <span className="subSectionHeading">Server Configuration</span>
+                                    <div className="inventoryForm mt-4">
+                                        <span className="subSectionHeading">Send Reports as</span>
+                                        {
+                                            radioBtn_Two.map((val, index) => (
+                                                <div className="mb-2" key={"radioInputKey" + index}>
+                                                    <div className="radioBtnTextAlign">
+                                                        <Field
+                                                            type='radio'
+                                                            name='radioBtnsTwo'
+                                                            value={val.value}
+                                                            as={Radio}
+                                                        />
+                                                        {val.key}
+                                                    </div>
+
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
+
+                                    <div className="inventoryForm mt-4">
+                                        <span className="subSectionHeading">Server Configuration</span>
+                                        {
+                                            inputText_One.map((val, index) => (
+                                                <div className="mb-2 col-12" key={"inputTextField" + index}>
+                                                    {val.label}
+                                                    <Field
+                                                        type='text'
+                                                        name={val.name}
+                                                        placeholder={val.placeholder}
+                                                        as={TextField}
+                                                    />
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-12 col-md-6">
+                                <div className=" inventoryForm emailConfigMobView">
+                                    <h5 className="text-center mb-3 emailConfigHeading">Senders Information</h5>
                                     {
-                                        inputText_One.map((val, index) => (
-                                            <div className="mb-2 col-12" key={"inputTextField" + index}>
+                                        inputText_Two.map((val, index) => (
+                                            <div className="mb-3 col-12" key={"inputTextField" + index}>
                                                 {val.label}
                                                 <Field
                                                     type='text'
@@ -164,41 +185,24 @@ const EmailConfig = () => {
                                             </div>
                                         ))
                                     }
-                                </div>
-                            </div>
 
-                            <div className="col-12 col-md-6 inventoryForm emailConfigMobView">
-                                <h5 className="text-center mb-3 emailConfigHeading">Senders Information</h5>
-                                {
-                                    inputText_Two.map((val, index) => (
-                                        <div className="mb-3 col-12" key={"inputTextField" + index}>
-                                            {val.label}
-                                            <Field
-                                                type='text'
-                                                name={val.name}
-                                                placeholder={val.placeholder}
-                                                as={TextField}
-                                            />
-                                        </div>
-                                    ))
-                                }
-
-                                {
-                                    textArea_one.map((val, index) => (
-                                        <div className="mt-4 col-12" key={"inputTextField" + index}>
-                                            {val.label}
-                                            <div className="mt-2 inputTextArea">
-                                                <TextareaAutosize
-                                                    type='textarea'
-                                                    name={val.name}
-                                                    placeholder={val.placeholder}
-                                                    rows={11}
-                                                />
+                                    {
+                                        textArea_one.map((val, index) => (
+                                            <div className="mt-4 col-12" key={"inputTextField" + index}>
+                                                {val.label}
+                                                <div className="mt-2 inputTextArea">
+                                                    <TextareaAutosize
+                                                        type='textarea'
+                                                        name={val.name}
+                                                        placeholder={val.placeholder}
+                                                        rows={11}
+                                                    />
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))
-                                }
+                                        ))
+                                    }
 
+                                </div>
                             </div>
 
                         </div>
