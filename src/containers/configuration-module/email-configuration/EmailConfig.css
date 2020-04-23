@@ -1,0 +1,23 @@
+.emailConfigHeading {
+    text-decoration: underline;
+}
+
+.inputTextArea textarea {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .subSectionHeading {
+        position: relative;
+        top: -25px;
+        background-color: white;
+    }
+}
+
+@media (min-width: 768px) {
+    .subSectionHeading {
+        position: relative;
+        top: -28px;
+        background-color: white;
+    }
+}

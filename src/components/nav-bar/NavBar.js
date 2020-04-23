@@ -285,7 +285,7 @@ function NavBar() {
                                             <Link className="dropdown-item" to="">Party Dash Board Configuration</Link>
                                             <div className="dropdown-divider"></div>
 
-                                            <Link className="dropdown-item" to="">Email Configuration</Link>
+                                            <Link className="dropdown-item" to="/email-configuration">Email Configuration</Link>
                                             <div className="dropdown-divider"></div>
 
                                             <Link className="dropdown-item" to="">SMS API Configuration</Link>
