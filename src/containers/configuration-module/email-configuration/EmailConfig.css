@@ -12,6 +12,9 @@
         top: -25px;
         background-color: white;
     }
+    .emailConfigMobView {
+        margin-top: 1rem;
+    }
 }
 
 @media (min-width: 768px) {

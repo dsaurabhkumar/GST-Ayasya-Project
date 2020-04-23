@@ -105,10 +105,10 @@ const EmailConfig = () => {
                     setSubmitting(false);
                 }}
             >
-                {({ values, isSubmitting, handleChange }) => (
-                    <Form className="inventoryForm">
+                {({ values, isSubmitting }) => (
+                    <Form className="">
 
-                        <div className="row">
+                        <div className="row inventoryForm">
 
                             <div className="col-12 col-md-6 inventoryForm">
                                 <h5 className="text-center mb-3 emailConfigHeading">Email Sending Options</h5>
@@ -167,7 +167,7 @@ const EmailConfig = () => {
                                 </div>
                             </div>
 
-                            <div className="col-12 col-md-6 inventoryForm">
+                            <div className="col-12 col-md-6 inventoryForm emailConfigMobView">
                                 <h5 className="text-center mb-3 emailConfigHeading">Senders Information</h5>
                                 {
                                     inputText_Two.map((val, index) => (
