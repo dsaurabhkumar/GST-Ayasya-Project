@@ -70,6 +70,7 @@ import { VoucherSeriesConfig } from '../containers/configuration-module/voucher-
 import HardwareConfig from '../containers/configuration-module/hardware-configuration/HardwareConfig';
 import UserDashboardConfig from '../containers/configuration-module/user-dashboard-configuration/UserDashboardConfig';
 import EmailConfig from '../containers/configuration-module/email-configuration/EmailConfig';
+import MaxEntriesInVoucher from '../containers/configuration-module/maximum-entries-in-voucher/MaxEntriesInVoucher';
 
 const Routes = () => (
         <Switch>
@@ -279,6 +280,9 @@ const Routes = () => (
             </Route>
             <Route path="/email-configuration">
                 <EmailConfig />
+            </Route>
+            <Route path="/maximum-entries-in-voucher">
+                <MaxEntriesInVoucher />
             </Route>
 
             <Route component={PageNotFound}></Route>

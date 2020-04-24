@@ -386,7 +386,7 @@ function NavBar() {
                                             <Link className="dropdown-item" to="">Warning Alarms</Link>
                                             <div className="dropdown-divider"></div>
 
-                                            <Link className="dropdown-item" to="">Maximum Entries in Voucher</Link>
+                                            <Link className="dropdown-item" to="/maximum-entries-in-voucher">Maximum Entries in Voucher</Link>
                                             <div className="dropdown-divider"></div>
 
                                             <Link className="dropdown-item dropdown-toggle" to="">Ageing Analysis Time Slabs</Link>
