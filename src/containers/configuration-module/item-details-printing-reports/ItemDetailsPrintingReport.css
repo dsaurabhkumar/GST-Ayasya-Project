@@ -1,0 +1,26 @@
+.itemDetailsReport {
+    display: flex;
+}
+.itemDetailsReport .MuiFormControl-root {
+    width: 25%;
+    position: absolute;
+    right: 1rem;
+}
+.labelWidth {
+    width: 65%;
+}
+
+@media (max-width: 575px) {
+    .itemDetailsHeading {
+        position: relative;
+        bottom: 28px;
+        background-color: #ffffff;
+    }
+}
+@media (min-width: 576px) {
+    .itemDetailsHeading {
+        position: relative;
+        bottom: 30px;
+        background-color: #ffffff;
+    }
+}

@@ -71,6 +71,7 @@ import HardwareConfig from '../containers/configuration-module/hardware-configur
 import UserDashboardConfig from '../containers/configuration-module/user-dashboard-configuration/UserDashboardConfig';
 import EmailConfig from '../containers/configuration-module/email-configuration/EmailConfig';
 import MaxEntriesInVoucher from '../containers/configuration-module/maximum-entries-in-voucher/MaxEntriesInVoucher';
+import ItemDetailsPrintingReport from '../containers/configuration-module/item-details-printing-reports/ItemDetailsPrintingReport';
 
 const Routes = () => (
         <Switch>
@@ -280,6 +281,9 @@ const Routes = () => (
             </Route>
             <Route path="/email-configuration">
                 <EmailConfig />
+            </Route>
+            <Route path="/items-details-printing-in-reports">
+                <ItemDetailsPrintingReport />               
             </Route>
             <Route path="/maximum-entries-in-voucher">
                 <MaxEntriesInVoucher />

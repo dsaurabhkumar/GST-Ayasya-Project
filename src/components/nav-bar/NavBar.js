@@ -377,7 +377,7 @@ function NavBar() {
                                             <Link className="dropdown-item" to="">Report Header Printing</Link>
                                             <div className="dropdown-divider"></div>
 
-                                            <Link className="dropdown-item" to="">Items Details Printing in Reports</Link>
+                                            <Link className="dropdown-item" to="/items-details-printing-in-reports">Items Details Printing in Reports</Link>
                                             <div className="dropdown-divider"></div>
 
                                             <Link className="dropdown-item" to="">Final Results Configuration</Link>
