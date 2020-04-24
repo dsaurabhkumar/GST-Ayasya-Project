@@ -279,7 +279,7 @@ function NavBar() {
                                             <Link className="dropdown-item" to="/hardware-configuration">Hardware Configuration</Link>
                                             <div className="dropdown-divider"></div>
 
-                                            <Link className="dropdown-item" to="">User Dash Board Configuration</Link>
+                                            <Link className="dropdown-item" to="/user-dash-board-configuration">User Dash Board Configuration</Link>
                                             <div className="dropdown-divider"></div>
 
                                             <Link className="dropdown-item" to="">Party Dash Board Configuration</Link>

@@ -456,7 +456,6 @@ const Inventory = (props) => {
                             {
                                 checkboxdata.map((val, index) => (
                                     <div className="col-12 col-md-6 inventoryButton" key={"inputCheckboxKey" + index}>
-                                        {/* <div> */}
                                         <FormControlLabel
                                             label={val.title}
                                             control={
@@ -467,10 +466,7 @@ const Inventory = (props) => {
                                                     as={Checkbox} />
                                             }
                                         />
-                                        {/* </div> */}
-                                        {/* <div className="col-5 col-md-5 configureBtns"> */}
                                         {componentModalItem(val.id)}
-                                        {/* </div> */}
                                     </div>
                                 ))
                             }

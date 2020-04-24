@@ -68,6 +68,7 @@ import CountryModify from '../containers/masters-module/masters-misc-masters-cou
 import CountryList from '../containers/masters-module/masters-misc-masters-country/country-list/CountryList';
 import { VoucherSeriesConfig } from '../containers/configuration-module/voucher-series-configuration/VoucherSeriesConfig';
 import HardwareConfig from '../containers/configuration-module/hardware-configuration/HardwareConfig';
+import UserDashboardConfig from '../containers/configuration-module/user-dashboard-configuration/UserDashboardConfig';
 import EmailConfig from '../containers/configuration-module/email-configuration/EmailConfig';
 
 const Routes = () => (
@@ -272,6 +273,9 @@ const Routes = () => (
             </Route>
             <Route path='/hardware-configuration'>
                 <HardwareConfig />
+            </Route>
+            <Route path='/user-dash-board-configuration'>
+                <UserDashboardConfig />
             </Route>
             <Route path="/email-configuration">
                 <EmailConfig />
