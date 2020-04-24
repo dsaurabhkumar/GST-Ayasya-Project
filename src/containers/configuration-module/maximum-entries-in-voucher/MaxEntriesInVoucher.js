@@ -76,7 +76,7 @@ const MaxEntriesInVoucher = () => {
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
 
-                        <div className="row">
+                        <div className="row inventoryForm">
                             {
                                 inputText.map((val, index) => (
                                     <div className="mb-3 col-12 col-md-6 maxEntriesVoucher" key={"inputTextField" + index}>
