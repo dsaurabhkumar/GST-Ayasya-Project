@@ -1,3 +1,7 @@
 .maxEntriesVoucher {
     display: flex;
 }
+
+.maxEntriesVoucher .MuiFormControl-root.MuiTextField-root {
+    width: 50% !important;
+}
