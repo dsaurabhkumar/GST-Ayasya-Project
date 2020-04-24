@@ -679,9 +679,9 @@ const UserDashboardConfig = () => {
                                     </div>
                                 ))
                             }
-                            </div>
+                        </div>
 
-                            <span className="userDashsubHeading">Parties Info</span>
+                        <span className="userDashsubHeading">Parties Info</span>
                         <div className="row inventoryForm">
                             {
                                 dropDown_eleven.map((val, index) => (
@@ -707,9 +707,9 @@ const UserDashboardConfig = () => {
                                     </div>
                                 ))
                             }
-                            </div>
+                        </div>
 
-                            <span className="userDashsubHeading">Profit/Loss</span>
+                        <span className="userDashsubHeading">Profit/Loss</span>
                         <div className="row inventoryForm">
                             {
                                 dropDown_twelve.map((val, index) => (
@@ -735,7 +735,7 @@ const UserDashboardConfig = () => {
                                     </div>
                                 ))
                             }
-                            </div>
+                        </div>
 
 
 
