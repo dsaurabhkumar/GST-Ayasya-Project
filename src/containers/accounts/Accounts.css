@@ -42,8 +42,7 @@ input[type='checkbox'] {
 }
 .dropdownSelectValue{
     bottom: 27px;
-    position: relative;
-    
+    position: relative;    
 }
 .accountCheckbox{
     display: flex;
