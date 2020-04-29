@@ -77,232 +77,232 @@ import BillRefPrintingReports from '../containers/configuration-module/refrences
 import ItemGroupPrinting from '../containers/configuration-module/refrences-group-summary-printing-configuration/item-group-summary-printing/ItemGroupPrinting';
 
 const Routes = () => (
-        <Switch>
-            <Route path="/" exact={true} component={LandingPage}>
-            </Route>
-            <Route path="/create-company">
-                <CreateCompany />
-            </Route>
-            <Route path="/open-company">
-                <OpenCompany />
-            </Route>
-            <Route path="/login">
-                <Login />
-            </Route>
-            <Route path="/feature-options">
-                <FeatureOption />
-            </Route>
-            <Route path="/regional-settings">
-                <RegionalSettings />
-            </Route>
-            <Route path="/general">
-                <General />
-            </Route>
-            <Route path="/display-settings">
-                <DisplaySettings />
-            </Route>
-            <Route path="/accounts">
-                <Accounts />
-            </Route>
-            <Route path="/inventory">
-                <Inventory />
-            </Route>
-            <Route path="/gst-vat">
-                <GstVat />
-            </Route>
-            <Route path="/excise">
-                <Excise />
-            </Route>
-            <Route path="/service-tax">
-                <ServiceTax />
-            </Route>
-            <Route path="/tds-tcs">
-                <TdsTcs />
-            </Route>
-            <Route path="/account-add">
-                <AccountAdd />
-            </Route>
-            <Route path="/account-modify">
-                <AccountModify />
-            </Route>
-            <Route path="/account-list">
-                <AccountList />
-            </Route>
-            <Route path="/account-group-add">
-                <AccountGroupAdd />
-            </Route>
-            <Route path="/account-group-modify">
-                <AccountGroupModify />
-            </Route>
-            <Route path="/account-group-list">
-                <AccountGroupList />
-            </Route>
-            <Route path="/std-narration-add">
-                <StdNarrationAdd />
-            </Route>
-            <Route path="/std-narration-modify">
-                <StdNarrationModify />
-            </Route>
-            <Route path="/std-narration-list">
-                <StdNarrationList />
-            </Route>
-            <Route path="/item-add">
-                <ItemAdd />
-            </Route>
-            <Route path="/item-modify">
-                <ItemModify />
-            </Route>
-            <Route path="/item-list">
-                <ItemList />
-            </Route>
-            <Route path="/item-group-add">
-                <ItemGroupAdd />
-            </Route>
-            <Route path="/item-group-modify">
-                <ItemGroupModify />
-            </Route>
-            <Route path="/item-group-list">
-                <ItemGroupList />
-            </Route>
-            <Route path="/material-centre-add">
-                <MaterialCentreAdd />
-            </Route>
-            <Route path="/material-centre-modify">
-                <MaterialCentreModify />
-            </Route>
-            <Route path="/material-centre-list">
-                <MaterialCentreList />
-            </Route>
-            <Route path="/material-centre-group-add">
-                <MaterialCentreGroupAdd />
-            </Route>
-            <Route path="/material-centre-group-modify">
-                <MaterialCentreGroupModify />
-            </Route>
-            <Route path="/material-centre-group-list">
-                <MaterialCentreGroupList />
-            </Route>
-            <Route path="/unit-add">
-                <UnitAdd />
-            </Route>
-            <Route path="/unit-modify">
-                <UnitModify />
-            </Route>
-            <Route path="/unit-list">
-                <UnitList />
-            </Route>
-            <Route path="/unit-conversion-add">
-                <UnitConversionAdd />
-            </Route>
-            <Route path="/unit-conversion-modify">
-                <UnitConversionModify />
-            </Route>
-            <Route path="/unit-conversion-list">
-                <UnitConversionList />
-            </Route>
-            <Route path="/bill-sundry-add">
-                <BillSundryAdd />
-            </Route>
-            <Route path="/bill-sundry-modify">
-                <BillSundryModify />
-            </Route>
-            <Route path="/bill-sundry-list">
-                <BillSundryList />
-            </Route>
-            <Route path="/bill-of-material-add">
-                <BillOfMaterialAdd />
-            </Route>
-            <Route path="/bill-of-material-modify">
-                <BillOfMaterialModify />
-            </Route>
-            <Route path="/bill-of-material-list">
-                <BillOfMaterialList />
-            </Route>
-            <Route path="/sale-type-add">
-                <SaleTypeAdd />
-            </Route>
-            <Route path="/sale-type-modify">
-                <SaleTypeModify />
-            </Route>
-            <Route path="/sale-type-list">
-                <SaleTypeList />
-            </Route>
-            <Route path="/purchase-type-add">
-                <PurchaseTypeAdd />
-            </Route>
-            <Route path="/purchase-type-modify">
-                <PurchaseTypeModify />
-            </Route>
-            <Route path="/purchase-type-list">
-                <PurchaseTypeList />
-            </Route>
-            <Route path="/tax-category-add">
-                <TaxCategoryAdd />
-            </Route>
-            <Route path="/tax-category-modify">
-                <TaxCategoryModify />
-            </Route>
-            <Route path="/tax-category-list">
-                <TaxCategoryList />
-            </Route>
-            <Route path="/misc-masters-discount-structure-add">
-                <DiscountStructureAdd />
-            </Route>
-            <Route path="/misc-masters-discount-structure-modify">
-                <DiscountStructureModify />
-            </Route>
-            <Route path="/misc-masters-discount-structure-list">
-                <DiscountStructureList />
-            </Route>
-            <Route path="/discount-structre-state-add">
-                <StateAdd />
-            </Route>
-            <Route path="/discount-structre-state-modify">
-                <StateModify />
-            </Route>
-            <Route path="/discount-structre-state-list">
-                <StateList />
-            </Route>
-            <Route path='/discount-structre-country-add'>
-                <CountryAdd />
-            </Route>
-            <Route path='/discount-structre-country-modify'>
-                <CountryModify />
-            </Route>
-            <Route path='/discount-structre-country-list'>
-                <CountryList />
-            </Route>
+    <Switch>
+        <Route path="/" exact={true} component={LandingPage}>
+        </Route>
+        <Route path="/create-company">
+            <CreateCompany />
+        </Route>
+        <Route path="/open-company">
+            <OpenCompany />
+        </Route>
+        <Route path="/login">
+            <Login />
+        </Route>
+        <Route path="/feature-options">
+            <FeatureOption />
+        </Route>
+        <Route path="/regional-settings">
+            <RegionalSettings />
+        </Route>
+        <Route path="/general">
+            <General />
+        </Route>
+        <Route path="/display-settings">
+            <DisplaySettings />
+        </Route>
+        <Route path="/accounts">
+            <Accounts />
+        </Route>
+        <Route path="/inventory">
+            <Inventory />
+        </Route>
+        <Route path="/gst-vat">
+            <GstVat />
+        </Route>
+        <Route path="/excise">
+            <Excise />
+        </Route>
+        <Route path="/service-tax">
+            <ServiceTax />
+        </Route>
+        <Route path="/tds-tcs">
+            <TdsTcs />
+        </Route>
+        <Route path="/account-add">
+            <AccountAdd />
+        </Route>
+        <Route path="/account-modify">
+            <AccountModify />
+        </Route>
+        <Route path="/account-list">
+            <AccountList />
+        </Route>
+        <Route path="/account-group-add">
+            <AccountGroupAdd />
+        </Route>
+        <Route path="/account-group-modify">
+            <AccountGroupModify />
+        </Route>
+        <Route path="/account-group-list">
+            <AccountGroupList />
+        </Route>
+        <Route path="/std-narration-add">
+            <StdNarrationAdd />
+        </Route>
+        <Route path="/std-narration-modify">
+            <StdNarrationModify />
+        </Route>
+        <Route path="/std-narration-list">
+            <StdNarrationList />
+        </Route>
+        <Route path="/item-add">
+            <ItemAdd />
+        </Route>
+        <Route path="/item-modify">
+            <ItemModify />
+        </Route>
+        <Route path="/item-list">
+            <ItemList />
+        </Route>
+        <Route path="/item-group-add">
+            <ItemGroupAdd />
+        </Route>
+        <Route path="/item-group-modify">
+            <ItemGroupModify />
+        </Route>
+        <Route path="/item-group-list">
+            <ItemGroupList />
+        </Route>
+        <Route path="/material-centre-add">
+            <MaterialCentreAdd />
+        </Route>
+        <Route path="/material-centre-modify">
+            <MaterialCentreModify />
+        </Route>
+        <Route path="/material-centre-list">
+            <MaterialCentreList />
+        </Route>
+        <Route path="/material-centre-group-add">
+            <MaterialCentreGroupAdd />
+        </Route>
+        <Route path="/material-centre-group-modify">
+            <MaterialCentreGroupModify />
+        </Route>
+        <Route path="/material-centre-group-list">
+            <MaterialCentreGroupList />
+        </Route>
+        <Route path="/unit-add">
+            <UnitAdd />
+        </Route>
+        <Route path="/unit-modify">
+            <UnitModify />
+        </Route>
+        <Route path="/unit-list">
+            <UnitList />
+        </Route>
+        <Route path="/unit-conversion-add">
+            <UnitConversionAdd />
+        </Route>
+        <Route path="/unit-conversion-modify">
+            <UnitConversionModify />
+        </Route>
+        <Route path="/unit-conversion-list">
+            <UnitConversionList />
+        </Route>
+        <Route path="/bill-sundry-add">
+            <BillSundryAdd />
+        </Route>
+        <Route path="/bill-sundry-modify">
+            <BillSundryModify />
+        </Route>
+        <Route path="/bill-sundry-list">
+            <BillSundryList />
+        </Route>
+        <Route path="/bill-of-material-add">
+            <BillOfMaterialAdd />
+        </Route>
+        <Route path="/bill-of-material-modify">
+            <BillOfMaterialModify />
+        </Route>
+        <Route path="/bill-of-material-list">
+            <BillOfMaterialList />
+        </Route>
+        <Route path="/sale-type-add">
+            <SaleTypeAdd />
+        </Route>
+        <Route path="/sale-type-modify">
+            <SaleTypeModify />
+        </Route>
+        <Route path="/sale-type-list">
+            <SaleTypeList />
+        </Route>
+        <Route path="/purchase-type-add">
+            <PurchaseTypeAdd />
+        </Route>
+        <Route path="/purchase-type-modify">
+            <PurchaseTypeModify />
+        </Route>
+        <Route path="/purchase-type-list">
+            <PurchaseTypeList />
+        </Route>
+        <Route path="/tax-category-add">
+            <TaxCategoryAdd />
+        </Route>
+        <Route path="/tax-category-modify">
+            <TaxCategoryModify />
+        </Route>
+        <Route path="/tax-category-list">
+            <TaxCategoryList />
+        </Route>
+        <Route path="/misc-masters-discount-structure-add">
+            <DiscountStructureAdd />
+        </Route>
+        <Route path="/misc-masters-discount-structure-modify">
+            <DiscountStructureModify />
+        </Route>
+        <Route path="/misc-masters-discount-structure-list">
+            <DiscountStructureList />
+        </Route>
+        <Route path="/discount-structre-state-add">
+            <StateAdd />
+        </Route>
+        <Route path="/discount-structre-state-modify">
+            <StateModify />
+        </Route>
+        <Route path="/discount-structre-state-list">
+            <StateList />
+        </Route>
+        <Route path='/discount-structre-country-add'>
+            <CountryAdd />
+        </Route>
+        <Route path='/discount-structre-country-modify'>
+            <CountryModify />
+        </Route>
+        <Route path='/discount-structre-country-list'>
+            <CountryList />
+        </Route>
 
-            <Route path='/voucher-series-configuration'>
-                <VoucherSeriesConfig />
-            </Route>
-            <Route path='/hardware-configuration'>
-                <HardwareConfig />
-            </Route>
-            <Route path='/user-dash-board-configuration'>
-                <UserDashboardConfig />
-            </Route>
-            <Route path="/email-configuration">
-                <EmailConfig />
-            </Route>
-            <Route path="/bill-reference-printing-documents">
-                <BillRefPrintingDocuments />
-            </Route>
-            <Route path="/bill-reference-printing-reports">
-                <BillRefPrintingReports />
-            </Route>
-            <Route path="/item-group-summary-details-printing">
-                <ItemGroupPrinting />
-            </Route>
+        <Route path='/voucher-series-configuration'>
+            <VoucherSeriesConfig />
+        </Route>
+        <Route path='/hardware-configuration'>
+            <HardwareConfig />
+        </Route>
+        <Route path='/user-dash-board-configuration'>
+            <UserDashboardConfig />
+        </Route>
+        <Route path="/email-configuration">
+            <EmailConfig />
+        </Route>
+        <Route path="/bill-reference-printing-documents">
+            <BillRefPrintingDocuments />
+        </Route>
+        <Route path="/bill-reference-printing-reports">
+            <BillRefPrintingReports />
+        </Route>
+        <Route path="/item-group-summary-details-printing">
+            <ItemGroupPrinting />
+        </Route>
 
-            <Route path="/items-details-printing-in-reports">
-                <ItemDetailsPrintingReport />               
-            </Route>
-            <Route path="/maximum-entries-in-voucher">
-                <MaxEntriesInVoucher />
-            </Route>
+        <Route path="/items-details-printing-in-reports">
+            <ItemDetailsPrintingReport />
+        </Route>
+        <Route path="/maximum-entries-in-voucher">
+            <MaxEntriesInVoucher />
+        </Route>
 
-            <Route component={PageNotFound}></Route>
-        </Switch>
+        <Route component={PageNotFound}></Route>
+    </Switch>
 )
 export default Routes
