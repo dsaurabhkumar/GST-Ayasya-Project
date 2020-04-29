@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, Fragment } from 'react';
 import './ServiceTax.css'
 import ModalComponent from '../../components/modal/ModalComponent';
 import { Formik, Field, Form } from 'formik';
@@ -7,6 +7,8 @@ import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } fro
 import SignatoryDetails from '../../components/Forms/gst-vat-sub-forms/signatory-details/SignatoryDetails';
 
 const ServiceTax = (props) => {
+
+    const [toggled, toggle] = useState(false);
 
     let childDataInfoFormOne = null;
 
@@ -169,7 +171,9 @@ const ServiceTax = (props) => {
                                                         type='checkbox'
                                                         name="checkbox"
                                                         value={val.value}
-                                                        as={Checkbox} />
+                                                        as={Checkbox}
+                                                        onClick={() => toggle(toggled => !toggled)}
+                                                    />
                                                 }
                                             />
                                         </div>
@@ -177,71 +181,74 @@ const ServiceTax = (props) => {
                                 }
                             </div>
 
-                            {
-                                dropDown.map((val, index) => (
-                                    <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
-                                        <div className="mb-2">
-                                            {val.label}
-                                        </div>
-                                        <FormControl>
-                                            <select
-                                                type='select'
-                                                name={val.name}
-                                                value={values.name}
-                                                onChange={handleChange}
-                                            >
-                                                <option defaultValue>Select an Option</option>
-                                                {
-                                                    val.values.map((cval, cindex) => (
-                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                    ))
-                                                }
-                                            </select>
-                                        </FormControl>
+                            {toggled &&
+                                <React.Fragment>
+                                    {
+                                        dropDown.map((val, index) => (
+                                            <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                                <div className="mb-2">
+                                                    {val.label}
+                                                </div>
+                                                <FormControl>
+                                                    <select
+                                                        type='select'
+                                                        name={val.name}
+                                                        value={values.name}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option defaultValue>Select an Option</option>
+                                                        {
+                                                            val.values.map((cval, cindex) => (
+                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                            ))
+                                                        }
+                                                    </select>
+                                                </FormControl>
+                                            </div>
+                                        ))
+                                    }
+
+                                    {
+                                        inputText_One.map((val, index) => (
+                                            <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
+                                                {val.label}
+                                                <Field
+                                                    type='text'
+                                                    name={val.name}
+                                                    placeholder={val.placeholder}
+                                                    as={TextField}
+                                                />
+                                            </div>
+                                        ))
+                                    }
+
+                                    {
+                                        inputText_Two.map((val, index) => (
+                                            <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
+                                                {val.label}
+                                                <Field
+                                                    type='text'
+                                                    name={val.name}
+                                                    placeholder={val.placeholder}
+                                                    as={TextField}
+                                                />
+                                            </div>
+                                        ))
+                                    }
+
+                                    <div className="mt-2 mb-4 configureBtn">
+                                        {
+                                            signatoryDetails.map((val, index) => (
+                                                <div key={"inputTextKey" + index}>
+                                                    {
+                                                        componentModalItem(val.id)
+                                                    }
+                                                </div>
+                                            ))
+                                        }
                                     </div>
-                                ))
+                                </React.Fragment>
                             }
-
-                            {
-                                inputText_One.map((val, index) => (
-                                    <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
-                                        {val.label}
-                                        <Field
-                                            type='text'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextField}
-                                        />
-                                    </div>
-                                ))
-                            }
-
-                            {
-                                inputText_Two.map((val, index) => (
-                                    <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
-                                        {val.label}
-                                        <Field
-                                            type='text'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextField}
-                                        />
-                                    </div>
-                                ))
-                            }
-
-                            <div className="mt-2 mb-4 configureBtn">
-                                {
-                                    signatoryDetails.map((val, index) => (
-                                        <div key={"inputTextKey" + index}>
-                                            {
-                                                componentModalItem(val.id)
-                                            }
-                                        </div>
-                                    ))
-                                }
-                            </div>
-
                         </div>
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">

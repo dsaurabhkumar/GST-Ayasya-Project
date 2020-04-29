@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Excise.css';
 import ModalComponent from '../../components/modal/ModalComponent';
 import { Formik, Field, Form } from 'formik';
@@ -7,6 +7,8 @@ import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } fro
 import InvoiceSetting from '../../components/Forms/excise-sub-forms/invoice-setting/InvoiceSetting';
 
 const Excise = (props) => {
+
+    const [toggled, toggle] = useState(false);
 
     let childDataInfoFormOne = null;
 
@@ -263,7 +265,9 @@ const Excise = (props) => {
                                                         type='checkbox'
                                                         name="checkbox_One"
                                                         value={val.value}
-                                                        as={Checkbox} />
+                                                        as={Checkbox}
+                                                        onClick={() => toggle(toggled => !toggled)}
+                                                    />
                                                 }
                                             />
                                         </div>
@@ -271,175 +275,179 @@ const Excise = (props) => {
                                 }
                             </div>
 
-
-                            <span className="exciseHeadingText">Automatic Mode Configuration</span>
-                            <div className="exciseRadioBtns row">
-                                {
-                                    radioBtn_One.map((val, index) => (
-                                        <div className="mb-2 col-6 col-md-4" key={"radioInputKey" + index}>
-                                            <div className="radioBtnTextAlign">
-                                                <Field
-                                                    type='radio'
-                                                    name='radioBtnsOne'
-                                                    value={val.value}
-                                                    as={Radio}
-                                                />
-                                                {val.key}
-                                            </div>
-
-                                        </div>
-                                    ))
-                                }
-                            </div>
-
-                            <span className="exciseHeadingText">Excise Details</span>
-                            <div className="exciseRadioBtns row">
-                                {
-                                    inputText_One.map((val, index) => (
-                                        <div className="mb-3 col-12 col-md-6" key={"inputTextField" + index}>
-                                            {val.label}
-                                            <Field
-                                                type='text'
-                                                name={val.name}
-                                                placeholder={val.placeholder}
-                                                as={TextField}
-                                            />
-                                        </div>
-                                    ))
-                                }
-
-                                {
-                                    dropDown_One.map((val, index) => (
-                                        <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
-                                            <div className="mb-2">
-                                                {val.label}
-                                            </div>
-                                            <FormControl>
-                                                <select
-                                                    type='select'
-                                                    name={val.name}
-                                                    value={values.name}
-                                                    onChange={handleChange}
-                                                >
-                                                    <option defaultValue>Select an Option</option>
-                                                    {
-                                                        val.values.map((cval, cindex) => (
-                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                        ))
-                                                    }
-                                                </select>
-                                            </FormControl>
-                                        </div>
-                                    ))
-                                }
-                            </div>
-
-
-                            <span className="exciseHeadingText">Manufacturing Options</span>
-                            <div className="exciseRadioBtns row">
-
-                                {
-                                    dropDown_Two.map((val, index) => (
-                                        <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
-                                            <div className="mb-2">
-                                                {val.label}
-                                            </div>
-                                            <FormControl>
-                                                <select
-                                                    type='select'
-                                                    name={val.name}
-                                                    value={values.name}
-                                                    onChange={handleChange}
-                                                >
-                                                    <option defaultValue>Select an Option</option>
-                                                    {
-                                                        val.values.map((cval, cindex) => (
-                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                        ))
-                                                    }
-                                                </select>
-                                            </FormControl>
-                                        </div>
-                                    ))
-                                }
-                                {
-                                    inputText_Two.map((val, index) => (
-                                        <div className="mb-3 col-12 col-md-6" key={"inputTextField" + index}>
-                                            {val.label}
-                                            <Field
-                                                type='text'
-                                                name={val.name}
-                                                placeholder={val.placeholder}
-                                                as={TextField}
-                                            />
-                                        </div>
-                                    ))
-                                }
-
-                                <div className="exciseRadioBtns row">
-                                    <div className="col-12 col-md-12">
+                            {
+                                toggled && <React.Fragment>
+                                    <span className="exciseHeadingText">Automatic Mode Configuration</span>
+                                    <div className="exciseRadioBtns row">
                                         {
-                                            checkBoxData_Two.map((val, index) => (
-                                                <div key={"inputCheckboxKey" + index}>
-                                                    <FormControlLabel
-                                                        label={val.title}
-                                                        control={
-                                                            <Field
-                                                                type='checkbox'
-                                                                name="checkbox_Two"
-                                                                value={val.value}
-                                                                as={Checkbox} />
-                                                        }
-                                                    />
+                                            radioBtn_One.map((val, index) => (
+                                                <div className="mb-2 col-6 col-md-4" key={"radioInputKey" + index}>
+                                                    <div className="radioBtnTextAlign">
+                                                        <Field
+                                                            type='radio'
+                                                            name='radioBtnsOne'
+                                                            value={val.value}
+                                                            as={Radio}
+                                                        />
+                                                        {val.key}
+                                                    </div>
+
                                                 </div>
                                             ))
                                         }
                                     </div>
-                                </div>
-                            </div>
+
+                                    <span className="exciseHeadingText">Excise Details</span>
+                                    <div className="exciseRadioBtns row">
+                                        {
+                                            inputText_One.map((val, index) => (
+                                                <div className="mb-3 col-12 col-md-6" key={"inputTextField" + index}>
+                                                    {val.label}
+                                                    <Field
+                                                        type='text'
+                                                        name={val.name}
+                                                        placeholder={val.placeholder}
+                                                        as={TextField}
+                                                    />
+                                                </div>
+                                            ))
+                                        }
+
+                                        {
+                                            dropDown_One.map((val, index) => (
+                                                <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                                    <div className="mb-2">
+                                                        {val.label}
+                                                    </div>
+                                                    <FormControl>
+                                                        <select
+                                                            type='select'
+                                                            name={val.name}
+                                                            value={values.name}
+                                                            onChange={handleChange}
+                                                        >
+                                                            <option defaultValue>Select an Option</option>
+                                                            {
+                                                                val.values.map((cval, cindex) => (
+                                                                    <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                                ))
+                                                            }
+                                                        </select>
+                                                    </FormControl>
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
 
 
-                            <span className="exciseHeadingText">Trading Options</span>
-                            <div className="exciseRadioBtns row">
+                                    <span className="exciseHeadingText">Manufacturing Options</span>
+                                    <div className="exciseRadioBtns row">
 
-                                {
-                                    dropDown_Three.map((val, index) => (
-                                        <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
-                                            <div className="mb-2">
-                                                {val.label}
-                                            </div>
-                                            <FormControl>
-                                                <select
-                                                    type='select'
-                                                    name={val.name}
-                                                    value={values.name}
-                                                    onChange={handleChange}
-                                                >
-                                                    <option defaultValue>Select an Option</option>
-                                                    {
-                                                        val.values.map((cval, cindex) => (
-                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                        ))
-                                                    }
-                                                </select>
-                                            </FormControl>
-                                        </div>
-                                    ))
-                                }
+                                        {
+                                            dropDown_Two.map((val, index) => (
+                                                <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                                    <div className="mb-2">
+                                                        {val.label}
+                                                    </div>
+                                                    <FormControl>
+                                                        <select
+                                                            type='select'
+                                                            name={val.name}
+                                                            value={values.name}
+                                                            onChange={handleChange}
+                                                        >
+                                                            <option defaultValue>Select an Option</option>
+                                                            {
+                                                                val.values.map((cval, cindex) => (
+                                                                    <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                                ))
+                                                            }
+                                                        </select>
+                                                    </FormControl>
+                                                </div>
+                                            ))
+                                        }
+                                        {
+                                            inputText_Two.map((val, index) => (
+                                                <div className="mb-3 col-12 col-md-6" key={"inputTextField" + index}>
+                                                    {val.label}
+                                                    <Field
+                                                        type='text'
+                                                        name={val.name}
+                                                        placeholder={val.placeholder}
+                                                        as={TextField}
+                                                    />
+                                                </div>
+                                            ))
+                                        }
 
-                                <div className="mt-2 mb-4 configureBtn">
-                                    {
-                                        invoiceSetting.map((val, index) => (
-                                            <div key={"inputTextKey" + index}>
+                                        <div className="exciseRadioBtns row">
+                                            <div className="col-12 col-md-12">
                                                 {
-                                                    componentModalItem(val.id)
+                                                    checkBoxData_Two.map((val, index) => (
+                                                        <div key={"inputCheckboxKey" + index}>
+                                                            <FormControlLabel
+                                                                label={val.title}
+                                                                control={
+                                                                    <Field
+                                                                        type='checkbox'
+                                                                        name="checkbox_Two"
+                                                                        value={val.value}
+                                                                        as={Checkbox} />
+                                                                }
+                                                            />
+                                                        </div>
+                                                    ))
                                                 }
                                             </div>
-                                        ))
-                                    }
-                                </div>
+                                        </div>
+                                    </div>
 
-                            </div>
+
+                                    <span className="exciseHeadingText">Trading Options</span>
+                                    <div className="exciseRadioBtns row">
+
+                                        {
+                                            dropDown_Three.map((val, index) => (
+                                                <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                                    <div className="mb-2">
+                                                        {val.label}
+                                                    </div>
+                                                    <FormControl>
+                                                        <select
+                                                            type='select'
+                                                            name={val.name}
+                                                            value={values.name}
+                                                            onChange={handleChange}
+                                                        >
+                                                            <option defaultValue>Select an Option</option>
+                                                            {
+                                                                val.values.map((cval, cindex) => (
+                                                                    <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                                ))
+                                                            }
+                                                        </select>
+                                                    </FormControl>
+                                                </div>
+                                            ))
+                                        }
+
+                                        <div className="mt-2 mb-4 configureBtn">
+                                            {
+                                                invoiceSetting.map((val, index) => (
+                                                    <div key={"inputTextKey" + index}>
+                                                        {
+                                                            componentModalItem(val.id)
+                                                        }
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+
+                                    </div>
+                                </React.Fragment>
+                            }
+
                         </div>
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
