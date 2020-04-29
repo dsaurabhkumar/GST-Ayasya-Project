@@ -72,6 +72,9 @@ import UserDashboardConfig from '../containers/configuration-module/user-dashboa
 import EmailConfig from '../containers/configuration-module/email-configuration/EmailConfig';
 import MaxEntriesInVoucher from '../containers/configuration-module/maximum-entries-in-voucher/MaxEntriesInVoucher';
 import ItemDetailsPrintingReport from '../containers/configuration-module/item-details-printing-reports/ItemDetailsPrintingReport';
+import BillRefPrintingDocuments from '../containers/configuration-module/refrences-group-summary-printing-configuration/bill-reference-printing-documents/BillRefPrintingDocuments';
+import BillRefPrintingReports from '../containers/configuration-module/refrences-group-summary-printing-configuration/bill-reference-printing-reports/BillRefPrintingReports';
+import ItemGroupPrinting from '../containers/configuration-module/refrences-group-summary-printing-configuration/item-group-summary-printing/ItemGroupPrinting';
 
 const Routes = () => (
         <Switch>
@@ -282,6 +285,16 @@ const Routes = () => (
             <Route path="/email-configuration">
                 <EmailConfig />
             </Route>
+            <Route path="/bill-reference-printing-documents">
+                <BillRefPrintingDocuments />
+            </Route>
+            <Route path="/bill-reference-printing-reports">
+                <BillRefPrintingReports />
+            </Route>
+            <Route path="/item-group-summary-details-printing">
+                <ItemGroupPrinting />
+            </Route>
+
             <Route path="/items-details-printing-in-reports">
                 <ItemDetailsPrintingReport />               
             </Route>

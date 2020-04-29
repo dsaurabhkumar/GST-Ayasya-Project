@@ -366,11 +366,11 @@ function NavBar() {
 
                                             <Link className="dropdown-item dropdown-toggle" to="">References/Group Summary Configuration</Link>
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">Bill Reference Details Printing (Reports)</a></li>
+                                                <Link className="dropdown-item" to="/bill-reference-printing-reports">Bill Reference Details Printing (Reports)</Link>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">Bill Reference Details Printing (Documents)</a></li>
+                                                <Link className="dropdown-item" to="/bill-reference-printing-documents">Bill Reference Details Printing (Documents)</Link>
                                                 <div className="dropdown-divider"></div>
-                                                <li><a className="dropdown-item" href="#">Item Group Summary Details Printing</a></li>
+                                                <Link className="dropdown-item" to="/item-group-summary-details-printing">Item Group Summary Details Printing</Link>
                                             </ul>
                                             <div className="dropdown-divider"></div>
 
