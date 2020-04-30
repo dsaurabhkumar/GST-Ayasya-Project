@@ -2,17 +2,15 @@ import React from 'react';
 import './ItemGroupPrinting.css'
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
-import {  Button, FormControlLabel, FormControl, } from '@material-ui/core';
-
-
-
+import { Button, FormControlLabel, FormControl, } from '@material-ui/core';
 
 const ItemGroupPrinting = () => {
+
     const formValue = {
-       
+
     }
+
     const dropDown = [
-       
         {
             label: 'Item Group Name',
             name: 'itemGroupName',
@@ -20,8 +18,6 @@ const ItemGroupPrinting = () => {
                 "Y",
             ]
         },
-
-
         {
             label: 'Main Qty',
             name: 'mainQty',
@@ -43,13 +39,11 @@ const ItemGroupPrinting = () => {
                 "Y",
             ]
         },
-        
+
     ]
 
-  
+
     return (
-      
-      
         <div className="container mt-4 mb-4 containerWidth ">
             <h2 className="text-center mb-4">Item Group Printing Component</h2>
             <Formik
@@ -64,10 +58,10 @@ const ItemGroupPrinting = () => {
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
                         <div className="row">
-                        <b className="col-6">Item Group Details</b>
-                        <b className="col-6 text-center">Required</b>
+                            <b className="col-6">Item Group Details</b>
+                            <b className="col-6 text-center">Required</b>
                         </div>
-                        
+
                         <div className="mt-4 itemGroupDisplay">
                             {
                                 dropDown.map((val, index) => (
@@ -93,10 +87,7 @@ const ItemGroupPrinting = () => {
                                     </div>
                                 ))
                             }
-
                         </div>
-
-                      
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
                             <div className="mt-3 col-12 col-md-3 p-0">
