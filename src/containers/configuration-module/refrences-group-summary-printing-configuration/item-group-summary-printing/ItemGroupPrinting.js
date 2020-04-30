@@ -45,7 +45,7 @@ const ItemGroupPrinting = () => {
 
     return (
         <div className="container mt-4 mb-4 containerWidth ">
-            <h2 className="text-center mb-4">Item Group Printing Component</h2>
+            <h2 className="text-center mb-4">Item GroupWise Details Printing</h2>
             <Formik
                 initialValues={formValue}
 
