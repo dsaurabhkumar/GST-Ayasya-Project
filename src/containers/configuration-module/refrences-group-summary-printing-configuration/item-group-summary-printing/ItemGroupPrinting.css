@@ -1,0 +1,12 @@
+.itemGroupDisplay{
+    flex-direction: column;
+}
+.dropdownItemValue{
+    display: flex;
+}
+.dropDownHeading{
+    width: 100%;
+}
+.dropdownItemValue .MuiFormControl-root{
+    width: 50%;
+}
