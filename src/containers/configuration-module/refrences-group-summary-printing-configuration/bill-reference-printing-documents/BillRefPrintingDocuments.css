@@ -6,7 +6,7 @@
 }
 .billRefTextField {
     position: relative;
-    bottom: 7px;
+    bottom: 8px;
 }
 
 @media (max-width: 767px) {
