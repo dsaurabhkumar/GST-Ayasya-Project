@@ -278,7 +278,7 @@ const Excise = (props) => {
                             {
                                 toggled && <React.Fragment>
                                     <span className="exciseHeadingText">Automatic Mode Configuration</span>
-                                    <div className="exciseRadioBtns row">
+                                    <div className="exciseRadioBtns mb-4 row">
                                         {
                                             radioBtn_One.map((val, index) => (
                                                 <div className="mb-2 col-6 col-md-4" key={"radioInputKey" + index}>
