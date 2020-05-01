@@ -391,9 +391,9 @@ function NavBar() {
 
                                         <Link className="dropdown-item dropdown-toggle" to="">Ageing Analysis Time Slabs</Link>
                                         <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item" href="#">Account</a></li>
+                                            <Link className="dropdown-item" to="/ageing-analysis-account">Account</Link>
                                             <div className="dropdown-divider"></div>
-                                            <li><a className="dropdown-item" href="#">Inventory</a></li>
+                                            <Link className="dropdown-item" to="/ageing-analysis-inventory">Inventory</Link>
                                         </ul>
                                         <div className="dropdown-divider"></div>
 
