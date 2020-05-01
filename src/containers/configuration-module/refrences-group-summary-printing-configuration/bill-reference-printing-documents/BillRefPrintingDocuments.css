@@ -8,6 +8,9 @@
     position: relative;
     bottom: 8px;
 }
+.billRefTextField .MuiFormControl-root .MuiInput-formControl input{
+    text-align: center;
+}
 
 @media (max-width: 767px) {
   .dropdownWidth .MuiFormControl-root {

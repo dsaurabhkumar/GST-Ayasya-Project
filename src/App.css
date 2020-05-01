@@ -58,6 +58,12 @@ code {
   align-self: center;
 }
 
+@media (max-width: 765px) {
+  h2 {
+    font-size: 25px;
+  }
+}
+
 @media (min-width: 767px) {
   .containerWidth {
     width: 570px;

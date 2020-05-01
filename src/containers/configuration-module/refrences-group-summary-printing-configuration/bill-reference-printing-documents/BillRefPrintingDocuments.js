@@ -14,6 +14,18 @@ const BillRefPrintingDocuments = () => {
         dueDate_text: "",
     }
 
+    const radioBtn = [
+        {
+            key: 'Use Seprate Line For Each Bill No',
+            value: 'useSeprateLineForEachBillNo',
+        },
+        {
+            key: 'Conncatenate all Bill Nos',
+            value: 'concatenateAllBillNo',
+        },
+
+    ]
+
     const dropDown = [
 
         {
@@ -64,21 +76,10 @@ const BillRefPrintingDocuments = () => {
             name: 'dueDate_text',
         },
     ]
-    const radioBtn = [
-        {
-            key: 'Use Seprate Line For Each Bill No',
-            value: 'useSeprateLineForEachBillNo',
-        },
-        {
-            key: 'Conncatenate All Bill No',
-            value: 'concatenateAllBillNo',
-        },
-
-    ]
 
     return (
         <div className="container mt-4 mb-4">
-            <h2 className="text-center mb-4">Bill Details Configuration (for)</h2>
+            <h2 className="text-center mb-4">Bill Details Printing Configuration (for)</h2>
             <Formik
                 initialValues={formValue}
 
@@ -109,6 +110,12 @@ const BillRefPrintingDocuments = () => {
                                     </div>
                                 ))
                             }
+                        </div>
+
+                        <div className="row">
+                            <b className="col-4">Bill Details</b>
+                            <b className="col-4 text-center">Required</b>
+                            <b className="col-4 text-center">Width</b>
                         </div>
 
                         <div className="row mt-4">

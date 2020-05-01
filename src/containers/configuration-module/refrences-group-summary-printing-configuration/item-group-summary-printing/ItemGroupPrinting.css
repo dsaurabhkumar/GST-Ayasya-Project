@@ -10,3 +10,6 @@
 .dropdownItemValue .MuiFormControl-root{
     width: 50%;
 }
+.dropdownItemValue .MuiFormControl-root .MuiInput-formControl input{
+    text-align: center;
+}
