@@ -141,7 +141,6 @@ const DiscountStructureAdd = (props) => {
                                 ))
                             }
 
-                            <h5><span className="mt-2 headingAlign">Amount of Discount to be fed as</span></h5>
                             <div className="row inventoryForm divWidth">
                                 {
                                     discount_structure_add_radio_three.map((val, index) => (
