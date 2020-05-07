@@ -106,7 +106,7 @@ const AgeingInventory = () => {
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
                         <div className="row mt-4 ageingBorderBox">
-                            <div className="col-4 col-md-3 mt-3">
+                            <div className="col-4 col-md-3 mt-3 p-0">
                                 {
                                     label.map((val) => (
                                         <div className="dropdownItemValue dropdownWidth mb-4">
@@ -118,7 +118,7 @@ const AgeingInventory = () => {
                                 }
 
                             </div>
-                            <div className="col-3 col-md-4 billRefTextField mt-3">
+                            <div className="col-3 col-md-4 billRefTextField mt-3 p-0">
                                 {
                                     inputText_one.map((val, index) => (
                                         <div className="mb-3" key={"inputTextField" + index}>
@@ -141,7 +141,7 @@ const AgeingInventory = () => {
                                 <p className="mb-4">to</p>
 
                             </div>
-                            <div className="col-3 col-md-4 billRefTextField mt-3">
+                            <div className="col-3 col-md-4 billRefTextField mt-3 p-0">
                                 {
                                     inputText_two.map((val, index) => (
                                         <div className="mb-3" key={"inputTextField" + index}>
