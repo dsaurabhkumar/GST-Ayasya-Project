@@ -108,8 +108,8 @@ const AgeingInventory = () => {
                         <div className="row mt-4 ageingBorderBox">
                             <div className="col-4 col-md-3 mt-3 p-0">
                                 {
-                                    label.map((val) => (
-                                        <div className="dropdownItemValue dropdownWidth mb-4">
+                                    label.map((val, index) => (
+                                        <div className="dropdownItemValue dropdownWidth mb-4" key={"inputText" + index}>
                                             <div className="dropDownHeading">
                                                 {val.label}
                                             </div>

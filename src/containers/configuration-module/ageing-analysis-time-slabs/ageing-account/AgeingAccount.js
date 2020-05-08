@@ -18,7 +18,6 @@ const AgeingAccount = () => {
         Days_For_Slab_5_2: "",
     }
 
-
     const label = [
 
         {
@@ -91,7 +90,6 @@ const AgeingAccount = () => {
         },
     ]
 
-
     return (
         <div className="container containerWidth mt-4 mb-4">
             <h2 className="text-center mb-4">Ageing Analysis Time Slabs</h2>
@@ -106,11 +104,12 @@ const AgeingAccount = () => {
             >
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
+
                         <div className="row mt-4 ageingBorderBox">
                             <div className="col-4 col-md-3 mt-3 p-0">
                                 {
-                                    label.map((val) => (
-                                        <div className="dropdownItemValue dropdownWidth mb-4">
+                                    label.map((val, index) => (
+                                        <div className="dropdownItemValue dropdownWidth mb-4" key={"inputText" + index}>
                                             <div className="dropDownHeading">
                                                 {val.label}
                                             </div>
@@ -119,6 +118,7 @@ const AgeingAccount = () => {
                                 }
 
                             </div>
+
                             <div className="col-3 col-md-4 billRefTextField mt-3 p-0">
                                 {
                                     inputText_one.map((val, index) => (
@@ -133,15 +133,15 @@ const AgeingAccount = () => {
                                     ))
                                 }
                             </div>
+
                             <div className="col-2 col-md-1 mt-3">
-
                                 <p className="mb-4">to</p>
                                 <p className="mb-4">to</p>
                                 <p className="mb-4">to</p>
                                 <p className="mb-4">to</p>
                                 <p className="mb-4">to</p>
-
                             </div>
+
                             <div className="col-3 col-md-4 billRefTextField mt-3 p-0">
                                 {
                                     inputText_two.map((val, index) => (
