@@ -138,14 +138,13 @@ class VoucherSeriesList extends React.Component {
           <h6 className="mt-3 text-center">Select the Voucher Series to Configure</h6>
         <div className="container containerStyle mb-3 mt-3">
           <div className="row">
-            <div className="col-md-7 mb-3 voucherListBox">
+            <div className="col-md-5 mb-3 voucherListBox">
               {
                 this.state.voucherList.map((val, index) => (
                   <div key={'accordion' + index}>
-                    <button className="btn btn-link mr-1 ml-2" onClick={() => this.accordionView(index)}>{!val.open ? "+" : "-"}</button>
-                    {val.label}
+                    <button className="btn btn-link mr-1 ml-2" onClick={() => this.accordionView(index)}>{!val.open ? "+" : "-"} {val.label} </button>
                     <div className={(!val.open ? 'd-none' : '')}>
-                      <Link className="ml-5 p-0" to="">
+                      <Link className="ml-5 p-0 mb-3" to="">
                         {val.accordianText}
                       </Link>
                     </div>
@@ -155,7 +154,7 @@ class VoucherSeriesList extends React.Component {
               }
             </div>
 
-            <div className="col-md-5">
+            <div className="col-md-7">
               {
                 this.state.buttonList.map((val, index) => (
                   <div key={'buttons' + index}>

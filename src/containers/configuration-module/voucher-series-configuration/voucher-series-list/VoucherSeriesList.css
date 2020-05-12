@@ -41,7 +41,7 @@
 }
 
 .btn-link {
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .btn-link.focus, .btn-link:focus {
@@ -80,5 +80,5 @@ hr {
 }
 
 .buttonAlign {
-  margin-bottom: 1.75rem;
+  margin-bottom: 0.85rem;
 }
