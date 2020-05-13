@@ -11,12 +11,10 @@ class VoucherSeriesList extends React.Component {
         {
           label: 'Sales',
           accordianText: 'Main',
-          id: 'sales'
         },
         {
           label: 'Purchase',
           accordianText: 'Main',
-          id: 'purchase'
         },
         {
           label: 'Sales Return(Cr.Note)',
