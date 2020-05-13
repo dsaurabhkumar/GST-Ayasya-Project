@@ -59,7 +59,8 @@ class VoucherListButton extends React.Component {
 
     render() {
         return (
-                <Button className="row">{
+            <Button>
+                {
                     this.state.buttonList.map((val, index) => (
                         <button className="col-12 col-md-6 mobileView" key={'buttons' + index}>
                             {
@@ -70,7 +71,7 @@ class VoucherListButton extends React.Component {
                         </button>
                     ))
                 }
-                </Button>
+            </Button>
         )
     }
 }

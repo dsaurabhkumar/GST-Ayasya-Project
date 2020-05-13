@@ -2,6 +2,9 @@ button {
     background-color: white;
     border: none;
 }
+.mobileView {
+    padding-right: 0;
+}
 
 @media (max-width: 767px) {
   .mobileView {
