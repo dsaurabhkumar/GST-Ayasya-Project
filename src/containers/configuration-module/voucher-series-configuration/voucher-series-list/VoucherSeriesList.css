@@ -36,8 +36,9 @@
 
 .btn.btn-link {
   position: relative;
-  bottom: 5px !important;
-  padding: 5px;
+  bottom: 3px !important;
+  padding: 3px;
+  color: #000000;
 }
 
 .btn-link {

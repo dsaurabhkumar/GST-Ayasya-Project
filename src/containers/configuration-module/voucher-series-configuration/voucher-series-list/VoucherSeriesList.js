@@ -11,10 +11,12 @@ class VoucherSeriesList extends React.Component {
         {
           label: 'Sales',
           accordianText: 'Main',
+          id: 'sales'
         },
         {
           label: 'Purchase',
           accordianText: 'Main',
+          id: 'purchase'
         },
         {
           label: 'Sales Return(Cr.Note)',
@@ -135,7 +137,7 @@ class VoucherSeriesList extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h6 className="mt-3 text-center">Select the Voucher Series to Configure</h6>
+        <h2 className="mt-3 text-center">Select the Voucher Series to Configure</h2>
         <div className="container mt-4">
           <div className="row mb-4 containerBorder">
             <div className="col-12 col-md-4 mb-4 voucherListBox containerStyle">
@@ -145,7 +147,7 @@ class VoucherSeriesList extends React.Component {
                     <button className="btn btn-link mr-1" onClick={() => this.accordionView(index)}>{!val.open ? "+" : "-"} {val.label} </button>
                     <div className={(!val.open ? 'd-none' : '')}>
                     <div className="mb-2">
-                      <Link className="ml-4 p-0 mb-3" to="">
+                      <Link className="ml-4 p-0 btn btn-link" to="">
                         {val.accordianText}
                       </Link>
                       </div>
