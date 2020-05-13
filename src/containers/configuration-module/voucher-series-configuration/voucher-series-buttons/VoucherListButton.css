@@ -1,0 +1,10 @@
+button {
+    background-color: white;
+    border: none;
+}
+
+@media (max-width: 767px) {
+  .mobileView {
+    padding: 0;
+  }
+}

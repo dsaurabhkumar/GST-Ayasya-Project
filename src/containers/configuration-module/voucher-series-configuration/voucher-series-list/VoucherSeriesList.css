@@ -73,9 +73,6 @@
   .containerBorder {
     padding: 3%;
   }
-  .mobileView {
-    padding: 0;
-  }
 }
 
 hr {
@@ -85,4 +82,5 @@ hr {
 
 .buttonAlign {
   margin-bottom: 0.85rem;
+  white-space: pre-wrap;
 }

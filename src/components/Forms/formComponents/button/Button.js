@@ -1,6 +1,6 @@
 import React from 'react';
 
 const Button = (props) => {
-    {props.children}
+    return <button>{props.children}</button>
 }
 export default Button

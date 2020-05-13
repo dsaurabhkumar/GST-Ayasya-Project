@@ -1,8 +1,8 @@
 import React from 'react';
 import VoucherSeriesList from './voucher-series-list/VoucherSeriesList';
-import VoucherSeriesButton from './voucher-series-buttons/VoucherListButton';
+import VoucherListButton from './voucher-series-buttons/VoucherListButton';
 
-export const VoucherSeriesConfig = () => {
+export const VoucherSeriesConfig = (props) => {
     return (
 
         <div className="container">
@@ -12,10 +12,8 @@ export const VoucherSeriesConfig = () => {
                     <VoucherSeriesList />
 
                 </div>
-                <div className="col-12 col-md-8">
-                    <div className="row">
-                        <VoucherSeriesButton />
-                    </div>
+                <div className="col-12 col-md-8 mobileView">
+                    <VoucherListButton />
                 </div>
             </div>
         </div>

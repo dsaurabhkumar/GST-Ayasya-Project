@@ -1,8 +1,10 @@
 import React from 'react';
+import './VoucherListButton.css';
 import { Link } from 'react-router-dom';
+import Button from '../../../../components/Forms/formComponents/button/Button';
 
 
-class VoucherSeriesButton extends React.Component {
+class VoucherListButton extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -44,7 +46,7 @@ class VoucherSeriesButton extends React.Component {
                     buttonLink: ''
                 },
                 {
-                    label: "Voucher Management",
+                    label: "Voucher Series Group Management",
                     buttonLink: ''
                 },
                 {
@@ -57,20 +59,19 @@ class VoucherSeriesButton extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
-                {
+                <Button className="row">{
                     this.state.buttonList.map((val, index) => (
-                        <div className="col-12 col-md-6 mobileView" key={'buttons' + index}>
+                        <button className="col-12 col-md-6 mobileView" key={'buttons' + index}>
                             {
                                 val.buttonLink.startsWith('http') ?
                                     <a className="btn btn-primary divWidth buttonAlign" target={val.target} href={val.buttonLink}>{val.label}</a> :
                                     <Link className="btn btn-primary divWidth buttonAlign" to={val.buttonLink}>{val.label}</Link>
                             }
-                        </div>
+                        </button>
                     ))
                 }
-            </React.Fragment>
+                </Button>
         )
     }
 }
-export default VoucherSeriesButton
+export default VoucherListButton
