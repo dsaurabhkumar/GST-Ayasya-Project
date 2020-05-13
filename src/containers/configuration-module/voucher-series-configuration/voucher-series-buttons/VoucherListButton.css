@@ -4,6 +4,9 @@ button {
 }
 .mobileView {
     padding-right: 0;
+}
+
+.buttonView {
     display: inline-block;
 }
 
