@@ -62,13 +62,13 @@ class VoucherListButton extends React.Component {
             <Button>
                 {
                     this.state.buttonList.map((val, index) => (
-                        <button className="col-12 col-md-6 mobileView" key={'buttons' + index}>
+                        <span className="col-12 col-md-6 mobileView" key={'buttons' + index}>
                             {
                                 val.buttonLink.startsWith('http') ?
                                     <a className="btn btn-primary divWidth buttonAlign" target={val.target} href={val.buttonLink}>{val.label}</a> :
                                     <Link className="btn btn-primary divWidth buttonAlign" to={val.buttonLink}>{val.label}</Link>
                             }
-                        </button>
+                        </span>
                     ))
                 }
             </Button>

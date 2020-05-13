@@ -4,6 +4,7 @@ button {
 }
 .mobileView {
     padding-right: 0;
+    display: inline-block;
 }
 
 @media (max-width: 767px) {
