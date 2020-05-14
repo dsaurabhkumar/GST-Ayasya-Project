@@ -80,6 +80,11 @@ import AgeingInventory from '../containers/configuration-module/ageing-analysis-
 import UsersAdd from '../containers/users-module/users-add/UsersAdd';
 import UsersModify from '../containers/users-module/users-modify/UsersModify';
 import UsersList from '../containers/users-module/users-list/UsersList';
+import DataFreezing from '../containers/utilities-module/data-freezing/DataFreezing';
+import BillWiseReferences from '../containers/utilities-module/reference-management/clear-references/BillWiseReferences';
+import BillWiseRefer from '../containers/utilities-module/reference-management/auto-adjust-references/BillWiseRefer';
+import BillReferences from '../containers/utilities-module/reference-management/reference-adjustment-wizard/BillReferences';
+import SendEmail from '../containers/utilities-module/send-e-mail/SendEmail';
 
 const Routes = () => (
     <Switch>
@@ -326,7 +331,25 @@ const Routes = () => (
             <UsersList />
         </Route>
 
-        
+
+
+        <Route path="/utilities-data-freezing">
+            <DataFreezing />
+        </Route>
+        <Route path="/utilities-clear-bill-wise-references">
+            <BillWiseReferences />
+        </Route>
+        <Route path="/utilities-auto-adjust-bill-wise-references">
+            <BillWiseRefer />
+        </Route>
+        <Route path="/utilities-bill-references">
+            <BillReferences />
+        </Route>
+        <Route path="/send-e-mail">
+            <SendEmail />
+        </Route>
+
+
 
         <Route component={PageNotFound}></Route>
     </Switch>

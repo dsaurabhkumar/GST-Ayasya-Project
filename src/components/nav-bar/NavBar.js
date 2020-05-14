@@ -419,16 +419,111 @@ function NavBar() {
                                 <li>
                                     <a className="dropdown-item dropdown-toggle" href="#">Users</a>
                                     <ul className="dropdown-menu">
-                                        <Link className="dropdown-item" to="users-add">Add</Link>
+                                        <Link className="dropdown-item" to="/users-add">Add</Link>
                                         <div className="dropdown-divider"></div>
-                                        <Link className="dropdown-item" to="users-modify">Modify</Link>
+                                        <Link className="dropdown-item" to="/users-modify">Modify</Link>
                                         <div className="dropdown-divider"></div>
-                                        <Link className="dropdown-item" to="users-list">List</Link>
+                                        <Link className="dropdown-item" to="/users-list">List</Link>
                                     </ul>
                                 </li>
                                 <div className="dropdown-divider"></div>
 
-                                <li><a className="dropdown-item dropdown-toggle" href="#">Utilities</a></li>
+                                <li><a className="dropdown-item dropdown-toggle" href="#">Utilities</a>
+
+                                    <ul className="dropdown-menu">
+                                            <Link className="dropdown-item" to="/utilities-data-freezing">Data Freezing</Link>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <a className="dropdown-item dropdown-toggle" href="#">Reference Management</a>
+                                            <ul className="dropdown-menu">
+                                                <li><Link className="dropdown-item dropdown-toggle" to=''>Clear References</Link>
+                                                    <ul className="dropdown-menu">
+                                                        <li><Link className="dropdown-item" to='/utilities-clear-bill-wise-references'>Bill-wise References</Link></li>
+                                                    </ul>
+                                                </li>
+                                                <div className="dropdown-divider"></div>
+                                                <li><Link className="dropdown-item dropdown-toggle" to=''>Auto Adjust References</Link>
+                                                    <ul className="dropdown-menu">
+                                                        <li><Link className="dropdown-item" to='/utilities-auto-adjust-bill-wise-references'>Bill-wise References</Link></li>
+                                                    </ul>
+                                                </li>
+                                                <div className="dropdown-divider"></div>
+                                                <li><Link className="dropdown-item dropdown-toggle" to=''>Reference Adjustment Wizard</Link>
+                                                    <ul className="dropdown-menu">
+                                                        <li><Link className="dropdown-item" to='/utilities-bill-references'>Bill References</Link></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/send-e-mail">Send E-Mail</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <a className="dropdown-item" href="#">Send SMS</a>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <a className="dropdown-item" href="#">Send Notifications</a>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <a className="dropdown-item" href="#">Offline E-Mail/SMS</a>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <a className="dropdown-item dropdown-toggle" href="#">Customization</a>
+                                            <ul className="dropdown-menu">
+                                                <li><Link className="dropdown-item dropdown-toggle" to=''>Custom Report</Link>
+                                                    <ul className="dropdown-menu">
+                                                        <li><Link className="dropdown-item" to=''>Restore Custom Report</Link></li>
+                                                        <div className="dropdown-divider"></div>
+                                                        <li><Link className="dropdown-item" to=''>Delete Custom Report</Link></li>
+                                                        <div className="dropdown-divider"></div>
+                                                        <li><Link className="dropdown-item" to=''>Backup Custom Report</Link></li>
+                                                    </ul>
+                                                </li>
+                                                <div className="dropdown-divider"></div>
+                                                <li><Link className="dropdown-item dropdown-toggle" to=''>Custom Validation</Link>
+                                                <ul className="dropdown-menu">
+                                                        <li><Link className="dropdown-item" to=''>Restore Custom Validation</Link></li>
+                                                        <div className="dropdown-divider"></div>
+                                                        <li><Link className="dropdown-item" to=''>Delete Custom Validation</Link></li>
+                                                        <div className="dropdown-divider"></div>
+                                                        <li><Link className="dropdown-item" to=''>Backup Custom Validation</Link></li>
+                                                    </ul></li>
+                                            </ul>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <a className="dropdown-item" href="#">Block Account/Item</a>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <a className="dropdown-item" href="#">De-Activate Masters</a>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <a className="dropdown-item" href="#">Mapping of Masters</a>
+                                        </li>
+
+                                    </ul>
+
+
+
+
+
+                                </li>
                                 <div className="dropdown-divider"></div>
 
                                 <li><a className="dropdown-item dropdown-toggle" href="#">Data Export Import</a></li>
