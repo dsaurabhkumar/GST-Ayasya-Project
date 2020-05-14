@@ -3,7 +3,7 @@ import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
 
-const UserModify = (props) => {
+const UsersModify = (props) => {
 
     const formValue = {
 
@@ -77,4 +77,4 @@ const UserModify = (props) => {
     )
 }
 
-export default UserModify
+export default UsersModify
