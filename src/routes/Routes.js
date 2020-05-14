@@ -77,6 +77,9 @@ import BillRefPrintingReports from '../containers/configuration-module/refrences
 import ItemGroupPrinting from '../containers/configuration-module/refrences-group-summary-printing-configuration/item-group-summary-printing/ItemGroupPrinting';
 import AgeingAccount from '../containers/configuration-module/ageing-analysis-time-slabs/ageing-account/AgeingAccount';
 import AgeingInventory from '../containers/configuration-module/ageing-analysis-time-slabs/ageing-inventory/AgeingInventory';
+import UsersAdd from '../containers/users-module/users-add/UsersAdd';
+import UsersModify from '../containers/users-module/users-modify/UsersModify';
+import UsersList from '../containers/users-module/users-list/UsersList';
 
 const Routes = () => (
     <Switch>
@@ -309,6 +312,21 @@ const Routes = () => (
         <Route path="/ageing-analysis-inventory">
             <AgeingInventory />
         </Route>
+
+
+
+
+        <Route path="/users-add">
+            <UsersAdd />
+        </Route>
+        <Route path="/users-modify">
+            <UsersModify />
+        </Route>
+        <Route path="/users-list">
+            <UsersList />
+        </Route>
+
+        
 
         <Route component={PageNotFound}></Route>
     </Switch>
