@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
+import DatePicker from '../../../../components/date-picker/DatePicker'
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
 
 const BillWiseRefer = () => {
+
 
     const formValue = {
         showBills: "",
@@ -35,16 +37,15 @@ const BillWiseRefer = () => {
         {
             label: 'Start Date',
             name: 'startDate',
-            placeholder: '1-4-2020'
         },
         {
             label: 'End Date',
-            name: 'endDate',
-            placeholder: '1-4-2020'
+            name: 'endDate'
         },
     ]
 
     return (
+      
         <div className="container containerWidth mt-4 mb-4">
             <div className="text-center mb-4">
                 <strong>Bills References Adjustment Wizard</strong>
@@ -89,13 +90,10 @@ const BillWiseRefer = () => {
                             }
                             {
                                 inputText_one.map((val, index) => (
-                                    <div className="mb-3 col-12 col-md-6" key={"inputTextField" + index}>
+                                    <div className="mb-3 col-12 col-md-6" key={"DatePicker" + index}>
                                         {val.label}
-                                        <Field
-                                            type='text'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextField}
+                                        <DatePicker
+                                        name={val.name}
                                         />
                                     </div>
                                 ))
