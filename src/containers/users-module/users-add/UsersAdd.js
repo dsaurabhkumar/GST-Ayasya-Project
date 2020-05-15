@@ -107,7 +107,7 @@ const UsersAdd = (props) => {
     const users_dropdown_five = [
         {
             label: 'Read Control from Other User',
-            name: 'specifyVoucherSeriesGroup',
+            name: 'readControlFromOtherUser',
             values: [
                 "Y"
             ]
