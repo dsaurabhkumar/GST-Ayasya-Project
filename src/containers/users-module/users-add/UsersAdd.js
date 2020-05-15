@@ -282,7 +282,7 @@ const UsersAdd = (props) => {
             >
 
 
-                {({ values, isSubmitting, handleChange, handleValueChange }) => (
+                {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
                         <h2 className="text-center mb-4">Add New User</h2>
 
@@ -421,7 +421,7 @@ const UsersAdd = (props) => {
                                                         type='select'
                                                         name={val.name}
                                                         multiple={false}
-                                                        onChange={event => {setState(event.target.value !== 'Y')}}
+                                                        onChange={event => { setState(event.target.value !== 'Y') }}
                                                     >
                                                         <option defaultValue>N</option>
                                                         {
