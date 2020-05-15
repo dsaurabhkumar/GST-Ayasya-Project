@@ -7,8 +7,6 @@ const BillWiseRefer = () => {
 
     const formValue = {
         radioBtnsOne: "",
-        groupOfAccount: "",
-        oneAccount: ""
     }
 
     const select_range_radio = [

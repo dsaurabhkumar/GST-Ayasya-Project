@@ -11,8 +11,8 @@ const BillWiseRefer = () => {
         startDate:"",
         endDate: ""
     }
-    const label = [
 
+    const label = [
         {
             label: 'Show Bills',
         },
@@ -25,10 +25,7 @@ const BillWiseRefer = () => {
         {
             label: 'End Date',
         },
-        
     ]
-
-
 
     const group_of_account_dropdown = [
         {
