@@ -6,7 +6,8 @@ import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } fro
 
 const UsersAdd = (props) => {
 
-
+    const [user, setUser] = useState(false);
+    const [group, setGroup] = useState(false);
     const [state, setState] = useState(true);
 
     const formValue = {
@@ -317,7 +318,7 @@ const UsersAdd = (props) => {
                                                         type='select'
                                                         name={val.name}
                                                         multiple={false}
-                                                        onChange={handleChange}
+                                                        onChange={event => setUser(event.target.value === 'Y')}
                                                     >
                                                         <option defaultValue>N</option>
                                                         {
@@ -332,27 +333,29 @@ const UsersAdd = (props) => {
                                     }
                                 </div>
                                 <div className="col-md-5">
-                                    {
-                                        users_dropdown_two.map((val, index) => (
-                                            <div className="mt-2" key={"inputDropdownValue" + index}>
-                                                <FormControl>
-                                                    <select
-                                                        type='select'
-                                                        name={val.name}
-                                                        multiple={false}
-                                                        onChange={handleChange}
-                                                    >
-                                                        <option defaultValue>Select an Option</option>
-                                                        {
-                                                            val.values.map((cval, cindex) => (
-                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                            ))
-                                                        }
-                                                    </select>
-                                                </FormControl>
-                                            </div>
-                                        ))
-                                    }
+                                    <div className={user ? "d-block" : "d-none"}>
+                                        {
+                                            users_dropdown_two.map((val, index) => (
+                                                <div className="mt-2" key={"inputDropdownValue" + index}>
+                                                    <FormControl>
+                                                        <select
+                                                            type='select'
+                                                            name={val.name}
+                                                            multiple={false}
+                                                            onChange={handleChange}
+                                                        >
+                                                            <option defaultValue>Select an Option</option>
+                                                            {
+                                                                val.values.map((cval, cindex) => (
+                                                                    <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                                ))
+                                                            }
+                                                        </select>
+                                                    </FormControl>
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
                                 </div>
                             </div>
 
@@ -369,7 +372,7 @@ const UsersAdd = (props) => {
                                                         type='select'
                                                         name={val.name}
                                                         multiple={false}
-                                                        onChange={handleChange}
+                                                        onChange={event => {setGroup(event.target.value === 'Y')}}
                                                     >
                                                         <option defaultValue>N</option>
                                                         {
@@ -384,6 +387,7 @@ const UsersAdd = (props) => {
                                     }
                                 </div>
                                 <div className="col-md-5">
+                                <div className={group ? "d-block" : "d-none"}>
                                     {
                                         users_dropdown_four.map((val, index) => (
                                             <div className="mt-2" key={"inputDropdownValue" + index}>
@@ -405,6 +409,7 @@ const UsersAdd = (props) => {
                                             </div>
                                         ))
                                     }
+                                </div>
                                 </div>
                             </div>
 
