@@ -40,7 +40,7 @@ const BillWiseRefer = () => {
         },
         {
             label: 'End Date',
-            name: 'endDate'
+            name: 'endDate',
         },
     ]
 
@@ -93,6 +93,7 @@ const BillWiseRefer = () => {
                                     <div className="mb-3 col-12 col-md-6" key={"DatePicker" + index}>
                                         {val.label}
                                         <DatePicker
+                                        value={val.value}
                                         name={val.name}
                                         />
                                     </div>
