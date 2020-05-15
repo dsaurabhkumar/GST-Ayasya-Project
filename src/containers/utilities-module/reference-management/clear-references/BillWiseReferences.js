@@ -1,14 +1,15 @@
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
-import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
+import { TextField, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
 
-const BillWiseReferences  = () => {
+const BillWiseReferences = (props) => {
+
 
     const formValue = {
         radioBtnsOne: "",
         groupOfAccount: "",
-        oneAccount:""
+        oneAccount: ""
     }
 
     const select_range_radio = [
@@ -25,7 +26,7 @@ const BillWiseReferences  = () => {
             value: 'OneAccount',
         },
     ]
-  
+
     const group_of_account_dropdown = [
         {
             name: 'groupOfAccount',
@@ -44,11 +45,11 @@ const BillWiseReferences  = () => {
         }
     ]
 
-   
+
     return (
         <div className="container containerWidth mt-4 mb-4">
             <div className="text-center mb-4">
-            <strong>Clear Bills References</strong>
+                <strong>Clear Bills References</strong>
             </div>
             <h5><span className="mt-2 headingAlign">Select Range</span></h5>
 
@@ -65,25 +66,25 @@ const BillWiseReferences  = () => {
 
 
                 {({ values, isSubmitting, handleChange }) => (
-                    <Form className="inventoryForm">   
+                    <Form className="inventoryForm">
                         <div className="row">
                             <div className="col-6 col-md-6">
-{
-                                select_range_radio.map((val, index) => (
-                                    <div className="mb-2 p-0" key={"radioInputKey" + index}>
-                                        <div className="radioBtnTextAlign">
-                                            <Field
-                                                type='radio'
-                                                name='radioBtnsOne'
-                                                value={val.value}
-                                                as={Radio}
-                                            />
-                                            {val.key}
-                                        </div>
+                                {
+                                    select_range_radio.map((val, index) => (
+                                        <div className="mb-2 p-0" key={"radioInputKey" + index}>
+                                            <div className="radioBtnTextAlign">
+                                                <Field
+                                                    type='radio'
+                                                    name='radioBtnsOne'
+                                                    value={val.value}
+                                                    as={Radio}
+                                                />
+                                                {val.key}
+                                            </div>
 
-                                    </div>
-                                ))
-                            }
+                                        </div>
+                                    ))
+                                }
                             </div>
                             <div className="col-6 col-md-6">
                                 {
@@ -107,10 +108,10 @@ const BillWiseReferences  = () => {
                                         </div>
                                     ))
                                 }
-                                
+
                             </div>
-                            
-                            
+
+
                         </div>
 
 
