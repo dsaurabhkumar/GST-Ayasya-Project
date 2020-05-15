@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './UsersAdd.css';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
 
 const UsersAdd = (props) => {
+
+
+    const [state, setState] = useState(true);
 
     const formValue = {
         username: '',
@@ -279,7 +282,7 @@ const UsersAdd = (props) => {
             >
 
 
-                {({ values, isSubmitting, handleChange }) => (
+                {({ values, isSubmitting, handleChange, handleValueChange }) => (
                     <Form className="inventoryForm">
                         <h2 className="text-center mb-4">Add New User</h2>
 
@@ -418,7 +421,7 @@ const UsersAdd = (props) => {
                                                         type='select'
                                                         name={val.name}
                                                         multiple={false}
-                                                        onChange={handleChange}
+                                                        onChange={event => {setState(event.target.value !== 'Y')}}
                                                     >
                                                         <option defaultValue>N</option>
                                                         {
@@ -436,31 +439,33 @@ const UsersAdd = (props) => {
 
                         </div>
 
-                        <span className="textHeading">User Controls</span>
-                        <div className="inventoryForm">
-                            <div className="row">
-                                {
-                                    users_dropdown_six.map((val, index) => (
-                                        <div className="col-12 col-md-6 inputAlignment mb-3" key={"inputDropdownValue" + index}>
+                        <div className={state ? "d-block" : "d-none"}>
+                            <span className="textHeading">User Controls</span>
+                            <div className="inventoryForm">
+                                <div className="row">
+                                    {
+                                        users_dropdown_six.map((val, index) => (
+                                            <div className="col-12 col-md-6 inputAlignment mb-3" key={"inputDropdownValue" + index}>
                                                 <div className="labelWidth">{val.label}</div>
-                                            <FormControl>
-                                                <select
-                                                    type='select'
-                                                    name={val.name}
-                                                    multiple={false}
-                                                    onChange={handleChange}
-                                                >
-                                                    <option defaultValue>N</option>
-                                                    {
-                                                        val.values.map((cval, cindex) => (
-                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                        ))
-                                                    }
-                                                </select>
-                                            </FormControl>
-                                        </div>
-                                    ))
-                                }
+                                                <FormControl>
+                                                    <select
+                                                        type='select'
+                                                        name={val.name}
+                                                        multiple={false}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option defaultValue>N</option>
+                                                        {
+                                                            val.values.map((cval, cindex) => (
+                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                            ))
+                                                        }
+                                                    </select>
+                                                </FormControl>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
                             </div>
                         </div>
 
