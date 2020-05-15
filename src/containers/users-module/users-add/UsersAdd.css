@@ -1,0 +1,14 @@
+.inputAlignment {
+    display: flex;
+}
+.inputAlignment .MuiFormControl-root {
+    width: 25%;
+    position: absolute;
+    right: 1rem;
+}
+.textHeading {
+    position: relative;
+    top: 12px;
+    background: white;
+    left: 10px;
+}
