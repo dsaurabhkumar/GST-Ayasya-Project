@@ -8,35 +8,22 @@ const BillWiseRefer = () => {
     const formValue = {
         showBills: "",
         selectAccount: "",
-        startDate:"",
+        startDate: "",
         endDate: ""
     }
 
-    const label = [
-        {
-            label: 'Show Bills',
-        },
-        {
-            label: 'Select Account',
-        },
-        {
-            label: 'Start Date',
-        },
-        {
-            label: 'End Date',
-        },
-    ]
-
     const group_of_account_dropdown = [
         {
+            label: 'Show Bills',
             name: 'showBills',
             values: [
                 "All",
                 "Uncleared",
-                
+
             ]
         },
         {
+            label: 'Select Account',
             name: 'selectAccount',
             values: [
                 "Busy Infotech Pvt. ltd.",
@@ -46,10 +33,12 @@ const BillWiseRefer = () => {
 
     const inputText_one = [
         {
+            label: 'Start Date',
             name: 'startDate',
             placeholder: '1-4-2020'
         },
         {
+            label: 'End Date',
             name: 'endDate',
             placeholder: '1-4-2020'
         },
@@ -76,53 +65,41 @@ const BillWiseRefer = () => {
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
                         <div className="row">
-                            <div className="col-6 col-md-6 mt-3 p-0">
-                                {
-                                    label.map((val, index) => (
-                                        <div className="dropdownItemValue dropdownWidth mb-4" key={"inputText" + index}>
-                                            <div className="dropDownHeading">
-                                                {val.label}
-                                            </div>
-                                        </div>
-                                    ))
-                                }
-
-                            </div>
-                            <div className="col-6 col-md-6">
-                                {
-                                    group_of_account_dropdown.map((val, index) => (
-                                        <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
-                                            <FormControl>
-                                                <select
-                                                    type='select'
-                                                    name={val.name}
-                                                    multiple={false}
-                                                    onChange={handleChange}
-                                                >
-                                                    <option defaultValue>Select</option>
-                                                    {
-                                                        val.values.map((cval, cindex) => (
-                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                        ))
-                                                    }
-                                                </select>
-                                            </FormControl>
-                                        </div>
-                                    ))
-                                }
-                                {
-                                    inputText_one.map((val, index) => (
-                                        <div className="mb-3" key={"inputTextField" + index}>
-                                            <Field
-                                                type='text'
+                            {
+                                group_of_account_dropdown.map((val, index) => (
+                                    <div className="mt-3 mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                        {val.label}
+                                        <FormControl>
+                                            <select
+                                                type='select'
                                                 name={val.name}
-                                                placeholder={val.placeholder}
-                                                as={TextField}
-                                            />
-                                        </div>
-                                    ))
-                                }
-                            </div>
+                                                multiple={false}
+                                                onChange={handleChange}
+                                            >
+                                                <option defaultValue>Select</option>
+                                                {
+                                                    val.values.map((cval, cindex) => (
+                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                    ))
+                                                }
+                                            </select>
+                                        </FormControl>
+                                    </div>
+                                ))
+                            }
+                            {
+                                inputText_one.map((val, index) => (
+                                    <div className="mb-3 col-12 col-md-6" key={"inputTextField" + index}>
+                                        {val.label}
+                                        <Field
+                                            type='text'
+                                            name={val.name}
+                                            placeholder={val.placeholder}
+                                            as={TextField}
+                                        />
+                                    </div>
+                                ))
+                            }
                         </div>
 
 
