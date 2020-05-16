@@ -431,7 +431,12 @@ function NavBar() {
                                 <li><a className="dropdown-item dropdown-toggle" href="#">Utilities</a>
 
                                     <ul className="dropdown-menu">
-                                            <Link className="dropdown-item" to="/utilities-data-freezing">Data Freezing</Link>
+                                        <a className="dropdown-item dropdown-toggle" href="#">Data Freezing</a>
+                                        <ul className="dropdown-menu">
+                                            <li><Link className="dropdown-item" to='/utilities-full-data-freezing'>Full Data Freezing</Link></li>
+                                            <div className="dropdown-divider"></div>
+                                            <li><Link className="dropdown-item" to='/utilities-partial-data-freezing'>Partial Data Freezing</Link></li>
+                                        </ul>
                                         <div className="dropdown-divider"></div>
 
                                         <li>
@@ -468,15 +473,10 @@ function NavBar() {
                                         </li>
                                         <div className="dropdown-divider"></div>
 
-                                        <li>
-                                            <a className="dropdown-item" href="#">Send Notifications</a>
-                                        </li>
-                                        <div className="dropdown-divider"></div>
-
-                                        <li>
+                                        {/* <li>
                                             <a className="dropdown-item" href="#">Offline E-Mail/SMS</a>
                                         </li>
-                                        <div className="dropdown-divider"></div>
+                                        <div className="dropdown-divider"></div> */}
 
                                         <li>
                                             <a className="dropdown-item dropdown-toggle" href="#">Customization</a>
@@ -492,7 +492,7 @@ function NavBar() {
                                                 </li>
                                                 <div className="dropdown-divider"></div>
                                                 <li><Link className="dropdown-item dropdown-toggle" to=''>Custom Validation</Link>
-                                                <ul className="dropdown-menu">
+                                                    <ul className="dropdown-menu">
                                                         <li><Link className="dropdown-item" to=''>Restore Custom Validation</Link></li>
                                                         <div className="dropdown-divider"></div>
                                                         <li><Link className="dropdown-item" to=''>Delete Custom Validation</Link></li>
