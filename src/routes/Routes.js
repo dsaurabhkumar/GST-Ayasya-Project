@@ -80,11 +80,12 @@ import AgeingInventory from '../containers/configuration-module/ageing-analysis-
 import UsersAdd from '../containers/users-module/users-add/UsersAdd';
 import UsersModify from '../containers/users-module/users-modify/UsersModify';
 import UsersList from '../containers/users-module/users-list/UsersList';
-import DataFreezing from '../containers/utilities-module/data-freezing/DataFreezing';
 import BillWiseReferences from '../containers/utilities-module/reference-management/clear-references/BillWiseReferences';
 import BillWiseRefer from '../containers/utilities-module/reference-management/auto-adjust-references/BillWiseRefer';
 import BillReferences from '../containers/utilities-module/reference-management/reference-adjustment-wizard/BillReferences';
 import SendEmail from '../containers/utilities-module/send-e-mail/SendEmail';
+import FullFreezing from '../containers/utilities-module/data-freezing/full-data-freezing/FullFreezing';
+import PartialFreezing from '../containers/utilities-module/data-freezing/partial-data-freezing/PartialFreezing';
 
 const Routes = () => (
     <Switch>
@@ -333,8 +334,11 @@ const Routes = () => (
 
 
 
-        <Route path="/utilities-data-freezing">
-            <DataFreezing />
+        <Route path="/utilities-full-data-freezing">
+            <FullFreezing />
+        </Route>
+        <Route path="/utilities-partial-data-freezing">
+            <PartialFreezing />
         </Route>
         <Route path="/utilities-clear-bill-wise-references">
             <BillWiseReferences />
