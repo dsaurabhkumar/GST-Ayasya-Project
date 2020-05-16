@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
 
 const BillWiseReferences = (props) => {
+
+    const [user, setUser] = useState(false);
+    const [group, setGroup] = useState(false);
 
 
     const formValue = {
@@ -21,11 +24,11 @@ const BillWiseReferences = (props) => {
         },
         {
             key: 'One Account',
-            value: 'OneAccount',
+            value: 'account',
         },
     ]
 
-    const group_of_account_dropdown = [
+    const ref_dropdown_one = [
         {
             name: 'groupOfAccount',
             values: [
@@ -35,6 +38,9 @@ const BillWiseReferences = (props) => {
                 "Secured Loans",
             ]
         },
+    ]
+
+    const ref_dropdown_two = [
         {
             name: 'oneAccount',
             values: [
@@ -76,6 +82,8 @@ const BillWiseReferences = (props) => {
                                                     name='radioBtnsOne'
                                                     value={val.value}
                                                     as={Radio}
+                                                    // onClick={event => setUser(event.target.value === 'GroupOfAccounts')}
+                                                    onClick={event => setGroup(event.target.value === 'account')}
                                                 />
                                                 {val.key}
                                             </div>
@@ -84,32 +92,57 @@ const BillWiseReferences = (props) => {
                                     ))
                                 }
                             </div>
+
                             <div className="col-6 col-md-6">
-                                {
-                                    group_of_account_dropdown.map((val, index) => (
-                                        <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
-                                            <FormControl>
-                                                <select
-                                                    type='select'
-                                                    name={val.name}
-                                                    multiple={false}
-                                                    onChange={handleChange}
-                                                >
-                                                    <option defaultValue>Select</option>
-                                                    {
-                                                        val.values.map((cval, cindex) => (
-                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                        ))
-                                                    }
-                                                </select>
-                                            </FormControl>
-                                        </div>
-                                    ))
-                                }
-
+                                <div className={user ? "d-block" : "d-none"}>
+                                    {
+                                        ref_dropdown_one.map((val, index) => (
+                                            <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
+                                                <FormControl>
+                                                    <select
+                                                        type='select'
+                                                        name={val.name}
+                                                        multiple={false}
+                                                        className={val.className}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option defaultValue>Select</option>
+                                                        {
+                                                            val.values.map((cval, cindex) => (
+                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                            ))
+                                                        }
+                                                    </select>
+                                                </FormControl>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                                <div className={group ? "d-block" : "d-none"}>
+                                    {
+                                        ref_dropdown_two.map((val, index) => (
+                                            <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
+                                                <FormControl>
+                                                    <select
+                                                        type='select'
+                                                        name={val.name}
+                                                        multiple={false}
+                                                        className={val.className}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option defaultValue>Select</option>
+                                                        {
+                                                            val.values.map((cval, cindex) => (
+                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                            ))
+                                                        }
+                                                    </select>
+                                                </FormControl>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
                             </div>
-
-
                         </div>
 
 
