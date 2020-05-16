@@ -7,7 +7,6 @@ import { useFormikContext, Field } from 'formik';
 
 const Datepicker = ({ name, value }) => {
     const { setFieldValue } = useFormikContext();
-    // const [startDate, setStartDate] = useState(new Date());
     return (
         <div>
             <Field
