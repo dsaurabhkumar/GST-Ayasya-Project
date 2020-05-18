@@ -84,8 +84,19 @@ import BillWiseReferences from '../containers/utilities-module/reference-managem
 import BillWiseRefer from '../containers/utilities-module/reference-management/auto-adjust-references/BillWiseRefer';
 import BillReferences from '../containers/utilities-module/reference-management/reference-adjustment-wizard/BillReferences';
 import SendEmail from '../containers/utilities-module/send-e-mail/SendEmail';
+import SendSms from '../containers/utilities-module/send-sms/SendSms';
 import FullFreezing from '../containers/utilities-module/data-freezing/full-data-freezing/FullFreezing';
 import PartialFreezing from '../containers/utilities-module/data-freezing/partial-data-freezing/PartialFreezing';
+import RestoreCustomReport from '../containers/utilities-module/customization/custom-report/restore-custom-report/RestoreCustomReport';
+import DeleteCustomReport from '../containers/utilities-module/customization/custom-report/delete-custom-report/DeleteCustomReport';
+import BackupCustomReport from '../containers/utilities-module/customization/custom-report/backup-custom-report/BackupCustomReport';
+import RestoreCustomValidation from '../containers/utilities-module/customization/custom-validation/restore-custom-validation/RestoreCustomValidation';
+import DeleteCustomValidation from '../containers/utilities-module/customization/custom-validation/delete-custom-validation/DeleteCustomValidation';
+import BackupCustomValidation from '../containers/utilities-module/customization/custom-validation/backup-custom-validation/BackupCustomValidation';
+import BlockAccountItem from '../containers/utilities-module/block-account-item/BlockAccountItem';
+import DeactivateMasters from '../containers/utilities-module/de-activate-masters/DeactivateMasters';
+import MappingMasters from '../containers/utilities-module/mapping-of-masters/MappingMasters';
+
 
 const Routes = () => (
     <Switch>
@@ -351,6 +362,37 @@ const Routes = () => (
         </Route>
         <Route path="/send-e-mail">
             <SendEmail />
+        </Route>
+        <Route path="/send-sms">
+            <SendSms />
+        </Route>
+        <Route path="/restore-custom-report">
+            <RestoreCustomReport />
+        </Route>
+        <Route path="/delete-custom-report">
+            <DeleteCustomReport />
+        </Route>
+        <Route path="/backup-custom-report">
+            <BackupCustomReport />
+        </Route>
+        <Route path="/restore-custom-validation">
+            <RestoreCustomValidation />
+        </Route>
+        <Route path="/delete-custom-validation">
+            <DeleteCustomValidation />
+        </Route>
+        <Route path="/backup-custom-validation">
+            <BackupCustomValidation />
+        </Route>
+
+        <Route path="/utilities-block-account-item">
+            <BlockAccountItem />
+        </Route>
+        <Route path="/utilities-deactivate-masters">
+            <DeactivateMasters />
+        </Route>
+        <Route path="/utilities-mapping-masters">
+            <MappingMasters />
         </Route>
 
 

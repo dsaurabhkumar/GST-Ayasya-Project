@@ -11,6 +11,8 @@ const BillWiseReferences = (props) => {
 
     const formValue = {
         radioBtnsOne: "",
+        groupOfAccount: "",
+        oneAccount: ""
     }
 
     const select_range_radio = [
@@ -82,8 +84,7 @@ const BillWiseReferences = (props) => {
                                                     name='radioBtnsOne'
                                                     value={val.value}
                                                     as={Radio}
-                                                    // onClick={event => setUser(event.target.value === 'GroupOfAccounts')}
-                                                    onClick={event => setGroup(event.target.value === 'account')}
+                                                    onClick={event => setGroup(event.target.value === 'account') || setUser(event.target.value === 'GroupOfAccounts')}
                                                 />
                                                 {val.key}
                                             </div>
