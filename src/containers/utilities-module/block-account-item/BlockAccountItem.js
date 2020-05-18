@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 
 const BlockAccountItem = () => {
 
-    const [user, selectVoucherType] = useState(false);
-    const [all, setUser] = useState(false);
-    const [select, setGroup] = useState(false);
+    const [blockMaster, setBlockMaster] = useState(false);
+    const [all, setAll] = useState(false);
+    const [selected, setSelected] = useState(false);
 
     const formValue = {
         blockAccountRadio: "",
@@ -159,7 +159,7 @@ const BlockAccountItem = () => {
                                                     type='select'
                                                     name={val.name}
                                                     multiple={false}
-                                                    onChange={event => selectVoucherType(event.target.value === 'Y')}
+                                                    onChange={event => setBlockMaster(event.target.value === 'Y')}
                                                 >
                                                     <option defaultValue>N</option>
                                                     {
@@ -175,7 +175,7 @@ const BlockAccountItem = () => {
                             </div>
                         </div>
 
-                        <div className={user ? "d-block" : "d-none"}>
+                        <div className={blockMaster ? "d-block" : "d-none"}>
                             <span className="sectionHeading">Select Voucher Type For Blocking</span>
                             <div className="row mt-4 inventoryForm">
                                 <div className="col-6 col-md-6 p-0">
@@ -188,7 +188,7 @@ const BlockAccountItem = () => {
                                                         name='blockAccountRadio'
                                                         value={val.value}
                                                         as={Radio}
-                                                        onClick={event => setGroup(event.target.value === 'All') || setUser(event.target.value === 'Selected')}
+                                                        onClick={event => setSelected(event.target.value === 'All') || setAll(event.target.value === 'Selected')}
                                                     />
                                                     {val.key}
                                                 </div>
@@ -223,7 +223,7 @@ const BlockAccountItem = () => {
                             </div>
                         </div>
 
-                        <div className={user ? "d-block" : "d-none"}>
+                        <div className={blockMaster ? "d-block" : "d-none"}>
                             {
                                 textArea_one.map((val, index) => (
                                     <div className="mt-4 col-12 p-0" key={"inputTextField" + index}>
