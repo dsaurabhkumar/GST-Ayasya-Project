@@ -1,3 +1,14 @@
 .blockAccountInput{
     display: flex;
 }
+
+.sectionHeading {
+    position: relative;
+    background: white;
+    top: 33px;
+    left: 15px;
+}
+
+textarea {
+    border: 1px solid;
+}

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './BlockAccountItem.css'
-import { TextField, Button, FormControlLabel, FormControl, Radio, Checkbox, TextareaAutosize } from '@material-ui/core';
+import { Button, FormControlLabel, FormControl, Radio, Checkbox, TextareaAutosize } from '@material-ui/core';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
+
+
 const BlockAccountItem = () => {
 
     const [user, selectVoucherType] = useState(false);
@@ -114,67 +116,69 @@ const BlockAccountItem = () => {
                 }}
             >
                 {({ values, isSubmitting, handleChange, handleBlur }) => (
-                    <Form className="inventoryForm">
-                        <div className="mt-4 row">
-                            <div className="col-12 col-md-12">
-                            {
-                                group_of_account_dropdown_one.map((val, index) => (
-                                    <div className="mt-3 mb-3 blockAccountInput" key={"inputDropdownValue" + index}>
-                                        <div className="col-6 col-md-6">
-                                            {val.label}
-                                        </div>
-                                        <FormControl>
-                                            <select
-                                                type='select'
-                                                name={val.name}
-                                                multiple={false}
-                                                onChange={handleChange}
-                                            >
-                                                <option defaultValue>Select</option>
-                                                {
-                                                    val.values.map((cval, cindex) => (
-                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                    ))
-                                                }
-                                            </select>
-                                        </FormControl>
-                                    </div>
-                                ))
-                            }
-                            </div>
-                        </div>
+                    <Form className="inventoryForm mb-4">
                         <div className="row">
                             <div className="col-12 col-md-12">
-                            {
-                                group_of_account_dropdown_two.map((val, index) => (
-                                    <div className="blockAccountInput" key={"inputDropdownValue" + index}>
-                                        <div className="col-6 col-md-6">
-                                            {val.label}
+                                {
+                                    group_of_account_dropdown_one.map((val, index) => (
+                                        <div className="mt-3 mb-3 blockAccountInput" key={"inputDropdownValue" + index}>
+                                            <div className="col-6 col-md-6 p-0">
+                                                {val.label}
+                                            </div>
+                                            <FormControl>
+                                                <select
+                                                    type='select'
+                                                    name={val.name}
+                                                    multiple={false}
+                                                    onChange={handleChange}
+                                                >
+                                                    <option defaultValue>Select</option>
+                                                    {
+                                                        val.values.map((cval, cindex) => (
+                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                        ))
+                                                    }
+                                                </select>
+                                            </FormControl>
                                         </div>
-                                        <FormControl>
-                                            <select
-                                                type='select'
-                                                name={val.name}
-                                                multiple={false}
-                                                onChange={event => selectVoucherType(event.target.value === 'Y')}
-                                            >
-                                                <option defaultValue>N</option>
-                                                {
-                                                    val.values.map((cval, cindex) => (
-                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                    ))
-                                                }
-                                            </select>
-                                        </FormControl>
-                                    </div>
-                                ))
-                            }
+                                    ))
+                                }
                             </div>
                         </div>
+
+                        <div className="row">
+                            <div className="col-12 col-md-12">
+                                {
+                                    group_of_account_dropdown_two.map((val, index) => (
+                                        <div className="blockAccountInput" key={"inputDropdownValue" + index}>
+                                            <div className="col-6 col-md-6 p-0">
+                                                {val.label}
+                                            </div>
+                                            <FormControl>
+                                                <select
+                                                    type='select'
+                                                    name={val.name}
+                                                    multiple={false}
+                                                    onChange={event => selectVoucherType(event.target.value === 'Y')}
+                                                >
+                                                    <option defaultValue>N</option>
+                                                    {
+                                                        val.values.map((cval, cindex) => (
+                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                        ))
+                                                    }
+                                                </select>
+                                            </FormControl>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </div>
+
                         <div className={user ? "d-block" : "d-none"}>
-                            <span class="textHeading">Select Voucher Type For Blocking</span>
+                            <span className="sectionHeading">Select Voucher Type For Blocking</span>
                             <div className="row mt-4 inventoryForm">
-                                <div className="col-6 col-md-6">
+                                <div className="col-6 col-md-6 p-0">
                                     {
                                         select_voucher_type.map((val, index) => (
                                             <div className="mb-2 p-0" key={"radioInputKey" + index}>
@@ -193,30 +197,31 @@ const BlockAccountItem = () => {
                                         ))
                                     }
                                 </div>
-                                    <div className={all ? "d-block" : "d-none"}>
-                                        {
-                                            checkBoxData.map((val, index) => (
-                                                <div key={"inputCheckboxKey" + index}>
-                                                    <FormControlLabel
-                                                        label={val.title}
-                                                        control={
-                                                            <Field
-                                                                type='checkbox'
-                                                                name="checkboxOne"
-                                                                value={val.value}
-                                                                as={Checkbox} />
-                                                        }
-                                                    />
-                                                </div>
-                                            ))
-                                        }
+                                <div className={all ? "d-block" : "d-none"}>
+                                    {
+                                        checkBoxData.map((val, index) => (
+                                            <div key={"inputCheckboxKey" + index}>
+                                                <FormControlLabel
+                                                    label={val.title}
+                                                    control={
+                                                        <Field
+                                                            type='checkbox'
+                                                            name="checkboxOne"
+                                                            value={val.value}
+                                                            as={Checkbox} />
+                                                    }
+                                                />
+                                            </div>
+                                        ))
+                                    }
                                 </div>
                             </div>
                         </div>
+
                         <div className={user ? "d-block" : "d-none"}>
                             {
                                 textArea_one.map((val, index) => (
-                                    <div className="mt-4 col-12" key={"inputTextField" + index}>
+                                    <div className="mt-4 col-12 p-0" key={"inputTextField" + index}>
                                         {val.label}
                                         <div className="mt-2 inputTextArea">
                                             <TextareaAutosize
@@ -232,6 +237,7 @@ const BlockAccountItem = () => {
                                 ))
                             }
                         </div>
+                        
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
                             <div className="mt-3 col-12 col-md-3 p-0">
                                 <Button type="submit" className="col-12" disabled={isSubmitting}>Save</Button>
@@ -239,7 +245,7 @@ const BlockAccountItem = () => {
                             <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
                                 <Link to='/'><Button type="submit" className="col-12">Quit</Button></Link>
                             </div>
-                            <div className="mt-3 col-12 col-md-6 align-self-center quitBtn">
+                            <div className="mt-3 col-12 col-md-6 align-self-center quitBtn pl-0">
                                 <Link to='/'><Button type="submit" className="col-12">List Of Blocked Master</Button></Link>
                             </div>
                         </div>
