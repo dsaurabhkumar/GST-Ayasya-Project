@@ -197,23 +197,28 @@ const BlockAccountItem = () => {
                                         ))
                                     }
                                 </div>
-                                <div className={all ? "d-block" : "d-none"}>
-                                    {
-                                        checkBoxData.map((val, index) => (
-                                            <div key={"inputCheckboxKey" + index}>
-                                                <FormControlLabel
-                                                    label={val.title}
-                                                    control={
-                                                        <Field
-                                                            type='checkbox'
-                                                            name="checkboxOne"
-                                                            value={val.value}
-                                                            as={Checkbox} />
-                                                    }
-                                                />
-                                            </div>
-                                        ))
-                                    }
+
+                                <div className="col-6 col-md-6">
+                                    <div className={all ? "d-block" : "d-none"}>
+                                        <div className="inventoryForm">
+                                            {
+                                                checkBoxData.map((val, index) => (
+                                                    <div key={"inputCheckboxKey" + index}>
+                                                        <FormControlLabel
+                                                            label={val.title}
+                                                            control={
+                                                                <Field
+                                                                    type='checkbox'
+                                                                    name="checkboxOne"
+                                                                    value={val.value}
+                                                                    as={Checkbox} />
+                                                            }
+                                                        />
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -237,7 +242,7 @@ const BlockAccountItem = () => {
                                 ))
                             }
                         </div>
-                        
+
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
                             <div className="mt-3 col-12 col-md-3 p-0">
                                 <Button type="submit" className="col-12" disabled={isSubmitting}>Save</Button>
