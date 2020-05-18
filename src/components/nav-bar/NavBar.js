@@ -469,52 +469,47 @@ function NavBar() {
                                         <div className="dropdown-divider"></div>
 
                                         <li>
-                                            <a className="dropdown-item" href="#">Send SMS</a>
+                                            <Link className="dropdown-item" to="/send-sms">Send SMS</Link>
                                         </li>
                                         <div className="dropdown-divider"></div>
-
-                                        {/* <li>
-                                            <a className="dropdown-item" href="#">Offline E-Mail/SMS</a>
-                                        </li>
-                                        <div className="dropdown-divider"></div> */}
 
                                         <li>
                                             <a className="dropdown-item dropdown-toggle" href="#">Customization</a>
                                             <ul className="dropdown-menu">
                                                 <li><Link className="dropdown-item dropdown-toggle" to=''>Custom Report</Link>
                                                     <ul className="dropdown-menu">
-                                                        <li><Link className="dropdown-item" to=''>Restore Custom Report</Link></li>
+                                                        <li><Link className="dropdown-item" to='/restore-custom-report'>Restore Custom Report</Link></li>
                                                         <div className="dropdown-divider"></div>
-                                                        <li><Link className="dropdown-item" to=''>Delete Custom Report</Link></li>
+                                                        <li><Link className="dropdown-item" to='/delete-custom-report'>Delete Custom Report</Link></li>
                                                         <div className="dropdown-divider"></div>
-                                                        <li><Link className="dropdown-item" to=''>Backup Custom Report</Link></li>
+                                                        <li><Link className="dropdown-item" to='/backup-custom-report'>Backup Custom Report</Link></li>
                                                     </ul>
                                                 </li>
                                                 <div className="dropdown-divider"></div>
                                                 <li><Link className="dropdown-item dropdown-toggle" to=''>Custom Validation</Link>
                                                     <ul className="dropdown-menu">
-                                                        <li><Link className="dropdown-item" to=''>Restore Custom Validation</Link></li>
+                                                        <li><Link className="dropdown-item" to='/restore-custom-validation'>Restore Custom Validation</Link></li>
                                                         <div className="dropdown-divider"></div>
-                                                        <li><Link className="dropdown-item" to=''>Delete Custom Validation</Link></li>
+                                                        <li><Link className="dropdown-item" to='/delete-custom-validation'>Delete Custom Validation</Link></li>
                                                         <div className="dropdown-divider"></div>
-                                                        <li><Link className="dropdown-item" to=''>Backup Custom Validation</Link></li>
+                                                        <li><Link className="dropdown-item" to='/backup-custom-validation'>Backup Custom Validation</Link></li>
                                                     </ul></li>
                                             </ul>
                                         </li>
                                         <div className="dropdown-divider"></div>
 
                                         <li>
-                                            <a className="dropdown-item" href="#">Block Account/Item</a>
+                                            <Link className="dropdown-item" to="/utilities-block-account-item">Block Account/Item</Link>
                                         </li>
                                         <div className="dropdown-divider"></div>
 
                                         <li>
-                                            <a className="dropdown-item" href="#">De-Activate Masters</a>
+                                            <Link className="dropdown-item" to="/utilities-deactivate-masters">De-Activate Masters</Link>
                                         </li>
                                         <div className="dropdown-divider"></div>
 
                                         <li>
-                                            <a className="dropdown-item" href="#">Mapping of Masters</a>
+                                            <Link className="dropdown-item" to="/utilities-mapping-masters">Mapping of Masters</Link>
                                         </li>
 
                                     </ul>
