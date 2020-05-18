@@ -16,7 +16,7 @@ const BlockAccountItem = () => {
     }
 
 
-    const group_of_account_dropdown_one = [
+    const block_account_dropdown_one = [
         {
             label: 'Master Type',
             name: 'masterType',
@@ -46,7 +46,7 @@ const BlockAccountItem = () => {
         }
     ]
 
-    const group_of_account_dropdown_two = [
+    const block_account_dropdown_two = [
         {
             label: 'Block Master',
             name: 'blockmaster',
@@ -95,7 +95,7 @@ const BlockAccountItem = () => {
     ]
 
 
-    const textArea_one = [
+    const block_account_textarea = [
         {
             label: 'Reason For Blocking Master',
             name: 'reasonForBlockingMaster'
@@ -120,7 +120,7 @@ const BlockAccountItem = () => {
                         <div className="row">
                             <div className="col-12 col-md-12">
                                 {
-                                    group_of_account_dropdown_one.map((val, index) => (
+                                    block_account_dropdown_one.map((val, index) => (
                                         <div className="mt-3 mb-3 blockAccountInput" key={"inputDropdownValue" + index}>
                                             <div className="col-6 col-md-6 p-0">
                                                 {val.label}
@@ -149,7 +149,7 @@ const BlockAccountItem = () => {
                         <div className="row">
                             <div className="col-12 col-md-12">
                                 {
-                                    group_of_account_dropdown_two.map((val, index) => (
+                                    block_account_dropdown_two.map((val, index) => (
                                         <div className="blockAccountInput" key={"inputDropdownValue" + index}>
                                             <div className="col-6 col-md-6 p-0">
                                                 {val.label}
@@ -225,7 +225,7 @@ const BlockAccountItem = () => {
 
                         <div className={blockMaster ? "d-block" : "d-none"}>
                             {
-                                textArea_one.map((val, index) => (
+                                block_account_textarea.map((val, index) => (
                                     <div className="mt-4 col-12 p-0" key={"inputTextField" + index}>
                                         {val.label}
                                         <div className="mt-2 inputTextArea">
