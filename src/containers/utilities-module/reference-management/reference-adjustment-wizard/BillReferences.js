@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
-import DatePicker from '../../../../components/date-picker/DatePicker'
+import DatePicker from '../../../../components/date-picker/DatePicker';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
 
 const BillWiseRefer = () => {
