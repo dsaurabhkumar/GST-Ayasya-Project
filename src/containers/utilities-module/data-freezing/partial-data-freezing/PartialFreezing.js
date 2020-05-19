@@ -409,9 +409,10 @@ const PartialFreezing = (props) => {
 
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
-                        <h2 className="text-center mb-5">Partial Data Freezing</h2>
+                        <h2 className="text-center mb-3">Partial Data Freezing</h2>
                         <div className="row">
                             <div className="col-12 col-md-5 mt-3">
+                            <h6 className="mb-4 mt-4 mobile_view">Voucher Type</h6>
                                 {
                                     partial_freeze_dropdown_one.map((val, index) => (
                                         <div className="mt-2 partialInputAlign" key={"inputDropdownValue" + index}>
@@ -440,6 +441,7 @@ const PartialFreezing = (props) => {
                                 }
                             </div>
                             <div className="col-12 col-md-4 mt-3">
+                            <h6 className="mb-4 mt-4 mobile_view">Apply Freezing to</h6>
                                 {
                                     partial_freeze_dropdown_two.map((val, index) => (
                                         <div className="mt-2 mb-3" key={"inputDropdownValue" + index}>
@@ -465,6 +467,7 @@ const PartialFreezing = (props) => {
                                 }
                             </div>
                             <div className="col-12 col-md-3 mt-3">
+                            <h6 className="mb-4 mt-4 mobile_view">Series/Date</h6>
                                 {
                                     partial_freeze_date.map((val, index) => (
                                         <div className="mt-2 mb-1 dateFieldHeight" key={"DatePicker" + index}>
@@ -480,6 +483,7 @@ const PartialFreezing = (props) => {
                             </div>
                         </div>
 
+                        <span className="section_Heading">Freeze ?</span>
                         <div className="row inventoryForm mt-3 pl-0 pr-0">
                             {
                                 partial_freeze_dropdown_three.map((val, index) => (
