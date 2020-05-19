@@ -425,6 +425,7 @@ const PartialFreezing = (props) => {
                                                     multiple={false}
                                                     className={val.className}
                                                     id={val.id}
+                                                    onChange={handleChange}
                                                 >
                                                     <option defaultValue>N</option>
                                                     {
@@ -449,6 +450,7 @@ const PartialFreezing = (props) => {
                                                     multiple={false}
                                                     className={val.className}
                                                     id={val.id}
+                                                    onChange={handleChange}
                                                 >
                                                     <option defaultValue>Select an Option</option>
                                                     {
@@ -492,6 +494,7 @@ const PartialFreezing = (props) => {
                                                 multiple={false}
                                                 className={val.className}
                                                 id={val.id}
+                                                onChange={handleChange}
                                             >
                                                 <option defaultValue>Select an Option</option>
                                                 {
