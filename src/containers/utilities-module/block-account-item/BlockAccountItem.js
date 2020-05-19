@@ -122,7 +122,7 @@ const BlockAccountItem = () => {
                                 {
                                     block_account_dropdown_one.map((val, index) => (
                                         <div className="mt-3 mb-3 blockAccountInput" key={"inputDropdownValue" + index}>
-                                            <div className="col-6 col-md-6 p-0">
+                                            <div className="col-5 col-md-6 p-0">
                                                 {val.label}
                                             </div>
                                             <FormControl>
@@ -151,7 +151,7 @@ const BlockAccountItem = () => {
                                 {
                                     block_account_dropdown_two.map((val, index) => (
                                         <div className="blockAccountInput" key={"inputDropdownValue" + index}>
-                                            <div className="col-6 col-md-6 p-0">
+                                            <div className="col-5 col-md-6 p-0">
                                                 {val.label}
                                             </div>
                                             <FormControl>
