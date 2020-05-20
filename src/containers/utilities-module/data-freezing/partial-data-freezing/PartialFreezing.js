@@ -15,8 +15,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Sales',
             name: 'sales',
-            className: 'salesInput',
-            id: 'salesInput',
             values: [
                 "Y"
             ]
@@ -24,8 +22,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Purchase',
             name: 'purchase',
-            className: 'purchaseInput',
-            id: 'purchaseInput',
             values: [
                 "Y"
             ]
@@ -33,8 +29,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Sales Return',
             name: 'salesReturn',
-            className: 'salesReturnInput',
-            id: 'salesReturnInput',
             values: [
                 "Y"
             ]
@@ -42,8 +36,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Purchase Return',
             name: 'purchaseReturn',
-            className: 'purchaseReturnInput',
-            id: 'purchaseReturnInput',
             values: [
                 "Y"
             ]
@@ -51,8 +43,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Material Issue',
             name: 'materialIssue',
-            className: 'materialIssue',
-            id: 'materialIssue',
             values: [
                 "Y"
             ]
@@ -60,8 +50,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Material Receipt',
             name: 'materialReceipt',
-            className: 'materialReceipt',
-            id: 'materialReceipt',
             values: [
                 "Y"
             ]
@@ -69,8 +57,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Stock Transfer',
             name: 'stockTransfer',
-            className: 'stockTransfer',
-            id: 'stockTransfer',
             values: [
                 "Y"
             ]
@@ -78,8 +64,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Production',
             name: 'production',
-            className: 'production',
-            id: 'production',
             values: [
                 "Y"
             ]
@@ -87,8 +71,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Unassemble',
             name: 'unassemble',
-            className: 'unassemble',
-            id: 'unassemble',
             values: [
                 "Y"
             ]
@@ -96,8 +78,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Stock Journal',
             name: 'stockJournal',
-            className: 'stockJournal',
-            id: 'stockJournal',
             values: [
                 "Y"
             ]
@@ -105,8 +85,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Payment',
             name: 'payment',
-            className: 'payment',
-            id: 'payment',
             values: [
                 "Y"
             ]
@@ -114,8 +92,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Receipt',
             name: 'receipt',
-            className: 'receipt',
-            id: 'receipt',
             values: [
                 "Y"
             ]
@@ -123,8 +99,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Journal',
             name: 'journal',
-            className: 'journal',
-            id: 'journal',
             values: [
                 "Y"
             ]
@@ -132,8 +106,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Contra',
             name: 'contra',
-            className: 'contra',
-            id: 'contra',
             values: [
                 "Y"
             ]
@@ -141,8 +113,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Debit Note',
             name: 'debitNote',
-            className: 'debitNote',
-            id: 'debitNote',
             values: [
                 "Y"
             ]
@@ -150,8 +120,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Credit Note',
             name: 'creditNote',
-            className: 'creditNote',
-            id: 'creditNote',
             values: [
                 "Y"
             ]
@@ -161,128 +129,96 @@ const PartialFreezing = (props) => {
     const partial_freeze_dropdown_two = [
         {
             name: 'freezeSales',
-            className: 'freezeSales',
-            id: 'freezeSales',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezePurchase',
-            className: 'freezePurchase',
-            id: 'freezePurchase',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeSalesReturn',
-            className: 'freezeSalesReturn',
-            id: 'freezeSalesReturn',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezePurchaseReturn',
-            className: 'freezePurchaseReturn',
-            id: 'freezePurchaseReturn',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeMaterialIssue',
-            className: 'freezeMaterialIssue',
-            id: 'freezeMaterialIssue',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeMaterialReceipt',
-            className: 'freezeMaterialReceipt',
-            id: 'freezeMaterialReceipt',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeStock',
-            className: 'freezeStock',
-            id: 'freezeStock',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeProduction',
-            className: 'freezeProduction',
-            id: 'freezeProduction',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeUnassemble',
-            className: 'freezeUnassemble',
-            id: 'freezeUnassemble',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeStockJournal',
-            className: 'freezeStockJournal',
-            id: 'freezeStockJournal',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezePayment',
-            className: 'freezePayment',
-            id: 'freezePayment',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeReceipt',
-            className: 'freezeReceipt',
-            id: 'freezeReceipt',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeJournal',
-            className: 'freezeJournal',
-            id: 'freezeJournal',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeContra',
-            className: 'freezeContra',
-            id: 'freezeContra',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeDebit',
-            className: 'freezeDebit',
-            id: 'freezeDebit',
             values: [
                 "All Series"
             ]
         },
         {
             name: 'freezeCredit',
-            className: 'freezeCredit',
-            id: 'freezeCredit',
             values: [
                 "All Series"
             ]
@@ -292,83 +228,51 @@ const PartialFreezing = (props) => {
     const partial_freeze_date = [
         {
             name: 'freezeSalesDate',
-            className: 'freezeSalesDate',
-            id: 'freezeSalesDate'
         },
         {
             name: 'freezePurchaseDate',
-            className: 'freezePurchaseDate',
-            id: 'freezePurchaseDate'
         },
         {
             name: 'freezeSalesReturnDate',
-            className: 'freezeSalesReturnDate',
-            id: 'freezeSalesReturnDate'
         },
         {
             name: 'freezePurchaseReturnDate',
-            className: 'freezePurchaseReturnDate',
-            id: 'freezePurchaseReturnDate'
         },
         {
             name: 'freezeMaterialIssueDate',
-            className: 'freezeMaterialIssueDate',
-            id: 'freezeMaterialIssueDate'
         },
         {
             name: 'freezeMaterialReceiptDate',
-            className: 'freezeMaterialReceiptDate',
-            id: 'freezeMaterialReceiptDate'
         },
         {
             name: 'freezeStockDate',
-            className: 'freezeStockDate',
-            id: 'freezeStockDate'
         },
         {
             name: 'freezeProduction',
-            className: 'freezeProduction',
-            id: 'freezeProduction'
         },
         {
             name: 'freezeUnassembleDate',
-            className: 'freezeUnassembleDate',
-            id: 'freezeUnassembleDate'
         },
         {
             name: 'freezeStockJournalDate',
-            className: 'freezeStockJournalDate',
-            id: 'freezeStockJournalDate'
         },
         {
             name: 'freezePaymentDate',
-            className: 'freezePaymentDate',
-            id: 'freezePaymentDate'
         },
         {
             name: 'freezeReceiptDate',
-            className: 'freezeReceiptDate',
-            id: 'freezeReceiptDate'
         },
         {
             name: 'freezeJournalDate',
-            className: 'freezeJournalDate',
-            id: 'freezeJournalDate'
         },
         {
             name: 'freezeContraDate',
-            className: 'freezeContraDate',
-            id: 'freezeContraDate'
         },
         {
             name: 'freezeDebitDate',
-            className: 'freezeDebitDate',
-            id: 'freezeDebitDate'
         },
         {
             name: 'freezeCreditDate',
-            className: 'freezeCreditDate',
-            id: 'freezeCreditDate'
         },
     ]
 
@@ -376,8 +280,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Account Opening Balance',
             name: 'accountOpeningBalance',
-            className: 'accountOpeningBalance',
-            id: 'accountOpeningBalance',
             values: [
                 "Y"
             ]
@@ -385,8 +287,6 @@ const PartialFreezing = (props) => {
         {
             label: 'Items Opening Balance',
             name: 'itemsOpeningBalance',
-            className: 'accountOpeningBalance',
-            id: 'accountOpeningBalance',
             values: [
                 "Y"
             ]
@@ -409,13 +309,13 @@ const PartialFreezing = (props) => {
 
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
-                        <h2 className="text-center mb-3">Partial Data Freezing</h2>
+                        <h2 className="text-center">Partial Data Freezing</h2>
                         <div className="row">
                             <div className="col-12 col-md-5 mt-3">
-                            <h6 className="mb-4 mt-4 mobile_view">Voucher Type</h6>
+                            <h5 className="mb-4 mt-4 mobile_view">Voucher Type</h5>
                                 {
                                     partial_freeze_dropdown_one.map((val, index) => (
-                                        <div className="mt-2 partialInputAlign" key={"inputDropdownValue" + index}>
+                                        <div className="mt-2 partialInputAlign" key={"voucherType" + index}>
                                             <div className="mb-2">
                                                 {val.label}
                                             </div>
@@ -424,8 +324,6 @@ const PartialFreezing = (props) => {
                                                     type='select'
                                                     name={val.name}
                                                     multiple={false}
-                                                    className={val.className}
-                                                    id={val.id}
                                                     onChange={handleChange}
                                                 >
                                                     <option defaultValue>N</option>
@@ -440,18 +338,18 @@ const PartialFreezing = (props) => {
                                     ))
                                 }
                             </div>
+
+
                             <div className="col-12 col-md-4 mt-3">
-                            <h6 className="mb-4 mt-4 mobile_view">Apply Freezing to</h6>
+                            <h5 className="mb-4 mt-4 mobile_view">Apply Freezing to</h5>
                                 {
                                     partial_freeze_dropdown_two.map((val, index) => (
-                                        <div className="mt-2 mb-3" key={"inputDropdownValue" + index}>
+                                        <div className="mt-2 mb-3" key={"freeze" + index}>
                                             <FormControl>
                                                 <select
                                                     type='select'
                                                     name={val.name}
                                                     multiple={false}
-                                                    className={val.className}
-                                                    id={val.id}
                                                     onChange={handleChange}
                                                 >
                                                     <option defaultValue>Select an Option</option>
@@ -466,16 +364,16 @@ const PartialFreezing = (props) => {
                                     ))
                                 }
                             </div>
+
+
                             <div className="col-12 col-md-3 mt-3">
-                            <h6 className="mb-4 mt-4 mobile_view">Series/Date</h6>
+                            <h5 className="mb-4 mt-4 mobile_view">Series/Date</h5>
                                 {
                                     partial_freeze_date.map((val, index) => (
                                         <div className="mt-2 mb-1 dateFieldHeight" key={"DatePicker" + index}>
                                             <DatePicker
                                                 value={val.value}
                                                 name={val.name}
-                                                className={val.className}
-                                                id={val.id}
                                             />
                                         </div>
                                     ))
@@ -487,7 +385,7 @@ const PartialFreezing = (props) => {
                         <div className="row inventoryForm mt-3 pl-0 pr-0">
                             {
                                 partial_freeze_dropdown_three.map((val, index) => (
-                                    <div className="mt-2 mb-3 col-12 col-md-6 freezeSection" key={"inputDropdownValue" + index}>
+                                    <div className="mt-2 mb-3 col-12 col-md-6 freezeSection" key={"freezeOptions" + index}>
                                         <div>
                                             {val.label}
                                         </div>
@@ -496,8 +394,6 @@ const PartialFreezing = (props) => {
                                                 type='select'
                                                 name={val.name}
                                                 multiple={false}
-                                                className={val.className}
-                                                id={val.id}
                                                 onChange={handleChange}
                                             >
                                                 <option defaultValue>Select an Option</option>
