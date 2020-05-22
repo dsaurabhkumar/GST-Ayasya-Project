@@ -473,6 +473,12 @@ function NavBar() {
                                         </li>
                                         <div className="dropdown-divider"></div>
 
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/send-notification">Send Notification</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
                                         <li>
                                             <a className="dropdown-item dropdown-toggle" href="#">Customization</a>
                                             <ul className="dropdown-menu">
