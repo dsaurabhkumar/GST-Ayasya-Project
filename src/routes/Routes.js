@@ -85,6 +85,7 @@ import BillWiseRefer from '../containers/utilities-module/reference-management/a
 import BillReferences from '../containers/utilities-module/reference-management/reference-adjustment-wizard/BillReferences';
 import SendEmail from '../containers/utilities-module/send-e-mail/SendEmail';
 import SendSms from '../containers/utilities-module/send-sms/SendSms';
+import SendNotification from '../containers/utilities-module/send-notification/SendNotification';
 import FullFreezing from '../containers/utilities-module/data-freezing/full-data-freezing/FullFreezing';
 import PartialFreezing from '../containers/utilities-module/data-freezing/partial-data-freezing/PartialFreezing';
 import RestoreCustomReport from '../containers/utilities-module/customization/custom-report/restore-custom-report/RestoreCustomReport';
@@ -96,7 +97,6 @@ import BackupCustomValidation from '../containers/utilities-module/customization
 import BlockAccountItem from '../containers/utilities-module/block-account-item/BlockAccountItem';
 import DeactivateMasters from '../containers/utilities-module/de-activate-masters/DeactivateMasters';
 import MappingMasters from '../containers/utilities-module/mapping-of-masters/MappingMasters';
-import SendNotification from '../containers/utilities-module/send-notification/SendNotification';
 
 
 const Routes = () => (
@@ -367,6 +367,9 @@ const Routes = () => (
         <Route path="/send-sms">
             <SendSms />
         </Route>
+        <Route path="/send-notification">
+            <SendNotification />
+        </Route>
         <Route path="/restore-custom-report">
             <RestoreCustomReport />
         </Route>
@@ -394,9 +397,6 @@ const Routes = () => (
         </Route>
         <Route path="/utilities-mapping-masters">
             <MappingMasters />
-        </Route>
-        <Route path="/send-notification">
-            <SendNotification />
         </Route>
 
 
