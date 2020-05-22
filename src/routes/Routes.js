@@ -96,6 +96,7 @@ import BackupCustomValidation from '../containers/utilities-module/customization
 import BlockAccountItem from '../containers/utilities-module/block-account-item/BlockAccountItem';
 import DeactivateMasters from '../containers/utilities-module/de-activate-masters/DeactivateMasters';
 import MappingMasters from '../containers/utilities-module/mapping-of-masters/MappingMasters';
+import SendNotification from '../containers/utilities-module/send-notification/SendNotification';
 
 
 const Routes = () => (
@@ -393,6 +394,9 @@ const Routes = () => (
         </Route>
         <Route path="/utilities-mapping-masters">
             <MappingMasters />
+        </Route>
+        <Route path="/send-notification">
+            <SendNotification />
         </Route>
 
 
