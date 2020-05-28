@@ -10,7 +10,6 @@ const DeactivateMasters = (props) => {
 
     const formValue = {
         radioBtnsOne: "",
-
     }
 
     const ref_dropdown_one = [
