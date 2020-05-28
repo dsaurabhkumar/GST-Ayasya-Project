@@ -1,0 +1,10 @@
+.uploadFileAlign {
+    margin-left: 15px;
+}
+@media (min-width: 767px) {
+    .attachmentLabel {
+        width: 10%;
+    }
+}
+
+

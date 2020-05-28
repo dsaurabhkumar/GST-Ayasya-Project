@@ -18,7 +18,6 @@ const SendEmail = (props) => {
         cc: '',
         bcc: '',
         subject: '',
-        externalAttachment: ''
     }
 
     const send_email_radio = [
@@ -126,13 +125,6 @@ const SendEmail = (props) => {
             label: 'Subject:',
             name: 'subject',
         },
-    ]
-
-    const attachment_field = [
-        {
-            label: "External Attachment",
-            name: 'externalAttachment'
-        }
     ]
 
     return (
@@ -305,16 +297,10 @@ const SendEmail = (props) => {
                                     </div>
                                 ))
                             }
-                            {
-                                attachment_field.map((val, index) => (
-                                    <div className="mb-3 col-12 col-md-12" key={"attachment" + index}>
-                                        <div className="attachmentLabel">{val.label}</div>
-                                    </div>
-                                ))
-                            }
                             <UploadFile 
                                 fileUpload = {(childData) => (childDataInfo = (childData.target.files))}
                             />
+                            
                         </div>
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
