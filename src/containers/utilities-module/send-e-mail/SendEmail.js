@@ -3,7 +3,7 @@ import './SendEmail.css';
 import DatePicker from '../../../components/date-picker/DatePicker';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
-import { TextField, Button, FormControl, Radio } from '@material-ui/core';
+import { TextField, Button, FormControl, Radio, TextareaAutosize } from '@material-ui/core';
 import UploadFile from '../../../components/upload-files/UploadFile';
 import axios from 'axios';
 import { checkPropTypes } from 'prop-types';
@@ -18,6 +18,9 @@ const SendEmail = (props) => {
         cc: '',
         bcc: '',
         subject: '',
+        header: '',
+        body: '',
+        footer: ''
     }
 
     const send_email_radio = [
@@ -127,6 +130,28 @@ const SendEmail = (props) => {
         },
     ]
 
+    const mail_details = [
+        {
+            label: 'Header',
+            name: 'header'
+        },
+        {
+            label: 'Body',
+            name: 'body'
+        },
+        {
+            label: 'Footer',
+            name: 'footer'
+        }
+    ]
+
+    const attachment_field = [
+        {
+            label: "External Attachment",
+            name: 'externalAttachment'
+        }
+    ]
+
     return (
         <div className="container mt-4 mb-4">
             <div className="text-center mb-4">
@@ -145,7 +170,7 @@ const SendEmail = (props) => {
             >
 
 
-                {({ values, isSubmitting, handleChange }) => (
+                {({ values, isSubmitting, handleChange, handleBlur }) => (
                     <Form className="inventoryForm">
 
                         <div className="row">
@@ -297,10 +322,42 @@ const SendEmail = (props) => {
                                     </div>
                                 ))
                             }
-                            <UploadFile 
-                                fileUpload = {(childData) => (childDataInfo = (childData.target.files))}
-                            />
-                            
+                        </div>
+
+                        <div className="row textFieldAlignment">
+                            {
+                                attachment_field.map((val, index) => (
+                                    <div className="mb-3 col-12 col-md-6" key={"attachment" + index}>
+                                        <div className="attachmentLabel">{val.label}</div>
+                                    </div>
+                                ))
+                            }
+                            <div className="col-12 col-md-6">
+                                <UploadFile
+                                    fileUpload={(childData) => (childDataInfo = (childData.target.files))}
+
+                                />
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            {
+                                mail_details.map((val, index) => (
+                                    <div className="mt-4 col-12" key={"inputTextField" + index}>
+                                        {val.label}
+                                        <div className="mt-2 inputTextArea">
+                                            <TextareaAutosize
+                                                type='text'
+                                                name={val.name}
+                                                placeholder={val.placeholder}
+                                                rows={5}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                            />
+                                        </div>
+                                    </div>
+                                ))
+                            }
                         </div>
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
