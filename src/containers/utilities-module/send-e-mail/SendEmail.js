@@ -349,7 +349,7 @@ const SendEmail = (props) => {
                                             <TextareaAutosize
                                                 type='text'
                                                 name={val.name}
-                                                rows={5}
+                                                rows={3}
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
                                             />
