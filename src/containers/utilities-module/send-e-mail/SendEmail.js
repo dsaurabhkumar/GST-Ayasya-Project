@@ -335,7 +335,6 @@ const SendEmail = (props) => {
                             <div className="col-12 col-md-6">
                                 <UploadFile
                                     fileUpload={(childData) => (childDataInfo = (childData.target.files))}
-
                                 />
                             </div>
                         </div>
