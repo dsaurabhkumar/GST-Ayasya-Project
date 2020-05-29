@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SendEmail.css';
 import DatePicker from '../../../components/date-picker/DatePicker';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Button, FormControl, Radio, TextareaAutosize } from '@material-ui/core';
 import UploadFile from '../../../components/upload-files/UploadFile';
-import axios from 'axios';
-import { checkPropTypes } from 'prop-types';
 
 const SendEmail = (props) => {
 
     let childDataInfo;
+
+    const [oneAccount, setOneAccount] = useState(false);
+    const [groupAccount, setGroupAccount] = useState(false);
+    const [pickEmail, setPickEmail] = useState(false);
 
     const formValue = {
         radioBtnsOne: "",
@@ -185,6 +187,7 @@ const SendEmail = (props) => {
                                                         name='radioBtnsOne'
                                                         value={val.value}
                                                         as={Radio}
+                                                        onClick={event => setOneAccount(event.target.value === 'oneAccount') || setGroupAccount(event.target.value === 'groupOfAccounts') || setPickEmail(event.target.value === 'pickEmailFromVouchers')}
                                                     />
                                                     {val.key}
                                                 </div>
@@ -192,118 +195,123 @@ const SendEmail = (props) => {
                                             </div>
                                         ))
                                     }
-                                    {
-                                        select_account.map((val, index) => (
-                                            <div className="mb-2 mt-2 m-3" key={"inputDropdownValue" + index}>
-                                                <div className="mb-2">
-                                                    {val.label}
+                                    <div className={oneAccount ? "d-block" : "d-none"}>
+                                        {
+                                            select_account.map((val, index) => (
+                                                <div className="mb-2 mt-2 m-3" key={"inputDropdownValue" + index}>
+                                                    <div className="mb-2">
+                                                        {val.label}
+                                                    </div>
+                                                    <FormControl>
+                                                        <select
+                                                            type='select'
+                                                            name={val.name}
+                                                            multiple={false}
+                                                            onChange={handleChange}
+                                                        >
+                                                            <option defaultValue>Select an Option</option>
+                                                            {
+                                                                val.values.map((cval, cindex) => (
+                                                                    <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                                ))
+                                                            }
+                                                        </select>
+                                                    </FormControl>
                                                 </div>
-                                                <FormControl>
-                                                    <select
-                                                        type='select'
-                                                        name={val.name}
-                                                        multiple={false}
-                                                        onChange={handleChange}
-                                                    >
-                                                        <option defaultValue>Select an Option</option>
-                                                        {
-                                                            val.values.map((cval, cindex) => (
-                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                            ))
-                                                        }
-                                                    </select>
-                                                </FormControl>
-                                            </div>
-                                        ))
-                                    }
-                                    {
-                                        select_group_account.map((val, index) => (
-                                            <div className="mb-2 mt-2 m-3" key={"inputDropdownValue" + index}>
-                                                <div className="mb-2">
-                                                    {val.label}
+                                            ))
+                                        }
+                                    </div>
+                                    <div className={groupAccount ? "d-block" : "d-none"}>
+                                        {
+                                            select_group_account.map((val, index) => (
+                                                <div className="mb-2 mt-2 m-3" key={"inputDropdownValue" + index}>
+                                                    <div className="mb-2">
+                                                        {val.label}
+                                                    </div>
+                                                    <FormControl>
+                                                        <select
+                                                            type='select'
+                                                            name={val.name}
+                                                            multiple={false}
+                                                            onChange={handleChange}
+                                                        >
+                                                            <option defaultValue>Select an Option</option>
+                                                            {
+                                                                val.values.map((cval, cindex) => (
+                                                                    <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                                ))
+                                                            }
+                                                        </select>
+                                                    </FormControl>
                                                 </div>
-                                                <FormControl>
-                                                    <select
-                                                        type='select'
-                                                        name={val.name}
-                                                        multiple={false}
-                                                        onChange={handleChange}
-                                                    >
-                                                        <option defaultValue>Select an Option</option>
-                                                        {
-                                                            val.values.map((cval, cindex) => (
-                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                            ))
-                                                        }
-                                                    </select>
-                                                </FormControl>
-                                            </div>
-                                        ))
-                                    }
+                                            ))
+                                        }
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="col-12 col-md-6 marginAlignment">
-                                <div className="radioBtnsAlignment">
-                                    {
-                                        pick_email_radio.map((val, index) => (
-                                            <div key={"radioInputKey" + index}>
-                                                <div className="radioBtnTextAlign">
-                                                    <Field
-                                                        type='radio'
-                                                        name='radioBtnsTwo'
+                                <div className={pickEmail ? "d-block" : "d-none"}>
+                                    <div className="radioBtnsAlignment">
+                                        {
+                                            pick_email_radio.map((val, index) => (
+                                                <div key={"radioInputKey" + index}>
+                                                    <div className="radioBtnTextAlign">
+                                                        <Field
+                                                            type='radio'
+                                                            name='radioBtnsTwo'
+                                                            value={val.value}
+                                                            as={Radio}
+                                                        />
+                                                        {val.key}
+                                                    </div>
+
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
+                                    <div className="radioBtnsAlignment mt-3">
+                                        {
+                                            voucher_details.map((val, index) => (
+                                                <div className="mb-2 mt-2 m-3" key={"inputDropdownValue" + index}>
+                                                    <div className="mb-2">
+                                                        {val.label}
+                                                    </div>
+                                                    <FormControl>
+                                                        <select
+                                                            type='select'
+                                                            name={val.name}
+                                                            multiple={false}
+                                                            onChange={handleChange}
+                                                        >
+                                                            <option defaultValue>Select an Option</option>
+                                                            {
+                                                                val.values.map((cval, cindex) => (
+                                                                    <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                                ))
+                                                            }
+                                                        </select>
+                                                    </FormControl>
+                                                </div>
+                                            ))
+                                        }
+
+                                        {
+                                            dates.map((val, index) => (
+                                                <div className="mb-3 m-3 datePickerAlign" key={"DatePicker" + index}>
+                                                    <div className="dateLabelWidth">
+                                                        {val.label}
+                                                    </div>
+                                                    <DatePicker
                                                         value={val.value}
-                                                        as={Radio}
-                                                    />
-                                                    {val.key}
-                                                </div>
-
-                                            </div>
-                                        ))
-                                    }
-                                </div>
-                                <div className="radioBtnsAlignment mt-3">
-                                    {
-                                        voucher_details.map((val, index) => (
-                                            <div className="mb-2 mt-2 m-3" key={"inputDropdownValue" + index}>
-                                                <div className="mb-2">
-                                                    {val.label}
-                                                </div>
-                                                <FormControl>
-                                                    <select
-                                                        type='select'
                                                         name={val.name}
-                                                        multiple={false}
-                                                        onChange={handleChange}
-                                                    >
-                                                        <option defaultValue>Select an Option</option>
-                                                        {
-                                                            val.values.map((cval, cindex) => (
-                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                            ))
-                                                        }
-                                                    </select>
-                                                </FormControl>
-                                            </div>
-                                        ))
-                                    }
-
-                                    {
-                                        dates.map((val, index) => (
-                                            <div className="mb-3 m-3 datePickerAlign" key={"DatePicker" + index}>
-                                                <div className="dateLabelWidth">
-                                                    {val.label}
+                                                    />
                                                 </div>
-                                                <DatePicker
-                                                    value={val.value}
-                                                    name={val.name}
-                                                />
-                                            </div>
-                                        ))
-                                    }
+                                            ))
+                                        }
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
 
                         <div className="row mt-4">
