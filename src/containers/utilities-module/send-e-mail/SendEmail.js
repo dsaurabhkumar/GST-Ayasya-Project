@@ -349,7 +349,6 @@ const SendEmail = (props) => {
                                             <TextareaAutosize
                                                 type='text'
                                                 name={val.name}
-                                                placeholder={val.placeholder}
                                                 rows={5}
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
