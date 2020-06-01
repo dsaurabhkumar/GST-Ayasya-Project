@@ -11,15 +11,12 @@ const SendNotification = (props) => {
 
     let SendPDF;
 
-
     const [user, setUser] = useState(false);
     const [group, setGroup] = useState(false);
     const [mobile, setMobile] = useState(false);
     const [voucher, setVoucher] = useState(false);
     const [party, fromParty] = useState(false);
     const [billing, billingDetails] = useState(false);
-
-
 
     const formValue = {
         radioBtnsOne: "",
@@ -28,8 +25,7 @@ const SendNotification = (props) => {
         radioBtnsFour: "",
         startDate: "",
         endDate: "",
-        message:""
-
+        message: ""
     }
 
     const radioBtn_One = [
@@ -122,7 +118,7 @@ const SendNotification = (props) => {
             ]
         },
     ]
-    
+
     const inputTextOne = [
         {
             label: 'Voucher Series',
@@ -141,7 +137,7 @@ const SendNotification = (props) => {
             name: 'endDate',
         },
     ]
-    
+
     const message = [
         {
             label: 'Message',
@@ -161,20 +157,15 @@ const SendNotification = (props) => {
                 </div>
 
                 <Formik
-
                     initialValues={formValue}
-
                     onSubmit={(data, { setSubmitting }) => {
                         setSubmitting(true);
                         console.log(data, SendPDF)
                         setSubmitting(false);
                     }}
                 >
-
-
                     {({ values, isSubmitting, handleChange, handleBlur }) => (
                         <Form className="">
-                            {/* <div className="row"> */}
                             {
                                 radioBtn_One.map((val, index) => (
                                     <div key={"radioInputKey" + index}>
@@ -294,7 +285,7 @@ const SendNotification = (props) => {
                                                         name='radioBtnsFour'
                                                         value={val.value}
                                                         as={Radio}
-                                                        onClick={event => fromParty(event.target.value === 'FromParty') || billingDetails(event.target.value === 'FromBillingDetails')}                                                    />
+                                                        onClick={event => fromParty(event.target.value === 'FromParty') || billingDetails(event.target.value === 'FromBillingDetails')} />
                                                     {val.key}
                                                 </div>
 
@@ -302,14 +293,14 @@ const SendNotification = (props) => {
                                         ))
                                     }
                                 </div>
-                                    <div className={party || billing ? "d-block" : "d-none"}>
+                                <div className={party || billing ? "d-block" : "d-none"}>
                                     <span className="headingAlign">Voucher Details</span>
-                                        <div className="inventoryForm mt-2">
+                                    <div className="inventoryForm mt-2">
                                         {
                                             ref_dropdown_three.map((val, index) => (
                                                 <div className="mt-3 mb-3 SendNotifications" key={"inputDropdownValue" + index}>
                                                     <div className="labelWidth">
-                                                    {val.label}
+                                                        {val.label}
                                                     </div>
                                                     <FormControl>
                                                         <select
@@ -349,7 +340,7 @@ const SendNotification = (props) => {
                                             inputDate.map((val, index) => (
                                                 <div className="mb-3 mt-3 SendNotifications" key={"DatePicker" + index}>
                                                     <div className="labelWidth">
-                                                    {val.label}
+                                                        {val.label}
                                                     </div>
                                                     <DatePicker
                                                         value={val.value}
@@ -359,10 +350,10 @@ const SendNotification = (props) => {
                                             ))
                                         }
                                     </div>
-                                    </div>
+                                </div>
                             </div>
 
-                            <div className="col-12 col-md-6">
+                            <div className="col-12 col-md-6 mt-4 p-0">
                                 <UploadFile
                                     fileUpload={(childData) => (SendPDF = (childData.target.files))}
                                 />
@@ -371,7 +362,7 @@ const SendNotification = (props) => {
                             <div className="row mt-4">
                                 {
                                     message.map((val, index) => (
-                                        <div className="mt-4 col-12" key={"inputTextField" + index}>
+                                        <div className="col-12" key={"inputTextField" + index}>
                                             {val.label}
                                             <div className="mt-2 inputTextArea">
                                                 <TextareaAutosize
@@ -386,12 +377,6 @@ const SendNotification = (props) => {
                                     ))
                                 }
                             </div>
-
-
-
-
-
-
 
                             <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
                                 <div className="mt-3 col-12 col-md-3 p-0">
