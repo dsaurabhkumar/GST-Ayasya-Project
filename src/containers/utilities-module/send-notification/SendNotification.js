@@ -24,6 +24,7 @@ const SendNotification = (props) => {
         radioBtnsThree: "",
         radioBtnsFour: "",
         startDate: "",
+        VoucherSeries: '',
         endDate: "",
         message: ""
     }
