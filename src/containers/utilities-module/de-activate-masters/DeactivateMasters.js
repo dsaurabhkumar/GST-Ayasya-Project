@@ -81,7 +81,7 @@ const DeactivateMasters = (props) => {
     return (
         <div className="container containerWidth mt-4 mb-4">
             <div className="text-center mb-4">
-                <strong>De-Active Master</strong>
+                <h2>De-Active Master</h2>
             </div>
             <h5><span className="mt-2 headingAlign">Select Range</span></h5>
 
