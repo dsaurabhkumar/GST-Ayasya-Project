@@ -3,9 +3,14 @@ import './SendNotification.css'
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import DatePicker from '../../../components/date-picker/DatePicker';
-import { TextField, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
+import { TextField, Button, FormControlLabel, FormControl, Radio, TextareaAutosize } from '@material-ui/core';
+import UploadFile from '../../../components/upload-files/UploadFile';
+
 
 const SendNotification = (props) => {
+
+    let SendPDF;
+
 
     const [user, setUser] = useState(false);
     const [group, setGroup] = useState(false);
@@ -22,7 +27,8 @@ const SendNotification = (props) => {
         radioBtnsThree: "",
         radioBtnsFour: "",
         startDate: "",
-        endDate: ""
+        endDate: "",
+        message:""
 
     }
 
@@ -136,6 +142,12 @@ const SendNotification = (props) => {
         },
     ]
     
+    const message = [
+        {
+            label: 'Message',
+            name: 'message'
+        }
+    ]
 
 
     return (
@@ -154,13 +166,13 @@ const SendNotification = (props) => {
 
                     onSubmit={(data, { setSubmitting }) => {
                         setSubmitting(true);
-                        console.log(data)
+                        console.log(data, SendPDF)
                         setSubmitting(false);
                     }}
                 >
 
 
-                    {({ values, isSubmitting, handleChange }) => (
+                    {({ values, isSubmitting, handleChange, handleBlur }) => (
                         <Form className="">
                             {/* <div className="row"> */}
                             {
@@ -350,6 +362,30 @@ const SendNotification = (props) => {
                                     </div>
                             </div>
 
+                            <div className="col-12 col-md-6">
+                                <UploadFile
+                                    fileUpload={(childData) => (SendPDF = (childData.target.files))}
+                                />
+                            </div>
+
+                            <div className="row mt-4">
+                                {
+                                    message.map((val, index) => (
+                                        <div className="mt-4 col-12" key={"inputTextField" + index}>
+                                            {val.label}
+                                            <div className="mt-2 inputTextArea">
+                                                <TextareaAutosize
+                                                    type='text'
+                                                    name={val.name}
+                                                    rows={3}
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                />
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
 
 
 
