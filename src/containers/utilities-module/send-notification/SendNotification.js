@@ -35,7 +35,6 @@ const SendNotification = (props) => {
         },
     ]
 
-
     const radioBtn_two = [
         {
             key: 'One Account',
@@ -74,13 +73,13 @@ const SendNotification = (props) => {
         }
     ]
 
-
     const radioBtn_three = [
         {
             key: 'Pick Mobile No. from Voucher',
             value: 'PickMobileNo.fromVoucher',
         },
     ]
+
     const radioBtn_four = [
         {
             key: 'From Party',
@@ -145,6 +144,13 @@ const SendNotification = (props) => {
         }
     ]
 
+    const attachment_field = [
+        {
+            label: "Send PDF Attachment",
+            name: 'sendPDFattachment'
+        }
+    ]
+
 
     return (
         <div className="container containerWidth mt-4 mb-4">
@@ -165,98 +171,100 @@ const SendNotification = (props) => {
                     }}
                 >
                     {({ values, isSubmitting, handleChange, handleBlur }) => (
-                        <Form className="">
-                            {
-                                radioBtn_One.map((val, index) => (
-                                    <div key={"radioInputKey" + index}>
-                                        <Field
-                                            type='radio'
-                                            name='radioBtnsOne'
-                                            value={val.value}
-                                            as={Radio}
-                                            onClick={event => setMobile(event.target.value === 'PickMobileNo.fromAccount')}
-                                        />
-                                        {val.key}
+                        <Form>
+                            <div className="inventoryForm">
+                                {
+                                    radioBtn_One.map((val, index) => (
+                                        <div key={"radioInputKey" + index}>
+                                            <Field
+                                                type='radio'
+                                                name='radioBtnsOne'
+                                                value={val.value}
+                                                as={Radio}
+                                                onClick={event => setMobile(event.target.value === 'PickMobileNo.fromAccount')}
+                                            />
+                                            {val.key}
 
-                                    </div>
-                                ))
-                            }
-                            {/* </div> */}
-                            <div className={mobile ? "d-block" : "d-none"}>
-                                <span className="mt-2 headingAlign">Send SMS to</span>
-                                <div className="inventoryForm row">
-                                    {
-                                        radioBtn_two.map((val, index) => (
-                                            <div className="mb-2" key={"radioInputKey" + index}>
-                                                <div className="radioBtnTextAlign">
-                                                    <Field
-                                                        type='radio'
-                                                        name='radioBtnsTwo'
-                                                        value={val.value}
-                                                        as={Radio}
-                                                        onClick={event => setUser(event.target.value === 'OneAccount') || setGroup(event.target.value === 'GroupOfAccounts')}
-                                                    />
-                                                    {val.key}
-                                                </div>
-
-                                            </div>
-                                        ))
-                                    }
-
-                                    <div className="col-6 col-md-6">
-                                        <div className={user ? "d-block" : "d-none"}>
-                                            {
-                                                ref_dropdown_one.map((val, index) => (
-                                                    <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
-                                                        <FormControl>
-                                                            <select
-                                                                type='select'
-                                                                name={val.name}
-                                                                multiple={false}
-                                                                className={val.className}
-                                                                onChange={handleChange}
-                                                            >
-                                                                <option defaultValue>Select</option>
-                                                                {
-                                                                    val.values.map((cval, cindex) => (
-                                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                                    ))
-                                                                }
-                                                            </select>
-                                                        </FormControl>
-                                                    </div>
-                                                ))
-                                            }
                                         </div>
-                                        <div className={group ? "d-block" : "d-none"}>
-                                            {
-                                                ref_dropdown_two.map((val, index) => (
-                                                    <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
-                                                        <FormControl>
-                                                            <select
-                                                                type='select'
-                                                                name={val.name}
-                                                                multiple={false}
-                                                                className={val.className}
-                                                                onChange={handleChange}
-                                                            >
-                                                                <option defaultValue>Select</option>
-                                                                {
-                                                                    val.values.map((cval, cindex) => (
-                                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                                    ))
-                                                                }
-                                                            </select>
-                                                        </FormControl>
+                                    ))
+                                }
+
+                                <div className={mobile ? "d-block" : "d-none"}>
+                                    <span className="mt-2 headingAlign">Send SMS to</span>
+                                    <div className="inventoryForm row">
+                                        {
+                                            radioBtn_two.map((val, index) => (
+                                                <div className="mb-2" key={"radioInputKey" + index}>
+                                                    <div className="radioBtnTextAlign">
+                                                        <Field
+                                                            type='radio'
+                                                            name='radioBtnsTwo'
+                                                            value={val.value}
+                                                            as={Radio}
+                                                            onClick={event => setUser(event.target.value === 'OneAccount') || setGroup(event.target.value === 'GroupOfAccounts')}
+                                                        />
+                                                        {val.key}
                                                     </div>
-                                                ))
-                                            }
+
+                                                </div>
+                                            ))
+                                        }
+
+                                        <div className="col-6 col-md-6">
+                                            <div className={user ? "d-block" : "d-none"}>
+                                                {
+                                                    ref_dropdown_one.map((val, index) => (
+                                                        <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
+                                                            <FormControl>
+                                                                <select
+                                                                    type='select'
+                                                                    name={val.name}
+                                                                    multiple={false}
+                                                                    className={val.className}
+                                                                    onChange={handleChange}
+                                                                >
+                                                                    <option defaultValue>Select</option>
+                                                                    {
+                                                                        val.values.map((cval, cindex) => (
+                                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                                        ))
+                                                                    }
+                                                                </select>
+                                                            </FormControl>
+                                                        </div>
+                                                    ))
+                                                }
+                                            </div>
+                                            <div className={group ? "d-block" : "d-none"}>
+                                                {
+                                                    ref_dropdown_two.map((val, index) => (
+                                                        <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
+                                                            <FormControl>
+                                                                <select
+                                                                    type='select'
+                                                                    name={val.name}
+                                                                    multiple={false}
+                                                                    className={val.className}
+                                                                    onChange={handleChange}
+                                                                >
+                                                                    <option defaultValue>Select</option>
+                                                                    {
+                                                                        val.values.map((cval, cindex) => (
+                                                                            <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                                        ))
+                                                                    }
+                                                                </select>
+                                                            </FormControl>
+                                                        </div>
+                                                    ))
+                                                }
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div>
+                            <div className="inventoryForm mt-3">
                                 {
                                     radioBtn_three.map((val, index) => (
                                         <div key={"radioInputKey" + index}>
@@ -272,88 +280,94 @@ const SendNotification = (props) => {
                                         </div>
                                     ))
                                 }
-                            </div>
-                            <div className={voucher ? "d-block" : "d-none"}>
-                                <span className="headingAlign">Pick Mobile No.</span>
-                                <div className="inventoryForm row">
-                                    {
-                                        radioBtn_four.map((val, index) => (
-                                            <div className="mb-2" key={"radioInputKey" + index}>
-                                                <div className="radioBtnTextAlign">
-                                                    <Field
-                                                        type='radio'
-                                                        name='radioBtnsFour'
-                                                        value={val.value}
-                                                        as={Radio}
-                                                        onClick={event => fromParty(event.target.value === 'FromParty') || billingDetails(event.target.value === 'FromBillingDetails')} />
-                                                    {val.key}
-                                                </div>
+                                <div className={voucher ? "d-block" : "d-none"}>
+                                    <span className="headingAlign">Pick Mobile No.</span>
+                                    <div className="inventoryForm row">
+                                        {
+                                            radioBtn_four.map((val, index) => (
+                                                <div className="mb-2" key={"radioInputKey" + index}>
+                                                    <div className="radioBtnTextAlign">
+                                                        <Field
+                                                            type='radio'
+                                                            name='radioBtnsFour'
+                                                            value={val.value}
+                                                            as={Radio}
+                                                            onClick={event => fromParty(event.target.value === 'FromParty') || billingDetails(event.target.value === 'FromBillingDetails')} />
+                                                        {val.key}
+                                                    </div>
 
-                                            </div>
-                                        ))
-                                    }
-                                </div>
-                                <div className={party || billing ? "d-block" : "d-none"}>
-                                    <span className="headingAlign">Voucher Details</span>
-                                    <div className="inventoryForm mt-2">
-                                        {
-                                            ref_dropdown_three.map((val, index) => (
-                                                <div className="mt-3 mb-3 SendNotifications" key={"inputDropdownValue" + index}>
-                                                    <div className="labelWidth">
-                                                        {val.label}
-                                                    </div>
-                                                    <FormControl>
-                                                        <select
-                                                            type='select'
-                                                            name={val.name}
-                                                            multiple={false}
-                                                            className={val.className}
-                                                            onChange={handleChange}
-                                                        >
-                                                            <option defaultValue>Select</option>
-                                                            {
-                                                                val.values.map((cval, cindex) => (
-                                                                    <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                                ))
-                                                            }
-                                                        </select>
-                                                    </FormControl>
-                                                </div>
-                                            ))
-                                        }
-                                        {
-                                            inputTextOne.map((val, index) => (
-                                                <div className="mb-3 mt-3 SendNotifications" key={"inputTextField" + index}>
-                                                    <div className="labelWidth">
-                                                        {val.label}
-                                                    </div>
-                                                    <Field
-                                                        type='text'
-                                                        name={val.name}
-                                                        placeholder={val.placeholder}
-                                                        as={TextField}
-                                                    />
-                                                </div>
-                                            ))
-                                        }
-                                        {
-                                            inputDate.map((val, index) => (
-                                                <div className="mb-3 mt-3 SendNotifications" key={"DatePicker" + index}>
-                                                    <div className="labelWidth">
-                                                        {val.label}
-                                                    </div>
-                                                    <DatePicker
-                                                        value={val.value}
-                                                        name={val.name}
-                                                    />
                                                 </div>
                                             ))
                                         }
                                     </div>
+                                    <div className={party || billing ? "d-block" : "d-none"}>
+                                        <span className="headingAlign">Voucher Details</span>
+                                        <div className="inventoryForm mt-2">
+                                            {
+                                                ref_dropdown_three.map((val, index) => (
+                                                    <div className="mt-3 mb-3 SendNotifications" key={"inputDropdownValue" + index}>
+                                                        <div className="labelWidth">
+                                                            {val.label}
+                                                        </div>
+                                                        <FormControl>
+                                                            <select
+                                                                type='select'
+                                                                name={val.name}
+                                                                multiple={false}
+                                                                className={val.className}
+                                                                onChange={handleChange}
+                                                            >
+                                                                <option defaultValue>Select</option>
+                                                                {
+                                                                    val.values.map((cval, cindex) => (
+                                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                                    ))
+                                                                }
+                                                            </select>
+                                                        </FormControl>
+                                                    </div>
+                                                ))
+                                            }
+                                            {
+                                                inputTextOne.map((val, index) => (
+                                                    <div className="mb-3 mt-3 SendNotifications" key={"inputTextField" + index}>
+                                                        <div className="labelWidth">
+                                                            {val.label}
+                                                        </div>
+                                                        <Field
+                                                            type='text'
+                                                            name={val.name}
+                                                            placeholder={val.placeholder}
+                                                            as={TextField}
+                                                        />
+                                                    </div>
+                                                ))
+                                            }
+                                            {
+                                                inputDate.map((val, index) => (
+                                                    <div className="mb-3 mt-3 SendNotifications" key={"DatePicker" + index}>
+                                                        <div className="labelWidth">
+                                                            {val.label}
+                                                        </div>
+                                                        <DatePicker
+                                                            value={val.value}
+                                                            name={val.name}
+                                                        />
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div className="col-12 col-md-6 mt-4 p-0">
+                            {
+                                attachment_field.map((val, index) => (
+                                    <div className="mt-3 mb-3 col-12 col-md-6 p-0" key={"attachment" + index}>
+                                        <div className="attachmentLabel">{val.label}</div>
+                                    </div>
+                                ))
+                            }
+                            <div className="col-12 col-md-6 mt-2 p-0">
                                 <UploadFile
                                     fileUpload={(childData) => (SendPDF = (childData.target.files))}
                                 />
