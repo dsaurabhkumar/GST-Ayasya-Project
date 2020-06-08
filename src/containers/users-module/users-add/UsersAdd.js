@@ -128,7 +128,7 @@ const UsersAdd = (props) => {
         },
         {
             label: 'Allow Price Change in Voucher',
-            name: 'allowModificationOfCompany',
+            name: 'allowPriceChangeInVoucher',
             values: [
                 "Y"
             ]
