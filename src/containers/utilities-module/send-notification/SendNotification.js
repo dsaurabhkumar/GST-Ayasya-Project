@@ -224,7 +224,7 @@ const SendNotification = (props) => {
                                                                     className={val.className}
                                                                     onChange={handleChange}
                                                                 >
-                                                                    <option defaultValue>Select</option>
+                                                                    <option defaultValue>Select an Option</option>
                                                                     {
                                                                         val.values.map((cval, cindex) => (
                                                                             <option key={"optionValues" + cindex} value={cval}>{cval}</option>
@@ -248,7 +248,7 @@ const SendNotification = (props) => {
                                                                     className={val.className}
                                                                     onChange={handleChange}
                                                                 >
-                                                                    <option defaultValue>Select</option>
+                                                                    <option defaultValue>Select an Option</option>
                                                                     {
                                                                         val.values.map((cval, cindex) => (
                                                                             <option key={"optionValues" + cindex} value={cval}>{cval}</option>
@@ -318,7 +318,7 @@ const SendNotification = (props) => {
                                                                 className={val.className}
                                                                 onChange={handleChange}
                                                             >
-                                                                <option defaultValue>Select</option>
+                                                                <option defaultValue>Select an Option</option>
                                                                 {
                                                                     val.values.map((cval, cindex) => (
                                                                         <option key={"optionValues" + cindex} value={cval}>{cval}</option>
