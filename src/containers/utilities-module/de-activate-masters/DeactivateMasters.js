@@ -117,7 +117,7 @@ const DeactivateMasters = (props) => {
                                                     setDropdownValue(event.target.value);
                                                 }}
                                                 >
-                                                    <option defaultValue>select</option>
+                                                    <option defaultValue>Select an Option</option>
                                                     {
                                                         val.values.map((cval, cindex) => (
                                                             <option key={"optionValues" + cindex} value={cval}>{cval}</option>
@@ -170,7 +170,7 @@ const DeactivateMasters = (props) => {
                                                     multiple={false}
                                                     onChange={handleChange}
                                                 >
-                                                    <option defaultValue>Select</option>
+                                                    <option defaultValue>Select an Option</option>
                                                     {
                                                         val.values.map((cval, cindex) => (
                                                             <option key={"optionValues" + cindex} value={cval}>{cval}</option>
