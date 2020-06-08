@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { TextField, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
 
 const DeactivateMasters = (props) => {
-    const [dropdownvalue, setdropdownvalue] = useState(null);
+    const [dropdownValue, setDropdownValue] = useState(null);
     const [masterType, setMasterType] = useState(false);
 
     const formValue = {
@@ -92,7 +92,7 @@ const DeactivateMasters = (props) => {
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
                     console.log(data)
-                    console.log("[DROPDOWN vALUE]: ", dropdownvalue)
+                    console.log("[Dropdown Value]: ", dropdownValue)
                     setSubmitting(false);
                 }}
             >
@@ -114,7 +114,7 @@ const DeactivateMasters = (props) => {
                                                     name={val.name}
                                                 onChange={event => {
                                                     setMasterType(event.target.name === 'masterType')
-                                                    setdropdownvalue(event.target.value);
+                                                    setDropdownValue(event.target.value);
                                                 }}
                                                 >
                                                     <option defaultValue>select</option>
@@ -131,7 +131,7 @@ const DeactivateMasters = (props) => {
                             </div>
                         </div>
 
-                        <div className={dropdownvalue !== null ? "d-block" : "d-none"}>
+                        <div className={dropdownValue !== null ? "d-block" : "d-none"}>
                             <span className="exciseHeadingText">Select</span>
                             <div className="row">
                                 <div className="exciseRadioBtns deactivateRadioDisplay">
