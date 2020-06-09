@@ -523,6 +523,110 @@ function NavBar() {
                                 </li>
                                 <div className="dropdown-divider"></div>
 
+                                <li><a className="dropdown-item dropdown-toggle" href="#">Bulk Updations</a>
+                                    <ul className="dropdown-menu">
+                                        <li>
+                                            <Link className="dropdown-item" to="/update-bal-sheet-stock">Update Bal. Sheet Stock</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/masters-synchronization">Masters Synchronization</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/update-master-print-name">Update Master Print Name</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li><Link className="dropdown-item dropdown-toggle" to=''>Merge Masters</Link>
+                                            <ul className="dropdown-menu">
+                                                <li><Link className="dropdown-item" to='/merge-masters-items'>Items</Link></li>
+                                                <div className="dropdown-divider"></div>
+                                                <li><Link className="dropdown-item" to='/merge-masters-accounts'>Accounts</Link></li>
+                                            </ul>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/delete-unused-masters">Delete Unused Masters</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/update-item-tax-category">Update Item Tax Category / HSN Code</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/update-item-critical-levels">Update Item Critical levels</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/update-item-price-discount">Update Item Price/Discount</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/update-item-discount-structure">Update Item Discount Structure</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/multiple-account-creation-modification">Multiple Account Creation / Modification</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/multiple-item-creation-modification">Multiple Item Creation / Modification</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/multiple-tax-cat-creation-modification">Multiple Tax Category Creation / Modification</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/bulk-voucher-creation-modification">Bulk Voucher Creation / Modification</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/auto-generate-production-vouchers">Auto Generate Production Vouchers</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/regenerate-manufacturing-vouchers">Regenerate Manufacturing Vouchers</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/copy-vouchers">Copy Vouchers (Sales to Purchase)</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/voucher-replication">Voucher Replication</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/set-voucher-as-template">Set Voucher as Template</Link>
+                                        </li>
+                                        <div className="dropdown-divider"></div>
+
+                                        <li>
+                                            <Link className="dropdown-item" to="/voucher-template-tagging">Voucher Template Tagging</Link>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <div className="dropdown-divider"></div>
+
                                 <li><a className="dropdown-item dropdown-toggle" href="#">Data Export Import</a></li>
                                 <div className="dropdown-divider"></div>
 

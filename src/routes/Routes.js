@@ -97,6 +97,13 @@ import BackupCustomValidation from '../containers/utilities-module/customization
 import BlockAccountItem from '../containers/utilities-module/block-account-item/BlockAccountItem';
 import DeactivateMasters from '../containers/utilities-module/de-activate-masters/DeactivateMasters';
 import MappingMasters from '../containers/utilities-module/mapping-of-masters/MappingMasters';
+import UpdateBalSheetStock from '../containers/bulk-updations-module/update-bal-sheet-stock/UpdateBalSheetStock';
+import MastersSync from '../containers/bulk-updations-module/masters-synchronization/MastersSync';
+import UpdateMasterPrintName from '../containers/bulk-updations-module/update-master-print-name/UpdateMasterPrintName';
+import MergeMastersItems from '../containers/bulk-updations-module/merge-masters/merge-masters-item/MergeMastersItems';
+import MergeMastersAccounts from '../containers/bulk-updations-module/merge-masters/merge-masters-accounts/MergeMastersAccounts';
+import DeleteUnusedMasters from '../containers/bulk-updations-module/delete-unused-masters/DeleteUnusedMasters';
+import UpdateTaxCatHsn from '../containers/bulk-updations-module/update-item-tax-category-hsn/UpdateTaxCatHsn';
 
 
 const Routes = () => (
@@ -397,6 +404,28 @@ const Routes = () => (
         </Route>
         <Route path="/utilities-mapping-masters">
             <MappingMasters />
+        </Route>
+
+        <Route path="/update-bal-sheet-stock">
+            <UpdateBalSheetStock />
+        </Route>
+        <Route path="/masters-synchronization">
+            <MastersSync />
+        </Route>
+        <Route path="/update-master-print-name">
+            <UpdateMasterPrintName />
+        </Route>
+        <Route path="/merge-masters-items">
+            <MergeMastersItems />
+        </Route>
+        <Route path="/merge-masters-accounts">
+            <MergeMastersAccounts />
+        </Route>
+        <Route path="/delete-unused-masters">
+            <DeleteUnusedMasters />
+        </Route>
+        <Route path="/update-item-tax-category">
+            <UpdateTaxCatHsn />
         </Route>
 
 
