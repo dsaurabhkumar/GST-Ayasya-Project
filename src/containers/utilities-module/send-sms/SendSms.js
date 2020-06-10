@@ -6,17 +6,15 @@ import DatePicker from '../../../components/date-picker/DatePicker';
 import { TextField, Button, FormControlLabel, FormControl, Radio, TextareaAutosize } from '@material-ui/core';
 import UploadFile from '../../../components/upload-files/UploadFile';
 
-
-
-
 const SendSms = () => {
+
     let SendPDF;
 
     const [port, setPort] = useState(false);
     const [internet, setInternet] = useState(false);
     const [user, setUser] = useState(false);
-    const [AccountDropdown, setAccountDropdown] = useState(false);
-    const [GroupDropdown, setGroupDropdown] = useState(false);
+    const [accountDropdown, setAccountDropdown] = useState(false);
+    const [groupDropdown, setGroupDropdown] = useState(false);
     const [voucher, setVoucher] = useState(false);
     const [party, setFromParty] = useState(false);
     const [billing, setBillingDetails] = useState(false);
@@ -28,7 +26,6 @@ const SendSms = () => {
     }
 
     const select_range_radio = [
-
         {
             key: 'Phone',
             value: 'phone',
@@ -41,40 +38,11 @@ const SendSms = () => {
 
     const ref_dropdown_one = [
         {
-            name: 'phone',
+            name: 'port_number',
             values: [
-                "COM1",
-                "COM2",
-                "COM3",
-                "COM4",
-                "COM5",
-                "COM6",
-                "COM7",
-                "COM8",
-                "COM9",
-                "COM10",
-                "COM11",
-                "COM12",
-                "COM13",
-                "COM14",
-                "COM15",
-                "COM16",
-                "COM17",
-                "COM18",
-                "COM19",
-                "COM20",
-                "COM21",
-                "COM22",
-                "COM23",
-                "COM24",
-                "COM25",
-                "COM26",
-                "COM27",
-                "COM28",
-                "COM29",
-                "COM30",
-                "COM31",
-                "COM32",
+                "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "COM10", "COM11", "COM12", "COM13", "COM14", "COM15", 
+                "COM16", "COM17", "COM18", "COM19", "COM20","COM21", "COM22", "COM23", "COM24", "COM25", "COM26", "COM27", "COM28", "COM29", 
+                "COM30", "COM31", "COM32"
             ]
         },
     ]
@@ -90,8 +58,6 @@ const SendSms = () => {
                 "Bad Debts Written Off",
                 "Bank Charges",
                 "Books & periodicals"
-
-
             ]
         }
     ]
@@ -129,9 +95,6 @@ const SendSms = () => {
                 "Current Liabilties",
                 "Duties & Taxes",
                 "Expenses (Direct/Mfg.)",
-
-
-
             ]
         }
     ]
@@ -141,10 +104,8 @@ const SendSms = () => {
             label: 'Mobile No.',
             name: 'MobileNo.'
         },
-
     ]
 
-    // 
     const radioBtn_three = [
         {
             key: 'Pick Mobile No. from Voucher',
@@ -185,7 +146,6 @@ const SendSms = () => {
                 "Purchase",
                 "Sales Return",
                 "Purchase Return"
-
             ]
         },
     ]
@@ -195,7 +155,6 @@ const SendSms = () => {
             label: 'Voucher Series',
             name: 'VoucherSeries'
         },
-
     ]
 
     const inputDate = [
@@ -336,7 +295,7 @@ const SendSms = () => {
                                             ))
                                         }
                                         </div>
-                                        <div className={AccountDropdown ? "d-block" : "d-none"}>
+                                        <div className={accountDropdown ? "d-block" : "d-none"}>
                                             {
                                                 ref_dropdown_two.map((val, index) => (
                                                     <div className="mt-3 mb-3 col-12 col-md-8" key={"inputDropdownValue" + index}>
@@ -393,7 +352,7 @@ const SendSms = () => {
                                         }
                                         </div>
 
-                                        <div className={GroupDropdown ? "d-block" : "d-none"}>
+                                        <div className={groupDropdown ? "d-block" : "d-none"}>
                                             {
                                                 ref_dropdown_three.map((val, index) => (
                                                     <div className="mt-3 mb-3 col-12 col-md-8" key={"inputDropdownValue" + index}>
