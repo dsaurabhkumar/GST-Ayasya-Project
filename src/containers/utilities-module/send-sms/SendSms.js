@@ -209,7 +209,7 @@ const SendSms = () => {
                                             <div className="radioBtnTextAlign">
                                                 <Field
                                                     type='radio'
-                                                    name='radioBtnsSelect'
+                                                    name='radioBtnsSelectOne'
                                                     value={val.value}
                                                     as={Radio}
                                                     onClick={event => setPort(event.target.value === 'phone') || setInternet(event.target.value === 'internet')}
@@ -267,7 +267,7 @@ const SendSms = () => {
                                                         <div className="radioBtnTextAlign">
                                                             <Field
                                                                 type='radio'
-                                                                name='radioBtnsTwo'
+                                                                name='radioBtnsSelectTwo'
                                                                 value={val.value}
                                                                 as={Radio}
                                                                 onClick={event => setUser(event.target.value === 'pickMobileNoFromAccount')}
@@ -284,7 +284,7 @@ const SendSms = () => {
                                                     <div className="radioBtnTextAlign">
                                                         <Field
                                                             type='radio'
-                                                            name='radioBtnsThree'
+                                                            name='radioBtnsSelectThree'
                                                             value={val.value}
                                                             as={Radio}
                                                             onClick={event => setAccountDropdown(event.target.value === 'OneACcount')}
@@ -340,7 +340,7 @@ const SendSms = () => {
                                                     <div className="radioBtnTextAlign">
                                                         <Field
                                                             type='radio'
-                                                            name='radioBtnsThree'
+                                                            name='radioBtnsSelectFour'
                                                             value={val.value}
                                                             as={Radio}
                                                             onClick={event => setGroupDropdown(event.target.value === 'GroupOfAccounts')}
@@ -383,7 +383,7 @@ const SendSms = () => {
                                                 <div key={"radioInputKey" + index}>
                                                     <Field
                                                         type='radio'
-                                                        name='radioBtnsThree'
+                                                        name='radioBtnsSelectFive'
                                                         value={val.value}
                                                         as={Radio}
                                                         onClick={event => setVoucher(event.target.value === 'PickMobileNo.fromVoucher')}
@@ -402,7 +402,7 @@ const SendSms = () => {
                                                             <div className="radioBtnTextAlign">
                                                                 <Field
                                                                     type='radio'
-                                                                    name='radioBtnsFour'
+                                                                    name='radioBtnsSelectSix'
                                                                     value={val.value}
                                                                     as={Radio}
                                                                     onClick={event => setFromParty(event.target.value === 'FromParty') || setBillingDetails(event.target.value === 'FromBillingDetails')} />
