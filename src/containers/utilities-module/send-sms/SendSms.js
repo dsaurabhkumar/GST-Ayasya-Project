@@ -12,15 +12,14 @@ import UploadFile from '../../../components/upload-files/UploadFile';
 const SendSms = () => {
     let SendPDF;
 
-    const [port, phone] = useState(false);
-    const [internet, pickMobileNo] = useState(false);
+    const [port, setPort] = useState(false);
+    const [internet, setInternet] = useState(false);
     const [user, setUser] = useState(false);
-    const [OneACcountDropdown, dropDownTwo] = useState(false);
-    const [GroupACcountDropdown, dropDownThree] = useState(false);
-    // 
+    const [AccountDropdown, setAccountDropdown] = useState(false);
+    const [GroupDropdown, setGroupDropdown] = useState(false);
     const [voucher, setVoucher] = useState(false);
-    const [party, fromParty] = useState(false);
-    const [billing, billingDetails] = useState(false);
+    const [party, setFromParty] = useState(false);
+    const [billing, setBillingDetails] = useState(false);
 
 
     const formValue = {
@@ -247,17 +246,17 @@ const SendSms = () => {
                 {({ values, isSubmitting, handleChange, handleBlur }) => (
                     <Form className="inventoryForm">
                         <div className="inventoryForm">
-                            <div className="sendSmsRadioAlign">
+                            <div className="sendSmsRadioAlign inventoryForm">
                                 {
                                     select_range_radio.map((val, index) => (
-                                        <div className="mb-2 ml-4 p-0" key={"radioInputKey" + index}>
+                                        <div className="mb-2 p-0 col-12 col-md-6" key={"radioInputKey" + index}>
                                             <div className="radioBtnTextAlign">
                                                 <Field
                                                     type='radio'
                                                     name='radioBtnsOne'
                                                     value={val.value}
                                                     as={Radio}
-                                                    onClick={event => phone(event.target.value === 'phone') || pickMobileNo(event.target.value === 'internet')}
+                                                    onClick={event => setPort(event.target.value === 'phone') || setInternet(event.target.value === 'internet')}
                                                 />
                                                 {val.key}
                                             </div>
@@ -267,7 +266,7 @@ const SendSms = () => {
                                 }
                             </div>
 
-                            <div className="col-12 col-md-12">
+                            <div className="">
                                 <div className={port ? "d-block" : "d-none"}>
                                     {
                                         ref_dropdown_one.map((val, index) => (
@@ -291,11 +290,11 @@ const SendSms = () => {
                                                         <div className="mt-3 col-12 col-md-6 p-0">
                                                             <Button type="submit" className="col-12" disabled={isSubmitting}>Connect</Button>
                                                         </div>
-                                                        <div className="mt-3 col-12 col-md-6 align-self-center quitBtn">
+                                                        <div className="mt-3 col-12 col-md-6 align-self-center quitBtn pl-0">
                                                             <Button type="submit" className="col-12">Autodetect</Button>
                                                         </div>
                                                     </div>
-                                                        
+
                                                 </FormControl>
                                             </div>
                                         ))
@@ -332,7 +331,7 @@ const SendSms = () => {
                                                             name='radioBtnsThree'
                                                             value={val.value}
                                                             as={Radio}
-                                                            onClick={event => dropDownTwo(event.target.value === 'OneACcount')}
+                                                            onClick={event => setAccountDropdown(event.target.value === 'OneACcount')}
                                                         />
                                                         {val.key}
                                                     </div>
@@ -340,7 +339,7 @@ const SendSms = () => {
                                             ))
                                         }
                                         </div>
-                                        <div className={OneACcountDropdown ? "d-block" : "d-none"}>
+                                        <div className={AccountDropdown ? "d-block" : "d-none"}>
                                             {
                                                 ref_dropdown_two.map((val, index) => (
                                                     <div className="mt-3 mb-3 col-12 col-md-8" key={"inputDropdownValue" + index}>
@@ -388,7 +387,7 @@ const SendSms = () => {
                                                             name='radioBtnsThree'
                                                             value={val.value}
                                                             as={Radio}
-                                                            onClick={event => dropDownThree(event.target.value === 'GroupOfAccounts')}
+                                                            onClick={event => setGroupDropdown(event.target.value === 'GroupOfAccounts')}
                                                         />
                                                         {val.key}
                                                     </div>
@@ -397,7 +396,7 @@ const SendSms = () => {
                                         }
                                         </div>
 
-                                        <div className={GroupACcountDropdown ? "d-block" : "d-none"}>
+                                        <div className={GroupDropdown ? "d-block" : "d-none"}>
                                             {
                                                 ref_dropdown_three.map((val, index) => (
                                                     <div className="mt-3 mb-3 col-12 col-md-8" key={"inputDropdownValue" + index}>
@@ -422,7 +421,7 @@ const SendSms = () => {
                                             }
                                         </div>
                                     </div>
-                                    <div className="inventoryForm mt-3">
+                                    <div className="inventoryForm mt-3 p-1">
                                         {
                                             radioBtn_three.map((val, index) => (
                                                 <div key={"radioInputKey" + index}>
@@ -440,7 +439,7 @@ const SendSms = () => {
                                         }
                                         <div className={voucher ? "d-block" : "d-none"}>
                                             <span className="headingAlign">Pick Mobile No.</span>
-                                            <div className="inventoryForm row">
+                                            <div className="inventoryForm row pickMobileNoRadio mb-3">
                                                 {
                                                     radioBtn_four.map((val, index) => (
                                                         <div className="mb-2" key={"radioInputKey" + index}>
@@ -450,7 +449,7 @@ const SendSms = () => {
                                                                     name='radioBtnsFour'
                                                                     value={val.value}
                                                                     as={Radio}
-                                                                    onClick={event => fromParty(event.target.value === 'FromParty') || billingDetails(event.target.value === 'FromBillingDetails')} />
+                                                                    onClick={event => setFromParty(event.target.value === 'FromParty') || setBillingDetails(event.target.value === 'FromBillingDetails')} />
                                                                 {val.key}
                                                             </div>
 
@@ -460,7 +459,7 @@ const SendSms = () => {
                                             </div>
                                             <div className={party || billing ? "d-block" : "d-none"}>
                                                 <span className="headingAlign">Voucher Details</span>
-                                                <div className="inventoryForm mt-2">
+                                                <div className="inventoryForm mt-2 pickMobileNoRadio mb-3">
                                                     {
                                                         ref_dropdown_eight.map((val, index) => (
                                                             <div className="mt-3 mb-3 SendNotifications" key={"inputDropdownValue" + index}>
@@ -562,7 +561,6 @@ const SendSms = () => {
                     </Form>
                 )
                 }
-
             </Formik>
         </div>
     );

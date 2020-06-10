@@ -1,6 +1,11 @@
 
 @media (min-width: 767px) {
 .sendSmsRadioAlign{
-    display: inline-flex;
+    display: flex;
     }
+    .pickMobileNoRadio{
+    margin-left: 15px;
+    margin-right: 15px;
+    }
+
 }
