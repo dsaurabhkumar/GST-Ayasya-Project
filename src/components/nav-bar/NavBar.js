@@ -512,7 +512,6 @@ function NavBar() {
                                         <li>
                                             <Link className="dropdown-item" to="/utilities-deactivate-masters">De-Activate Masters</Link>
                                         </li>
-                                        <div className="dropdown-divider"></div>
 
                                         {/* <li>
                                             <Link className="dropdown-item" to="/utilities-mapping-masters">Mapping of Masters</Link>

@@ -104,6 +104,19 @@ import MergeMastersItems from '../containers/bulk-updations-module/merge-masters
 import MergeMastersAccounts from '../containers/bulk-updations-module/merge-masters/merge-masters-accounts/MergeMastersAccounts';
 import DeleteUnusedMasters from '../containers/bulk-updations-module/delete-unused-masters/DeleteUnusedMasters';
 import UpdateTaxCatHsn from '../containers/bulk-updations-module/update-item-tax-category-hsn/UpdateTaxCatHsn';
+import UpdateItemCriticalLevel from '../containers/bulk-updations-module/update-item-critical-levels/UpdateItemCriticalLevel';
+import UpdateItemPriceDiscount from '../containers/bulk-updations-module/update-item-price-discount/UpdateItemPriceDiscount';
+import UpdateItemDisStructure from '../containers/bulk-updations-module/update-item-discount-structure/UpdateItemDisStructure';
+import MultipleAccCreationMod from '../containers/bulk-updations-module/multiple-account-creation-modification/MultipleAccCreationMod';
+import MultipleItemCreationMod from '../containers/bulk-updations-module/multiple-item-creation-modification/MultipleItemCreationMod';
+import TaxCategoryCreationMod from '../containers/bulk-updations-module/multiple-tax-cat-creation-modification/TaxCategoryCreationMod';
+import BulkVoucherCreationMod from '../containers/bulk-updations-module/bulk-voucher-creation-modification/BulkVoucherCreationMod';
+import AutoGenerateProdVouchers from '../containers/bulk-updations-module/auto-generate-production-vouchers/AutoGenerateProdVouchers';
+import RegenerateManVouchers from '../containers/bulk-updations-module/regenerate-manufacturing-vouchers/RegenerateManVouchers';
+import CopyVouchers from '../containers/bulk-updations-module/copy-vouchers/CopyVouchers';
+import VoucherReplication from '../containers/bulk-updations-module/voucher-replication/VoucherReplication';
+import SetVoucherTemplate from '../containers/bulk-updations-module/set-voucher-as-template/SetVoucherTemplate';
+import VoucherTemplateTagging from '../containers/bulk-updations-module/voucher-template-tagging/VoucherTemplateTagging';
 
 
 const Routes = () => (
@@ -426,6 +439,45 @@ const Routes = () => (
         </Route>
         <Route path="/update-item-tax-category">
             <UpdateTaxCatHsn />
+        </Route>
+        <Route path="/update-item-critical-levels">
+            <UpdateItemCriticalLevel />
+        </Route>
+        <Route path="/update-item-price-discount">
+            <UpdateItemPriceDiscount />
+        </Route>
+        <Route path="/update-item-discount-structure">
+            <UpdateItemDisStructure />
+        </Route>
+        <Route path="/multiple-account-creation-modification">
+            <MultipleAccCreationMod />
+        </Route>
+        <Route path="/multiple-item-creation-modification">
+            <MultipleItemCreationMod />
+        </Route>
+        <Route path="/multiple-tax-cat-creation-modification">
+            <TaxCategoryCreationMod />
+        </Route>
+        <Route path="/bulk-voucher-creation-modification">
+            <BulkVoucherCreationMod />
+        </Route>
+        <Route path="/auto-generate-production-vouchers">
+            <AutoGenerateProdVouchers />
+        </Route>
+        <Route path="/regenerate-manufacturing-vouchers">
+            <RegenerateManVouchers />
+        </Route>
+        <Route path="/copy-vouchers">
+            <CopyVouchers />
+        </Route>
+        <Route path="/voucher-replication">
+            <VoucherReplication />
+        </Route>
+        <Route path="/set-voucher-as-template">
+            <SetVoucherTemplate />
+        </Route>
+        <Route path="/voucher-template-tagging">
+            <VoucherTemplateTagging />
         </Route>
 
 
