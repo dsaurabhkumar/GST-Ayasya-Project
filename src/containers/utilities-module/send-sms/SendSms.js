@@ -195,7 +195,7 @@ const SendSms = () => {
 
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
-                    console.log(data)
+                    console.log(data, SendPDF)
                     setSubmitting(false);
                 }}
             >
