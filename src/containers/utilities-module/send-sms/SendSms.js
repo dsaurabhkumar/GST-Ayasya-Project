@@ -23,11 +23,8 @@ const SendSms = () => {
 
 
     const formValue = {
-        internet: "",
-        phone: "",
-        radioBtnsOne: "",
-        radioBtnsTwo: "",
-        radioBtnsThree: ""
+        MobileNo: "",
+        VoucherSeries: "",
     }
 
     const select_range_radio = [
@@ -253,7 +250,7 @@ const SendSms = () => {
                                             <div className="radioBtnTextAlign">
                                                 <Field
                                                     type='radio'
-                                                    name='radioBtnsOne'
+                                                    name='radioBtnsSelect'
                                                     value={val.value}
                                                     as={Radio}
                                                     onClick={event => setPort(event.target.value === 'phone') || setInternet(event.target.value === 'internet')}
