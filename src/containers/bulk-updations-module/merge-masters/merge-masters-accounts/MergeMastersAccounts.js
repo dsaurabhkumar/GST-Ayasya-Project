@@ -51,7 +51,7 @@ const MergeMastersAccounts = (props) => {
                     <Form>
                         <h2 className="text-center mb-4 mt-3">Merge Account Data</h2>
                         <div className="inventoryForm">
-                        <p className="notes text-center mb-0">You are going to merge the data of two items. If you continue, all the data of the Source Item will be merged into the data of Target Item including opening balances.</p> 
+                        <p className="notes text-center mb-0">You are going to merge the data of two Accounts. If you continue, all the data of the Source Account will be merged into the data of Target Account including opening balances.</p> 
                         <p className="notes text-center">Please note that this operation can not be reversed back.</p>
                             <div className="row">
                                 {
