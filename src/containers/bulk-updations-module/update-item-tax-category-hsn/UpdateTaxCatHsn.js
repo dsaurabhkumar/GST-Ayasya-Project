@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './UpdateTaxCatHsn.css';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
@@ -21,11 +22,11 @@ const UpdateTaxCatHsn = (props) => {
 
     const update_item_radio = [
         {
-            key: 'Update Tax Category',
+            key: 'Tax Category',
             value: 'updateTaxCategory',
         },
         {
-            key: 'Update HSN Code',
+            key: 'HSN Code',
             value: 'updateHsnCode',
         },
     ]
@@ -174,28 +175,32 @@ const UpdateTaxCatHsn = (props) => {
 
                         <div className="row inventoryForm">
                             {
-                                <div className="exciseRadioBtns mb-4 row m-0">
-                                    {
-                                        update_item_radio.map((val, index) => (
-                                            <div className="mb-2 col-12 col-md-6 p-0" key={"radioInputKey" + index}>
-                                                <div className="radioBtnTextAlign">
-                                                    <Field
-                                                        type='radio'
-                                                        name='radioBtnUpdate'
-                                                        value={val.value}
-                                                        as={Radio}
-                                                        onClick={event => setCategory(event.target.value === 'updateTaxCategory') || setHsn(event.target.value === 'updateHsnCode')}
-                                                    />
-                                                    {val.key}
-                                                </div>
+                                <React.Fragment>
+                                    <span className="sectionHeading">Update</span>
+                                    <div className="exciseRadioBtns mb-4 row m-0">
+                                        {
+                                            update_item_radio.map((val, index) => (
+                                                <div className="mb-2 col-12 col-md-6 p-0" key={"radioInputKey" + index}>
+                                                    <div className="radioBtnTextAlign">
+                                                        <Field
+                                                            type='radio'
+                                                            name='radioBtnUpdate'
+                                                            value={val.value}
+                                                            as={Radio}
+                                                            onClick={event => setCategory(event.target.value === 'updateTaxCategory') || setHsn(event.target.value === 'updateHsnCode')}
+                                                        />
+                                                        {val.key}
+                                                    </div>
 
-                                            </div>
-                                        ))
-                                    }
-                                </div>
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
+                                </React.Fragment>
                             }
                             <div className={category ? "d-block" : "d-none"}>
-                                <div className="inventoryForm row">
+                                <span className="sectionHeading">Tax Category to be updated for</span>
+                                <div className="row inventoryForm">
                                     {
                                         <div className="exciseRadioBtns mb-2 row m-0">
                                             {
@@ -275,6 +280,7 @@ const UpdateTaxCatHsn = (props) => {
                                             </div>
                                         ))
                                     }
+
                                     {
                                         tax_Category_dropdown.map((val, index) => (
                                             <div className="mb-4 mt-4 col-12 col-md-12 inventoryForm labelFieldAlign" key={"inputDropdownValue" + index}>
@@ -304,6 +310,7 @@ const UpdateTaxCatHsn = (props) => {
 
 
                             <div className={hsn ? "d-block" : "d-none"}>
+                                <span className="sectionHeading">HSN Code to be updated for</span>
                                 <div className="inventoryForm row">
                                     {
                                         <div className="exciseRadioBtns mb-2 row m-0">
@@ -386,6 +393,7 @@ const UpdateTaxCatHsn = (props) => {
                                     }
 
                                     <div className="row inventoryForm divWidth mt-4 py-1">
+                                        <span className="sectionSubHeading">HSN Code</span>
                                         {
                                             new_hsn_code_text.map((val, index) => (
                                                 <div className="mt-4 col-12 col-md-12 labelFieldAlign mb-2 p-0" key={"inputTextField" + index}>
