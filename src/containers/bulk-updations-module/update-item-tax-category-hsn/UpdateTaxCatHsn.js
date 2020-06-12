@@ -243,7 +243,7 @@ const UpdateTaxCatHsn = (props) => {
                                     }
                                     {
                                         filter_HSN_dropdown.map((val, index) => (
-                                            <div className="mb-4 mt-4 col-6 col-md-6 labelFieldAlign p-0" key={"inputDropdownValue" + index}>
+                                            <div className="mb-4 mt-4 col-12 col-md-6 labelFieldAlign p-0" key={"inputDropdownValue" + index}>
                                                 <div className="labelWidth">
                                                     {val.label}
                                                 </div>
@@ -354,7 +354,7 @@ const UpdateTaxCatHsn = (props) => {
                                     }
                                     {
                                         filter_HSN_dropdown_hsn.map((val, index) => (
-                                            <div className="mb-4 mt-4 col-6 col-md-6 labelFieldAlign p-0" key={"inputDropdownValue" + index}>
+                                            <div className="mb-4 mt-4 col-12 col-md-6 labelFieldAlign p-0" key={"inputDropdownValue" + index}>
                                                 <div className="labelWidth">
                                                     {val.label}
                                                 </div>
