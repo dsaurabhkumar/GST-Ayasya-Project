@@ -278,7 +278,8 @@ const SendSms = () => {
                                                 ))
                                             }
                                         </div>
-                                        <div className={user ? "d-block" : "d-none"}>                                            {
+                                        <div className={user ? "d-block" : "d-none"}>                           
+                                            {
                                             one_Account_radio.map((val, index) => (
                                                 <div key={"radioInputKey" + index}>
                                                     <div className="radioBtnTextAlign">
