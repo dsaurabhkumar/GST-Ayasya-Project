@@ -58,12 +58,6 @@ code {
   align-self: center;
 }
 
-.labelFieldAlign .MuiFormControl-root {
-  width: 50%;
-  position: absolute;
-  right: 1rem;
-}
-
 .labelWidth {
   width: 45%;
 }

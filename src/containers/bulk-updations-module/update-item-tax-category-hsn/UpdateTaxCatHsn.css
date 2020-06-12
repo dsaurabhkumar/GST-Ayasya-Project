@@ -11,3 +11,7 @@
     left: 15px;
     background-color: #ffffff;
 }
+
+.labelFieldAlign .MuiFormControl-root {
+    width: 50%;
+  }

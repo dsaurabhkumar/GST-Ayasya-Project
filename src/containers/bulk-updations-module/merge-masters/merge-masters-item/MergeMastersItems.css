@@ -4,8 +4,6 @@
 
 .labelFieldAlign .MuiFormControl-root {
     width: 50%;
-    position: absolute;
-    right: 1rem;
 }
 
 .labelWidth {
