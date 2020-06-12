@@ -58,6 +58,16 @@ code {
   align-self: center;
 }
 
+.labelFieldAlign .MuiFormControl-root {
+  width: 50%;
+  position: absolute;
+  right: 1rem;
+}
+
+.labelWidth {
+  width: 45%;
+}
+
 @media (max-width: 765px) {
   h2 {
     font-size: 21px;
