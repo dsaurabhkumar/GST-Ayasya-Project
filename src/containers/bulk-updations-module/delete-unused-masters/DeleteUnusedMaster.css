@@ -1,3 +1,6 @@
 .AccountDropdownAllign{
     display: flex;
 }
+.dropdownAlign .MuiFormControl-root {
+    bottom: 8px;
+}

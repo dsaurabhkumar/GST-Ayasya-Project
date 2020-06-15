@@ -9,7 +9,9 @@ const DeleteUnusedMasters = () => {
     const [account, setAccount] = useState(false);
     const [item, setItem] = useState(false);
     const [materialCenter, setMaterialCenter] = useState(false);
-    const [groupDropdown, setGroupDropdown] = useState(false);
+    const [accDropdown, setAccDropdown] = useState(false);
+    const [itemDropdown, setItemDropdown] = useState(false);
+    const [mcs, setMcs] = useState(false);
 
     const formValue = {
 
@@ -142,7 +144,7 @@ const DeleteUnusedMasters = () => {
                                                         name='radioBtnsSelectThree'
                                                         value={val.value}
                                                         as={Radio}
-                                                        onClick={event => setGroupDropdown(event.target.value === 'GroupOfAccounts')}
+                                                        onClick={event => setAccDropdown(event.target.value === 'GroupOfAccounts')}
                                                     />
                                                     {val.key}
                                                 </div>
@@ -150,10 +152,10 @@ const DeleteUnusedMasters = () => {
                                         ))
                                     }
                                     <div>
-                                        <div className={groupDropdown ? "d-block" : "d-none"}>
+                                        <div className={accDropdown ? "d-block" : "d-none"}>
                                             {
                                                 dropdown_one.map((val, index) => (
-                                                    <div className="mt-3 mb-3 " key={"inputDropdownValue" + index}>
+                                                    <div className="mt-3 mb-3 pl-3" key={"inputDropdownValue" + index}>
                                                         <FormControl>
                                                             <select
                                                                 type='select'
@@ -162,7 +164,7 @@ const DeleteUnusedMasters = () => {
                                                                 className={val.className}
                                                                 onChange={handleChange}
                                                             >
-                                                                <option defaultValue>Select</option>
+                                                                <option defaultValue>Select an Option</option>
                                                                 {
                                                                     val.values.map((cval, cindex) => (
                                                                         <option key={"optionValues" + cindex} value={cval}>{cval}</option>
@@ -176,7 +178,7 @@ const DeleteUnusedMasters = () => {
                                             {
                                                 dropdown_two.map((val, index) => (
                                                     <div className="mt-3 mb-3 blockAccountInput" key={"inputDropdownValue" + index}>
-                                                        <div className="col-5 col-md-9 p-0">
+                                                        <div className="col-5 col-md-9 pl-3">
                                                             {val.label}
                                                         </div>
                                                         <FormControl>
@@ -212,7 +214,7 @@ const DeleteUnusedMasters = () => {
                                                         name='radioBtnsSelectThree'
                                                         value={val.value}
                                                         as={Radio}
-                                                        onClick={event => setGroupDropdown(event.target.value === 'GroupOfItems')}
+                                                        onClick={event => setItemDropdown(event.target.value === 'GroupOfItems')}
                                                     />
                                                     {val.key}
                                                 </div>
@@ -220,10 +222,10 @@ const DeleteUnusedMasters = () => {
                                         ))
                                     }
                                     <div>
-                                        <div className={groupDropdown ? "d-block" : "d-none"}>
+                                        <div className={itemDropdown ? "d-block" : "d-none"}>
                                             {
                                                 dropdown_three.map((val, index) => (
-                                                    <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
+                                                    <div className="mt-3 mb-3 pl-3" key={"inputDropdownValue" + index}>
                                                         <FormControl>
                                                             <select
                                                                 type='select'
@@ -232,7 +234,7 @@ const DeleteUnusedMasters = () => {
                                                                 className={val.className}
                                                                 onChange={handleChange}
                                                             >
-                                                                <option defaultValue>Select</option>
+                                                                <option defaultValue>Select an Option</option>
                                                                 {
                                                                     val.values.map((cval, cindex) => (
                                                                         <option key={"optionValues" + cindex} value={cval}>{cval}</option>
@@ -246,7 +248,7 @@ const DeleteUnusedMasters = () => {
                                             {
                                                 dropdown_two.map((val, index) => (
                                                     <div className="mt-3 mb-3 blockAccountInput" key={"inputDropdownValue" + index}>
-                                                        <div className="col-5 col-md-9 p-0">
+                                                        <div className="col-5 col-md-9 pl-3">
                                                             {val.label}
                                                         </div>
                                                         <FormControl>
@@ -282,18 +284,17 @@ const DeleteUnusedMasters = () => {
                                                         name='radioBtnsSelectThree'
                                                         value={val.value}
                                                         as={Radio}
-                                                        onClick={event => setGroupDropdown(event.target.value === 'GroupOfMC')}
+                                                        onClick={event => setMcs(event.target.value === 'GroupOfMC')}
                                                     />
                                                     {val.key}
                                                 </div>
                                             </div>
                                         ))
                                     }
-                                    <div>
-                                        <div className={groupDropdown ? "d-block" : "d-none"}>
+                                        <div className={mcs ? "d-block" : "d-none"}>
                                             {
                                                 dropdown_three.map((val, index) => (
-                                                    <div className="mt-3 mb-3 " key={"inputDropdownValue" + index}>
+                                                    <div className="mt-3 mb-3 pl-3 dropdownAlign" key={"inputDropdownValue" + index}>
                                                         <FormControl>
                                                             <select
                                                                 type='select'
@@ -302,7 +303,7 @@ const DeleteUnusedMasters = () => {
                                                                 className={val.className}
                                                                 onChange={handleChange}
                                                             >
-                                                                <option defaultValue>Select</option>
+                                                                <option defaultValue>Select an Option</option>
                                                                 {
                                                                     val.values.map((cval, cindex) => (
                                                                         <option key={"optionValues" + cindex} value={cval}>{cval}</option>
@@ -313,7 +314,6 @@ const DeleteUnusedMasters = () => {
                                                     </div>
                                                 ))
                                             }
-                                        </div>
                                     </div>
                                 </div>
                             </div>
