@@ -9,13 +9,12 @@ const DeleteUnusedMasters = () => {
     const [account, setAccount] = useState(false);
     const [item, setItem] = useState(false);
     const [materialCenter, setMaterialCenter] = useState(false);
-    // const [user, setUser] = useState(false);
-    // const [accountDropdown, setAccountDropdown] = useState(false);
     const [groupDropdown, setGroupDropdown] = useState(false);
 
     const formValue = {
 
     }
+
     const select_master_type_radio = [
         {
             key: 'Account',
@@ -36,9 +35,6 @@ const DeleteUnusedMasters = () => {
             key: 'All Account',
             value: 'allAccounts',
         },
-    ]
-
-    const group_Of_Accounts_radio = [
         {
             key: 'Group Of Accounts',
             value: 'GroupOfAccounts',
@@ -57,26 +53,22 @@ const DeleteUnusedMasters = () => {
             ]
         }
     ]
+
     const dropdown_two = [
         {
             label: 'Delete Account With Opening Balance',
             name: 'delete-account-with-opening-balance',
             values: [
                 "Y"
-
             ]
         },
     ]
 
-    // 
     const all_items_radio = [
         {
             key: 'All Items',
             value: 'allitems',
         },
-    ]
-
-    const group_Of_items_radio = [
         {
             key: 'Group Of Items',
             value: 'GroupOfItems',
@@ -91,32 +83,26 @@ const DeleteUnusedMasters = () => {
             ]
         }
     ]
+
     const all_mcs_radio = [
         {
             key: 'All MC,s',
             value: 'allMC',
         },
-    ]
-
-    const group_Of_mcs_radio = [
         {
             key: 'Group Of MC,s',
-            value: 'GroupOfMC,s',
+            value: 'GroupOfMC',
         },
     ]
 
-    // 
     return (
         <div className="container containerWidth mt-4 mb-4">
             <div className="text-center mb-4">
                 <h2>Batch Deletion of Master</h2>
             </div>
 
-
             <Formik
-
                 initialValues={formValue}
-
                 onSubmit={(data, { setSubmitting }) => {
                     setSubmitting(true);
                     console.log(data)
@@ -156,6 +142,7 @@ const DeleteUnusedMasters = () => {
                                                         name='radioBtnsSelectThree'
                                                         value={val.value}
                                                         as={Radio}
+                                                        onClick={event => setGroupDropdown(event.target.value === 'GroupOfAccounts')}
                                                     />
                                                     {val.key}
                                                 </div>
@@ -163,27 +150,10 @@ const DeleteUnusedMasters = () => {
                                         ))
                                     }
                                     <div>
-                                        {
-                                            group_Of_Accounts_radio.map((val, index) => (
-                                                <div key={"radioInputKey" + index}>
-                                                    <div className="radioBtnTextAlign">
-                                                        <Field
-                                                            type='radio'
-                                                            name='radioBtnsSelectThree'
-                                                            value={val.value}
-                                                            as={Radio}
-                                                            onClick={event => setGroupDropdown(event.target.value === 'GroupOfAccounts')}
-                                                        />
-                                                        {val.key}
-                                                    </div>
-                                                </div>
-                                            ))
-                                        }
-
                                         <div className={groupDropdown ? "d-block" : "d-none"}>
                                             {
                                                 dropdown_one.map((val, index) => (
-                                                    <div className="mt-3 mb-3 col-12 col-md-8" key={"inputDropdownValue" + index}>
+                                                    <div className="mt-3 mb-3 " key={"inputDropdownValue" + index}>
                                                         <FormControl>
                                                             <select
                                                                 type='select'
@@ -231,7 +201,6 @@ const DeleteUnusedMasters = () => {
                                     </div>
                                 </div>
                             </div>
-                            {/*  */}
                             <div className={item ? "d-block" : "d-none"}>
                                 <div className="inventoryForm mt-3 mb-3 AccountsRadioSelect row">
                                     {
@@ -243,6 +212,7 @@ const DeleteUnusedMasters = () => {
                                                         name='radioBtnsSelectThree'
                                                         value={val.value}
                                                         as={Radio}
+                                                        onClick={event => setGroupDropdown(event.target.value === 'GroupOfItems')}
                                                     />
                                                     {val.key}
                                                 </div>
@@ -250,27 +220,10 @@ const DeleteUnusedMasters = () => {
                                         ))
                                     }
                                     <div>
-                                        {
-                                            group_Of_items_radio.map((val, index) => (
-                                                <div key={"radioInputKey" + index}>
-                                                    <div className="radioBtnTextAlign">
-                                                        <Field
-                                                            type='radio'
-                                                            name='radioBtnsSelectThree'
-                                                            value={val.value}
-                                                            as={Radio}
-                                                            onClick={event => setGroupDropdown(event.target.value === 'GroupOfItems')}
-                                                        />
-                                                        {val.key}
-                                                    </div>
-                                                </div>
-                                            ))
-                                        }
-
                                         <div className={groupDropdown ? "d-block" : "d-none"}>
                                             {
                                                 dropdown_three.map((val, index) => (
-                                                    <div className="mt-3 mb-3 col-12 col-md-8" key={"inputDropdownValue" + index}>
+                                                    <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
                                                         <FormControl>
                                                             <select
                                                                 type='select'
@@ -318,7 +271,6 @@ const DeleteUnusedMasters = () => {
                                     </div>
                                 </div>
                             </div>
-                            {/*material  */}
                             <div className={materialCenter ? "d-block" : "d-none"}>
                                 <div className="inventoryForm mt-3 mb-3 AccountsRadioSelect row">
                                     {
@@ -330,6 +282,7 @@ const DeleteUnusedMasters = () => {
                                                         name='radioBtnsSelectThree'
                                                         value={val.value}
                                                         as={Radio}
+                                                        onClick={event => setGroupDropdown(event.target.value === 'GroupOfMC')}
                                                     />
                                                     {val.key}
                                                 </div>
@@ -337,27 +290,10 @@ const DeleteUnusedMasters = () => {
                                         ))
                                     }
                                     <div>
-                                        {
-                                            group_Of_mcs_radio.map((val, index) => (
-                                                <div key={"radioInputKey" + index}>
-                                                    <div className="radioBtnTextAlign">
-                                                        <Field
-                                                            type='radio'
-                                                            name='radioBtnsSelectThree'
-                                                            value={val.value}
-                                                            as={Radio}
-                                                            onClick={event => setGroupDropdown(event.target.value === 'GroupOfItems')}
-                                                        />
-                                                        {val.key}
-                                                    </div>
-                                                </div>
-                                            ))
-                                        }
-
                                         <div className={groupDropdown ? "d-block" : "d-none"}>
                                             {
                                                 dropdown_three.map((val, index) => (
-                                                    <div className="mt-3 mb-3 col-12 col-md-8" key={"inputDropdownValue" + index}>
+                                                    <div className="mt-3 mb-3 " key={"inputDropdownValue" + index}>
                                                         <FormControl>
                                                             <select
                                                                 type='select'
@@ -381,7 +317,6 @@ const DeleteUnusedMasters = () => {
                                     </div>
                                 </div>
                             </div>
-                            {/*  */}
                         </div>
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
