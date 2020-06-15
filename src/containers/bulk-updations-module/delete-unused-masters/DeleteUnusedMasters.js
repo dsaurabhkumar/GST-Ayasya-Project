@@ -146,7 +146,7 @@ const DeleteUnusedMasters = () => {
                                 }
                             </div>
                             <div className={account ? "d-block" : "d-none"}>
-                                <div className="inventoryForm mt-3 mb-3 AccountsRadioSelect">
+                                <div className="inventoryForm mt-3 mb-3 AccountsRadioSelect row ">
                                     {
                                         all_Account_radio.map((val, index) => (
                                             <div key={"radioInputKey" + index}>
@@ -233,7 +233,7 @@ const DeleteUnusedMasters = () => {
                             </div>
                             {/*  */}
                             <div className={item ? "d-block" : "d-none"}>
-                                <div className="inventoryForm mt-3 mb-3 AccountsRadioSelect">
+                                <div className="inventoryForm mt-3 mb-3 AccountsRadioSelect row">
                                     {
                                         all_items_radio.map((val, index) => (
                                             <div key={"radioInputKey" + index}>
@@ -320,7 +320,7 @@ const DeleteUnusedMasters = () => {
                             </div>
                             {/*material  */}
                             <div className={materialCenter ? "d-block" : "d-none"}>
-                                <div className="inventoryForm mt-3 mb-3 AccountsRadioSelect">
+                                <div className="inventoryForm mt-3 mb-3 AccountsRadioSelect row">
                                     {
                                         all_mcs_radio.map((val, index) => (
                                             <div key={"radioInputKey" + index}>
