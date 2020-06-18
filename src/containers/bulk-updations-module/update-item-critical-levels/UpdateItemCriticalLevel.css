@@ -1,0 +1,21 @@
+.borderBoxHeading{
+    position: relative;
+    top: 11px;
+    background: #ffffff;
+    left: 21px;
+    }
+.borderHeading{
+    top: 34px !important;
+    position: relative;
+    background: #ffffff;
+    left: 21px;
+    }
+.selectdVoucherHeading{
+    top: 11px;
+    position: relative;
+    background: #ffffff;
+    left: 21px;
+    }
+.itemGeneratedDropdown{
+    display: inline-flex;
+}
