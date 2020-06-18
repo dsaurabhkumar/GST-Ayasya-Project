@@ -10,9 +10,7 @@ const UpdateItemDisStructure = (props) => {
 
 
     const formValue = {
-        radioBtnsOne: "",
-        groupOfItem: "",
-        oneAccount: ""
+        itemRadio: "",
     }
 
     const item_radio = [
@@ -49,7 +47,7 @@ const UpdateItemDisStructure = (props) => {
     const dropdown_two = [
         {
             label: 'Selected Discount Structure',
-            name: 'groupOfItem',
+            name: 'Select Discount Structure',
             values: [
                 "General",
             ]
@@ -81,7 +79,7 @@ const UpdateItemDisStructure = (props) => {
                                             <div className="radioBtnTextAlign">
                                                 <Field
                                                     type='radio'
-                                                    name='radioBtnsOne'
+                                                    name='itemRadio'
                                                     value={val.value}
                                                     as={Radio}
                                                     onClick={event => setUser(event.target.value === 'GroupOfItem')}
@@ -129,7 +127,7 @@ const UpdateItemDisStructure = (props) => {
                                             <div className="radioBtnTextAlign">
                                                 <Field
                                                     type='radio'
-                                                    name='radioBtnsTwo'
+                                                    name='Sale Purchase Radio'
                                                     value={val.value}
                                                     as={Radio}
                                                     onChange={handleChange}
