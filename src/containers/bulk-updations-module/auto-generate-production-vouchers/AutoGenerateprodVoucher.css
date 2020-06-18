@@ -7,3 +7,8 @@
  .datePicker{
    margin-left: 0px !important;
  }
+ @media (min-width: 767px) {
+  .itemConsumedMedia {
+    padding-left: 0px;
+  }
+}
