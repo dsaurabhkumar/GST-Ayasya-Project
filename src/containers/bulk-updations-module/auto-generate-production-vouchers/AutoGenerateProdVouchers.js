@@ -11,7 +11,6 @@ const AutoGenerateProdVouchers = (props) => {
     const [group, setGroup] = useState(false);
     const [oneMC, setoneMC] = useState(false);
     const [groupMcs, setGroupMCS] = useState(false);
-    // 
     const [bom, setBom] = useState(false);
     const [generateStock, setgenerateStock] = useState(false);
 
@@ -48,7 +47,7 @@ const AutoGenerateProdVouchers = (props) => {
         }
     ]
 
-    const MCS_radio = [
+    const mcs_radio = [
         {
             key: 'One MC',
             value: 'oneMC',
@@ -70,21 +69,21 @@ const AutoGenerateProdVouchers = (props) => {
         },
     ]
 
-    const Mc_dropdown = [
+    const mc_dropdown = [
         {
             name: 'OneMc',
             values: [
-                "MainStore",
+                "Main Store",
             ]
         }
     ]
 
-    const Mc_itemGenerated_dropdown = [
+    const mc_itemGenerated_dropdown = [
         {
             label: 'MC (Item Generated)',
             name: 'MC (Item Generated)',
             values: [
-                "MainStore",
+                "Main Store",
             ]
         }
     ]
@@ -99,27 +98,27 @@ const AutoGenerateProdVouchers = (props) => {
         }
     ]
 
-    const Mc_itemConsumed_dropdown = [
+    const mc_itemConsumed_dropdown = [
         {
             label: 'MC (Item Consumed)',
             name: 'MC (Item Consumed)',
             values: [
-                "MainStore",
+                "Main Store",
             ]
         }
     ]
 
-    const Voucher_Series_dropdown_one = [
+    const voucher_Series_dropdown_one = [
         {
             label: 'Voucher Series',
             name: 'Voucher Series One',
             values: [
-                "MainStore",
+                "Main Store",
             ]
         }
     ]
 
-    const Select_date = [
+    const select_date = [
         {
             label: 'Start Date',
             name: 'startDate',
@@ -140,25 +139,26 @@ const AutoGenerateProdVouchers = (props) => {
         }
     ]
 
-    const Generate_voucher_at_MC_dropdown = [
+    const generate_voucher_at_mc_dropdown = [
         {
             label: 'Generate Voucher at MC',
             name: 'Generate Voucher at MC',
             values: [
-                "MainStore",
+                "Main Store",
             ]
         }
     ]
 
-    const Voucher_Series_dropdown_two = [
+    const voucher_Series_dropdown_two = [
         {
             label: 'Voucher Series',
             name: 'Voucher Series two',
             values: [
-                "MainStore",
+                "Main Store",
             ]
         }
     ]
+
     return (
         <div className="container containerWidth mt-4 mb-4">
             <div className="text-center mb-4">
@@ -193,7 +193,6 @@ const AutoGenerateProdVouchers = (props) => {
                                                 />
                                                 {val.key}
                                             </div>
-
                                         </div>
                                     ))
                                 }
@@ -253,7 +252,7 @@ const AutoGenerateProdVouchers = (props) => {
                         <div className="row inventoryForm mt-3">
                             <div className="col-6 col-md-6">
                                 {
-                                    MCS_radio.map((val, index) => (
+                                    mcs_radio.map((val, index) => (
                                         <div className="mb-2 p-0" key={"radioInputKey" + index}>
                                             <div className="radioBtnTextAlign">
                                                 <Field
@@ -265,7 +264,6 @@ const AutoGenerateProdVouchers = (props) => {
                                                 />
                                                 {val.key}
                                             </div>
-
                                         </div>
                                     ))
                                 }
@@ -295,9 +293,10 @@ const AutoGenerateProdVouchers = (props) => {
                                         ))
                                     }
                                 </div>
+
                                 <div className={oneMC ? "d-block" : "d-none"}>
                                     {
-                                        Mc_dropdown.map((val, index) => (
+                                        mc_dropdown.map((val, index) => (
                                             <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
                                                 <FormControl>
                                                     <select
@@ -321,12 +320,13 @@ const AutoGenerateProdVouchers = (props) => {
                                 </div>
                             </div>
                         </div>
+
                         <span className="mt-2 ForProductionBoxHeading">Select Option :</span>
                         <div className="inventoryForm mt-3">
                             <span className="ForProductionBoxHeading">For Production Voucher :</span>
                             <div className="inventoryForm mt-3">
                                 {
-                                    Mc_itemGenerated_dropdown.map((val, index) => (
+                                    mc_itemGenerated_dropdown.map((val, index) => (
                                         <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
                                             <div className=" col-6 col-md-6 itemGeneratedDropdown">
                                                 {val.label}
@@ -382,7 +382,7 @@ const AutoGenerateProdVouchers = (props) => {
                                 <div className={bom ? "d-block" : "d-none"}>
                                     <div className="mt-4">
                                         {
-                                            Mc_itemConsumed_dropdown.map((val, index) => (
+                                            mc_itemConsumed_dropdown.map((val, index) => (
                                                 <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
                                                     <div className=" col-6 col-md-6 itemGeneratedDropdown">
                                                         {val.label}
@@ -410,9 +410,10 @@ const AutoGenerateProdVouchers = (props) => {
                                         }
                                     </div>
                                 </div>
+
                                 <div>
                                     {
-                                        Voucher_Series_dropdown_one.map((val, index) => (
+                                        voucher_Series_dropdown_one.map((val, index) => (
                                             <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
                                                 <div className=" col-6 col-md-6 itemGeneratedDropdown">
                                                     {val.label}
@@ -440,10 +441,11 @@ const AutoGenerateProdVouchers = (props) => {
                                     }
                                 </div>
                             </div>
+
                             <div className="inventoryForm  mt-3">
                                 <div className="row datePicker">
                                     {
-                                        Select_date.map((val, index) => (
+                                        select_date.map((val, index) => (
                                             <div className="mb-3 col-12 col-md-6" key={"DatePicker" + index}>
                                                 {val.label}
                                                 <DatePicker
@@ -454,6 +456,7 @@ const AutoGenerateProdVouchers = (props) => {
                                         ))
                                     }
                                 </div>
+
                                 <div className="col-12 col-md-12">
                                     {
                                         general_stock_voucher.map((val, index) => (
@@ -484,7 +487,7 @@ const AutoGenerateProdVouchers = (props) => {
                                 <div className={generateStock ? "d-block" : "d-none"}>
                                     <div className="mt-4 inventoryForm">
                                         {
-                                            Generate_voucher_at_MC_dropdown.map((val, index) => (
+                                            generate_voucher_at_mc_dropdown.map((val, index) => (
                                                 <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
                                                     <div className=" col-6 col-md-6 itemGeneratedDropdown">
                                                         {val.label}
@@ -511,7 +514,7 @@ const AutoGenerateProdVouchers = (props) => {
                                             ))
                                         }
                                         {
-                                            Voucher_Series_dropdown_two.map((val, index) => (
+                                            voucher_Series_dropdown_two.map((val, index) => (
                                                 <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
                                                     <div className=" col-6 col-md-6 itemGeneratedDropdown">
                                                         {val.label}
@@ -541,6 +544,7 @@ const AutoGenerateProdVouchers = (props) => {
                                 </div>
                             </div>
                         </div>
+
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
                             <div className="mt-3 col-12 col-md-3 p-0">
                                 <Button type="submit" className="col-12" disabled={isSubmitting}>Save</Button>
@@ -552,7 +556,6 @@ const AutoGenerateProdVouchers = (props) => {
                     </Form>
                 )
                 }
-
             </Formik>
         </div >
     )
