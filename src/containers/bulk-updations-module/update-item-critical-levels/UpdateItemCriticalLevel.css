@@ -16,3 +16,6 @@
     background: #ffffff;
     left: 21px;
     }
+.itemGeneratedDropdown{
+    display: inline-flex;
+}

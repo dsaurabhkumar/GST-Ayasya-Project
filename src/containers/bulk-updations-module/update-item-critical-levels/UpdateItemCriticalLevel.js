@@ -381,7 +381,7 @@ const UpdateItemCriticalLevel = (props) => {
                                     ))
                                 }
                             </div>
-                            <div className="col-6 col-md-6">
+                            <div className="col-12 col-md-6">
                                 <div className={all ? "d-block" : "d-none"}>
                                     <span className="selectdVoucherHeading">Selected Vouchers</span>
                                     <div className="inventoryForm">
