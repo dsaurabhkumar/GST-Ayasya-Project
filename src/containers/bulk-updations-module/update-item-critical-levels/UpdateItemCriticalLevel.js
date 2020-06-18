@@ -22,23 +22,23 @@ const UpdateItemCriticalLevel = (props) => {
     const formValue = {
         groupofItem: "",
         oneItem: "",
-        UpdateMinimumLevelTextField: "",
-        UpdateReOrderLevelTextField: "",
-        UpdateMaximumLevelTextField: "",
+        updateMinimumLevel: "",
+        updateReorderLevel: "",
+        updateMaxLevel: "",
     }
 
     const select_range_radio = [
         {
             key: 'One Item',
-            value: 'oneIem',
+            value: 'oneItem',
         },
         {
             key: 'Group of Items',
-            value: 'GroupOfItems',
+            value: 'groupOfItems',
         },
     ]
 
-    const ref_dropdown_one = [
+    const select_items_dropdown_one = [
         {
             name: 'groupofItem',
             values: [
@@ -47,7 +47,7 @@ const UpdateItemCriticalLevel = (props) => {
         },
     ]
 
-    const ref_dropdown_two = [
+    const select_items_dropdown_two = [
         {
             name: 'oneItem',
             values: [
@@ -56,18 +56,18 @@ const UpdateItemCriticalLevel = (props) => {
         }
     ]
 
-    const MCS_radio = [
+    const mcs_radio = [
         {
             key: 'One MC',
             value: 'oneMC',
         },
         {
             key: 'Group of MC',
-            value: 'GroupOfMC',
+            value: 'groupOfMC',
         },
     ]
 
-    const ref_dropdown_three = [
+    const check_consumption_dropdown_one = [
         {
             name: 'groupofMC',
             values: [
@@ -78,16 +78,27 @@ const UpdateItemCriticalLevel = (props) => {
         },
     ]
 
-    const ref_dropdown_four = [
+    const check_consumption_dropdown_two = [
         {
-            name: 'OneMc',
+            name: 'oneMc',
             values: [
-                "MainStore",
+                "Main Store",
             ]
         }
     ]
 
-    const checkBoxData_One = [
+    const check_pattern_radio = [
+        {
+            key: 'All',
+            value: 'All',
+        },
+        {
+            key: 'Selected',
+            value: 'Selected',
+        },
+    ]
+
+    const select_vouchers_checkbox = [
         {
             title: 'Sales',
             value: 'Sales',
@@ -118,82 +129,71 @@ const UpdateItemCriticalLevel = (props) => {
         },
     ]
 
-    const select_voucher_type = [
-        {
-            key: 'All',
-            value: 'All',
-        },
-        {
-            key: 'Selected',
-            value: 'Selected',
-        },
-    ]
-
-    const No_of_Days = [
+    const no_of_Days = [
         {
             key: 'From Item Master',
-            value: 'FromItemMaster',
+            value: 'fromItemMaster',
         },
         {
             key: 'As Specified Below',
-            value: 'AsSpecifiedBelow',
+            value: 'asSpecifiedBelow',
         },
     ]
 
-    const checkBoxData_two = [
+    const update_min_level_checkbox = [
         {
             title: 'Update Minimum Level',
-            value: 'checkboxUpdateMinmumLevel',
+            value: 'update_min_level',
         },
 
     ]
 
-    const inputTextOne = [
+    const update_min_level_text = [
         {
             label: 'Update Minimum Level',
-            name: 'UpdateMinimumLevelTextField'
+            name: 'updateMinimumLevel'
         },
     ]
-
-    const checkboxData_three = [
+    
+    const update_reorder_checkbox = [
         {
             title: 'Update Re-Order Level',
-            value: 'checkboxUpdateReorderLevel',
+            value: 'update_reorder_level',
         },
     ]
 
-    const inputTextTwo = [
+    const update_reorder_text = [
         {
             label: 'Update Re-Order Level',
-            name: 'UpdateReOrderLevelTextField'
+            name: 'updateReorderLevel'
         },
     ]
 
-    const checkboxData_four = [
+    const update_max_level_checkbox = [
         {
             title: 'Update Maximum Level',
-            value: 'checkboxUpdateMaximumLevel',
+            value: 'update_max_level',
         },
     ]
-    const inputTextThree = [
+    const update_max_level_text = [
         {
             label: 'Update Maximum Level',
-            name: 'UpdateMaximumLevelTextField'
+            name: 'updateMaxLevel'
         },
     ]
 
-    const checkboxData_five = [
+    const item_Master_checkbox = [
         {
             title: 'Update Minimum Level',
-            value: 'UpdateMinimumLevel',
+            value: 'update_Minimum_Level',
         },
         {
             title: 'Update Re-Order Level',
-            value: 'UpdateReOrderLevel',
+            value: 'update_ReOrder_Level',
         },
         {
             title: 'Update Maximum Level',
-            value: 'UpdateMaximumLevel',
+            value: 'update_Maximum_Level',
         },
     ]
 
@@ -225,10 +225,10 @@ const UpdateItemCriticalLevel = (props) => {
                                             <div className="radioBtnTextAlign">
                                                 <Field
                                                     type='radio'
-                                                    name='Item Radio'
+                                                    name='select_Item_Radio'
                                                     value={val.value}
                                                     as={Radio}
-                                                    onClick={event => setGroup(event.target.value === 'oneIem') || setUser(event.target.value === 'GroupOfItems')}
+                                                    onClick={event => setGroup(event.target.value === 'oneItem') || setUser(event.target.value === 'groupOfItems')}
                                                 />
                                                 {val.key}
                                             </div>
@@ -240,7 +240,7 @@ const UpdateItemCriticalLevel = (props) => {
                             <div className="col-6 col-md-6">
                                 <div className={user ? "d-block" : "d-none"}>
                                     {
-                                        ref_dropdown_one.map((val, index) => (
+                                        select_items_dropdown_one.map((val, index) => (
                                             <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
                                                 <FormControl>
                                                     <select
@@ -264,7 +264,7 @@ const UpdateItemCriticalLevel = (props) => {
                                 </div>
                                 <div className={group ? "d-block" : "d-none"}>
                                     {
-                                        ref_dropdown_two.map((val, index) => (
+                                        select_items_dropdown_two.map((val, index) => (
                                             <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
                                                 <FormControl>
                                                     <select
@@ -292,15 +292,15 @@ const UpdateItemCriticalLevel = (props) => {
                         <div className="row inventoryForm mt-3">
                             <div className="col-6 col-md-6">
                                 {
-                                    MCS_radio.map((val, index) => (
+                                    mcs_radio.map((val, index) => (
                                         <div className="mb-2 p-0" key={"radioInputKey" + index}>
                                             <div className="radioBtnTextAlign">
                                                 <Field
                                                     type='radio'
-                                                    name='MC Radio'
+                                                    name='check_consumption_Radio'
                                                     value={val.value}
                                                     as={Radio}
-                                                    onClick={event => setoneMC(event.target.value === 'oneMC') || setGroupMCS(event.target.value === 'GroupOfMC')}
+                                                    onClick={event => setoneMC(event.target.value === 'oneMC') || setGroupMCS(event.target.value === 'groupOfMC')}
                                                 />
                                                 {val.key}
                                             </div>
@@ -312,7 +312,7 @@ const UpdateItemCriticalLevel = (props) => {
                             <div className="col-6 col-md-6">
                                 <div className={groupMcs ? "d-block" : "d-none"}>
                                     {
-                                        ref_dropdown_three.map((val, index) => (
+                                        check_consumption_dropdown_one.map((val, index) => (
                                             <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
                                                 <FormControl>
                                                     <select
@@ -336,7 +336,7 @@ const UpdateItemCriticalLevel = (props) => {
                                 </div>
                                 <div className={oneMC ? "d-block" : "d-none"}>
                                     {
-                                        ref_dropdown_four.map((val, index) => (
+                                        check_consumption_dropdown_two.map((val, index) => (
                                             <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
                                                 <FormControl>
                                                     <select
@@ -364,12 +364,12 @@ const UpdateItemCriticalLevel = (props) => {
                         <div className="row mt-4 inventoryForm">
                             <div className="col-6 col-md-6 p-0">
                                 {
-                                    select_voucher_type.map((val, index) => (
+                                    check_pattern_radio.map((val, index) => (
                                         <div className="mb-2 p-0" key={"radioInputKey" + index}>
                                             <div className="radioBtnTextAlign">
                                                 <Field
                                                     type='radio'
-                                                    name='Selected and All Radio'
+                                                    name='check_consumption_pattern_radio'
                                                     value={val.value}
                                                     as={Radio}
                                                     onClick={event => setSelected(event.target.value === 'All') || setAll(event.target.value === 'Selected')}
@@ -386,14 +386,14 @@ const UpdateItemCriticalLevel = (props) => {
                                     <span className="selectdVoucherHeading">Selected Vouchers</span>
                                     <div className="inventoryForm">
                                         {
-                                            checkBoxData_One.map((val, index) => (
+                                            select_vouchers_checkbox.map((val, index) => (
                                                 <div key={"inputCheckboxKey" + index}>
                                                     <FormControlLabel
                                                         label={val.title}
                                                         control={
                                                             <Field
                                                                 type='checkbox'
-                                                                name="Selected Voucher"
+                                                                name="selected_Voucher"
                                                                 value={val.value}
                                                                 as={Checkbox} />
                                                         }
@@ -409,15 +409,15 @@ const UpdateItemCriticalLevel = (props) => {
                         <div className="mt-4 inventoryForm">
                             <div className="col-12 col-md-6 p-0">
                                 {
-                                    No_of_Days.map((val, index) => (
+                                    no_of_Days.map((val, index) => (
                                         <div className="mb-2 p-0" key={"radioInputKey" + index}>
                                             <div className="radioBtnTextAlign">
                                                 <Field
                                                     type='radio'
-                                                    name='From Item Master and As Specified Below Radio'
+                                                    name='item_Master_&_specified_radio'
                                                     value={val.value}
                                                     as={Radio}
-                                                    onClick={event => setItemMaster(event.target.value === 'FromItemMaster') || setSpecifiedBelow(event.target.value === 'AsSpecifiedBelow')}
+                                                    onClick={event => setItemMaster(event.target.value === 'fromItemMaster') || setSpecifiedBelow(event.target.value === 'asSpecifiedBelow')}
                                                 />
                                                 {val.key}
                                             </div>
@@ -429,14 +429,14 @@ const UpdateItemCriticalLevel = (props) => {
                             <div className={itemMaster ? "d-block" : "d-none"}>
                                 <div className="inventoryForm">
                                     {
-                                        checkboxData_five.map((val, index) => (
+                                        item_Master_checkbox.map((val, index) => (
                                             <div key={"inputCheckboxKey" + index}>
                                                 <FormControlLabel
                                                     label={val.title}
                                                     control={
                                                         <Field
                                                             type='checkbox'
-                                                            name="From Item Master Checkbox"
+                                                            name="from_item_master"
                                                             value={val.value}
                                                             as={Checkbox}
                                                         />
@@ -450,14 +450,14 @@ const UpdateItemCriticalLevel = (props) => {
                             <div className={specifiedBelow ? "d-block" : "d-none"}>
                                 <div className="inventoryForm">
                                     {
-                                        checkBoxData_two.map((val, index) => (
+                                        update_min_level_checkbox.map((val, index) => (
                                             <div key={"inputCheckboxKey" + index}>
                                                 <FormControlLabel
                                                     label={val.title}
                                                     control={
                                                         <Field
                                                             type='checkbox'
-                                                            name="checkboxUpdateMinmumLevel"
+                                                            name="update_min_level"
                                                             value={val.value}
                                                             as={Checkbox}
                                                             onClick={() => toggle(toggled => !toggled)}
@@ -470,7 +470,7 @@ const UpdateItemCriticalLevel = (props) => {
                                     <div className={toggled ? "d-block" : "d-none"}>
                                         <div className="col-12 col-md-12 mt-3">
                                             {
-                                                inputTextOne.map((val, index) => (
+                                                update_min_level_text.map((val, index) => (
                                                     <div className="mb-3 mt-3 blockAccountInput" key={"inputTextField" + index}>
                                                         <div className="col-5 col-md-6 p-0">
                                                             {val.label}
@@ -492,14 +492,14 @@ const UpdateItemCriticalLevel = (props) => {
                             <div className={specifiedBelow ? "d-block" : "d-none"}>
                                 <div className="inventoryForm mt-3">
                                     {
-                                        checkboxData_three.map((val, index) => (
+                                        update_reorder_checkbox.map((val, index) => (
                                             <div key={"inputCheckboxKey" + index}>
                                                 <FormControlLabel
                                                     label={val.title}
                                                     control={
                                                         <Field
                                                             type='checkbox'
-                                                            name="checkboxUpdateReorderLevel"
+                                                            name="update_reorder_level"
                                                             value={val.value}
                                                             as={Checkbox}
                                                             onClick={() => settoggleReorder(toggledReOrder => !toggledReOrder)}
@@ -512,7 +512,7 @@ const UpdateItemCriticalLevel = (props) => {
                                     <div className={toggledReOrder ? "d-block" : "d-none"}>
                                         <div className="col-12 col-md-12 mt-3">
                                             {
-                                                inputTextTwo.map((val, index) => (
+                                                update_reorder_text.map((val, index) => (
                                                     <div className="mb-3 mt-3 blockAccountInput" key={"inputTextField" + index}>
                                                         <div className="col-5 col-md-6 p-0">
                                                             {val.label}
@@ -534,14 +534,14 @@ const UpdateItemCriticalLevel = (props) => {
                             <div className={specifiedBelow ? "d-block" : "d-none"}>
                                 <div className="inventoryForm mt-3">
                                     {
-                                        checkboxData_four.map((val, index) => (
+                                        update_max_level_checkbox.map((val, index) => (
                                             <div key={"inputCheckboxKey" + index}>
                                                 <FormControlLabel
                                                     label={val.title}
                                                     control={
                                                         <Field
                                                             type='checkbox'
-                                                            name="checkboxUpdateMaximumLevel"
+                                                            name="update_max_level"
                                                             value={val.value}
                                                             as={Checkbox}
                                                             onClick={() => settoggleMaximumLevel(toggledMaximumLevel => !toggledMaximumLevel)}
@@ -554,7 +554,7 @@ const UpdateItemCriticalLevel = (props) => {
                                     <div className={toggledMaximumLevel ? "d-block" : "d-none"}>
                                         <div className="col-12 col-md-12 mt-3">
                                             {
-                                                inputTextThree.map((val, index) => (
+                                                update_max_level_text.map((val, index) => (
                                                     <div className="mb-3 mt-3 blockAccountInput" key={"inputTextField" + index}>
                                                         <div className="col-5 col-md-6 p-0">
                                                             {val.label}
