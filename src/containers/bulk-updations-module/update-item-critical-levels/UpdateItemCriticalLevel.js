@@ -414,7 +414,7 @@ const UpdateItemCriticalLevel = (props) => {
                                             <div className="radioBtnTextAlign">
                                                 <Field
                                                     type='radio'
-                                                    name='item_Master_&_specified_radio'
+                                                    name='item_Master_specified_radio'
                                                     value={val.value}
                                                     as={Radio}
                                                     onClick={event => setItemMaster(event.target.value === 'fromItemMaster') || setSpecifiedBelow(event.target.value === 'asSpecifiedBelow')}
