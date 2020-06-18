@@ -13,7 +13,6 @@ const UpdateItemCriticalLevel = (props) => {
     const [group, setGroup] = useState(false);
     const [oneMC, setoneMC] = useState(false);
     const [groupMcs, setGroupMCS] = useState(false);
-    const [blockMaster, setBlockMaster] = useState(false);
     const [all, setAll] = useState(false);
     const [selected, setSelected] = useState(false);
     const [itemMaster, setItemMaster] = useState(false);
@@ -472,7 +471,7 @@ const UpdateItemCriticalLevel = (props) => {
                                             {
                                                 update_min_level_text.map((val, index) => (
                                                     <div className="mb-3 mt-3 blockAccountInput" key={"inputTextField" + index}>
-                                                        <div className="col-5 col-md-6 p-0">
+                                                        <div className="col-12 col-md-6 p-0">
                                                             {val.label}
                                                         </div>
                                                         <Field
@@ -514,7 +513,7 @@ const UpdateItemCriticalLevel = (props) => {
                                             {
                                                 update_reorder_text.map((val, index) => (
                                                     <div className="mb-3 mt-3 blockAccountInput" key={"inputTextField" + index}>
-                                                        <div className="col-5 col-md-6 p-0">
+                                                        <div className="col-12 col-md-6 p-0">
                                                             {val.label}
                                                         </div>
                                                         <Field
@@ -556,7 +555,7 @@ const UpdateItemCriticalLevel = (props) => {
                                             {
                                                 update_max_level_text.map((val, index) => (
                                                     <div className="mb-3 mt-3 blockAccountInput" key={"inputTextField" + index}>
-                                                        <div className="col-5 col-md-6 p-0">
+                                                        <div className="col-12 col-md-6 p-0">
                                                             {val.label}
                                                         </div>
                                                         <Field

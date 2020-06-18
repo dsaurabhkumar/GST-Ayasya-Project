@@ -331,7 +331,7 @@ const AutoGenerateProdVouchers = (props) => {
                                             <div className=" col-6 col-md-6 itemGeneratedDropdown">
                                                 {val.label}
                                             </div>
-                                            <div className="col-6 col-md-6 itemGeneratedDropdown">
+                                            <div className="col-6 col-md-6 itemGeneratedDropdown pl-0">
                                                 <FormControl>
                                                     <select
                                                         type='select'
@@ -356,7 +356,7 @@ const AutoGenerateProdVouchers = (props) => {
                                     {
                                         pick_MC_from_BOM_dropdown.map((val, index) => (
                                             <div className="blockAccountInput" key={"inputDropdownValue" + index}>
-                                                <div className="col-5 col-md-6 p-0">
+                                                <div className="col-6 col-md-6 p-0">
                                                     {val.label}
                                                 </div>
                                                 <FormControl>
@@ -384,10 +384,10 @@ const AutoGenerateProdVouchers = (props) => {
                                         {
                                             mc_itemConsumed_dropdown.map((val, index) => (
                                                 <div className="mt-3 mb-3" key={"inputDropdownValue" + index}>
-                                                    <div className=" col-6 col-md-6 itemGeneratedDropdown">
+                                                    <div className=" col-5 col-md-6 itemGeneratedDropdown">
                                                         {val.label}
                                                     </div>
-                                                    <div className="col-6 col-md-6 itemGeneratedDropdown">
+                                                    <div className="col-7 col-md-6 itemGeneratedDropdown itemConsumedMedia">
                                                         <FormControl>
                                                             <select
                                                                 type='select'
@@ -418,7 +418,7 @@ const AutoGenerateProdVouchers = (props) => {
                                                 <div className=" col-6 col-md-6 itemGeneratedDropdown">
                                                     {val.label}
                                                 </div>
-                                                <div className="col-6 col-md-6 itemGeneratedDropdown">
+                                                <div className="col-6 col-md-6 itemGeneratedDropdown pl-0">
                                                     <FormControl>
                                                         <select
                                                             type='select'
@@ -461,7 +461,7 @@ const AutoGenerateProdVouchers = (props) => {
                                     {
                                         general_stock_voucher.map((val, index) => (
                                             <div className="blockAccountInput" key={"inputDropdownValue" + index}>
-                                                <div className="col-5 col-md-6 p-0">
+                                                <div className="col-8 col-md-6 pl-0 pr-2">
                                                     {val.label}
                                                 </div>
                                                 <FormControl>
