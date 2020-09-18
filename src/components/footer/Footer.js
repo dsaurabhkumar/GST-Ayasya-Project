@@ -5,6 +5,7 @@ function Footer() {
     return (
         <React.Fragment>
             <div className="footer">
+            {/* <div>Testing</div> */}
                 <div className="container-fluid mb-3">
                     <div className="row mobileView">
                         <div className="col-12 col-md-3 mt-4">
