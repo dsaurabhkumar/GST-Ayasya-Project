@@ -316,7 +316,7 @@ const AccountAdd = (props) => {
 
                         <div className="row acc_add_container mb-5">
                         <div className='col-12'>
-                                <span className='other_heading'>Company Info</span>
+                                <span className='other_heading'>General Info</span>
                             </div>
 
                         {
@@ -435,7 +435,7 @@ const AccountAdd = (props) => {
                             </div>
                             {
                                 accountAdd_dropdown_two.map((val, index) => (
-                                    <div className="mb-3 col-12 col-md-4" key={"inputDropdownValue" + index}>
+                                    <div className="mb-4 col-12 col-md-4" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>
@@ -516,23 +516,23 @@ const AccountAdd = (props) => {
                         </div>
 
                         <div className="row btnContainer flex-sm-row mt-4 mb-3">
-                            <div className="mt-3 col-12 col-md-4 p-0">
+                            <div className="mt-3 col-12 col-md-3 p-0">
                                 <Link to='/accounts'><Button type="submit" className="col-12">Notes</Button></Link>
                             </div>
-                            <div className="mt-3 col-12 col-md-4 align-self-center quitBtn">
+                            <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
                                 <Button type="submit" className="col-12">Opt. Fields</Button>
                             </div>
-                            <div className="mt-3 col-12 col-md-4 align-self-center quitBtn pl-0">
+                            <div className="mt-3 col-12 col-md-3 align-self-center quitBtn pl-0">
                                 <Link to='/accounts'><Button type="submit" className="col-12">Multiple Alias</Button></Link>
                             </div>
                         </div>
 
 
-                        <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
-                            <div className="mt-3 col-6 col-md-2 p-0">
+                        <div className="row col-12 btnContainer flex-sm-row-reverse mt-4 mb-3">
+                            <div className="mt-3 col-sm-6 col-md-2">
                                 <Button type="submit" className="col-12" disabled={isSubmitting}>Save</Button>
                             </div>
-                            <div className="mt-3 col-6 col-md-2 align-self-center quitBtn">
+                            <div className="mt-3 col-sm-6 col-md-2 align-self-center ">
                                 <Link to='/'><Button type="submit" className="col-12" color="primary" variant="outlined">Quit</Button></Link>
                             </div>
                         </div>
