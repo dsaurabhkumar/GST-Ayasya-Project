@@ -39,7 +39,7 @@ const UnitAdd = (props) => {
     ]
 
     return (
-        <div className="container mt-4 mb-4">
+        <div className="container containerWidth mt-4 mb-4">
             <Formik
 
                 initialValues={formValue}
@@ -58,7 +58,7 @@ const UnitAdd = (props) => {
                         <div className="row">
                             {
                                 unit_add_text.map((val, index) => (
-                                    <div className="mb-2 col-12 col-md-4" key={"inputTextField" + index}>
+                                    <div className="mb-2 col-12" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -74,7 +74,7 @@ const UnitAdd = (props) => {
                         <div className="row mt-2">
                             {
                                 unit_add_gropdown.map((val, index) => (
-                                    <div className="mb-2 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                    <div className="my-3 col-12" key={"inputDropdownValue" + index}>
                                         {val.label}
                                         <FormControl>
                                             <select

@@ -6,11 +6,13 @@ import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } fro
 const StdNarrationAdd = (props) => {
 
     const formValue = {
+        voucherType: '',
         narration: ''
     }
 
     const stdNarrationAdd_dropdown = [
-        {
+        {  
+            label: 'Voucher Type',
             name: 'selectStdNarrationMaster',
             values: [
                 "Sales",
@@ -41,7 +43,7 @@ const StdNarrationAdd = (props) => {
     ]
 
     return (
-        <div className="container containerWidth mt-4 mb-4">
+        <div className="container containerWidth mt-4 mb-4 inventoryForm">
             <Formik
 
                 initialValues={formValue}
@@ -61,6 +63,9 @@ const StdNarrationAdd = (props) => {
                             {
                                 stdNarrationAdd_dropdown.map((val, index) => (
                                     <div className="mb-4 mt-4 col-12 col-md-12" key={"inputDropdownValue" + index}>
+                                        <div className="mb-2">
+                                            {val.label}
+                                        </div>
                                         <FormControl>
                                             <select
                                                 type='select'

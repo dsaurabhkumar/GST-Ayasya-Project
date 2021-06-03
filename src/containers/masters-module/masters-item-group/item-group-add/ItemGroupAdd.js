@@ -92,7 +92,7 @@ const ItemGroupAdd = (props) => {
     ]
 
     return (
-        <div className="container mt-4 mb-4">
+        <div className="container containerWidth my-4">
             <Formik
 
                 initialValues={formValue}
@@ -108,10 +108,10 @@ const ItemGroupAdd = (props) => {
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
                         <div className="text-center mb-4"><strong>Add Item Group Master</strong></div>
-                        <div className="row mt-2 mb-2">
+                        <div className="row">
                             {
                                 inputGroupAddInputText_one.map((val, index) => (
-                                    <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
+                                    <div className="mb-3 col-12 " key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -151,7 +151,7 @@ const ItemGroupAdd = (props) => {
                         <div className="row">
                             {
                                 inputGroupAddInputText_two.map((val, index) => (
-                                    <div className="mb-2 col-12 col-md-4" key={"inputTextField" + index}>
+                                    <div className="mb-2 col-12 col-md-6" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -166,7 +166,7 @@ const ItemGroupAdd = (props) => {
                         <div className="row">
                             {
                                 inputGroupAddInputText_three.map((val, index) => (
-                                    <div className="mb-2 col-12 col-md-4" key={"inputTextField" + index}>
+                                    <div className="mb-2 col-12" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -182,7 +182,7 @@ const ItemGroupAdd = (props) => {
                         <div className="row">
                             {
                                 itemGroupAdd_dropdown_two.map((val, index) => (
-                                    <div className="mb-2 mt-2 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                    <div className="mb-2 mt-2 col-4" key={"inputDropdownValue" + index}>
                                         {val.label}
                                         <FormControl>
                                             <select
@@ -205,7 +205,7 @@ const ItemGroupAdd = (props) => {
                             }
                             {
                                 inputGroupAddInputText_four.map((val, index) => (
-                                    <div className="mb-2 col-12 col-md-6" key={"inputTextField" + index}>
+                                    <div className="mb-2 col-8" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -221,7 +221,7 @@ const ItemGroupAdd = (props) => {
                         <div className="row">
                             {
                                 itemGroupAdd_dropdown_three.map((val, index) => (
-                                    <div className="mb-2 mt-2 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                    <div className="mb-2 mt-2 col-4" key={"inputDropdownValue" + index}>
                                         {val.label}
                                         <FormControl>
                                             <select
@@ -244,7 +244,7 @@ const ItemGroupAdd = (props) => {
                             }
                             {
                                 inputGroupAddInputText_five.map((val, index) => (
-                                    <div className="mb-2 col-12 col-md-6" key={"inputTextField" + index}>
+                                    <div className="mb-2 col-8" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'

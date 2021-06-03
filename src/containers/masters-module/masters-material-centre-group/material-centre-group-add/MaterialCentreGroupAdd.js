@@ -63,7 +63,7 @@ const MaterialCentreGroupAdd = (props) => {
                         <div className="row">
                             {
                                 materialCentreGroupAdd_text.map((val, index) => (
-                                    <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
+                                    <div className="mb-3 col-12" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -78,7 +78,7 @@ const MaterialCentreGroupAdd = (props) => {
                         <div className="row">
                             {
                                 materialCentreGroupAdd_dropdown_one.map((val, index) => (
-                                    <div className="mb-5 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                    <div className="mb-5 col-md-6" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>

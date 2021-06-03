@@ -102,7 +102,7 @@ const MaterialCentreAdd = (props) => {
                         <div className="row">
                             {
                                 materialCentreAdd_Text_one.map((val, index) => (
-                                    <div className="mb-3 col-6 col-md-4" key={"inputTextField" + index}>
+                                    <div className="mb-3 col-12" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -116,7 +116,7 @@ const MaterialCentreAdd = (props) => {
 
                             {
                                 materialCentreAdd_dropdown_one.map((val, index) => (
-                                    <div className="mb-5 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                    <div className="mb-5 col-12 col-md-12" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>
@@ -144,7 +144,7 @@ const MaterialCentreAdd = (props) => {
                         <div className="row">
                             {
                                 materialCentreAdd_dropdown_two.map((val, index) => (
-                                    <div className="mb-3 col-12 col-md-3" key={"inputDropdownValue" + index}>
+                                    <div className="mb-3 col-12 col-md-12" key={"inputDropdownValue" + index}>
                                         {val.label}
                                         <FormControl>
                                             <select
@@ -167,7 +167,7 @@ const MaterialCentreAdd = (props) => {
                             }
                             {
                                 materialCentreAdd_Text_two.map((val, index) => (
-                                    <div className=" mb-3 col-12 col-md-3" key={"inputTextField" + index}>
+                                    <div className=" mb-3 col-12 col-md-12" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -197,13 +197,13 @@ const MaterialCentreAdd = (props) => {
 
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
-                            <div className="mt-3 col-12 col-md-3 p-0">
+                            <div className="mt-3 col-12 col-md-3 col-lg-2 p-0">
                                 <Button type="submit" className="col-12" disabled={isSubmitting}>Save</Button>
                             </div>
-                            <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
+                            <div className="mt-3 col-12 col-md-3 col-lg-2 align-self-center quitBtn">
                                 <Link to='/'><Button type="submit" className="col-12">Quit</Button></Link>
                             </div>
-                            <div className="mt-3 col-12 col-md-3 p-0">
+                            <div className="mt-3 col-12 col-md-3 col-lg-2 p-0">
                                 <Button className="col-12">Opt. Fields</Button>
                             </div>
                         </div>

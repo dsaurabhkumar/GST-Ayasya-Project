@@ -90,6 +90,18 @@ const AccountAdd = (props) => {
                 "Maharashtra",
             ]
         },
+        {
+            label: `Type Of Dealer`,
+            name: 'TypeOfDealer',
+            values: [
+                "Registered",
+                "Un-Registered",
+                "Composition",
+                "Govt. Body",
+                "UIN Holder"
+            ]
+        },
+
 
 
     ]
