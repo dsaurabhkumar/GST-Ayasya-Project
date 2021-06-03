@@ -1,0 +1,30 @@
+[
+    {
+      "SrNo": 1,
+      "companyName": "Abc",
+      "companyId": 1,
+      "companyCreationDate": "25-11-2019",
+      "edit": "Edit"
+    },
+    {
+      "SrNo": 2,
+      "companyName": "Def",
+      "companyId": 2,
+      "companyCreationDate": "26-11-2019",
+      "edit": "Edit"
+    },
+    {
+      "SrNo": 3,
+      "companyName": "Ghi",
+      "companyId": 3,
+      "companyCreationDate": "27-11-2019",
+      "edit": "Edit"
+    },
+    {
+      "SrNo": 4,
+      "companyName": "Jkl",
+      "companyId": 4,
+      "companyCreationDate": "28-11-2019",
+      "edit": "Edit"
+    }
+  ]

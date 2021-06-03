@@ -1,9 +1,20 @@
-.formHeading {
+/* .formHeading {
     position: relative;
-    top: -49px;
+    top: -1rem;
     background-color: #ffffff;
+} */
+
+.acc_add_container{
+    border: 1px solid grey;
+    padding: 2rem 1rem;
 }
 
+.other_heading{
+    position: relative;
+    top: -2.8rem;
+    background-color: #ffffff;
+}
+/* 
 @media (max-width: 767px) {
     .formHeading {
         top: -32px;
@@ -13,4 +24,4 @@
     .formHeading {
         top: -70px;
     }
-}
+} */

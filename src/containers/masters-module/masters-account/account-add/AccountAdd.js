@@ -2,27 +2,36 @@ import React from 'react';
 import './AccountAdd.css';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
-import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
+import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio, TextareaAutosize } from '@material-ui/core';
 
 const AccountAdd = (props) => {
 
     const formValue = {
         name: '',
+        // alias:'',
         printName: '',
         opBal: '',
         crDr: '',
         prevYearBal: '',
         drCr: '',
         address: '',
+        gstin:'',
+        aadhar:'',
+        tin:'',
+        itpan:'',
+        ward:'',
         eMail: '',
         mobileNo: '',
+        whatsAppNo:'',
         telNo: '',
         fax: '',
         contactPerson: '',
         transport: '',
         station: '',
         pinCode: '',
+        distance: '',
         hsnSacCode: '',
+        hsncodeset:'',
         cstNo: '',
         lstNo: '',
         serviceTaxNo: '',
@@ -30,72 +39,151 @@ const AccountAdd = (props) => {
         bankAcNo: ''
     }
 
-    const accountAddInputText_one = [
+    const accountAddInputText_name=[
         {
             label: 'Name',
             name: 'name',
         },
+        // {
+        //     label: 'Alias',
+        //     name: 'Alias',
+        // },
         {
             label: 'Print Name',
             name: 'printName',
         },
-        {
-            label: 'Op. Bal.',
-            name: 'opBal',
-            placeholder: '0.00'
-        },
-        {
-            label: '(Rs.) CR/DR',
-            name: 'crDr',
-            placeholder: 'C/D'
-        },
-        {
-            label: 'Prev Year Bal.',
-            name: 'prevYearBal',
-            placeholder: '0.00'
-        },
-        {
-            label: '(Rs.) CR/DR',
-            name: 'drCr',
-            placeholder: 'C/D'
-        },
+
+
+    ]
+
+    const accountAddInputText_address=[
         {
             label: 'Address',
             name: 'address',
         },
-        {
-            label: 'E-Mail',
-            name: 'eMail'
-        },
-        {
-            label: 'Mobile No.',
-            name: 'mobileNo'
-        },
-        {
-            label: 'Tel. No.',
-            name: 'telNo'
-        },
-        {
-            label: 'Fax',
-            name: 'fax'
-        },
-        {
-            label: 'Contact Person',
-            name: 'contactPerson'
-        },
-        {
-            label: 'Transport',
-            name: 'transport'
-        },
-        {
-            label: 'Station',
-            name: 'station'
-        },
-        {
-            label: 'Pin Code',
-            name: 'pinCode'
-        }
+
     ]
+
+    const accountAdd_dropdown_address=[        
+        {
+        label: `Country`,
+        name: 'country',
+        values: [
+            "India",
+            "Australia",
+            "United State of America",
+            "Canada",
+            "Franse",
+             "Italy",         
+            ]
+        },
+
+        {
+            label: `State`,
+            name: 'state',
+            values: [
+                "Delhi",
+                "Hariyana",
+                "Madhya Pradesh",
+                "Uttar Pradesh",
+                "Bihar",
+                "Maharashtra",
+            ]
+        },
+
+
+    ]
+
+    
+
+    const accountAddInputText_one = [
+                {
+            label: 'Op. Bal. (Rs.)',
+            name: 'opBal',
+            placeholder: '0.00'
+        },
+        {
+            label: 'CR/DR',
+            name: 'crDr',
+            placeholder: 'C/D'
+        },
+        {
+            label: 'Prev Year Bal. (Rs.)',
+            name: 'prevYearBal',
+            placeholder: '0.00'
+        },
+        {
+            label: 'CR/DR',
+            name: 'drCr',
+            placeholder: 'C/D'
+        },
+         ]
+
+         const accountAdd_personal_info=[
+            {
+                label: 'GSTIN / UIN',
+                name: 'gstin'
+            },
+            {
+                label: 'Filing Freq',
+                name: 'filingFreq'
+            },
+            {
+                label:'Aadhar',
+                name: 'aadhar'
+            },
+            {
+                label: 'TIN',
+                name: 'tin'
+            },
+            {
+                label: 'IT PAN',
+                name: 'itpan'
+            },
+            {
+                label: 'Ward',
+                name: 'ward'
+            },
+            {
+                label: 'E-Mail',
+                name: 'eMail'
+            },
+            {
+                label: 'Mobile No.',
+                name: 'mobileNo'
+            },
+            {
+                label: 'Tel. No.',
+                name: 'telNo'
+            },
+            {
+                label: 'Fax',
+                name: 'fax'
+            },
+            {
+                label: 'Contact Person',
+                name: 'contactPerson'
+            },
+            {
+                label: 'Transport',
+                name: 'transport'
+            },
+            {
+                label: 'Station',
+                name: 'station'
+            },
+            {
+                label: 'Pin Code',
+                name: 'pinCode'
+            },
+            {
+                label: 'Distance',
+                name: 'distance'
+            }
+    
+         ]
+
+
 
     const accountAdd_dropdown_one = [
         {
@@ -103,6 +191,8 @@ const AccountAdd = (props) => {
             name: 'group',
             values: [
                 "Bank Accounts",
+                "Sundry Creditors",
+                "Sundry Debtors",
                 "Bank O/D Accounts",
                 "Capital Account",
                 "Cash-in-hand",
@@ -111,7 +201,7 @@ const AccountAdd = (props) => {
                 "Duties & Taxes",
                 "Expenses (Direct/Mfg.)",
                 "Expenses (Indirect/Admin.)",
-                "Fixed Assets"
+                "Fixed Assets",
             ]
         }
     ]
@@ -157,6 +247,11 @@ const AccountAdd = (props) => {
             label: 'HSN/SAC Code',
             name: 'hsnSacCode',
         },
+        {
+            label: 'HSN/SAC Code Set',
+            name: 'hsncodeset',
+        },
+        
     ]
 
     const accountAddInputText_three = [
@@ -202,7 +297,7 @@ const AccountAdd = (props) => {
     ]
 
     return (
-        <div className="container mt-4 mb-4">
+        <div className="container my-5">
             <Formik
 
                 initialValues={formValue}
@@ -217,12 +312,16 @@ const AccountAdd = (props) => {
 
                 {({ values, isSubmitting, handleChange }) => (
                     <Form className="inventoryForm">
-                        <span className="formHeading">General Info.</span>
-                        <div className="row">
+                        <h5 className="mb-4 d-flex justify-content-center">Add Account Master</h5>
 
-                            {
-                                accountAddInputText_one.map((val, index) => (
-                                    <div className="mb-3 col-6 col-md-3" key={"inputTextField" + index}>
+                        <div className="row acc_add_container mb-5">
+                        <div className='col-12'>
+                                <span className='other_heading'>Company Info</span>
+                            </div>
+
+                        {
+                                accountAddInputText_name.map((val, index) => (
+                                    <div className="mb-3 col-8" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -234,9 +333,10 @@ const AccountAdd = (props) => {
                                 ))
                             }
 
+                            
                             {
                                 accountAdd_dropdown_one.map((val, index) => (
-                                    <div className="mb-5 col-12 col-md-12" key={"inputDropdownValue" + index}>
+                                    <div className="mb-5 my-4 col-12 col-md-8" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>
@@ -259,12 +359,37 @@ const AccountAdd = (props) => {
                                     </div>
                                 ))
                             }
-                        </div>
 
-                        <div className="row">
+
                             {
-                                accountAdd_dropdown_two.map((val, index) => (
-                                    <div className="mb-2 col-12 col-md-4" key={"inputDropdownValue" + index}>
+                                accountAddInputText_one.map((val, index) => (
+                                    <div className="mb-3 col-6" key={"inputTextField" + index}>
+                                        {val.label}
+                                        <Field
+                                            type='text'
+                                            name={val.name}
+                                            placeholder={val.placeholder}
+                                            as={TextField}
+                                        />
+                                    </div>
+                                ))
+                            }
+                            {
+                                accountAddInputText_address.map((val, index) => (
+                                    <div className="mb-3 col-8" key={"inputTextField" + index}>
+                                        {val.label}
+                                        <Field
+                                            type='textarea'
+                                            name={val.name}
+                                            placeholder={val.placeholder}
+                                            as={TextareaAutosize}
+                                        />
+                                    </div>
+                                ))
+                            }
+                                             {
+                                accountAdd_dropdown_address.map((val, index) => (
+                                    <div className="mb-5 col-12 col-md-8" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>
@@ -286,11 +411,58 @@ const AccountAdd = (props) => {
                                         </FormControl>
                                     </div>
                                 ))
+                            }
+                            
+                            {
+                                 accountAdd_personal_info.map((val, index) => (
+                                    <div className="mb-3 col-6" key={"inputTextField" + index}>
+                                        {val.label}
+                                        <Field
+                                            type='text'
+                                            name={val.name}
+                                            placeholder={val.placeholder}
+                                            as={TextField}
+                                        />
+                                    </div>
+                                ))
+                            }
+
+                        </div>
+
+                        <div className="row acc_add_container mb-3">
+                            <div className='col-12'>
+                                <span className='other_heading'>Other Info</span>
+                            </div>
+                            {
+                                accountAdd_dropdown_two.map((val, index) => (
+                                    <div className="mb-3 col-12 col-md-4" key={"inputDropdownValue" + index}>
+                                        <div className="mb-2">
+                                            {val.label}
+                                        </div>
+                                        <FormControl>
+                                            <select
+                                                type='select'
+                                                name={val.name}
+                                                // value={values.name}
+                                                multiple={false}
+                                                onChange={handleChange}
+                                            >
+                                                <option defaultValue>Select an Option</option>
+                                                {
+                                                    val.values.map((cval, cindex) => (
+                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                    ))
+                                                }
+                                            </select>
+                                        </FormControl>
+                                    </div>
+                                ))
+                                
                             }
 
                             {
                                 accountAddInputText_two.map((val, index) => (
-                                    <div className="mb-3 mt-3 col-6 col-md-3" key={"inputTextField" + index}>
+                                    <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -301,24 +473,10 @@ const AccountAdd = (props) => {
                                     </div>
                                 ))
                             }
-                        </div>
 
-                        <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
-                            <div className="mt-3 col-12 col-md-4 p-0">
-                                <Link to='/accounts'><Button type="submit" className="col-12">Notes</Button></Link>
-                            </div>
-                            <div className="mt-3 col-12 col-md-4 align-self-center quitBtn">
-                                <Button type="submit" className="col-12">Opt. Fields</Button>
-                            </div>
-                            <div className="mt-3 col-12 col-md-4 align-self-center quitBtn pl-0">
-                                <Link to='/accounts'><Button type="submit" className="col-12">Multiple Alias</Button></Link>
-                            </div>
-                        </div>
-
-                        <div className="row mt-5">
-                            {
+{
                                 accountAddInputText_three.map((val, index) => (
-                                    <div className="mb-3 col-6 col-md-3" key={"inputTextField" + index}>
+                                    <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -331,7 +489,7 @@ const AccountAdd = (props) => {
                             }
                             {
                                 accountAdd_dropdown_three.map((val, index) => (
-                                    <div className="mb-2 col-12 col-md-4" key={"inputDropdownValue" + index}>
+                                    <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>
@@ -354,15 +512,28 @@ const AccountAdd = (props) => {
                                     </div>
                                 ))
                             }
+
+                        </div>
+
+                        <div className="row btnContainer flex-sm-row mt-4 mb-3">
+                            <div className="mt-3 col-12 col-md-4 p-0">
+                                <Link to='/accounts'><Button type="submit" className="col-12">Notes</Button></Link>
+                            </div>
+                            <div className="mt-3 col-12 col-md-4 align-self-center quitBtn">
+                                <Button type="submit" className="col-12">Opt. Fields</Button>
+                            </div>
+                            <div className="mt-3 col-12 col-md-4 align-self-center quitBtn pl-0">
+                                <Link to='/accounts'><Button type="submit" className="col-12">Multiple Alias</Button></Link>
+                            </div>
                         </div>
 
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
-                            <div className="mt-3 col-12 col-md-3 p-0">
+                            <div className="mt-3 col-6 col-md-2 p-0">
                                 <Button type="submit" className="col-12" disabled={isSubmitting}>Save</Button>
                             </div>
-                            <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
-                                <Link to='/'><Button type="submit" className="col-12">Quit</Button></Link>
+                            <div className="mt-3 col-6 col-md-2 align-self-center quitBtn">
+                                <Link to='/'><Button type="submit" className="col-12" color="primary" variant="outlined">Quit</Button></Link>
                             </div>
                         </div>
                     </Form>

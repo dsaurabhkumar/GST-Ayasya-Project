@@ -1,6 +1,6 @@
 import React from 'react';
 import './OpenCompany.css';
-import tableData from '../../assets/data/tableData.json';
+import tableData from './tableData.json';
 import { Link } from 'react-router-dom';
 
 export default class OpenCompany extends React.Component {
