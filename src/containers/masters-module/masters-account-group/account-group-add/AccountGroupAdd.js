@@ -51,7 +51,7 @@ const AccountGroupAdd = (props) => {
                         <div className="row mt-5 mb-5">
                             {
                                 accountGroupAddInputText.map((val, index) => (
-                                    <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
+                                    <div className="mb-3 col-12" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
@@ -63,6 +63,7 @@ const AccountGroupAdd = (props) => {
                                 ))
                             }
                         </div>
+                       
 
                         <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
                             <div className="mt-3 col-12 col-md-3 p-0">
