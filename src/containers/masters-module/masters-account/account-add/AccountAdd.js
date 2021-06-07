@@ -1,8 +1,18 @@
 import React from 'react';
 import './AccountAdd.css';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio, TextareaAutosize } from '@material-ui/core';
+import ErrorMsg from '../../../../components/error-msg/ErrorMsg';
+
+const validateField = value => {
+    let error
+    if(!value){
+        error = 'Required'
+    }
+    return error
+}
+
 
 const AccountAdd = (props) => {
 
@@ -10,33 +20,50 @@ const AccountAdd = (props) => {
         name: '',
         // alias:'',
         printName: '',
-        opBal: '',
+        openingBal: '',
         crDr: '',
         prevYearBal: '',
         drCr: '',
-        address: '',
+        accgroup:'',
+        address: {
+            id: '',
+            addLine1:'' ,
+            addLine2: '',
+            addLine3: '',
+            addLine4:''
+        },
+        country:'',
+        state:'',
+        dealertype:'',
         gstin:'',
         aadhar:'',
         tin:'',
         itpan:'',
         ward:'',
         eMail: '',
-        mobileNo: '',
-        whatsAppNo:'',
+        mobile: '',
+        // whatsAppNo:'',
         telNo: '',
         fax: '',
         contactPerson: '',
         transport: '',
         station: '',
-        pinCode: '',
+        pincode: '',
         distance: '',
-        hsnSacCode: '',
+        itcEligibility:'',
+        saleCreditDays: '',
+        purCreditDays:'',
+        defaultSaleType:'',
+        defaultPurType:'',
+        hsncode: '',
         hsncodeset:'',
         cstNo: '',
         lstNo: '',
-        serviceTaxNo: '',
-        lbtNo: '',
-        bankAcNo: ''
+        // serviceTaxNo: '',
+        // lbtNo: '',
+        bankAccountNo: '',
+        ieCode:''
+
     }
 
     const accountAddInputText_name=[
@@ -57,11 +84,16 @@ const AccountAdd = (props) => {
     ]
 
     const accountAddInputText_address=[
-        {
-            label: 'Address',
-            name: 'address',
-        },
-
+       {
+        label:'Address',
+        address: [
+            {name: 'id'},
+            {name: 'addLine1'},        
+            {name: 'addLine2'},
+            {name: 'addLine3'},
+            // name: 'addLine4',
+    ]
+    }
     ]
 
     const accountAdd_dropdown_address=[        
@@ -92,7 +124,7 @@ const AccountAdd = (props) => {
         },
         {
             label: `Type Of Dealer`,
-            name: 'TypeOfDealer',
+            name: 'dealertype',
             values: [
                 "Registered",
                 "Un-Registered",
@@ -111,7 +143,7 @@ const AccountAdd = (props) => {
     const accountAddInputText_one = [
                 {
             label: 'Op. Bal. (Rs.)',
-            name: 'opBal',
+            name: 'openingBal',
             placeholder: '0.00'
         },
         {
@@ -137,10 +169,6 @@ const AccountAdd = (props) => {
                 name: 'gstin'
             },
             {
-                label: 'Filing Freq',
-                name: 'filingFreq'
-            },
-            {
                 label:'Aadhar',
                 name: 'aadhar'
             },
@@ -150,7 +178,7 @@ const AccountAdd = (props) => {
             },
             {
                 label: 'IT PAN',
-                name: 'itpan'
+                name: 'itPan'
             },
             {
                 label: 'Ward',
@@ -162,11 +190,11 @@ const AccountAdd = (props) => {
             },
             {
                 label: 'Mobile No.',
-                name: 'mobileNo'
+                name: 'mobile'
             },
             {
                 label: 'Tel. No.',
-                name: 'telNo'
+                name: 'tel'
             },
             {
                 label: 'Fax',
@@ -186,13 +214,9 @@ const AccountAdd = (props) => {
             },
             {
                 label: 'Pin Code',
-                name: 'pinCode'
+                name: 'pincode'
             },
-            {
-                label: 'Distance',
-                name: 'distance'
-            }
-    
+            
          ]
 
 
@@ -200,7 +224,7 @@ const AccountAdd = (props) => {
     const accountAdd_dropdown_one = [
         {
             label: `Group`,
-            name: 'group',
+            name: 'accgroup',
             values: [
                 "Bank Accounts",
                 "Sundry Creditors",
@@ -217,6 +241,7 @@ const AccountAdd = (props) => {
             ]
         }
     ]
+
 
     const accountAdd_dropdown_two = [
         {
@@ -242,22 +267,22 @@ const AccountAdd = (props) => {
                 "Capital Goods"
             ],
         },
-        {
-            label: `Reverse Charge`,
-            name: 'reverseCharge',
-            values: [
-                "Based on Daily Limit",
-                "Compulsory",
-                "Service Import",
-                "Not Applicable"
-            ],
-        }
+        // {
+        //     label: `Reverse Charge`,
+        //     name: 'reverseCharge',
+        //     values: [
+        //         "Based on Daily Limit",
+        //         "Compulsory",
+        //         "Service Import",
+        //         "Not Applicable"
+        //     ],
+        // }
     ]
 
     const accountAddInputText_two = [
         {
             label: 'HSN/SAC Code',
-            name: 'hsnSacCode',
+            name: 'hsncode',
         },
         {
             label: 'HSN/SAC Code Set',
@@ -268,6 +293,23 @@ const AccountAdd = (props) => {
 
     const accountAddInputText_three = [
         {
+            label: 'Credit Days for Sale',
+            name: 'saleCreditDays',
+        },
+        {
+            label: 'Credit Days for Purchase',
+            name: 'purCreditDays',
+        },
+        {
+            label: 'Default Sale Type',
+            name: 'defaultSaleType',
+        },
+        {
+            label: 'Default Purchase Type',
+            name: 'defaultPurType',
+        },
+        
+        {
             label: 'CST No.',
             name: 'cstNo',
         },
@@ -275,41 +317,42 @@ const AccountAdd = (props) => {
             label: 'LST No.',
             name: 'lstNo',
         },
+        // {
+        //     label: 'LBT No.',
+        //     name: 'lbtNo',
+        // },        
         {
-            label: 'Service Tax No.',
-            name: 'serviceTaxNo',
-        },
-        {
-            label: 'LBT No.',
-            name: 'lbtNo',
-        },
+            label: "IE Code",
+            name: 'ieCode',
+        },        
         {
             label: 'Bank A/C No.',
-            name: 'bankAcNo'
-        }
+            name: 'bankAccountNo'
+        },
     ]
 
-    const accountAdd_dropdown_three = [
-        {
-            label: `Enable Email Query`,
-            name: 'enableEmailQuery',
-            values: [
-                "Y",
-                "N"
-            ],
-        },
-        {
-            label: `Enable SMS Query`,
-            name: 'enableSmsQuery',
-            values: [
-                "Y",
-                "N"
-            ],
-        }
-    ]
+    // const accountAdd_dropdown_three = [
+    //     {
+    //         label: `Enable Email Query`,
+    //         name: 'enableEmailQuery',
+    //         values: [
+    //             "Y",
+    //             "N"
+    //         ],
+    //     },
+    //     {
+    //         label: `Enable SMS Query`,
+    //         name: 'enableSmsQuery',
+    //         values: [
+    //             "Y",
+    //             "N"
+    //         ],
+    //     }
+    // ]
+
 
     return (
-        <div className="container my-5">
+        <div className="container-fluid my-4">
             <Formik
 
                 initialValues={formValue}
@@ -320,27 +363,31 @@ const AccountAdd = (props) => {
                     setSubmitting(false);
                 }}
             >
-
+ 
 
                 {({ values, isSubmitting, handleChange }) => (
-                    <Form className="inventoryForm">
+                    <Form className="acc_add_container">
                         <h5 className="mb-4 d-flex justify-content-center">Add Account Master</h5>
 
-                        <div className="row acc_add_container mb-5">
+                        <div className="row justify-content-around">
+                            <div className="mb-3 acc_add_container col-md-6">
                         <div className='col-12'>
                                 <span className='other_heading'>General Info</span>
                             </div>
+                            <div className='row'>
 
                         {
                                 accountAddInputText_name.map((val, index) => (
-                                    <div className="mb-3 col-8" key={"inputTextField" + index}>
+                                    <div className="mb-3 col-12" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'
                                             name={val.name}
                                             placeholder={val.placeholder}
                                             as={TextField}
+                                            validate={validateField}
                                         />
+                                        <ErrorMessage name={val.name} component={ErrorMsg}/>
                                     </div>
                                 ))
                             }
@@ -382,26 +429,63 @@ const AccountAdd = (props) => {
                                             name={val.name}
                                             placeholder={val.placeholder}
                                             as={TextField}
+                                            validate={validateField}
                                         />
+                                        <ErrorMessage name={val.name} component={ErrorMsg}/>
                                     </div>
                                 ))
                             }
                             {
-                                accountAddInputText_address.map((val, index) => (
-                                    <div className="mb-3 col-8" key={"inputTextField" + index}>
-                                        {val.label}
+                            <>  
+                            <div div className="col-9">
+                                <label htmlFor='address'>Address</label>
+                            </div>          
+                                
+                                    <div className="mb-3 col-9"> 
                                         <Field
-                                            type='textarea'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextareaAutosize}
+                                            type='text'
+                                            name='address.addLine1'
+                                            // placeholder={placeholder}
+                                            as={TextField}
+                                            validate={validateField}
                                         />
+                                        <ErrorMessage name='address.addLine1' component={ErrorMsg}/>
+                                        </div>
+                                    <div className="mb-3 col-9">    
+                                    <Field
+                                            type='text'
+                                            name='address.addLine2'
+                                            // placeholder={placeholder}
+                                            as={TextField}
+                                            validate={validateField}
+                                        />
+                                        <ErrorMessage name='address.addLine2' component={ErrorMsg}/>
+                                    </div> 
+                                    <div className="mb-3 col-9">    
+                                    <Field
+                                            type='textarea'
+                                            name='address.addLine3'
+                                            // placeholder={placeholder}
+                                            as={TextField}
+                                            validate={validateField}
+                                        />
+                                        <ErrorMessage name='address.addLine3'/>
+                                     </div>
+                                    <div className="mb-5 col-9">    
+                                    <Field
+                                            type='textarea'
+                                            name='address.addLine4'
+                                            // placeholder={placeholder}
+                                            as={TextField}
+                                            validate={validateField}
+                                        />
+                                        <ErrorMessage name='address.addLine4'/>
                                     </div>
-                                ))
+                            </>
                             }
-                                             {
+                            {
                                 accountAdd_dropdown_address.map((val, index) => (
-                                    <div className="mb-5 col-12 col-md-8" key={"inputDropdownValue" + index}>
+                                    <div className="mb-5 col-12 col-md-7" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>
@@ -434,20 +518,24 @@ const AccountAdd = (props) => {
                                             name={val.name}
                                             placeholder={val.placeholder}
                                             as={TextField}
+                                            validate={validateField}
                                         />
+                                        <ErrorMessage name={val.name} component={ErrorMsg}/>
                                     </div>
                                 ))
                             }
+                            </div>
 
                         </div>
 
-                        <div className="row acc_add_container mb-3">
-                            <div className='col-12'>
+                        <div className="mb-3 acc_add_container col-md-6">
+                            <div className='col-12 '>    
                                 <span className='other_heading'>Other Info</span>
                             </div>
+                            <div className='row'>
                             {
                                 accountAdd_dropdown_two.map((val, index) => (
-                                    <div className="mb-4 col-12 col-md-4" key={"inputDropdownValue" + index}>
+                                    <div className="mb-4 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>
@@ -458,6 +546,7 @@ const AccountAdd = (props) => {
                                                 // value={values.name}
                                                 multiple={false}
                                                 onChange={handleChange}
+                                                validate={validateField}
                                             >
                                                 <option defaultValue>Select an Option</option>
                                                 {
@@ -466,6 +555,7 @@ const AccountAdd = (props) => {
                                                     ))
                                                 }
                                             </select>
+                                            <ErrorMessage name={val.name}/>
                                         </FormControl>
                                     </div>
                                 ))
@@ -481,12 +571,14 @@ const AccountAdd = (props) => {
                                             name={val.name}
                                             placeholder={val.placeholder}
                                             as={TextField}
+                                            validate={validateField}
                                         />
+                                        <ErrorMessage name={val.name}/>
                                     </div>
                                 ))
                             }
 
-{
+                            {
                                 accountAddInputText_three.map((val, index) => (
                                     <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
                                         {val.label}
@@ -495,11 +587,13 @@ const AccountAdd = (props) => {
                                             name={val.name}
                                             placeholder={val.placeholder}
                                             as={TextField}
+                                            validate={validateField}
                                         />
+                                        <ErrorMessage name={val.name}/>
                                     </div>
                                 ))
                             }
-                            {
+                            {/* {
                                 accountAdd_dropdown_three.map((val, index) => (
                                     <div className="mb-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
@@ -523,18 +617,19 @@ const AccountAdd = (props) => {
                                         </FormControl>
                                     </div>
                                 ))
-                            }
+                            } */}
+                            </div>
 
                         </div>
-
+                       </div>     
                         <div className="row btnContainer flex-sm-row mt-4 mb-3">
-                            <div className="mt-3 col-12 col-md-3 p-0">
+                            <div className="mt-3 col-12 col-md-3 col-lg-2 p-0">
                                 <Link to='/accounts'><Button type="submit" className="col-12">Notes</Button></Link>
                             </div>
-                            <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
+                            <div className="mt-3 col-12 col-md-3 col-lg-2 align-self-center quitBtn">
                                 <Button type="submit" className="col-12">Opt. Fields</Button>
                             </div>
-                            <div className="mt-3 col-12 col-md-3 align-self-center quitBtn pl-0">
+                            <div className="mt-3 col-12 col-md-3 col-lg-2 align-self-center quitBtn pl-0">
                                 <Link to='/accounts'><Button type="submit" className="col-12">Multiple Alias</Button></Link>
                             </div>
                         </div>

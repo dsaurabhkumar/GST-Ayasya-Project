@@ -9,10 +9,18 @@ const MaterialCentreAdd = (props) => {
         name: '',
         alias: '',
         printName: '',
-        salesAccount: '',
-        purcAccount: '',
-        accountingInStockTransfer: '',
-        address: ''
+        group:'',
+        saleAcc: '',
+        purAcc: '',
+        stockTransfer: '',
+        address: {
+            id: '',
+            addLine1:'' ,
+            addLine2: '',
+            addLine3: '',
+            addLine4:''
+        },
+
     }
 
     const materialCentreAdd_Text_one = [
@@ -20,10 +28,10 @@ const MaterialCentreAdd = (props) => {
             label: 'Name',
             name: 'name',
         },
-        {
-            label: 'Alias',
-            name: 'alias',
-        },
+        // {
+        //     label: 'Alias',
+        //     name: 'alias',
+        // },
         {
             label: 'Print Name',
             name: 'printName',
@@ -42,7 +50,7 @@ const MaterialCentreAdd = (props) => {
         },
         {
             label: `Stock Account`,
-            name: 'stockAccount',
+            name: 'stockAcc',
             values: [
                 "Stock"
             ]
@@ -62,23 +70,29 @@ const MaterialCentreAdd = (props) => {
     const materialCentreAdd_Text_two = [
         {
             label: 'Sales Account',
-            name: 'salesAccount',
+            name: 'saleAcc',
         },
         {
             label: 'Purc. Account',
-            name: 'purcAccount',
+            name: 'purAcc',
         },
         {
             label: 'Accounting in Stock Transfer',
-            name: 'accountingInStockTransfer',
+            name: 'stockTransfer',
         },
     ]
 
     const materialCentreAdd_Text_three = [
         {
-            label: 'Address',
-            name: 'address',
-        },
+            label:'Address',
+            address: [
+                {name: 'id'},
+                {name: 'addLine1'},        
+                {name: 'addLine2'},
+                {name: 'addLine3'},
+                {name: 'addLine4'},
+        ]
+        }
     ]
 
 
@@ -201,7 +215,7 @@ const MaterialCentreAdd = (props) => {
                                 <Button type="submit" className="col-12" disabled={isSubmitting}>Save</Button>
                             </div>
                             <div className="mt-3 col-12 col-md-3 col-lg-2 align-self-center quitBtn">
-                                <Link to='/'><Button type="submit" className="col-12">Quit</Button></Link>
+                                <Link to='/'><Button type="submit" className="col-12" color="primary" variant="outlined">Quit</Button></Link>
                             </div>
                             <div className="mt-3 col-12 col-md-3 col-lg-2 p-0">
                                 <Button className="col-12">Opt. Fields</Button>

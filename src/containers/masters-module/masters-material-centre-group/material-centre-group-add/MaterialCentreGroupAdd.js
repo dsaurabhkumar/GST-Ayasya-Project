@@ -8,6 +8,8 @@ const MaterialCentreGroupAdd = (props) => {
     const formValue = {
         group: '',
         alias: '',
+        primaryGroup: '',
+        // underGroup: '',
     }
 
     const materialCentreGroupAdd_text = [
@@ -15,10 +17,10 @@ const MaterialCentreGroupAdd = (props) => {
             label: 'Group',
             name: 'group',
         },
-        {
-            label: 'Alias',
-            name: 'alias',
-        },
+        // {
+        //     label: 'Alias',
+        //     name: 'alias',
+        // },
     ]
 
     const materialCentreGroupAdd_dropdown_one = [
@@ -136,7 +138,7 @@ const MaterialCentreGroupAdd = (props) => {
                                 <Button type="submit" className="col-12" disabled={isSubmitting}>Save</Button>
                             </div>
                             <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
-                                <Link to='/'><Button type="submit" className="col-12">Quit</Button></Link>
+                                <Link to='/'><Button type="submit" className="col-12" color="primary" variant="outlined">Quit</Button></Link>
                             </div>
                         </div>
                     </Form>

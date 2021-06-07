@@ -6,14 +6,15 @@ import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } fro
 const ItemGroupAdd = (props) => {
 
     const formValue = {
-        group: '',
-        alias: '',
-        underGroup: '',
-        stockAccount: '',
-        salesAccount: '',
-        purchaseAccount: '',
-        hsnCode: '',
-        taxCategory: ''
+        pgroup: '',
+        // alias: '',
+        undergroup: '',
+        stockacc: '',
+        saleacc: '',
+        puracc: '',
+        hsncode: '',
+        hsncodeset:'',
+        // taxCategory: ''
     }
 
     const inputGroupAddInputText_one = [
@@ -21,16 +22,16 @@ const ItemGroupAdd = (props) => {
             label: 'Group',
             name: 'group',
         },
-        {
-            label: 'Alias',
-            name: 'alias',
-        },
+        // {
+        //     label: 'Alias',
+        //     name: 'alias',
+        // },
     ]
 
     const itemGroupAdd_dropdown_one = [
         {
             label: 'Primary Group (Y/N)',
-            name: 'primaryGroup',
+            name: 'pgroup',
             values: [
                 'Y',
             ]
@@ -40,29 +41,29 @@ const ItemGroupAdd = (props) => {
     const inputGroupAddInputText_two = [
         {
             label: 'Under Group',
-            name: 'underGroup',
+            name: 'undergroup',
         },
     ]
 
     const inputGroupAddInputText_three = [
         {
             label: 'Stock Account',
-            name: 'stockAccount',
+            name: 'stockacc',
         },
         {
             label: 'Sales Account',
-            name: 'salesAccount',
+            name: 'saleacc',
         },
         {
             label: 'Purchase Account',
-            name: 'purchaseAccount',
+            name: 'puracc',
         },
     ]
 
     const itemGroupAdd_dropdown_two = [
         {
             label: 'Specify HSN Code',
-            name: 'specifyHsnCode',
+            name: 'hsncodeset',
             values: [
                 'Y',
             ]
@@ -71,7 +72,7 @@ const ItemGroupAdd = (props) => {
     const inputGroupAddInputText_four = [
         {
             label: 'HSN Code',
-            name: 'hsnCode',
+            name: 'hsncode',
         },
     ]
 
