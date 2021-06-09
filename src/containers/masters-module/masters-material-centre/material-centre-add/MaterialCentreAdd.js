@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
+import Address from "../../../../components/address/Address"
 
 const MaterialCentreAdd = (props) => {
 
@@ -194,19 +195,7 @@ const MaterialCentreAdd = (props) => {
                             }
                         </div>
                         <div className="row mt-3">
-                            {
-                                materialCentreAdd_Text_three.map((val, index) => (
-                                    <div className=" mb-3 col-12 col-md-12" key={"inputTextField" + index}>
-                                        {val.label}
-                                        <Field
-                                            type='text'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextField}
-                                        />
-                                    </div>
-                                ))
-                            }
+                                  <Address/>                      
                         </div>
 
 

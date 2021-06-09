@@ -6,8 +6,11 @@ import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } fro
 const StateAdd = (props) => {
 
     const formValue = {
+        id:'',
         name: '',
-        stateCode: ''
+        stateCode: '',
+        countryid: '',
+        // gstcode:''
     }
 
     const state_add_text = [
@@ -42,7 +45,7 @@ const StateAdd = (props) => {
                         <div className="row mt-4">
                             {
                                 state_add_text.map((val, index) => (
-                                    <div className="mt-2 mb-2 col-12 col-md-6" key={"inputTextField" + index}>
+                                    <div className="mt-2 mb-2 col-12 col-md-12" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'

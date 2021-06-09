@@ -6,6 +6,7 @@ import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } fro
 const ItemGroupAdd = (props) => {
 
     const formValue = {
+        name:'',
         pgroup: '',
         // alias: '',
         undergroup: '',
@@ -20,7 +21,7 @@ const ItemGroupAdd = (props) => {
     const inputGroupAddInputText_one = [
         {
             label: 'Group',
-            name: 'group',
+            name: 'name',
         },
         // {
         //     label: 'Alias',

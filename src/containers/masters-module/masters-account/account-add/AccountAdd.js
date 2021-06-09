@@ -4,6 +4,10 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio, TextareaAutosize } from '@material-ui/core';
 import ErrorMsg from '../../../../components/error-msg/ErrorMsg';
+import Address from '../../../../components/address/Address'
+import SaveQuitButton from '../../../../components/Forms/save-quit-button/SaveQuitButton';
+import NMOButtons from '../../../../components/Forms/Notes-mulp-button/NMOButtons';
+
 
 const validateField = value => {
     let error
@@ -91,7 +95,7 @@ const AccountAdd = (props) => {
             {name: 'addLine1'},        
             {name: 'addLine2'},
             {name: 'addLine3'},
-            // name: 'addLine4',
+            {name: 'addLine4'}
     ]
     }
     ]
@@ -375,6 +379,7 @@ const AccountAdd = (props) => {
                                 <span className='other_heading'>General Info</span>
                             </div>
                             <div className='row'>
+                                
 
                         {
                                 accountAddInputText_name.map((val, index) => (
@@ -436,52 +441,7 @@ const AccountAdd = (props) => {
                                 ))
                             }
                             {
-                            <>  
-                            <div div className="col-9">
-                                <label htmlFor='address'>Address</label>
-                            </div>          
-                                
-                                    <div className="mb-3 col-9"> 
-                                        <Field
-                                            type='text'
-                                            name='address.addLine1'
-                                            // placeholder={placeholder}
-                                            as={TextField}
-                                            validate={validateField}
-                                        />
-                                        <ErrorMessage name='address.addLine1' component={ErrorMsg}/>
-                                        </div>
-                                    <div className="mb-3 col-9">    
-                                    <Field
-                                            type='text'
-                                            name='address.addLine2'
-                                            // placeholder={placeholder}
-                                            as={TextField}
-                                            validate={validateField}
-                                        />
-                                        <ErrorMessage name='address.addLine2' component={ErrorMsg}/>
-                                    </div> 
-                                    <div className="mb-3 col-9">    
-                                    <Field
-                                            type='textarea'
-                                            name='address.addLine3'
-                                            // placeholder={placeholder}
-                                            as={TextField}
-                                            validate={validateField}
-                                        />
-                                        <ErrorMessage name='address.addLine3'/>
-                                     </div>
-                                    <div className="mb-5 col-9">    
-                                    <Field
-                                            type='textarea'
-                                            name='address.addLine4'
-                                            // placeholder={placeholder}
-                                            as={TextField}
-                                            validate={validateField}
-                                        />
-                                        <ErrorMessage name='address.addLine4'/>
-                                    </div>
-                            </>
+                            <Address/>
                             }
                             {
                                 accountAdd_dropdown_address.map((val, index) => (
@@ -621,8 +581,14 @@ const AccountAdd = (props) => {
                             </div>
 
                         </div>
-                       </div>     
-                        <div className="row btnContainer flex-sm-row mt-4 mb-3">
+                       </div> 
+
+                       <NMOButtons />
+                        
+                        
+                        <SaveQuitButton isSubmitting={isSubmitting}/>
+
+                        {/* <div className="row btnContainer flex-sm-row mt-4 mb-3">
                             <div className="mt-3 col-12 col-md-3 col-lg-2 p-0">
                                 <Link to='/accounts'><Button type="submit" className="col-12">Notes</Button></Link>
                             </div>
@@ -642,7 +608,7 @@ const AccountAdd = (props) => {
                             <div className="mt-3 col-sm-6 col-md-2 align-self-center ">
                                 <Link to='/'><Button type="submit" className="col-12" color="primary" variant="outlined">Quit</Button></Link>
                             </div>
-                        </div>
+                        </div> */}
                     </Form>
                 )
                 }

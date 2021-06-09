@@ -8,7 +8,8 @@ const UnitAdd = (props) => {
     const formValue = {
         unitName: '',
         alias: '',
-        printName: ''
+        printName: '',
+        gstUQC: '',
     }
 
     const unit_add_text = [
@@ -29,7 +30,7 @@ const UnitAdd = (props) => {
     const unit_add_gropdown = [
         {
             label: `UQC (for GST e-return)`,
-            name: 'uqcForGstReturn',
+            name: 'gstUQC',
             values: [
                 "Godowns",
                 "Production Floors",

@@ -7,6 +7,9 @@ const UnitConversionAdd = (props) => {
 
     const formValue = {
         conFactor: '',
+        mainUnit:'',
+        subUnit:'',
+
     }
 
     const unit_conversion_add_dropdown = [
@@ -47,7 +50,7 @@ const UnitConversionAdd = (props) => {
     ]
 
     return(
-        <div className="container containerWidth mt-4 mb-4">
+        <div className="container containerWidth inventoryForm mt-4 mb-4">
             <Formik
 
                 initialValues={formValue}
@@ -67,7 +70,7 @@ const UnitConversionAdd = (props) => {
 
                             {
                                 unit_conversion_add_dropdown.map((val, index) => (
-                                    <div className="mb-4 mt-4 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                    <div className="mb-4 mt-4 col-12 col-md-12" key={"inputDropdownValue" + index}>
                                         <FormControl>
                                             <select
                                                 type='select'
@@ -88,7 +91,7 @@ const UnitConversionAdd = (props) => {
                             }
                             {
                                 unit_conversion_add_text.map((val, index) => (
-                                    <div className="mb-3 col-12 col-md-6" key={"inputTextField" + index}>
+                                    <div className="mb-3 col-12 col-md-12" key={"inputTextField" + index}>
                                         {val.label}
                                         <Field
                                             type='text'

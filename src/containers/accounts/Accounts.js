@@ -253,10 +253,11 @@ class Accounts extends React.Component {
                         {
                             this.state.inputLabels.map((val, index) => {
                                 if (val.type === "check-box") {
-                                    return val.options.map((cval, cindex) => <div className="col-12 col-md-6 mb-4 accountCheckbox" key={'input_checkbox_' + cindex + "_" + cval.name + "_" + cindex}>
+                                    return val.options.map((cval, cindex) => <div className=" form-group col-12 col-md-6 mb-4 accountCheckbox" key={'input_checkbox_' + cindex + "_" + cval.name + "_" + cindex}>
 
                                         <Checkbox
                                             name={val.label}
+                                            className="form-control"
                                             value={cval.value}
                                             checked={cval.checked}
                                             handleCheck={(event) => this.handleCheck(index, cindex, cval.value, event.target.checked)}

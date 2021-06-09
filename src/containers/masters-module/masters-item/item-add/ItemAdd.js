@@ -3,7 +3,10 @@ import ModalComponent from '../../../../components/modal/ModalComponent';
 import { Formik, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { TextField, Checkbox, Button, FormControlLabel, FormControl, Radio } from '@material-ui/core';
+import NMOButtons from '../../../../components/Forms/Notes-mulp-button/NMOButtons';
 import SetCriticalLevel from '../../../../components/Forms/masters-module-item-add-sub-forms/set-critical-level/SetCriticalLevel';
+import '../item-add/ItemAdd.css'
+import SaveQuitButton from '../../../../components/Forms/save-quit-button/SaveQuitButton';
 
 const ItemAdd = (props) => {
 
@@ -11,9 +14,12 @@ const ItemAdd = (props) => {
 
     const formValue = {
         name: '',
+        printName: '',
         group: '',
+        unit: '',
         opStockQty: '',
         opStockValue: '',
+        taxCategory:'',
         hsnSacCodeForGst: '',
         salesPrice: '',
         purchasePrice: '',
@@ -26,26 +32,33 @@ const ItemAdd = (props) => {
         packagingPurcPrice: '',
         saleDiscount: '',
         purcDiscount: '',
+        specifySaleAcc: '',
+        specifyPurcAcc: '',
         saleCompoundDisc: '',
         purcCompoundDisc: '',
         specifySalesDiscStructure: '',
         specifyPurcDiscStructure: '',
+        itemDescription: '',
         saleMarkup: '',
         purcMarkup: '',
         saleCompMarkup: '',
         purcCompMarkup: '',
         specifySalesMarkupStructure: '',
         specifyPurcMarkupStructure: '',
+        setCriticalLevel:'',
         maintainRg23d: '',
         tariffHeading: '',
         serialNoWiseDetails: '',
         parameterizedDetails: '',
         mrpWiseDetails: '',
         batchWiseDetails: '',
+        expMfgDateReq: '',
         expiryDays: '',
         specifyDefaultMC: '',
         freezeMCforItem: '',
+        skipGstReports: '',
         totalNoOfAuthors: '',
+        dontMaintainStockBal: '',
         pickItemSizingInfo: '',
         specifyDefaultVendor: ''
     }
@@ -62,9 +75,36 @@ const ItemAdd = (props) => {
             name: 'name',
         },
         {
-            label: 'Group',
-            name: 'group',
+            label: 'Print Name',
+            name: 'printName',
         },
+        // {
+        //     label: 'Group',
+        //     name: 'group',
+        // },
+    ]
+
+
+    
+    const accountAdd_dropdown_group = [
+        {
+            label: `Group`,
+            name: 'group',
+            values: [
+                "Bank Accounts",
+                "Sundry Creditors",
+                "Sundry Debtors",
+                "Bank O/D Accounts",
+                "Capital Account",
+                "Cash-in-hand",
+                "Current Assets",
+                "Current Liabilities",
+                "Duties & Taxes",
+                "Expenses (Direct/Mfg.)",
+                "Expenses (Indirect/Admin.)",
+                "Fixed Assets",
+            ]
+        }
     ]
 
     const itemAdd_dropdown_one = [
@@ -120,22 +160,27 @@ const ItemAdd = (props) => {
         {
             label: 'Sales Price',
             name: 'salesPrice',
+            placeholder: '0.00'
         },
         {
             label: 'Purc. Price',
             name: 'purchasePrice',
+            placeholder: '0.00'
         },
         {
             label: 'M.R.P',
             name: 'mrp',
+            placeholder: '0.00'
         },
         {
             label: 'Min. Sales Price',
             name: 'minSalesPrice',
+            placeholder: '0.00'
         },
         {
             label: 'Self-Val. Price',
             name: 'selfValPrice',
+            placeholder: '0.00'
         },
     ]
 
@@ -162,6 +207,7 @@ const ItemAdd = (props) => {
         {
             label: `Tax Inclusive Sale Price`,
             name: 'taxInclusiveSalePrice',
+            defaulOptionValue:'N',
             values: [
                 "Y",
                 "N"
@@ -170,6 +216,7 @@ const ItemAdd = (props) => {
         {
             label: `Tax Inclusive Purchase`,
             name: 'taxInclusivePurchase',
+            defaulOptionValue:'N',
             values: [
                 "Y",
                 "N"
@@ -177,17 +224,19 @@ const ItemAdd = (props) => {
         },
         {
             label: `Specify Sales Acc`,
-            name: 'specifySalesAcc',
+            name: 'specifySaleAcc',
+            defaulOptionValue:'Not Required',
             values: [
-                "Not Reqd.",
+                "Not Required",
                 "Specify in Vch."
             ]
         },
         {
             label: `Specify Purc Acc`,
             name: 'specifyPurcAcc',
+            defaulOptionValue:'Not Required',
             values: [
-                "Not Reqd.",
+                "Not Required",
                 "Specify in Vch."
             ]
         }
@@ -202,6 +251,7 @@ const ItemAdd = (props) => {
         {
             label: 'Purc. Discount',
             name: 'purcDiscount',
+            placeholder: '0.00'
         },
         {
             label: 'Sale Compound Disc.',
@@ -249,6 +299,7 @@ const ItemAdd = (props) => {
         {
             label: `Set Critical Level (Y/N)`,
             name: 'setCriticalLevel',
+            defaulOptionValue:'Y',
             values: [
                 "Y",
                 "N"
@@ -280,6 +331,10 @@ const ItemAdd = (props) => {
         {
             label: 'Batch-Wise Details',
             name: 'batchWiseDetails'
+        },
+        {
+            label: 'Exp/Mfg Date Required',
+            name: 'expMfgDateReq',
         },
         {
             label: 'Expiry Days',
@@ -331,7 +386,7 @@ const ItemAdd = (props) => {
     }
 
     return (
-        <div className="container mt-4 mb-4">
+        <div className="container-fluid">
             <Formik
 
                 initialValues={formValue}
@@ -345,29 +400,29 @@ const ItemAdd = (props) => {
 
 
                 {({ values, isSubmitting, handleChange }) => (
-                    <Form className="inventoryForm">
-                        <div className="text-center"><strong>Add Item Master</strong></div>
-                        <div className="row mt-4 mb-4">
-                            {
-                                itemAddText_one.map((val, index) => (
-                                    <div className="col-6 col-md-6" key={"inputTextField" + index}>
-                                        {val.label}
-                                        <Field
-                                            type='text'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextField}
-                                        />
-                                    </div>
-                                ))
-                            }
-                        </div>
+                    <Form className='m-2'>
+                        <div className="m-4 text-center"><strong>Add Item Master</strong></div>
+                        <div className='row justify-content-around'>
+ 
+                            <div className="borderItem col-md-6 border_margin">
 
-                        <strong>Main Unit Details</strong>
-                        <div className="row mb-4">
-                            {
-                                itemAdd_dropdown_one.map((val, index) => (
-                                    <div className="mt-3 col-12 col-md-4" key={"inputDropdownValue" + index}>
+                                <div className='row my-3 m-0 mb-4'>
+                                    {
+                                        itemAddText_one.map((val, index) => (
+                                            <div className="col-md-8 mb-2" key={"inputTextField" + index}>
+                                                {val.label}
+                                                <Field
+                                                    type='text'
+                                                    name={val.name}
+                                                    placeholder={val.placeholder}
+                                                    as={TextField}
+                                                />
+                                            </div>
+                                        ))
+                                    }
+                                    {
+                                accountAdd_dropdown_group.map((val, index) => (
+                                    <div className="mb-5 my-4 col-12 col-md-8" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>
@@ -390,219 +445,264 @@ const ItemAdd = (props) => {
                                     </div>
                                 ))
                             }
-                            {
-                                itemAddText_two.map((val, index) => (
-                                    <div className="mt-3 col-12 col-md-4" key={"inputTextField" + index}>
-                                        {val.label}
-                                        <Field
-                                            type='text'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextField}
-                                        />
+
+
+                                </div>
+
+                                <div className='row m-0 borderItem d-flex flex-column pb-3'>
+                                    <div className='col-12'><span className='heading_inner' >Main Unit Details</span></div>
+
+                                    {
+                                        itemAdd_dropdown_one.map((val, index) => (
+                                            <div className="mt-3 col-12 col-md-5" key={"inputDropdownValue" + index}>
+                                                <div className="mb-2">
+                                                    {val.label}
+                                                </div>
+                                                <FormControl>
+                                                    <select
+                                                        type='select'
+                                                        name={val.name}
+                                                        // value={values.name}
+                                                        multiple={false}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option defaultValue>Select an Option</option>
+                                                        {
+                                                            val.values.map((cval, cindex) => (
+                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                            ))
+                                                        }
+                                                    </select>
+                                                </FormControl>
+                                            </div>
+                                        ))
+                                    }
+                                    {
+                                        itemAddText_two.map((val, index) => (
+                                            <div className="mt-3 col-12 col-md-5 " key={"inputTextField" + index}>
+                                                {val.label}
+                                                <Field
+                                                    type='text'
+                                                    name={val.name}
+                                                    placeholder={val.placeholder}
+                                                    as={TextField}
+                                                />
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+
+
+                                <div className='row m-0 d-flex flex-column mt-2'>
+                                    {
+                                        itemAdd_dropdown_two.map((val, index) => (
+                                            <div className="mb-2 mt-3 col-12 col-md-6 " key={"inputDropdownValue" + index}>
+                                                <div className="mb-2">
+                                                    {val.label}
+                                                </div>
+                                                <FormControl>
+                                                    <select
+                                                        type='select'
+                                                        name={val.name}
+                                                        // value={values.name}
+                                                        multiple={false}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option defaultValue>Select an Option</option>
+                                                        {
+                                                            val.values.map((cval, cindex) => (
+                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                            ))
+                                                        }
+                                                    </select>
+                                                </FormControl>
+                                            </div>
+                                        ))
+                                    }
+                                    {
+                                        itemAddText_three.map((val, index) => (
+                                            <div className="mt-3 col-12 col-md-6" key={"inputTextField" + index}>
+                                                {val.label}
+                                                <Field
+                                                    type='text'
+                                                    name={val.name}
+                                                    placeholder={val.placeholder}
+                                                    as={TextField}
+                                                />
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+
+                                <div className='row m-0 borderItem my-4 pb-3'>
+                                        
+                                        <div className='col-12'><span className='heading_inner' >Item Price Info</span></div>
+                                    {
+                                        itemAddText_Four.map((val, index) => (
+                                            <div className="mt-3 col-6 col-md-5" key={"inputTextField" + index}>
+                                                {val.label}
+                                                <Field
+                                                    type='text'
+                                                    name={val.name}
+                                                    placeholder={val.placeholder}
+                                                    as={TextField}
+                                                />
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                                <div className='row m-0 borderItem pb-3'>
+                                <div className='col-12'><span className='heading_inner' >Packaging Unit Details</span></div>
+                                    {/* <strong>Packaging Unit Details</strong> */}
+
+                                    {
+                                        itemAddText_Five.map((val, index) => (
+                                            <div className="mt-3 col-6 col-md-6" key={"inputTextField" + index}>
+                                                {val.label}
+                                                <Field
+                                                    type='text'
+                                                    name={val.name}
+                                                    placeholder={val.placeholder}
+                                                    as={TextField}
+                                                />
+                                            </div>
+                                        ))
+                                    }
+
+                                </div>
+                                <div className='row m-0 my-3'>
+                                    {
+                                        itemAdd_dropdown_three.map((val, index) => (
+                                            <div className="my-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
+                                                <div className="mb-2">
+                                                    {val.label}
+                                                </div>
+                                                <FormControl>
+                                                    <select
+                                                        type='select'
+                                                        name={val.name}
+                                                        // value={values.name}
+                                                        multiple={false}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option defaultValue>{val.defaulOptionValue}</option>
+                                                        {
+                                                            val.values.map((cval, cindex) => (
+                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                            ))
+                                                        }
+                                                    </select>
+                                                </FormControl>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+
+                            </div>
+
+
+
+
+
+                            <div className='borderItem col-md-6'>
+
+                                <div className='row borderItem m-0 my-3 pb-4'>
+                                    <div className='col-12'>
+                                        <span className='heading_inner'>Discount & Markup Det</span>
                                     </div>
-                                ))
-                            }
 
-                        </div>
+                                    {
+                                        itemAddText_Six.map((val, index) => (
+                                            <div className="mt-3 col-6 col-md-6" key={"inputTextField" + index}>
+                                                {val.label}
+                                                <Field
+                                                    type='text'
+                                                    name={val.name}
+                                                    placeholder={val.placeholder}
+                                                    as={TextField}
+                                                />
+                                            </div>
+                                        ))
+                                    }
 
-                        <div className="row mb-4">
-                            {
-                                itemAdd_dropdown_two.map((val, index) => (
-                                    <div className="mb-2 mt-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
-                                        <div className="mb-2">
-                                            {val.label}
-                                        </div>
-                                        <FormControl>
-                                            <select
-                                                type='select'
-                                                name={val.name}
-                                                // value={values.name}
-                                                multiple={false}
-                                                onChange={handleChange}
-                                            >
-                                                <option defaultValue>Select an Option</option>
+                                </div>
+
+                                <div className='row m-0 '>
+                                    {
+                                        itemAdd_dropdown_four.map((val, index) => (
+                                            <div className="col-6 my-3" key={"inputDropdownValue" + index}>
+                                                <div className="mb-2">
+                                                    {val.label}
+                                                </div>
+                                                <FormControl>
+                                                    <select
+                                                        type='select'
+                                                        name={val.name}
+                                                        // value={values.name}
+                                                        multiple={false}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option defaultValue>{val.defaulOptionValue}</option>
+                                                        {
+                                                            val.values.map((cval, cindex) => (
+                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                            ))
+                                                        }
+                                                    </select>
+                                                </FormControl>
+                                            </div>
+                                        ))
+                                    }
+                                
+                                    {
+                                        setCriticalLevel.map((val, index) => (
+                                            <div className='my-4 mx-3' key={"inputTextKey" + index}>
                                                 {
-                                                    val.values.map((cval, cindex) => (
-                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                    ))
+                                                    componentModalItem(val.id)
                                                 }
-                                            </select>
-                                        </FormControl>
-                                    </div>
-                                ))
-                            }
-                            {
-                                itemAddText_three.map((val, index) => (
-                                    <div className="mt-3 col-12 col-md-6" key={"inputTextField" + index}>
-                                        {val.label}
-                                        <Field
-                                            type='text'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextField}
-                                        />
-                                    </div>
-                                ))
-                            }
-                        </div>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
 
-                        <strong>Item Price Info</strong>
-                        <div className="row mb-4">
-                            {
-                                itemAddText_Four.map((val, index) => (
-                                    <div className="mt-3 col-6 col-md-3" key={"inputTextField" + index}>
-                                        {val.label}
-                                        <Field
-                                            type='text'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextField}
-                                        />
-                                    </div>
-                                ))
-                            }
-                        </div>
 
-                        <strong>Packaging Unit Details</strong>
-                        <div className="row mb-4">
-                            {
-                                itemAddText_Five.map((val, index) => (
-                                    <div className="mt-3 col-6 col-md-3" key={"inputTextField" + index}>
-                                        {val.label}
-                                        <Field
-                                            type='text'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextField}
-                                        />
-                                    </div>
-                                ))
-                            }
-                        </div>
+                                <div className='row m-0'>
+                                    {
+                                        itemAddText_Seven.map((val, index) => (
+                                            <div className="mt-3 col-6 col-md-6" key={"inputTextField" + index}>
+                                                {val.label}
+                                                <Field
+                                                    type='text'
+                                                    name={val.name}
+                                                    placeholder={val.placeholder}
+                                                    as={TextField}
+                                                />
+                                            </div>
+                                        ))
+                                    }
+                                </div>
 
-                        <div className="row">
-                            {
-                                itemAdd_dropdown_three.map((val, index) => (
-                                    <div className="mt-3 col-12 col-md-6" key={"inputDropdownValue" + index}>
-                                        <div className="mb-2">
-                                            {val.label}
-                                        </div>
-                                        <FormControl>
-                                            <select
-                                                type='select'
-                                                name={val.name}
-                                                // value={values.name}
-                                                multiple={false}
-                                                onChange={handleChange}
-                                            >
-                                                <option defaultValue>Select an Option</option>
-                                                {
-                                                    val.values.map((cval, cindex) => (
-                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                    ))
-                                                }
-                                            </select>
-                                        </FormControl>
-                                    </div>
-                                ))
-                            }
-                        </div>
 
-                        <div className="row btnContainer flex-sm-row-reverse mt-4 mb-5">
-                            <div className="mt-3 col-12 col-md-4 p-0">
-                                <Link to='/inventory'><Button type="submit" className="col-12">Notes</Button></Link>
                             </div>
-                            <div className="mt-3 col-12 col-md-4 align-self-center quitBtn">
-                                <Button type="submit" className="col-12">Opt. Fields</Button>
-                            </div>
-                            <div className="mt-3 col-12 col-md-4 align-self-center quitBtn pl-0">
-                                <Link to='/inventory'><Button type="submit" className="col-12">Multiple Alias</Button></Link>
-                            </div>
+
+
                         </div>
 
-                        <strong>Discount & Markup Det.</strong>
-                        <div className="row mb-4">
-                            {
-                                itemAddText_Six.map((val, index) => (
-                                    <div className="mt-3 col-6 col-md-6" key={"inputTextField" + index}>
-                                        {val.label}
-                                        <Field
-                                            type='text'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextField}
-                                        />
-                                    </div>
-                                ))
-                            }
-                        </div>
+                        
+                            <NMOButtons />
+                        
+                        
+                            <SaveQuitButton isSubmitting={isSubmitting}/>
+                        
 
-                        <div className="row mb-4">
-                            {
-                                itemAdd_dropdown_four.map((val, index) => (
-                                    <div className="col-7 col-md-7" key={"inputDropdownValue" + index}>
-                                        <div className="mb-2">
-                                            {val.label}
-                                        </div>
-                                        <FormControl>
-                                            <select
-                                                type='select'
-                                                name={val.name}
-                                                // value={values.name}
-                                                multiple={false}
-                                                onChange={handleChange}
-                                            >
-                                                <option defaultValue>Select an Option</option>
-                                                {
-                                                    val.values.map((cval, cindex) => (
-                                                        <option key={"optionValues" + cindex} value={cval}>{cval}</option>
-                                                    ))
-                                                }
-                                            </select>
-                                        </FormControl>
-                                    </div>
-                                ))
-                            }
-                            <div className="col-5 col-md-5 text-right align-self-center pl-0">
-                                {
-                                    setCriticalLevel.map((val, index) => (
-                                        <div key={"inputTextKey" + index}>
-                                            {
-                                                componentModalItem(val.id)
-                                            }
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                        </div>
-
-                        <div className="row">
-                        {
-                                itemAddText_Seven.map((val, index) => (
-                                    <div className="mt-3 col-6 col-md-4" key={"inputTextField" + index}>
-                                        {val.label}
-                                        <Field
-                                            type='text'
-                                            name={val.name}
-                                            placeholder={val.placeholder}
-                                            as={TextField}
-                                        />
-                                    </div>
-                                ))
-                            }
-                        </div>
-
-
-
-                        <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
-                            <div className="mt-3 col-12 col-md-3 p-0">
+                        {/* <div className="row col-12 btnContainer flex-sm-row-reverse mt-4 mb-3">
+                            <div className="mt-3 col-sm-6 col-md-2 p-0">
                                 <Button type="submit" className="col-12" disabled={isSubmitting}>Save</Button>
                             </div>
-                            <div className="mt-3 col-12 col-md-3 align-self-center quitBtn">
-                                <Link to='/'><Button type="submit" className="col-12">Quit</Button></Link>
+                            <div className="mt-3 col-sm-6 col-md-2 align-self-center quitBtn">
+                                <Link to='/'><Button type="submit" className="col-12" color="primary" variant="outlined">Quit</Button></Link>
                             </div>
-                        </div>
+                        </div> */}
                     </Form>
                 )
                 }
