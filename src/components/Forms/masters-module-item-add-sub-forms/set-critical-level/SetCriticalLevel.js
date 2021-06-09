@@ -6,18 +6,18 @@ import { Checkbox, Button, FormControlLabel, FormControl, Radio, TextField } fro
 const SetCriticalLevel = (props) => {
 
     const formValue = {
-        minimumLevelQuantity: '',
+        minimumLevelQty: '',
         reorderLevelQty: '',
-        maximumLevelQuantity: '',
+        maximumLevelQty: '',
         minimumLevelDays: '',
         reorderLevelDays: '',
-        maximumLevelDays: ''
+        maximumLevelDays: '',
     }
 
     const inputText_One = [
         {
             label: 'Minimum Level (Qty.)',
-            name: 'minimumLevelQuantity',
+            name: 'minimumLevelQty',
             placeholder: `0.00`
         },
         {
@@ -27,7 +27,7 @@ const SetCriticalLevel = (props) => {
         },
         {
             label: 'Maximum Level (Qty.)',
-            name: 'maximumLevelQuantity',
+            name: 'maximumLevelQty',
             placeholder: `0.00`
         },
         {
@@ -49,7 +49,7 @@ const SetCriticalLevel = (props) => {
 
 
     return (
-        <div className="container mt-4 mb-4">
+        <div className="container">
             <Formik
                 initialValues={formValue}
 
@@ -63,11 +63,11 @@ const SetCriticalLevel = (props) => {
                 {({ isSubmitting }) => (
                     <Form>
                         <h5 className="modalFormHeading">Define Critical Levels</h5>
-                        <div className="text-center mb-4"><strong>Define Critical Levels</strong></div>
-                        <div className="row">
+                        <div className="text-center mb-3"><strong>Define Critical Levels</strong></div>
+                        <div className="row borderItem m-0 py-3">
                             {
                                 inputText_One.map((val, index) => (
-                                    <div className="mb-3 col-6 col-md-6" key={"inputTextField" + index}>
+                                    <div className="col-12 mb-1" key={"inputTextField" + index}>
                                         <h5 className="modalHeadingValue">{val.heading}</h5>
                                         {val.label}
                                         <Field
@@ -82,8 +82,8 @@ const SetCriticalLevel = (props) => {
                         </div>
 
 
-                        <div className="row btnContainer flex-sm-row-reverse mt-4 mb-3">
-                            <div className="mt-3 col-12 col-md-3 p-0">
+                        <div className="row btnContainer flex-sm-row-reverse mt-4">
+                            <div className=" col-12 col-md-3 p-0">
                                 <Button type="submit" className="col-12" disabled={isSubmitting}>Save</Button>
                             </div>
                         </div>

@@ -357,11 +357,39 @@ const ItemAdd = (props) => {
             label: 'Pick Item Sizing Info. from Item Description',
             name: 'pickItemSizingInfo'
         },
+        
+    ]
+    const itemAdd_dropdown_five = [
+        {
+            label: `Skip In GST Reports`,
+            name: 'skipGstReports',
+            defaulOptionValue:'N',
+            values: [
+                "Y",
+                "N"
+            ]
+        },
+        {
+            label: `Do Not Maintain Stock Balance`,
+            name: 'dontMaintainStockBal',
+            defaulOptionValue:'N',
+            values: [
+                "Y",
+                "N"
+            ]
+        },
         {
             label: 'Specify Default Vendor',
-            name: 'specifyDefaultVendor'
-        },
+            name: 'specifyDefaultVendor',
+            defaulOptionValue:'N',
+            values: [
+                "Y",
+                "N"
+            ]
+        }
     ]
+
+
 
     const componentModalItem = (id) => {
         let element = null;
@@ -422,7 +450,7 @@ const ItemAdd = (props) => {
                                     }
                                     {
                                 accountAdd_dropdown_group.map((val, index) => (
-                                    <div className="mb-5 my-4 col-12 col-md-8" key={"inputDropdownValue" + index}>
+                                    <div className=" my-3 col-12 col-md-8" key={"inputDropdownValue" + index}>
                                         <div className="mb-2">
                                             {val.label}
                                         </div>
@@ -681,6 +709,35 @@ const ItemAdd = (props) => {
                                         ))
                                     }
                                 </div>
+
+                                <div className='row m-0 '>
+                                    {
+                                        itemAdd_dropdown_five.map((val, index) => (
+                                            <div className="col-6 my-3" key={"inputDropdownValue" + index}>
+                                                <div className="mb-2">
+                                                    {val.label}
+                                                </div>
+                                                <FormControl>
+                                                    <select
+                                                        type='select'
+                                                        name={val.name}
+                                                        // value={values.name}
+                                                        multiple={false}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option defaultValue>{val.defaulOptionValue}</option>
+                                                        {
+                                                            val.values.map((cval, cindex) => (
+                                                                <option key={"optionValues" + cindex} value={cval}>{cval}</option>
+                                                            ))
+                                                        }
+                                                    </select>
+                                                </FormControl>
+                                            </div>
+                                        ))
+                                    }
+                                    </div>
+
 
 
                             </div>
