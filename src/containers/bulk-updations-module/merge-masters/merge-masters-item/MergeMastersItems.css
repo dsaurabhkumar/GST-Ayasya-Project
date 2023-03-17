@@ -1,0 +1,11 @@
+.labelFieldAlign {
+    display: flex;
+}
+
+.labelFieldAlign .MuiFormControl-root {
+    width: 50%;
+}
+
+.labelWidth {
+    width: 45%;
+}

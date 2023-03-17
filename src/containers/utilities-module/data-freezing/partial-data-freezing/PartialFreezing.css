@@ -1,0 +1,35 @@
+.partialInputAlign {
+    display: flex;
+}
+.partialInputAlign .MuiFormControl-root {
+    width: 40%;
+    position: absolute;
+    right: 1rem;
+}
+.partialDateAlign {
+    display: flex;
+}
+.dateFieldHeight .form-control {
+    height: calc(1.5em + 0.35rem + 2px);
+}
+.freezeSection {
+    display: flex;
+}
+.freezeSection .MuiFormControl-root {
+    width: 65%;
+}
+.section_Heading {
+    position: relative;
+    top: 27px;
+    background-color: #ffffff;
+    left: 15px;
+}
+@media (max-width: 767px) {
+    .dateFieldHeight .react-datepicker-wrapper {
+        right: 1rem;
+        width: 100%;
+    }
+    .mobile_view {
+        text-align: center;
+    }
+}

@@ -1,0 +1,17 @@
+.sectionHeading {
+    position: relative;
+    top: 10px;
+    left: 15px;
+    background-color: #ffffff;
+}
+
+.sectionSubHeading {
+    position: relative;
+    top: -18px;
+    left: 15px;
+    background-color: #ffffff;
+}
+
+.labelFieldAlign .MuiFormControl-root {
+    width: 50%;
+  }

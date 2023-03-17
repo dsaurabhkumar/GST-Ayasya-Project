@@ -1,0 +1,25 @@
+.radioBtnsAlignment {
+    border: 1px solid #000000;
+    padding: 1%;
+}
+
+.datePickerAlign {
+    display: flex;
+}
+
+.emailLabelWidth {
+    width: 25%;
+}
+
+.dateLabelWidth {
+    width: 40%;
+}
+
+@media (max-width: 767px) {
+    .marginAlignment {
+        margin-top: 15px;
+    }
+    .attachmentLabel {
+        width: 100%;
+    }
+}

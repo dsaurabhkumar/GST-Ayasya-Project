@@ -80,11 +80,44 @@ import AgeingInventory from '../containers/configuration-module/ageing-analysis-
 import UsersAdd from '../containers/users-module/users-add/UsersAdd';
 import UsersModify from '../containers/users-module/users-modify/UsersModify';
 import UsersList from '../containers/users-module/users-list/UsersList';
-import DataFreezing from '../containers/utilities-module/data-freezing/DataFreezing';
 import BillWiseReferences from '../containers/utilities-module/reference-management/clear-references/BillWiseReferences';
 import BillWiseRefer from '../containers/utilities-module/reference-management/auto-adjust-references/BillWiseRefer';
 import BillReferences from '../containers/utilities-module/reference-management/reference-adjustment-wizard/BillReferences';
 import SendEmail from '../containers/utilities-module/send-e-mail/SendEmail';
+import SendSms from '../containers/utilities-module/send-sms/SendSms';
+import SendNotification from '../containers/utilities-module/send-notification/SendNotification';
+import FullFreezing from '../containers/utilities-module/data-freezing/full-data-freezing/FullFreezing';
+import PartialFreezing from '../containers/utilities-module/data-freezing/partial-data-freezing/PartialFreezing';
+import RestoreCustomReport from '../containers/utilities-module/customization/custom-report/restore-custom-report/RestoreCustomReport';
+import DeleteCustomReport from '../containers/utilities-module/customization/custom-report/delete-custom-report/DeleteCustomReport';
+import BackupCustomReport from '../containers/utilities-module/customization/custom-report/backup-custom-report/BackupCustomReport';
+import RestoreCustomValidation from '../containers/utilities-module/customization/custom-validation/restore-custom-validation/RestoreCustomValidation';
+import DeleteCustomValidation from '../containers/utilities-module/customization/custom-validation/delete-custom-validation/DeleteCustomValidation';
+import BackupCustomValidation from '../containers/utilities-module/customization/custom-validation/backup-custom-validation/BackupCustomValidation';
+import BlockAccountItem from '../containers/utilities-module/block-account-item/BlockAccountItem';
+import DeactivateMasters from '../containers/utilities-module/de-activate-masters/DeactivateMasters';
+import MappingMasters from '../containers/utilities-module/mapping-of-masters/MappingMasters';
+import UpdateBalSheetStock from '../containers/bulk-updations-module/update-bal-sheet-stock/UpdateBalSheetStock';
+import MastersSync from '../containers/bulk-updations-module/masters-synchronization/MastersSync';
+import UpdateMasterPrintName from '../containers/bulk-updations-module/update-master-print-name/UpdateMasterPrintName';
+import MergeMastersItems from '../containers/bulk-updations-module/merge-masters/merge-masters-item/MergeMastersItems';
+import MergeMastersAccounts from '../containers/bulk-updations-module/merge-masters/merge-masters-accounts/MergeMastersAccounts';
+import DeleteUnusedMasters from '../containers/bulk-updations-module/delete-unused-masters/DeleteUnusedMasters';
+import UpdateTaxCatHsn from '../containers/bulk-updations-module/update-item-tax-category-hsn/UpdateTaxCatHsn';
+import UpdateItemCriticalLevel from '../containers/bulk-updations-module/update-item-critical-levels/UpdateItemCriticalLevel';
+import UpdateItemPriceDiscount from '../containers/bulk-updations-module/update-item-price-discount/UpdateItemPriceDiscount';
+import UpdateItemDisStructure from '../containers/bulk-updations-module/update-item-discount-structure/UpdateItemDisStructure';
+import MultipleAccCreationMod from '../containers/bulk-updations-module/multiple-account-creation-modification/MultipleAccCreationMod';
+import MultipleItemCreationMod from '../containers/bulk-updations-module/multiple-item-creation-modification/MultipleItemCreationMod';
+import TaxCategoryCreationMod from '../containers/bulk-updations-module/multiple-tax-cat-creation-modification/TaxCategoryCreationMod';
+import BulkVoucherCreationMod from '../containers/bulk-updations-module/bulk-voucher-creation-modification/BulkVoucherCreationMod';
+import AutoGenerateProdVouchers from '../containers/bulk-updations-module/auto-generate-production-vouchers/AutoGenerateProdVouchers';
+import RegenerateManVouchers from '../containers/bulk-updations-module/regenerate-manufacturing-vouchers/RegenerateManVouchers';
+import CopyVouchers from '../containers/bulk-updations-module/copy-vouchers/CopyVouchers';
+import VoucherReplication from '../containers/bulk-updations-module/voucher-replication/VoucherReplication';
+import SetVoucherTemplate from '../containers/bulk-updations-module/set-voucher-as-template/SetVoucherTemplate';
+import VoucherTemplateTagging from '../containers/bulk-updations-module/voucher-template-tagging/VoucherTemplateTagging';
+
 
 const Routes = () => (
     <Switch>
@@ -333,8 +366,11 @@ const Routes = () => (
 
 
 
-        <Route path="/utilities-data-freezing">
-            <DataFreezing />
+        <Route path="/utilities-full-data-freezing">
+            <FullFreezing />
+        </Route>
+        <Route path="/utilities-partial-data-freezing">
+            <PartialFreezing />
         </Route>
         <Route path="/utilities-clear-bill-wise-references">
             <BillWiseReferences />
@@ -347,6 +383,101 @@ const Routes = () => (
         </Route>
         <Route path="/send-e-mail">
             <SendEmail />
+        </Route>
+        <Route path="/send-sms">
+            <SendSms />
+        </Route>
+        <Route path="/send-notification">
+            <SendNotification />
+        </Route>
+        <Route path="/restore-custom-report">
+            <RestoreCustomReport />
+        </Route>
+        <Route path="/delete-custom-report">
+            <DeleteCustomReport />
+        </Route>
+        <Route path="/backup-custom-report">
+            <BackupCustomReport />
+        </Route>
+        <Route path="/restore-custom-validation">
+            <RestoreCustomValidation />
+        </Route>
+        <Route path="/delete-custom-validation">
+            <DeleteCustomValidation />
+        </Route>
+        <Route path="/backup-custom-validation">
+            <BackupCustomValidation />
+        </Route>
+
+        <Route path="/utilities-block-account-item">
+            <BlockAccountItem />
+        </Route>
+        <Route path="/utilities-deactivate-masters">
+            <DeactivateMasters />
+        </Route>
+        <Route path="/utilities-mapping-masters">
+            <MappingMasters />
+        </Route>
+
+        <Route path="/update-bal-sheet-stock">
+            <UpdateBalSheetStock />
+        </Route>
+        <Route path="/masters-synchronization">
+            <MastersSync />
+        </Route>
+        <Route path="/update-master-print-name">
+            <UpdateMasterPrintName />
+        </Route>
+        <Route path="/merge-masters-items">
+            <MergeMastersItems />
+        </Route>
+        <Route path="/merge-masters-accounts">
+            <MergeMastersAccounts />
+        </Route>
+        <Route path="/delete-unused-masters">
+            <DeleteUnusedMasters />
+        </Route>
+        <Route path="/update-item-tax-category">
+            <UpdateTaxCatHsn />
+        </Route>
+        <Route path="/update-item-critical-levels">
+            <UpdateItemCriticalLevel />
+        </Route>
+        <Route path="/update-item-price-discount">
+            <UpdateItemPriceDiscount />
+        </Route>
+        <Route path="/update-item-discount-structure">
+            <UpdateItemDisStructure />
+        </Route>
+        <Route path="/multiple-account-creation-modification">
+            <MultipleAccCreationMod />
+        </Route>
+        <Route path="/multiple-item-creation-modification">
+            <MultipleItemCreationMod />
+        </Route>
+        <Route path="/multiple-tax-cat-creation-modification">
+            <TaxCategoryCreationMod />
+        </Route>
+        <Route path="/bulk-voucher-creation-modification">
+            <BulkVoucherCreationMod />
+        </Route>
+        <Route path="/auto-generate-production-vouchers">
+            <AutoGenerateProdVouchers />
+        </Route>
+        <Route path="/regenerate-manufacturing-vouchers">
+            <RegenerateManVouchers />
+        </Route>
+        <Route path="/copy-vouchers">
+            <CopyVouchers />
+        </Route>
+        <Route path="/voucher-replication">
+            <VoucherReplication />
+        </Route>
+        <Route path="/set-voucher-as-template">
+            <SetVoucherTemplate />
+        </Route>
+        <Route path="/voucher-template-tagging">
+            <VoucherTemplateTagging />
         </Route>
 
 

@@ -1,0 +1,11 @@
+.dateFieldAlign {
+    display: flex;
+}
+.dateFieldAlign .react-datepicker-wrapper {
+    width: 55%;
+    position: absolute;
+    right: 1rem;
+}
+.dateLabel {
+    width: 40%;
+}
